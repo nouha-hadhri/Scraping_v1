@@ -1,0 +1,41 @@
+{
+  "_comment": "Critères de recherche saisis par l'utilisateur via l'interface CRM.",
+  "_usage": "Ce fichier est généré/modifié par l'interface. Ne contient QUE les choix utilisateur. Toute la config technique est dans config/settings.py.",
+  "_version": "3.0.0",
+  "secteurs_activite": [
+    "Informatique"
+  ],
+  "types_entreprise": [
+    "SAS",
+    "SARL",
+    "SASU",
+    "SA",
+    "EI"
+  ],
+  "taille_entreprise": {
+    "nb_employes_min": 1,
+    "nb_employes_max":5000,
+    "categories": [
+      "PME",
+      "ETI",
+      "GE"
+    ]
+  },
+  "zone_geographique": {
+    "zone_geographique": [
+      "France"
+    ],
+    "regions": [
+      "Île-de-France"    
+    ],
+    "villes": [
+      "Paris" 
+    ]
+  },
+  "mots_cles": [
+    "logiciel",
+    "software",
+    "informatique"  
+  ],
+  "max_prospects_total": 700
+}

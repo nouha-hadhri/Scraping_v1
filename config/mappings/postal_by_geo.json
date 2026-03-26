@@ -1,0 +1,510 @@
+{
+  "_comment": "Mapping zones géographiques (termes utilisateur) → préfixes codes postaux (API SIRENE).",
+  "_source": "La Poste / INSEE — découpages administratifs français 2024.",
+  "_usage": "Utilisé par SireneQueryBuilder. L'API SIRENE accepte code_postal avec LIKE 'prefix%'.",
+  "_note_regions": "Les préfixes correspondent aux départements composant chaque région administrative.",
+  "_note_villes": "Les préfixes à 3 chiffres couvrent les arrondissements (Paris, Lyon, Marseille) et communes proches.",
+
+  "regions": {
+
+    "Île-de-France": {
+      "_departements": ["Paris (75)", "Seine-et-Marne (77)", "Yvelines (78)", "Essonne (91)", "Hauts-de-Seine (92)", "Seine-Saint-Denis (93)", "Val-de-Marne (94)", "Val-d'Oise (95)"],
+      "prefixes": ["75", "77", "78", "91", "92", "93", "94", "95"]
+    },
+
+    "Provence-Alpes-Côte d'Azur": {
+      "_departements": ["Alpes-de-Haute-Provence (04)", "Hautes-Alpes (05)", "Alpes-Maritimes (06)", "Bouches-du-Rhône (13)", "Var (83)", "Vaucluse (84)"],
+      "prefixes": ["04", "05", "06", "13", "83", "84"]
+    },
+
+    "Auvergne-Rhône-Alpes": {
+      "_departements": ["Ain (01)", "Allier (03)", "Ardèche (07)", "Cantal (15)", "Drôme (26)", "Isère (38)", "Loire (42)", "Haute-Loire (43)", "Puy-de-Dôme (63)", "Rhône (69)", "Savoie (73)", "Haute-Savoie (74)"],
+      "prefixes": ["01", "03", "07", "15", "26", "38", "42", "43", "63", "69", "73", "74"]
+    },
+
+    "Nouvelle-Aquitaine": {
+      "_departements": ["Charente (16)", "Charente-Maritime (17)", "Corrèze (19)", "Creuse (23)", "Dordogne (24)", "Gironde (33)", "Landes (40)", "Lot-et-Garonne (47)", "Pyrénées-Atlantiques (64)", "Deux-Sèvres (79)", "Vienne (86)", "Haute-Vienne (87)"],
+      "prefixes": ["16", "17", "19", "23", "24", "33", "40", "47", "64", "79", "86", "87"]
+    },
+
+    "Occitanie": {
+      "_departements": ["Ariège (09)", "Aude (11)", "Aveyron (12)", "Gard (30)", "Haute-Garonne (31)", "Gers (32)", "Hérault (34)", "Lot (46)", "Lozère (48)", "Hautes-Pyrénées (65)", "Pyrénées-Orientales (66)", "Tarn (81)", "Tarn-et-Garonne (82)"],
+      "prefixes": ["09", "11", "12", "30", "31", "32", "34", "46", "48", "65", "66", "81", "82"]
+    },
+
+    "Hauts-de-France": {
+      "_departements": ["Aisne (02)", "Nord (59)", "Oise (60)", "Pas-de-Calais (62)", "Somme (80)"],
+      "prefixes": ["02", "59", "60", "62", "80"]
+    },
+
+    "Grand Est": {
+      "_departements": ["Ardennes (08)", "Aube (10)", "Marne (51)", "Haute-Marne (52)", "Meurthe-et-Moselle (54)", "Meuse (55)", "Moselle (57)", "Bas-Rhin (67)", "Haut-Rhin (68)", "Vosges (88)"],
+      "prefixes": ["08", "10", "51", "52", "54", "55", "57", "67", "68", "88"]
+    },
+
+    "Normandie": {
+      "_departements": ["Calvados (14)", "Eure (27)", "Manche (50)", "Orne (61)", "Seine-Maritime (76)"],
+      "prefixes": ["14", "27", "50", "61", "76"]
+    },
+
+    "Bretagne": {
+      "_departements": ["Côtes-d'Armor (22)", "Finistère (29)", "Ille-et-Vilaine (35)", "Morbihan (56)"],
+      "prefixes": ["22", "29", "35", "56"]
+    },
+
+    "Pays de la Loire": {
+      "_departements": ["Loire-Atlantique (44)", "Maine-et-Loire (49)", "Mayenne (53)", "Sarthe (72)", "Vendée (85)"],
+      "prefixes": ["44", "49", "53", "72", "85"]
+    },
+
+    "Centre-Val de Loire": {
+      "_departements": ["Cher (18)", "Eure-et-Loir (28)", "Indre (36)", "Indre-et-Loire (37)", "Loir-et-Cher (41)", "Loiret (45)"],
+      "prefixes": ["18", "28", "36", "37", "41", "45"]
+    },
+
+    "Bourgogne-Franche-Comté": {
+      "_departements": ["Côte-d'Or (21)", "Doubs (25)", "Jura (39)", "Nièvre (58)", "Haute-Saône (70)", "Saône-et-Loire (71)", "Yonne (89)", "Territoire de Belfort (90)"],
+      "prefixes": ["21", "25", "39", "58", "70", "71", "89", "90"]
+    },
+
+    "Corse": {
+      "_departements": ["Corse-du-Sud (2A)", "Haute-Corse (2B)"],
+      "prefixes": ["20", "2A", "2B"]
+    },
+
+    "La Réunion": {
+      "_departements": ["La Réunion (974)"],
+      "prefixes": ["974"]
+    },
+
+    "Martinique": {
+      "_departements": ["Martinique (972)"],
+      "prefixes": ["972"]
+    },
+
+    "Guadeloupe": {
+      "_departements": ["Guadeloupe (971)"],
+      "prefixes": ["971"]
+    },
+
+    "Guyane": {
+      "_departements": ["Guyane (973)"],
+      "prefixes": ["973"]
+    },
+
+    "Mayotte": {
+      "_departements": ["Mayotte (976)"],
+      "prefixes": ["976"]
+    }
+  },
+
+  "villes": {
+
+    "Paris": {
+      "_note": "75 arrondissements + communes limitrophes",
+      "prefixes": ["75001", "75002", "75003", "75004", "75005", "75006", "75007", "75008", "75009", "75010", "75011", "75012", "75013", "75014", "75015", "75016", "75017", "75018", "75019", "75020"]
+    },
+
+    "Lyon": {
+      "_note": "9 arrondissements lyonnais",
+      "prefixes": ["69001", "69002", "69003", "69004", "69005", "69006", "69007", "69008", "69009"]
+    },
+
+    "Marseille": {
+      "_note": "16 arrondissements marseillais",
+      "prefixes": ["13001", "13002", "13003", "13004", "13005", "13006", "13007", "13008", "13009", "13010", "13011", "13012", "13013", "13014", "13015", "13016"]
+    },
+
+    "Toulouse": {
+      "prefixes": ["31000", "31100", "31200", "31300", "31400", "31500"]
+    },
+
+    "Bordeaux": {
+      "prefixes": ["33000", "33100", "33200", "33300", "33800"]
+    },
+
+    "Nantes": {
+      "prefixes": ["44000", "44100", "44200", "44300"]
+    },
+
+    "Strasbourg": {
+      "prefixes": ["67000", "67100", "67200"]
+    },
+
+    "Lille": {
+      "prefixes": ["59000", "59800"]
+    },
+
+    "Nice": {
+      "prefixes": ["06000", "06100", "06200", "06300"]
+    },
+
+    "Montpellier": {
+      "prefixes": ["34000", "34070", "34080", "34090"]
+    },
+
+    "Rennes": {
+      "prefixes": ["35000", "35200", "35700"]
+    },
+
+    "Grenoble": {
+      "prefixes": ["38000", "38100"]
+    },
+
+    "Aix-en-Provence": {
+      "prefixes": ["13080", "13090", "13100", "13290", "13540"]
+    },
+
+    "Clermont-Ferrand": {
+      "prefixes": ["63000", "63100"]
+    },
+
+    "Tours": {
+      "prefixes": ["37000", "37100", "37200"]
+    },
+
+    "Nîmes": {
+      "prefixes": ["30000", "30900"]
+    },
+
+    "Toulon": {
+      "prefixes": ["83000", "83100", "83200"]
+    },
+
+    "Angers": {
+      "prefixes": ["49000", "49100"]
+    },
+
+    "Rouen": {
+      "prefixes": ["76000", "76100"]
+    },
+
+    "Dijon": {
+      "prefixes": ["21000", "21800"]
+    },
+
+    "Reims": {
+      "prefixes": ["51100"]
+    },
+
+    "Le Havre": {
+      "prefixes": ["76600"]
+    },
+
+    "Saint-Étienne": {
+      "prefixes": ["42000", "42100"]
+    },
+    "Brest": {
+      "prefixes": ["29200"]
+    },
+
+    "Le Mans": {
+      "prefixes": ["72000", "72100"]
+    },
+
+    "Amiens": {
+      "prefixes": ["80000", "80080", "80090"]
+    },
+
+    "Perpignan": {
+      "prefixes": ["66000", "66100"]
+    },
+
+    "Metz": {
+      "prefixes": ["57000", "57050", "57070"]
+    },
+
+    "Nancy": {
+      "prefixes": ["54000", "54100"]
+    },
+
+    "Orléans": {
+      "prefixes": ["45000", "45100"]
+    },
+
+    "Caen": {
+      "prefixes": ["14000"]
+    },
+
+    "Pau": {
+      "prefixes": ["64000", "64230"]
+    },
+
+    "Sophia Antipolis": {
+      "_note": "Technopole — hub IT/tech Côte d'Azur",
+      "prefixes": ["06410", "06560", "06600", "06902", "06903", "06904", "06905", "06906"]
+    },
+
+    "Massy": {
+      "_note": "Hub tech — Paris-Saclay",
+      "prefixes": ["91300"]
+    },
+
+    "Vélizy-Villacoublay": {
+      "_note": "Cluster tech/défense Île-de-France",
+      "prefixes": ["78140"]
+    },
+
+    "Roissy-en-France": {
+      "prefixes": ["95700"]
+    },
+
+    "Montrouge": {
+      "prefixes": ["92120"]
+    },
+
+    "Issy-les-Moulineaux": {
+      "_note": "Hub média & tech",
+      "prefixes": ["92130"]
+    },
+
+    "Boulogne-Billancourt": {
+      "prefixes": ["92100"]
+    },
+
+    "Levallois-Perret": {
+      "prefixes": ["92300"]
+    },
+
+    "Neuilly-sur-Seine": {
+      "prefixes": ["92200"]
+    },
+
+    "Clichy": {
+      "prefixes": ["92110"]
+    },
+
+    "Saint-Denis": {
+      "prefixes": ["93200", "93210"]
+    },
+
+    "Villeurbanne": {
+      "_note": "Commune adjacente Lyon",
+      "prefixes": ["69100"]
+    },
+
+    "Aubagne": {
+      "prefixes": ["13400"]
+    },
+
+    "Montbéliard": {
+      "prefixes": ["25200"]
+    },
+
+    "Valence": {
+      "prefixes": ["26000"]
+    },
+
+    "Chambéry": {
+      "prefixes": ["73000"]
+    },
+
+    "Annecy": {
+      "prefixes": ["74000"]
+    },
+
+    "Bayonne": {
+      "prefixes": ["64100"]
+    },
+
+    "Biarritz": {
+      "prefixes": ["64200"]
+    },
+
+    "Cannes": {
+      "prefixes": ["06400"]
+    },
+
+    "Antibes": {
+      "prefixes": ["06600"]
+    },
+
+    "Saint-Nazaire": {
+      "prefixes": ["44600"]
+    },
+
+    "Poitiers": {
+      "prefixes": ["86000"]
+    },
+
+    "Limoges": {
+      "prefixes": ["87000", "87100"]
+    },
+
+    "Besançon": {
+      "prefixes": ["25000"]
+    },
+
+    "Mulhouse": {
+      "prefixes": ["68100", "68200"]
+    },
+
+    "Colmar": {
+      "prefixes": ["68000"]
+    },
+
+    "Troyes": {
+      "prefixes": ["10000"]
+    },
+
+    "Charleville-Mézières": {
+      "prefixes": ["08000"]
+    },
+
+    "Épinal": {
+      "prefixes": ["88000"]
+    },
+
+    "Châlons-en-Champagne": {
+      "prefixes": ["51000"]
+    },
+
+    "Auxerre": {
+      "prefixes": ["89000"]
+    },
+
+    "Chalon-sur-Saône": {
+      "prefixes": ["71100"]
+    },
+
+    "Bourg-en-Bresse": {
+      "prefixes": ["01000"]
+    },
+
+    "Privas": {
+      "prefixes": ["07000"]
+    },
+
+    "Aurillac": {
+      "prefixes": ["15000"]
+    },
+
+    "Le Puy-en-Velay": {
+      "prefixes": ["43000"]
+    },
+
+    "Gap": {
+      "prefixes": ["05000"]
+    },
+
+    "Digne-les-Bains": {
+      "prefixes": ["04000"]
+    },
+
+    "Montauban": {
+      "prefixes": ["82000"]
+    },
+
+    "Albi": {
+      "prefixes": ["81000"]
+    },
+
+    "Cahors": {
+      "prefixes": ["46000"]
+    },
+
+    "Mende": {
+      "prefixes": ["48000"]
+    },
+
+    "Rodez": {
+      "prefixes": ["12000"]
+    },
+
+    "Auch": {
+      "prefixes": ["32000"]
+    },
+
+    "Foix": {
+      "prefixes": ["09000"]
+    },
+
+    "Carcassonne": {
+      "prefixes": ["11000"]
+    },
+
+    "Tarbes": {
+      "prefixes": ["65000"]
+    },
+
+    "Laval": {
+      "prefixes": ["53000"]
+    },
+
+    "La Roche-sur-Yon": {
+      "prefixes": ["85000"]
+    },
+
+    "Niort": {
+      "prefixes": ["79000"]
+    },
+
+    "Châteauroux": {
+      "prefixes": ["36000"]
+    },
+
+    "Bourges": {
+      "prefixes": ["18000"]
+    },
+
+    "Chartres": {
+      "prefixes": ["28000"]
+    },
+
+    "Blois": {
+      "prefixes": ["41000"]
+    },
+
+    "Alençon": {
+      "prefixes": ["61000"]
+    },
+
+    "Cherbourg-en-Cotentin": {
+      "prefixes": ["50100", "50120", "50130"]
+    },
+
+    "Évreux": {
+      "prefixes": ["27000"]
+    },
+
+    "Arras": {
+      "prefixes": ["62000"]
+    },
+
+    "Saint-Quentin": {
+      "prefixes": ["02100"]
+    },
+
+    "Beauvais": {
+      "prefixes": ["60000"]
+    },
+
+    "Ajaccio": {
+      "prefixes": ["20000", "20090"]
+    },
+
+    "Bastia": {
+      "prefixes": ["20200", "20600"]
+    },
+
+    "Saint-Denis de La Réunion": {
+      "prefixes": ["97400"]
+    },
+
+    "Fort-de-France": {
+      "prefixes": ["97200"]
+    },
+
+    "Pointe-à-Pitre": {
+      "prefixes": ["97110"]
+    },
+
+    "Cayenne": {
+      "prefixes": ["97300"]
+    },
+
+    "Mamoudzou": {
+      "prefixes": ["97600"]
+    }
+  }
+}

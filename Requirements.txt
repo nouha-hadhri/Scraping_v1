@@ -1,0 +1,16 @@
+# SCRAPING_V1 — Dépendances Python
+# Installer avec : pip install -r requirements.txt
+
+# ── HTML Parsing ──────────────────────────────
+beautifulsoup4>=4.12.0
+lxml>=5.0.0
+
+# ── NLP / Embeddings (optionnel) ─────────────
+# sentence-transformers>=2.6.0
+# torch>=2.0.0
+
+# ── Utilitaires ───────────────────────────────
+python-dateutil>=2.9.0
+
+# ── Dev / Tests ───────────────────────────────
+pytest>=8.0.0
