@@ -299,7 +299,12 @@ class ProspectCollector:
           2. search_config.json (interface CRM)
           3. TARGETING_CRITERIA (fallback hardcodé dans targets.py)
         """
-        criteria = self._resolve_criteria(target)
+        if target is None:
+            raise ValueError(
+                "Backend criteria are required: target must be provided from bridge payload."
+            )
+
+        criteria = self._target_to_criteria(target)
         self.scorer.criteria = criteria
 
         # Calculer les sous-sources actives UNE SEULE FOIS pour tout le run
@@ -482,7 +487,7 @@ class ProspectCollector:
         if PG_ENABLED:
             try:
                 with PgRepository() as pg:
-                    result = pg.upsert_prospects(scored)
+                    result = pg.upsert_prospects(scored, job_id=job.id)
                 n_upserted = result.get("upserted", 0)
                 n_skipped  = result.get("skipped", 0)
                 logger.info(
@@ -1581,7 +1586,7 @@ class Orchestrator(ProspectCollector):
 # CLI
 # ══════════════════════════════════════════════════════════════════════════════
 
-def main():
+def main() -> int:
     parser = argparse.ArgumentParser(
         description="SCRAPING_V1 — Système de scraping CRM"
     )
@@ -1675,7 +1680,7 @@ def main():
                 print(f"     {key:<20} {sub_status}")
         print(f"\n  [postgresql]   {' activé' if PG_ENABLED else ' désactivé'}")
         print("\nPour activer/désactiver : config/settings.py -> SOURCES_CONFIG / PG_ENABLED")
-        return
+        return 0
 
     # ── --stats-only ───────────────────────────
     if args.stats_only:
@@ -1683,7 +1688,7 @@ def main():
         scored = repo.load_scored()
         if not scored:
             print("Aucun résultat existant. Lancez d'abord le scraping.")
-            return
+            return 0
         stats = ProspectScorer.get_stats(scored)
         print(json.dumps(stats, indent=2, ensure_ascii=False))
 
@@ -1699,7 +1704,14 @@ def main():
                 ))
             except Exception as e:
                 print(f"\n[PostgreSQL] Indisponible : {e}")
-        return
+        return 0
+
+    def _emit_bridge_error(message: str) -> int:
+        if args.json_output:
+            print(json.dumps({"success": False, "error": message}, ensure_ascii=False))
+        else:
+            print(message)
+        return 2
 
     # ── Lancement du pipeline ──────────────────
     sf = args.source
@@ -1708,44 +1720,54 @@ def main():
 
     collector = ProspectCollector(dry_run=args.dry_run, source_filter=sf)
 
-    # Injecter les critères issus du bridge JSON si disponibles
-    _bridge_criteria_raw: Optional[Dict[str, Any]] = None
-    if args.bridge_json_file:
-        try:
-            import pathlib
-            _bp = json.loads(pathlib.Path(args.bridge_json_file).read_text(encoding="utf-8"))
-            _bridge_criteria_raw = _bp.get("criteria") or None
-        except Exception:
-            pass
+    # Source unique des critères : payload backend (--bridge-json-file)
+    if not args.bridge_json_file:
+        return _emit_bridge_error(
+            "Missing --bridge-json-file: backend criteria are mandatory."
+        )
 
-    if _bridge_criteria_raw:
-        # Construire un SearchTarget depuis les critères Spring si possible
-        from config.targets import SearchTarget as _ST
-        try:
-            _bt = _ST(
-                secteur_activite  = _bridge_criteria_raw.get("secteurActivite")
-                                    or _bridge_criteria_raw.get("secteurs_activite", []),
-                taille_entreprise = _bridge_criteria_raw.get("tailleEntreprise")
-                                    or _bridge_criteria_raw.get("tailles_entreprise", []),
-                types_entreprise  = _bridge_criteria_raw.get("typesEntreprise")
-                                    or _bridge_criteria_raw.get("types_entreprise", []),
-                pays              = _bridge_criteria_raw.get("pays", ["France"]),
-                regions           = _bridge_criteria_raw.get("regions", []),
-                villes            = _bridge_criteria_raw.get("villes", []),
-                keywords          = _bridge_criteria_raw.get("motsCles")
-                                    or _bridge_criteria_raw.get("keywords", []),
-                max_resultats     = int(_bridge_criteria_raw.get("maxResultats")
-                                        or _bridge_criteria_raw.get("max_resultats", 700)),
-                max_par_source    = int(_bridge_criteria_raw.get("maxParSource")
-                                        or _bridge_criteria_raw.get("max_par_source", 100)),
-            )
-            target = _bt
-            logger.info("[Bridge] Critères Spring convertis en SearchTarget")
-        except Exception as _bt_err:
-            logger.warning(f"[Bridge] Impossible de construire SearchTarget depuis criteria : {_bt_err} — fallback search_config.json")
-            target = None
-    else:
-        target = EXAMPLE_TARGETS.get(args.target) if args.target else None
+    _bridge_criteria_raw: Optional[Dict[str, Any]] = None
+    try:
+        import pathlib
+        _bp = json.loads(pathlib.Path(args.bridge_json_file).read_text(encoding="utf-8"))
+        _raw = _bp.get("criteria")
+        if isinstance(_raw, dict):
+            _bridge_criteria_raw = _raw
+    except Exception as _bridge_read_err:
+        return _emit_bridge_error(
+            f"Invalid bridge payload file: {_bridge_read_err}"
+        )
+
+    if not _bridge_criteria_raw:
+        return _emit_bridge_error(
+            "Bridge payload must contain a non-empty 'criteria' object."
+        )
+
+    # Construire un SearchTarget depuis les critères Spring (strict, sans fallback)
+    from config.targets import SearchTarget as _ST
+    try:
+        target = _ST(
+            secteur_activite  = _bridge_criteria_raw.get("secteurActivite")
+                                or _bridge_criteria_raw.get("secteurs_activite", []),
+            taille_entreprise = _bridge_criteria_raw.get("tailleEntreprise")
+                                or _bridge_criteria_raw.get("tailles_entreprise", []),
+            types_entreprise  = _bridge_criteria_raw.get("typesEntreprise")
+                                or _bridge_criteria_raw.get("types_entreprise", []),
+            pays              = _bridge_criteria_raw.get("pays", ["France"]),
+            regions           = _bridge_criteria_raw.get("regions", []),
+            villes            = _bridge_criteria_raw.get("villes", []),
+            keywords          = _bridge_criteria_raw.get("motsCles")
+                                or _bridge_criteria_raw.get("keywords", []),
+            max_resultats     = int(_bridge_criteria_raw.get("maxResultats")
+                                    or _bridge_criteria_raw.get("max_resultats", 700)),
+            max_par_source    = int(_bridge_criteria_raw.get("maxParSource")
+                                    or _bridge_criteria_raw.get("max_par_source", 100)),
+        )
+        logger.info("[Bridge] Critères backend convertis en SearchTarget")
+    except Exception as _bt_err:
+        return _emit_bridge_error(
+            f"Unable to build SearchTarget from backend criteria: {_bt_err}"
+        )
 
     job = collector.run(target, max_enrich=args.max_enrich)
 
@@ -1789,6 +1811,12 @@ def main():
         sys.stdout.buffer.write(_json_bytes)
         sys.stdout.buffer.flush()
 
+    if job.status == JobStatut.DONE.value:
+        return 0
+    if job.status == JobStatut.CANCELED.value:
+        return 3
+    return 1
+
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

@@ -23,6 +23,7 @@ import tempfile
 import threading
 import time
 import uuid
+import copy
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Dict, Optional
@@ -32,9 +33,103 @@ from pydantic import BaseModel
 
 from storage.repository import ProspectRepository
 
-
 APP_ROOT = Path(__file__).resolve().parent
 ORCHESTRATOR_PATH = APP_ROOT / "orchestrator.py"
+
+# ─────────────────────────────────────────────
+# NORMALISATION CRITÈRES (Frontend Spring Boot → Backend Python)
+# ─────────────────────────────────────────────
+
+_CATEGORY_MAP = {
+    "1-10":     "TPE",
+    "11-50":    "PME",
+    "51-250":   "ETI",
+    "251-5000": "ETI",
+    "251+":     "GE",
+    "5000+":    "GE",
+    "5000":     "GE",
+    # Variantes possibles venant du frontend
+    "tpe":      "TPE",
+    "pme":      "PME",
+    "eti":      "ETI",
+    "ge":       "GE",
+    "grande":   "GE",
+}
+
+
+def normalize_criteria(criteria: dict) -> dict:
+    """
+    Normalise les critères envoyés par le frontend Spring Boot
+    avant de les passer au pipeline Python (orchestrator).
+
+    Transformations principales :
+      - Mapping des catégories de taille d'entreprise (1-10 → TPE, etc.)
+      - Aplatissement des structures pour compatibilité avec SearchTarget et ProspectScorer
+      - Renommage de clés camelCase → snake_case quand nécessaire
+    """
+    if not isinstance(criteria, dict):
+        return criteria
+
+    # Copie profonde pour éviter de modifier l'original
+    crit = copy.deepcopy(criteria)
+
+    # 1. Normalisation de la taille d'entreprise
+    taille = crit.get("taille_entreprise") or crit.get("tailleEntreprise")
+    if isinstance(taille, dict):
+        raw_categories = taille.get("categories") or taille.get("category") or []
+        if isinstance(raw_categories, list):
+            normalized_cats = [
+                _CATEGORY_MAP.get(str(cat).strip(), str(cat).strip())
+                for cat in raw_categories if cat
+            ]
+            taille["categories"] = normalized_cats
+
+        # Mise à plat pour SearchTarget + Scorer
+        crit["tailles_entreprise"] = taille.get("categories", [])
+        crit["employes_min"] = taille.get("nb_employes_min") or taille.get("nbEmployesMin", 1)
+        crit["employes_max"] = taille.get("nb_employes_max") or taille.get("nbEmployesMax", None)
+
+        # On garde aussi la structure originale si besoin
+        crit["taille_entreprise"] = taille
+
+    # 2. Normalisation des autres champs (camelCase → snake_case)
+    if "secteurActivite" in crit:
+        crit["secteurs_activite"] = crit.pop("secteurActivite")
+
+    if "typesEntreprise" in crit:
+        crit["types_entreprise"] = crit.pop("typesEntreprise")
+
+    if "motsCles" in crit:
+        crit["keywords"] = crit.pop("motsCles")
+
+    # Support payload snake_case (Spring DTO sérialisé)
+    if "mots_cles" in crit and "keywords" not in crit:
+        crit["keywords"] = crit.pop("mots_cles")
+
+    if "zoneGeographique" in crit:
+        zone = crit.pop("zoneGeographique")
+        if isinstance(zone, dict):
+            crit["pays"]    = zone.get("pays") or zone.get("zone_geographique", ["France"])
+            crit["regions"] = zone.get("regions", [])
+            crit["villes"]  = zone.get("villes", [])
+
+    # Support payload snake_case (Spring DTO sérialisé)
+    if "zone_geographique" in crit:
+        zone = crit.pop("zone_geographique")
+        if isinstance(zone, dict):
+            crit["pays"] = zone.get("pays") or zone.get("zone_geographique", ["France"])
+            crit["regions"] = zone.get("regions", [])
+            crit["villes"] = zone.get("villes", [])
+
+    # 3. Max résultats
+    if "max_prospects_total" in crit:
+        crit["max_resultats"] = crit.pop("max_prospects_total")
+
+    if "maxResultats" in crit:
+        crit["max_resultats"] = crit.pop("maxResultats")
+
+    return crit
+
 
 # ─────────────────────────────────────────────
 # Modèles de requête
@@ -45,7 +140,7 @@ class CrmLaunchRequest(BaseModel):
     Body envoyé par AutoProspectionOrchestratorService.invokeScrapingApi() :
       { "jobId": "...", "criteria": { ... } }
     """
-    jobId: Optional[str] = None          # ID Spring — utilisé pour lier les données en base
+    jobId: Optional[str] = None
     criteria: Optional[Dict[str, Any]] = None
     source_filter: Optional[str] = None
     dry_run: bool = False
@@ -125,12 +220,17 @@ def _request_to_payload(req: CrmLaunchRequest, job_id: str) -> Dict[str, Any]:
         "dry_run": req.dry_run,
         "max_enrich": req.max_enrich,
     }
+
     if req.criteria is not None:
-        payload["criteria"] = req.criteria
+        normalized_criteria = normalize_criteria(req.criteria)
+        payload["criteria"] = normalized_criteria
+        logger.info(f"[Normalize] Critères normalisés → tailles={normalized_criteria.get('tailles_entreprise')}")
+
     if req.source_filter:
         payload["source_filter"] = req.source_filter
     if req.target_key:
         payload["target_key"] = req.target_key
+
     return payload
 
 
@@ -225,11 +325,11 @@ def _launch_job(payload: Dict[str, Any], job_id: str) -> JobState:
 
     creationflags = 0
     if os.name == "nt" and hasattr(subprocess, "CREATE_NEW_PROCESS_GROUP"):
-        # Isoler l'enfant du groupe console du serveur API (évite les CTRL+C propagés).
         creationflags = subprocess.CREATE_NEW_PROCESS_GROUP
 
     payload_file = _write_payload_file(payload)
     cmd = _build_command(payload_file)
+
     try:
         proc = subprocess.Popen(
             cmd,
@@ -266,7 +366,6 @@ def _get_job_or_404(job_id: str) -> JobState:
 
 
 def _wait_for_job(job_id: str, timeout: int = 600) -> JobState:
-    """Attend la fin du job (DONE / FAILED / CANCELED)."""
     elapsed = 0
     while True:
         with _JOBS_LOCK:
@@ -275,8 +374,6 @@ def _wait_for_job(job_id: str, timeout: int = 600) -> JobState:
         if job and job.status in ("DONE", "FAILED", "CANCELED"):
             return job
 
-        # Fallback: si le process est déjà terminé mais le watcher n'a pas finalisé,
-        # on force une finalisation minimale pour éviter de rester bloqué en RUNNING.
         if job and job.process is not None and job.status == "RUNNING":
             rc = job.process.poll()
             if rc is not None:
@@ -287,12 +384,10 @@ def _wait_for_job(job_id: str, timeout: int = 600) -> JobState:
                         current.finished_at = time.time()
                         if rc in (_STATUS_CONTROL_C_EXIT, _STATUS_CONTROL_C_EXIT_SIGNED):
                             current.status = "CANCELED"
-                            current.error = "orchestrator terminated by console control signal"
                         elif rc == 0:
                             current.status = "DONE"
                         else:
                             current.status = "FAILED"
-                            current.error = f"orchestrator exited with code {rc}"
                 return _get_job_or_404(job_id)
 
         if timeout is not None and elapsed >= timeout:
@@ -309,13 +404,6 @@ def _wait_for_job(job_id: str, timeout: int = 600) -> JobState:
 
 
 def _build_spring_response(job: JobState) -> Dict[str, Any]:
-    """
-    Construit la réponse attendue par AutoProspectionOrchestratorService.executePythonJob().
-    Spring lit :
-      responseNode.path("job")                          → stats
-      responseNode.path("qualified_prospects")          → liste de prospects
-      responseNode.path("output").path("qualified_prospects") → fallback
-    """
     if job.status in ("FAILED", "CANCELED"):
         return {
             "success": False,
@@ -336,10 +424,7 @@ def _build_spring_response(job: JobState) -> Dict[str, Any]:
     response = job.response or {}
     bridge_job = response.get("job", {})
 
-    # Retourner les deux nommages (camelCase + snake_case) pour compatibilité
-    # avec les deux variantes lues par readInt() dans Spring
     job_stats = {
-        # camelCase (Spring readInt cherche en premier)
         "totalCollected":  int(bridge_job.get("total_collected", 0) or 0),
         "totalCleaned":    int(bridge_job.get("total_cleaned", 0) or 0),
         "totalDeduped":    int(bridge_job.get("total_deduped", 0) or 0),
@@ -348,7 +433,7 @@ def _build_spring_response(job: JobState) -> Dict[str, Any]:
         "totalDuplicates": int(bridge_job.get("total_duplicates", 0) or 0),
         "sourcesUsed":     bridge_job.get("sources_used", []),
         "errors":          bridge_job.get("errors", []),
-        # snake_case (fallback readInt)
+        # snake_case fallback
         "total_collected":  int(bridge_job.get("total_collected", 0) or 0),
         "total_cleaned":    int(bridge_job.get("total_cleaned", 0) or 0),
         "total_deduped":    int(bridge_job.get("total_deduped", 0) or 0),
@@ -370,11 +455,18 @@ def _build_spring_response(job: JobState) -> Dict[str, Any]:
         "success": True,
         "job": job_stats,
         "qualified_prospects": qualified_prospects,
-        # Fallback output pour extractQualifiedProspects()
         "output": {
             "qualified_prospects": qualified_prospects,
         },
     }
+
+
+# ─────────────────────────────────────────────
+# Logging (ajouté ici car utilisé dans normalize)
+# ─────────────────────────────────────────────
+
+import logging
+logger = logging.getLogger("fastapi_app")
 
 
 # ─────────────────────────────────────────────
@@ -390,10 +482,6 @@ def health() -> Dict[str, str]:
 def launch(req: CrmLaunchRequest) -> Dict[str, Any]:
     """
     Appelé par AutoProspectionOrchestratorService.invokeScrapingApi().
-
-    - Utilise le jobId fourni par Spring (pour lier les données en base).
-    - Lance le pipeline Python de façon synchrone.
-    - Retourne les stats et les prospects qualifiés attendus par Spring.
     """
     job_id = req.jobId or str(uuid.uuid4())
     payload = _request_to_payload(req, job_id)
@@ -403,17 +491,12 @@ def launch(req: CrmLaunchRequest) -> Dict[str, Any]:
     except Exception as exc:
         raise HTTPException(status_code=500, detail=str(exc)) from exc
 
-    # Attendre la fin avant de répondre à Spring (pas de timeout par défaut).
     final_job = _wait_for_job(job_id, timeout=req.wait_timeout_seconds)
     return _build_spring_response(final_job)
 
 
 @app.get("/status/{job_id}")
 def get_status(job_id: str) -> Dict[str, Any]:
-    """
-    Retourne le statut courant d'un job.
-    Peut être utilisé par Spring pour du polling asynchrone futur.
-    """
     job = _get_job_or_404(job_id)
     response = job.response or {}
     bridge_job = response.get("job", {})
@@ -422,21 +505,17 @@ def get_status(job_id: str) -> Dict[str, Any]:
     return {
         "jobId": job.id,
         "status": job.status,
-        "totalCollected":  int(bridge_job.get("total_collected", 0) or 0),
-        "totalQualified":  int(bridge_job.get("total_qualified", 0) or 0),
+        "totalCollected": int(bridge_job.get("total_collected", 0) or 0),
+        "totalQualified": int(bridge_job.get("total_qualified", 0) or 0),
         "totalDuplicates": int(bridge_job.get("total_duplicates", 0) or 0),
-        "startedAt":   bridge_job.get("started_at"),
-        "finishedAt":  bridge_job.get("finished_at"),
+        "startedAt": bridge_job.get("started_at"),
+        "finishedAt": bridge_job.get("finished_at"),
         "errors": errors if isinstance(errors, list) else [str(errors)],
     }
 
 
 @app.post("/cancel/{job_id}")
 def cancel_job(job_id: str) -> bool:
-    """
-    Annule un job en cours.
-    Appelé par AutoProspectionController.cancelProspection() via jobService.markCancelled().
-    """
     job = _get_job_or_404(job_id)
 
     if job.status in ("DONE", "FAILED", "CANCELED"):
@@ -469,10 +548,6 @@ def cancel_job(job_id: str) -> bool:
 
 @app.get("/results/{job_id}")
 def get_results(job_id: str, page: int = 0, size: int = 20) -> Dict[str, Any]:
-    """
-    Retourne les prospects scorés pour un job, paginés.
-    Appelé par AutoProspectionController.getProspectionResults() via prospectService.findByJobId().
-    """
     if page < 0:
         raise HTTPException(status_code=400, detail="page must be >= 0")
     if size <= 0:

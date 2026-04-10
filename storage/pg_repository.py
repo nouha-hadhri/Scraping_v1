@@ -18,6 +18,7 @@ from __future__ import annotations
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+import hashlib
 import json
 import logging
 from contextlib import contextmanager
@@ -127,12 +128,13 @@ CREATE TABLE IF NOT EXISTS collection_jobs (
     type                TEXT        NOT NULL DEFAULT 'SCRAPING',
     status              TEXT        NOT NULL DEFAULT 'PENDING',
     parameters_json     TEXT        NOT NULL DEFAULT '{}',
-    crit_secteurs_activite TEXT[]   NOT NULL DEFAULT '{}',
-    crit_types_entreprise  TEXT[]   NOT NULL DEFAULT '{}',
-    crit_tailles_entreprise TEXT[]  NOT NULL DEFAULT '{}',
-    crit_pays              TEXT[]   NOT NULL DEFAULT '{}',
-    crit_regions           TEXT[]   NOT NULL DEFAULT '{}',
-    crit_villes            TEXT[]   NOT NULL DEFAULT '{}',
+    crit_secteurs_activite_txt TEXT NOT NULL DEFAULT '',
+    crit_types_entreprise_txt  TEXT NOT NULL DEFAULT '',
+    crit_tailles_entreprise_txt TEXT NOT NULL DEFAULT '',
+    crit_pays_txt              TEXT NOT NULL DEFAULT '',
+    crit_regions_txt           TEXT NOT NULL DEFAULT '',
+    crit_villes_txt            TEXT NOT NULL DEFAULT '',
+    crit_keywords_txt          TEXT NOT NULL DEFAULT '',
     crit_max_resultats     INTEGER,
     started_at          TIMESTAMPTZ,
     finished_at         TIMESTAMPTZ,
@@ -156,13 +158,25 @@ ALTER TABLE prospects
 
 _SQL_ALTER_JOBS_ADD_CRITERIA_FIELDS = """
 ALTER TABLE collection_jobs
-    ADD COLUMN IF NOT EXISTS crit_secteurs_activite TEXT[] NOT NULL DEFAULT '{}',
-    ADD COLUMN IF NOT EXISTS crit_types_entreprise TEXT[] NOT NULL DEFAULT '{}',
-    ADD COLUMN IF NOT EXISTS crit_tailles_entreprise TEXT[] NOT NULL DEFAULT '{}',
-    ADD COLUMN IF NOT EXISTS crit_pays TEXT[] NOT NULL DEFAULT '{}',
-    ADD COLUMN IF NOT EXISTS crit_regions TEXT[] NOT NULL DEFAULT '{}',
-    ADD COLUMN IF NOT EXISTS crit_villes TEXT[] NOT NULL DEFAULT '{}',
+    ADD COLUMN IF NOT EXISTS crit_secteurs_activite_txt TEXT NOT NULL DEFAULT '',
+    ADD COLUMN IF NOT EXISTS crit_types_entreprise_txt TEXT NOT NULL DEFAULT '',
+    ADD COLUMN IF NOT EXISTS crit_tailles_entreprise_txt TEXT NOT NULL DEFAULT '',
+    ADD COLUMN IF NOT EXISTS crit_pays_txt TEXT NOT NULL DEFAULT '',
+    ADD COLUMN IF NOT EXISTS crit_regions_txt TEXT NOT NULL DEFAULT '',
+    ADD COLUMN IF NOT EXISTS crit_villes_txt TEXT NOT NULL DEFAULT '',
+    ADD COLUMN IF NOT EXISTS crit_keywords_txt TEXT NOT NULL DEFAULT '',
     ADD COLUMN IF NOT EXISTS crit_max_resultats INTEGER;
+"""
+
+_SQL_DROP_JOB_ARRAY_CRITERIA_COLUMNS = """
+ALTER TABLE collection_jobs
+    DROP COLUMN IF EXISTS crit_secteurs_activite,
+    DROP COLUMN IF EXISTS crit_types_entreprise,
+    DROP COLUMN IF EXISTS crit_tailles_entreprise,
+    DROP COLUMN IF EXISTS crit_pays,
+    DROP COLUMN IF EXISTS crit_regions,
+    DROP COLUMN IF EXISTS crit_villes,
+    DROP COLUMN IF EXISTS crit_keywords;
 """
 
 # Upsert (INSERT … ON CONFLICT) pour éviter les doublons par hash_dedup.
@@ -237,16 +251,18 @@ ON CONFLICT (hash_dedup) DO UPDATE SET
 _SQL_UPSERT_JOB = """
 INSERT INTO collection_jobs (
     id, name, type, status, parameters_json,
-    crit_secteurs_activite, crit_types_entreprise, crit_tailles_entreprise,
-    crit_pays, crit_regions, crit_villes, crit_max_resultats,
+    crit_secteurs_activite_txt, crit_types_entreprise_txt, crit_tailles_entreprise_txt,
+    crit_pays_txt, crit_regions_txt, crit_villes_txt, crit_keywords_txt,
+    crit_max_resultats,
     started_at, finished_at,
     total_collected, total_cleaned, total_deduped,
     total_scored, total_saved, total_qualified, total_duplicates,
     sources_used, errors
 ) VALUES (
     %(id)s, %(name)s, %(type)s, %(status)s, %(parameters_json)s,
-    %(crit_secteurs_activite)s, %(crit_types_entreprise)s, %(crit_tailles_entreprise)s,
-    %(crit_pays)s, %(crit_regions)s, %(crit_villes)s, %(crit_max_resultats)s,
+    %(crit_secteurs_activite_txt)s, %(crit_types_entreprise_txt)s, %(crit_tailles_entreprise_txt)s,
+    %(crit_pays_txt)s, %(crit_regions_txt)s, %(crit_villes_txt)s, %(crit_keywords_txt)s,
+    %(crit_max_resultats)s,
     %(started_at)s, %(finished_at)s,
     %(total_collected)s, %(total_cleaned)s, %(total_deduped)s,
     %(total_scored)s, %(total_saved)s, %(total_qualified)s, %(total_duplicates)s,
@@ -255,12 +271,13 @@ INSERT INTO collection_jobs (
 ON CONFLICT (id) DO UPDATE SET
     status          = EXCLUDED.status,
     parameters_json = EXCLUDED.parameters_json,
-    crit_secteurs_activite = EXCLUDED.crit_secteurs_activite,
-    crit_types_entreprise = EXCLUDED.crit_types_entreprise,
-    crit_tailles_entreprise = EXCLUDED.crit_tailles_entreprise,
-    crit_pays = EXCLUDED.crit_pays,
-    crit_regions = EXCLUDED.crit_regions,
-    crit_villes = EXCLUDED.crit_villes,
+    crit_secteurs_activite_txt = EXCLUDED.crit_secteurs_activite_txt,
+    crit_types_entreprise_txt = EXCLUDED.crit_types_entreprise_txt,
+    crit_tailles_entreprise_txt = EXCLUDED.crit_tailles_entreprise_txt,
+    crit_pays_txt = EXCLUDED.crit_pays_txt,
+    crit_regions_txt = EXCLUDED.crit_regions_txt,
+    crit_villes_txt = EXCLUDED.crit_villes_txt,
+    crit_keywords_txt = EXCLUDED.crit_keywords_txt,
     crit_max_resultats = EXCLUDED.crit_max_resultats,
     finished_at     = EXCLUDED.finished_at,
     total_collected = EXCLUDED.total_collected,
@@ -382,6 +399,7 @@ class PgRepository:
                 cur.execute(_DDL_PROSPECTS_INDEXES)
                 cur.execute(_DDL_JOBS)
                 cur.execute(_SQL_ALTER_JOBS_ADD_CRITERIA_FIELDS)
+                cur.execute(_SQL_DROP_JOB_ARRAY_CRITERIA_COLUMNS)
             logger.info("[PgRepo] Schéma PostgreSQL vérifié/créé.")
         except Exception as e:
             logger.error(f"[PgRepo] Erreur lors de la création du schéma : {e}")
@@ -395,6 +413,8 @@ class PgRepository:
         """
         Insère ou met à jour les prospects qualifiés dans PostgreSQL.
         L'upsert est basé sur hash_dedup (clé primaire).
+        Si job_id est fourni, le hash est "scopé job" pour éviter les collisions
+        entre exécutions différentes.
 
         Returns:
             {"upserted": N, "skipped": M, "non_qualified": K}
@@ -446,12 +466,13 @@ class PgRepository:
             "type":             getattr(job, "type", "SCRAPING"),
             "status":           job.status,
             "parameters_json":  job.parameters_json,
-            "crit_secteurs_activite": criteria["crit_secteurs_activite"],
-            "crit_types_entreprise":  criteria["crit_types_entreprise"],
-            "crit_tailles_entreprise": criteria["crit_tailles_entreprise"],
-            "crit_pays": criteria["crit_pays"],
-            "crit_regions": criteria["crit_regions"],
-            "crit_villes": criteria["crit_villes"],
+            "crit_secteurs_activite_txt": _join_text_list(criteria["crit_secteurs_activite"]),
+            "crit_types_entreprise_txt":  _join_text_list(criteria["crit_types_entreprise"]),
+            "crit_tailles_entreprise_txt": _join_text_list(criteria["crit_tailles_entreprise"]),
+            "crit_pays_txt": _join_text_list(criteria["crit_pays"]),
+            "crit_regions_txt": _join_text_list(criteria["crit_regions"]),
+            "crit_villes_txt": _join_text_list(criteria["crit_villes"]),
+            "crit_keywords_txt": _join_text_list(criteria["crit_keywords"]),
             "crit_max_resultats": criteria["crit_max_resultats"],
             "started_at":       _parse_dt(job.started_at),
             "finished_at":      _parse_dt(job.finished_at),
@@ -610,9 +631,11 @@ class PgRepository:
 
         created_at = _parse_dt(d.get("created_at")) or datetime.now()
         resolved_job_id = _str(job_id) or _str(d.get("job_id"))
+        hash_raw = _str(d.get("hash_dedup"))
+        hash_scoped = PgRepository._scope_hash_with_job(hash_raw, resolved_job_id)
 
         return {
-            "hash_dedup":           _str(d.get("hash_dedup")),
+            "hash_dedup":           hash_scoped,
             "job_id":               resolved_job_id,
             "nom_commercial":       _str(d.get("nom_commercial")),
             "raison_sociale":       _str(d.get("raison_sociale")),
@@ -649,6 +672,25 @@ class PgRepository:
             "email_mx_verified":    _bool(d.get("email_mx_verified")),
             "created_at":           created_at,
         }
+
+    @staticmethod
+    def _scope_hash_with_job(hash_dedup: str, job_id: str) -> str:
+        """
+        Retourne un hash de déduplication contenant le job_id.
+
+        - Sans job_id: conserve le hash d'origine.
+        - Avec job_id: génère SHA-256(job_id|hash_dedup), tronqué à 16 hex.
+        """
+        base_hash = (hash_dedup or "").strip()
+        if not base_hash:
+            return ""
+
+        scoped_job = (job_id or "").strip()
+        if not scoped_job:
+            return base_hash
+
+        raw = f"{scoped_job}|{base_hash}"
+        return hashlib.sha256(raw.encode()).hexdigest()[:16]
 
     @staticmethod
     def _is_qualified(p: Any) -> bool:
@@ -699,6 +741,12 @@ def _extract_job_criteria(params: Dict[str, Any]) -> Dict[str, Any]:
 
     secteurs = params.get("secteurs_activite", params.get("secteur_activite", []))
     types = params.get("types_entreprise", params.get("type_entreprise", []))
+    keywords = (
+        params.get("keywords")
+        or params.get("mots_cles")
+        or params.get("motsCles")
+        or []
+    )
 
     tailles = params.get("tailles_entreprise", [])
     if not tailles:
@@ -717,7 +765,7 @@ def _extract_job_criteria(params: Dict[str, Any]) -> Dict[str, Any]:
 
     localisation = params.get("localisation") if isinstance(params.get("localisation"), dict) else {}
     if not localisation:
-        zone = params.get("zone_geographique")
+        zone = params.get("zone_geographique") or params.get("zoneGeographique")
         if isinstance(zone, dict):
             localisation = {
                 "pays": zone.get("pays", zone.get("zone_geographique", [])),
@@ -732,12 +780,12 @@ def _extract_job_criteria(params: Dict[str, Any]) -> Dict[str, Any]:
     if not pays:
         pays = params.get("pays", [])
     if not pays:
-        zone_raw = params.get("zone_geographique", [])
+        zone_raw = params.get("zone_geographique", params.get("zoneGeographique", []))
         if not isinstance(zone_raw, dict):
             pays = zone_raw
 
-    regions = localisation.get("regions", []) or params.get("regions", [])
-    villes = localisation.get("villes", []) or params.get("villes", [])
+    regions = localisation.get("regions", []) or params.get("regions", []) or params.get("region", [])
+    villes = localisation.get("villes", []) or params.get("villes", []) or params.get("ville", [])
 
     max_resultats = params.get("max_resultats", params.get("max_prospects_total"))
 
@@ -748,6 +796,7 @@ def _extract_job_criteria(params: Dict[str, Any]) -> Dict[str, Any]:
         "crit_pays": _as_text_list(pays),
         "crit_regions": _as_text_list(regions),
         "crit_villes": _as_text_list(villes),
+        "crit_keywords": _as_text_list(keywords),
         "crit_max_resultats": _safe_int(max_resultats),
     }
 
@@ -776,3 +825,8 @@ def _safe_int(value: Any) -> Optional[int]:
         return int(value) if value is not None else None
     except (TypeError, ValueError):
         return None
+
+
+def _join_text_list(values: List[str]) -> str:
+    """Retourne une représentation texte lisible sans accolades PostgreSQL."""
+    return ", ".join(v for v in values if str(v).strip())
