@@ -50,6 +50,9 @@ CREATE TABLE IF NOT EXISTS prospects (
     -- Clé de déduplication (SHA-256 tronqué, calculé par BaseScraper)
     hash_dedup          TEXT        PRIMARY KEY,
 
+    -- Job d'origine
+    job_id              TEXT        NOT NULL DEFAULT '',
+
     -- Identité
     nom_commercial      TEXT        NOT NULL DEFAULT '',
     raison_sociale      TEXT        NOT NULL DEFAULT '',
@@ -107,6 +110,7 @@ CREATE TABLE IF NOT EXISTS prospects (
 
 _DDL_PROSPECTS_INDEXES = """
 CREATE INDEX IF NOT EXISTS idx_prospects_statut    ON prospects (statut);
+CREATE INDEX IF NOT EXISTS idx_prospects_job_id    ON prospects (job_id);
 CREATE INDEX IF NOT EXISTS idx_prospects_siren     ON prospects (siren) WHERE siren <> '';
 CREATE INDEX IF NOT EXISTS idx_prospects_email     ON prospects (email) WHERE email <> '';
 CREATE INDEX IF NOT EXISTS idx_prospects_ville     ON prospects (ville);
@@ -123,6 +127,13 @@ CREATE TABLE IF NOT EXISTS collection_jobs (
     type                TEXT        NOT NULL DEFAULT 'SCRAPING',
     status              TEXT        NOT NULL DEFAULT 'PENDING',
     parameters_json     TEXT        NOT NULL DEFAULT '{}',
+    crit_secteurs_activite TEXT[]   NOT NULL DEFAULT '{}',
+    crit_types_entreprise  TEXT[]   NOT NULL DEFAULT '{}',
+    crit_tailles_entreprise TEXT[]  NOT NULL DEFAULT '{}',
+    crit_pays              TEXT[]   NOT NULL DEFAULT '{}',
+    crit_regions           TEXT[]   NOT NULL DEFAULT '{}',
+    crit_villes            TEXT[]   NOT NULL DEFAULT '{}',
+    crit_max_resultats     INTEGER,
     started_at          TIMESTAMPTZ,
     finished_at         TIMESTAMPTZ,
     total_collected     INTEGER     NOT NULL DEFAULT 0,
@@ -138,12 +149,28 @@ CREATE TABLE IF NOT EXISTS collection_jobs (
 );
 """
 
+_SQL_ALTER_PROSPECTS_ADD_JOB_ID = """
+ALTER TABLE prospects
+    ADD COLUMN IF NOT EXISTS job_id TEXT NOT NULL DEFAULT '';
+"""
+
+_SQL_ALTER_JOBS_ADD_CRITERIA_FIELDS = """
+ALTER TABLE collection_jobs
+    ADD COLUMN IF NOT EXISTS crit_secteurs_activite TEXT[] NOT NULL DEFAULT '{}',
+    ADD COLUMN IF NOT EXISTS crit_types_entreprise TEXT[] NOT NULL DEFAULT '{}',
+    ADD COLUMN IF NOT EXISTS crit_tailles_entreprise TEXT[] NOT NULL DEFAULT '{}',
+    ADD COLUMN IF NOT EXISTS crit_pays TEXT[] NOT NULL DEFAULT '{}',
+    ADD COLUMN IF NOT EXISTS crit_regions TEXT[] NOT NULL DEFAULT '{}',
+    ADD COLUMN IF NOT EXISTS crit_villes TEXT[] NOT NULL DEFAULT '{}',
+    ADD COLUMN IF NOT EXISTS crit_max_resultats INTEGER;
+"""
+
 # Upsert (INSERT … ON CONFLICT) pour éviter les doublons par hash_dedup.
 # Les champs de scoring et d'enrichissement sont TOUJOURS mis à jour
 # car ils peuvent évoluer entre deux runs (re-score, re-enrich).
 _SQL_UPSERT_PROSPECT = """
 INSERT INTO prospects (
-    hash_dedup, nom_commercial, raison_sociale,
+    hash_dedup, job_id, nom_commercial, raison_sociale,
     email, telephone, website, linkedin_url,
     adresse, ville, region, pays, code_postal,
     secteur_activite, type_entreprise, taille_entreprise,
@@ -156,7 +183,7 @@ INSERT INTO prospects (
     enrich_score, email_mx_verified,
     created_at, updated_at
 ) VALUES (
-    %(hash_dedup)s, %(nom_commercial)s, %(raison_sociale)s,
+    %(hash_dedup)s, %(job_id)s, %(nom_commercial)s, %(raison_sociale)s,
     %(email)s, %(telephone)s, %(website)s, %(linkedin_url)s,
     %(adresse)s, %(ville)s, %(region)s, %(pays)s, %(code_postal)s,
     %(secteur_activite)s, %(type_entreprise)s, %(taille_entreprise)s,
@@ -170,6 +197,7 @@ INSERT INTO prospects (
     %(created_at)s, NOW()
 )
 ON CONFLICT (hash_dedup) DO UPDATE SET
+    job_id              = EXCLUDED.job_id,
     nom_commercial      = EXCLUDED.nom_commercial,
     raison_sociale      = EXCLUDED.raison_sociale,
     email               = EXCLUDED.email,
@@ -209,12 +237,16 @@ ON CONFLICT (hash_dedup) DO UPDATE SET
 _SQL_UPSERT_JOB = """
 INSERT INTO collection_jobs (
     id, name, type, status, parameters_json,
+    crit_secteurs_activite, crit_types_entreprise, crit_tailles_entreprise,
+    crit_pays, crit_regions, crit_villes, crit_max_resultats,
     started_at, finished_at,
     total_collected, total_cleaned, total_deduped,
     total_scored, total_saved, total_qualified, total_duplicates,
     sources_used, errors
 ) VALUES (
     %(id)s, %(name)s, %(type)s, %(status)s, %(parameters_json)s,
+    %(crit_secteurs_activite)s, %(crit_types_entreprise)s, %(crit_tailles_entreprise)s,
+    %(crit_pays)s, %(crit_regions)s, %(crit_villes)s, %(crit_max_resultats)s,
     %(started_at)s, %(finished_at)s,
     %(total_collected)s, %(total_cleaned)s, %(total_deduped)s,
     %(total_scored)s, %(total_saved)s, %(total_qualified)s, %(total_duplicates)s,
@@ -222,6 +254,14 @@ INSERT INTO collection_jobs (
 )
 ON CONFLICT (id) DO UPDATE SET
     status          = EXCLUDED.status,
+    parameters_json = EXCLUDED.parameters_json,
+    crit_secteurs_activite = EXCLUDED.crit_secteurs_activite,
+    crit_types_entreprise = EXCLUDED.crit_types_entreprise,
+    crit_tailles_entreprise = EXCLUDED.crit_tailles_entreprise,
+    crit_pays = EXCLUDED.crit_pays,
+    crit_regions = EXCLUDED.crit_regions,
+    crit_villes = EXCLUDED.crit_villes,
+    crit_max_resultats = EXCLUDED.crit_max_resultats,
     finished_at     = EXCLUDED.finished_at,
     total_collected = EXCLUDED.total_collected,
     total_cleaned   = EXCLUDED.total_cleaned,
@@ -338,8 +378,10 @@ class PgRepository:
         try:
             with self._cursor() as cur:
                 cur.execute(_DDL_PROSPECTS)
+                cur.execute(_SQL_ALTER_PROSPECTS_ADD_JOB_ID)
                 cur.execute(_DDL_PROSPECTS_INDEXES)
                 cur.execute(_DDL_JOBS)
+                cur.execute(_SQL_ALTER_JOBS_ADD_CRITERIA_FIELDS)
             logger.info("[PgRepo] Schéma PostgreSQL vérifié/créé.")
         except Exception as e:
             logger.error(f"[PgRepo] Erreur lors de la création du schéma : {e}")
@@ -349,35 +391,42 @@ class PgRepository:
     # Prospects — écriture
     # ──────────────────────────────────────────
 
-    def upsert_prospects(self, prospects: List[Any]) -> Dict[str, int]:
+    def upsert_prospects(self, prospects: List[Any], job_id: str = "") -> Dict[str, int]:
         """
-        Insère ou met à jour une liste de Prospect dans PostgreSQL.
+        Insère ou met à jour les prospects qualifiés dans PostgreSQL.
         L'upsert est basé sur hash_dedup (clé primaire).
 
         Returns:
-            {"upserted": N, "skipped": M}
-            skipped = prospects sans hash_dedup (ne peuvent pas être upsertés)
+            {"upserted": N, "skipped": M, "non_qualified": K}
+            skipped = prospects qualifiés sans hash_dedup (ne peuvent pas être upsertés)
+            non_qualified = prospects ignorés car statut != QUALIFIE
         """
         if not prospects:
-            return {"upserted": 0, "skipped": 0}
+            return {"upserted": 0, "skipped": 0, "non_qualified": 0}
 
-        rows    = [self._prospect_to_row(p) for p in prospects]
+        qualified = [p for p in prospects if self._is_qualified(p)]
+        non_qualified = len(prospects) - len(qualified)
+
+        if non_qualified:
+            logger.info(f"[PgRepo] {non_qualified} prospect(s) non qualifiés ignorés.")
+
+        rows    = [self._prospect_to_row(p, job_id=job_id) for p in qualified]
         valid   = [r for r in rows if r.get("hash_dedup")]
         skipped = len(rows) - len(valid)
 
         if skipped:
             logger.warning(
-                f"[PgRepo] {skipped} prospect(s) ignorés (hash_dedup manquant)."
+                f"[PgRepo] {skipped} prospect(s) qualifié(s) ignorés (hash_dedup manquant)."
             )
 
         if not valid:
-            return {"upserted": 0, "skipped": skipped}
+            return {"upserted": 0, "skipped": skipped, "non_qualified": non_qualified}
 
         try:
             with self._cursor() as cur:
                 psycopg2.extras.execute_batch(cur, _SQL_UPSERT_PROSPECT, valid, page_size=100)
-            logger.info(f"[PgRepo] {len(valid)} prospects upsertés dans PostgreSQL.")
-            return {"upserted": len(valid), "skipped": skipped}
+            logger.info(f"[PgRepo] {len(valid)} prospects qualifiés upsertés dans PostgreSQL.")
+            return {"upserted": len(valid), "skipped": skipped, "non_qualified": non_qualified}
         except Exception as e:
             logger.error(f"[PgRepo] Erreur upsert prospects : {e}")
             raise
@@ -388,12 +437,22 @@ class PgRepository:
 
     def save_job(self, job: CollectionJob) -> None:
         """Insère ou met à jour un CollectionJob."""
+        params = _parse_json_dict(job.parameters_json)
+        criteria = _extract_job_criteria(params)
+
         row = {
             "id":               job.id,
             "name":             job.name,
-            "type":             job.type,
+            "type":             getattr(job, "type", "SCRAPING"),
             "status":           job.status,
             "parameters_json":  job.parameters_json,
+            "crit_secteurs_activite": criteria["crit_secteurs_activite"],
+            "crit_types_entreprise":  criteria["crit_types_entreprise"],
+            "crit_tailles_entreprise": criteria["crit_tailles_entreprise"],
+            "crit_pays": criteria["crit_pays"],
+            "crit_regions": criteria["crit_regions"],
+            "crit_villes": criteria["crit_villes"],
+            "crit_max_resultats": criteria["crit_max_resultats"],
             "started_at":       _parse_dt(job.started_at),
             "finished_at":      _parse_dt(job.finished_at),
             "total_collected":  job.total_collected,
@@ -514,7 +573,7 @@ class PgRepository:
     # ──────────────────────────────────────────
 
     @staticmethod
-    def _prospect_to_row(p: Any) -> Dict[str, Any]:
+    def _prospect_to_row(p: Any, job_id: str = "") -> Dict[str, Any]:
         """Convertit un Prospect (ou dict) en dict compatible psycopg2."""
         if isinstance(p, Prospect):
             d = p.to_dict()
@@ -550,9 +609,11 @@ class PgRepository:
             score_detail = json.dumps(score_detail, ensure_ascii=False, default=str)
 
         created_at = _parse_dt(d.get("created_at")) or datetime.now()
+        resolved_job_id = _str(job_id) or _str(d.get("job_id"))
 
         return {
             "hash_dedup":           _str(d.get("hash_dedup")),
+            "job_id":               resolved_job_id,
             "nom_commercial":       _str(d.get("nom_commercial")),
             "raison_sociale":       _str(d.get("raison_sociale")),
             "email":                _str(d.get("email")),
@@ -589,6 +650,18 @@ class PgRepository:
             "created_at":           created_at,
         }
 
+    @staticmethod
+    def _is_qualified(p: Any) -> bool:
+        """Retourne True uniquement pour les prospects qualifiés."""
+        if isinstance(p, Prospect):
+            statut = p.statut
+        elif isinstance(p, dict):
+            statut = p.get("statut", "")
+        else:
+            statut = getattr(p, "statut", "")
+
+        return str(statut).upper() == "QUALIFIE"
+
 
 # ══════════════════════════════════════════════════════════════════════════════
 # Helpers
@@ -603,4 +676,103 @@ def _parse_dt(value: Any) -> Optional[datetime]:
     try:
         return datetime.fromisoformat(str(value))
     except (ValueError, TypeError):
+        return None
+
+
+def _parse_json_dict(value: Any) -> Dict[str, Any]:
+    """Retourne un dict JSON valide (ou {} si invalide)."""
+    if isinstance(value, dict):
+        return value
+    if value is None:
+        return {}
+    try:
+        parsed = json.loads(str(value))
+        return parsed if isinstance(parsed, dict) else {}
+    except (TypeError, ValueError, json.JSONDecodeError):
+        return {}
+
+
+def _extract_job_criteria(params: Dict[str, Any]) -> Dict[str, Any]:
+    """Normalise les variantes de payload critères (interne + Spring/UI)."""
+    if not isinstance(params, dict):
+        params = {}
+
+    secteurs = params.get("secteurs_activite", params.get("secteur_activite", []))
+    types = params.get("types_entreprise", params.get("type_entreprise", []))
+
+    tailles = params.get("tailles_entreprise", [])
+    if not tailles:
+        taille_obj = params.get("taille_entreprise", [])
+        if isinstance(taille_obj, dict):
+            tailles = taille_obj.get("categories", [])
+            if not tailles:
+                min_emp = _safe_int(taille_obj.get("nb_employes_min"))
+                max_emp = _safe_int(taille_obj.get("nb_employes_max"))
+                if min_emp is not None or max_emp is not None:
+                    label_min = str(min_emp) if min_emp is not None else "0"
+                    label_max = str(max_emp) if max_emp is not None else "+"
+                    tailles = [f"{label_min}-{label_max}"]
+        else:
+            tailles = taille_obj
+
+    localisation = params.get("localisation") if isinstance(params.get("localisation"), dict) else {}
+    if not localisation:
+        zone = params.get("zone_geographique")
+        if isinstance(zone, dict):
+            localisation = {
+                "pays": zone.get("pays", zone.get("zone_geographique", [])),
+                "regions": zone.get("regions", []),
+                "villes": zone.get("villes", []),
+            }
+
+    # Supporte aussi les payloads plats ou variantes où zone_geographique est une liste.
+    pays = localisation.get("pays", [])
+    if not pays:
+        pays = localisation.get("zone_geographique", [])
+    if not pays:
+        pays = params.get("pays", [])
+    if not pays:
+        zone_raw = params.get("zone_geographique", [])
+        if not isinstance(zone_raw, dict):
+            pays = zone_raw
+
+    regions = localisation.get("regions", []) or params.get("regions", [])
+    villes = localisation.get("villes", []) or params.get("villes", [])
+
+    max_resultats = params.get("max_resultats", params.get("max_prospects_total"))
+
+    return {
+        "crit_secteurs_activite": _as_text_list(secteurs),
+        "crit_types_entreprise": _as_text_list(types),
+        "crit_tailles_entreprise": _as_text_list(tailles),
+        "crit_pays": _as_text_list(pays),
+        "crit_regions": _as_text_list(regions),
+        "crit_villes": _as_text_list(villes),
+        "crit_max_resultats": _safe_int(max_resultats),
+    }
+
+
+def _as_text_list(value: Any) -> List[str]:
+    """Normalise une valeur (str/list/tuple/set) en liste de strings non vides."""
+    if value is None:
+        return []
+    if isinstance(value, str):
+        text = value.strip()
+        return [text] if text else []
+    if isinstance(value, (list, tuple, set)):
+        out: List[str] = []
+        for item in value:
+            text = str(item).strip()
+            if text:
+                out.append(text)
+        return out
+    text = str(value).strip()
+    return [text] if text else []
+
+
+def _safe_int(value: Any) -> Optional[int]:
+    """Convertit une valeur en int si possible, sinon None."""
+    try:
+        return int(value) if value is not None else None
+    except (TypeError, ValueError):
         return None

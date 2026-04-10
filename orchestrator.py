@@ -309,7 +309,6 @@ class ProspectCollector:
         job = CollectionJob(
             id              = str(uuid.uuid4())[:8],
             name            = f"scraping_{datetime.now().strftime('%Y%m%d_%H%M%S')}",
-            type            = "SCRAPING",
             status          = JobStatut.RUNNING.value,
             parameters_json = json.dumps(criteria, ensure_ascii=False, default=str),
             started_at      = datetime.now().isoformat(),
@@ -1617,7 +1616,49 @@ def main():
         "--list-sources", action="store_true",
         help="Lister les sources et sous-sources disponibles avec leur statut",
     )
+    # ── Arguments bridge FastAPI / Spring (compatibilité AutoProspectionOrchestratorService) ──
+    parser.add_argument(
+        "--bridge-json-file",
+        type=str,
+        default=None,
+        dest="bridge_json_file",
+        help="Chemin vers un fichier JSON contenant le payload Spring (jobId + criteria)",
+    )
+    parser.add_argument(
+        "--json-output",
+        action="store_true",
+        default=False,
+        dest="json_output",
+        help="Écrire le résultat final sur stdout en JSON pur (attendu par le bridge FastAPI)",
+    )
     args = parser.parse_args()
+
+    # ── Lecture du payload bridge (--bridge-json-file) ─────────────────────────
+    # Priorité maximale : écrase les autres args si présent
+    _bridge_job_id: Optional[str] = None
+    if args.bridge_json_file:
+        import pathlib
+        try:
+            _bridge_payload = json.loads(
+                pathlib.Path(args.bridge_json_file).read_text(encoding="utf-8")
+            )
+            _bridge_job_id = _bridge_payload.get("job_id") or _bridge_payload.get("jobId")
+            _criteria_raw  = _bridge_payload.get("criteria") or {}
+
+            # Mapper les champs de ProspectionCriteriaDTO vers les args CLI existants
+            if _criteria_raw.get("source_filter") and not args.source:
+                sf_raw = _criteria_raw["source_filter"]
+                if sf_raw == "opendata":
+                    sf_raw = "open_data"
+                args.source = sf_raw
+            if _criteria_raw.get("maxEnrich") and not args.max_enrich:
+                args.max_enrich = int(_criteria_raw["maxEnrich"])
+            if _criteria_raw.get("dryRun"):
+                args.dry_run = bool(_criteria_raw["dryRun"])
+
+            logger.info(f"[Bridge] Payload chargé depuis {args.bridge_json_file} — job_id={_bridge_job_id}")
+        except Exception as _bridge_err:
+            logger.error(f"[Bridge] Impossible de lire le fichier JSON bridge : {_bridge_err}")
 
     # ── --list-sources ─────────────────────────
     if args.list_sources:
@@ -1666,8 +1707,87 @@ def main():
         sf = "open_data"
 
     collector = ProspectCollector(dry_run=args.dry_run, source_filter=sf)
-    target    = EXAMPLE_TARGETS.get(args.target) if args.target else None
-    collector.run(target, max_enrich=args.max_enrich)
+
+    # Injecter les critères issus du bridge JSON si disponibles
+    _bridge_criteria_raw: Optional[Dict[str, Any]] = None
+    if args.bridge_json_file:
+        try:
+            import pathlib
+            _bp = json.loads(pathlib.Path(args.bridge_json_file).read_text(encoding="utf-8"))
+            _bridge_criteria_raw = _bp.get("criteria") or None
+        except Exception:
+            pass
+
+    if _bridge_criteria_raw:
+        # Construire un SearchTarget depuis les critères Spring si possible
+        from config.targets import SearchTarget as _ST
+        try:
+            _bt = _ST(
+                secteur_activite  = _bridge_criteria_raw.get("secteurActivite")
+                                    or _bridge_criteria_raw.get("secteurs_activite", []),
+                taille_entreprise = _bridge_criteria_raw.get("tailleEntreprise")
+                                    or _bridge_criteria_raw.get("tailles_entreprise", []),
+                types_entreprise  = _bridge_criteria_raw.get("typesEntreprise")
+                                    or _bridge_criteria_raw.get("types_entreprise", []),
+                pays              = _bridge_criteria_raw.get("pays", ["France"]),
+                regions           = _bridge_criteria_raw.get("regions", []),
+                villes            = _bridge_criteria_raw.get("villes", []),
+                keywords          = _bridge_criteria_raw.get("motsCles")
+                                    or _bridge_criteria_raw.get("keywords", []),
+                max_resultats     = int(_bridge_criteria_raw.get("maxResultats")
+                                        or _bridge_criteria_raw.get("max_resultats", 700)),
+                max_par_source    = int(_bridge_criteria_raw.get("maxParSource")
+                                        or _bridge_criteria_raw.get("max_par_source", 100)),
+            )
+            target = _bt
+            logger.info("[Bridge] Critères Spring convertis en SearchTarget")
+        except Exception as _bt_err:
+            logger.warning(f"[Bridge] Impossible de construire SearchTarget depuis criteria : {_bt_err} — fallback search_config.json")
+            target = None
+    else:
+        target = EXAMPLE_TARGETS.get(args.target) if args.target else None
+
+    job = collector.run(target, max_enrich=args.max_enrich)
+
+    # ── Sortie JSON bridge (--json-output) ─────────────────────────────────────
+    # Attendu par fastapi_app._parse_bridge_stdout() → Spring AutoProspectionOrchestratorService
+    if args.json_output:
+        # Charger les prospects qualifiés depuis le repo pour les renvoyer à Spring
+        _qualified_prospects: list = []
+        try:
+            _repo_out = ProspectRepository()
+            _all_scored = _repo_out.load_scored()
+            # Filtrer par job_id bridge si fourni (le job Python a son propre UUID court)
+            _qualified_prospects = [
+                p.__dict__ if hasattr(p, "__dict__") else dict(p)
+                for p in _all_scored
+                if getattr(p, "statut", None) == "QUALIFIE"
+            ]
+        except Exception as _repo_err:
+            logger.warning(f"[Bridge] Impossible de charger les prospects qualifiés : {_repo_err}")
+
+        _bridge_result = {
+            "success": job.status == JobStatut.DONE.value,
+            "canceled": False,
+            "job": {
+                "total_collected":  job.total_collected,
+                "total_cleaned":    job.total_cleaned,
+                "total_deduped":    job.total_deduped,
+                "total_scored":     job.total_scored,
+                "total_qualified":  job.total_qualified,
+                "total_duplicates": job.total_duplicates,
+                "sources_used":     job.sources_used if isinstance(job.sources_used, list) else [],
+                "errors":           job.errors       if isinstance(job.errors, list)       else [],
+                "started_at":       job.started_at,
+                "finished_at":      job.finished_at,
+            },
+            "qualified_prospects": _qualified_prospects,
+        }
+        # Écrire sur stdout BRUT — bypass le wrapper UTF-8 (_stdout_utf8) du logger
+        # pour que _parse_bridge_stdout() de fastapi_app lise une ligne JSON pure
+        _json_bytes = (json.dumps(_bridge_result, ensure_ascii=False, default=str) + "\n").encode("utf-8")
+        sys.stdout.buffer.write(_json_bytes)
+        sys.stdout.buffer.flush()
 
 
 if __name__ == "__main__":

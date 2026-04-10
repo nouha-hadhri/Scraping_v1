@@ -114,10 +114,10 @@ class DomainRateLimiter:
         self.lock = threading.Lock()
 
         # Configuration par domaine (req/seconde)
-        # À adapter selon les limites réelles des API
+        # À adapter selon les limites réelles des API 
         self.custom_limits: Dict[str, float] = {
             # Sirene / data.gouv.fr (public, pas de limite officielle)
-            "data.gouv.fr": 2.0,        # 2 req/sec
+            "data.gouv.fr": 2.0,        # 2 req/sec 
 
             # Pappers API (gratuit: 1000 req/jour = ~0.012 req/sec, soyons conservateurs)
             "api.pappers.fr": 1.0 / 3,  # 1 req/3s

@@ -2,6 +2,7 @@
 SCRAPING_V1 - CurlClient
 Client HTTP robuste basé sur subprocess curl.
 Gère : rotation User-Agent, proxies, retries, anti-bot headers, HTTP/2.
+sanitisations de sécurité pour éviter les injections de commandes via les headers ou les proxies, validation stricte des URLs pour éviter les schémas dangereux, et un système de rate-limiting par domaine pour respecter les limites des sites cibles.
 """
 from __future__ import annotations
 import sys, os

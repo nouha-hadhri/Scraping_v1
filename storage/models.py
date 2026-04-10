@@ -36,6 +36,7 @@ class JobStatut(str, Enum):
     PENDING = "PENDING"
     RUNNING = "RUNNING"
     DONE    = "DONE"
+    CANCELED = "CANCELED"
     FAILED  = "FAILED"
 
 
@@ -100,7 +101,6 @@ class Prospect:
     # complétude des données de contact après l'étape d'enrichissement.
     enrich_score:       int  = 0
     # True si le domaine MX a été vérifié (vérification DNS)
-    email_mx_verified:  bool = False
 
     # ── Déduplication ─────────────────────────────────────────────────
     hash_dedup: str = ""
@@ -175,7 +175,6 @@ class CollectionJob:
     """
     id:                 str            = ""
     name:               str            = ""
-    type:               str            = "SCRAPING"
     status:             str            = JobStatut.PENDING.value  # Utiliser JobStatut enum
     parameters_json:    str            = ""
     started_at:         Optional[str]  = None

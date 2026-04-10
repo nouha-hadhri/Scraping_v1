@@ -81,14 +81,16 @@ class ProspectRepository:
 
     def save_job(self, job: CollectionJob) -> None:
         jobs = self.load_jobs()
+        job_data = job.to_dict()
+        job_data.update(_extract_job_criteria(job.parameters_json))
         found = False
         for i, j in enumerate(jobs):
             if j.get("id") == job.id:
-                jobs[i] = job.to_dict()
+                jobs[i] = job_data
                 found = True
                 break
         if not found:
-            jobs.append(job.to_dict())
+            jobs.append(job_data)
         self._write_json(JOBS_JSON, jobs)
 
     def export_qualified_only(self) -> Path:
@@ -216,3 +218,94 @@ class ProspectRepository:
         except Exception as e:
             logger.error(f"[Repo] CSV read error {path}: {e}")
             return []
+
+
+def _extract_job_criteria(parameters_json: str) -> Dict[str, Any]:
+    """Aplati les critères d'un job pour les exports JSON.
+
+    Les champs retournés restent compatibles avec les modèles actuels.
+    """
+    try:
+        params = json.loads(parameters_json) if parameters_json else {}
+    except (TypeError, ValueError, json.JSONDecodeError):
+        params = {}
+
+    if not isinstance(params, dict):
+        params = {}
+
+    secteurs = params.get("secteurs_activite", params.get("secteur_activite", []))
+    types = params.get("types_entreprise", params.get("type_entreprise", []))
+
+    tailles = params.get("tailles_entreprise", [])
+    if not tailles:
+        taille_obj = params.get("taille_entreprise", [])
+        if isinstance(taille_obj, dict):
+            tailles = taille_obj.get("categories", [])
+            if not tailles:
+                min_emp = _safe_int(taille_obj.get("nb_employes_min"))
+                max_emp = _safe_int(taille_obj.get("nb_employes_max"))
+                if min_emp is not None or max_emp is not None:
+                    label_min = str(min_emp) if min_emp is not None else "0"
+                    label_max = str(max_emp) if max_emp is not None else "+"
+                    tailles = [f"{label_min}-{label_max}"]
+        else:
+            tailles = taille_obj
+
+    localisation = params.get("localisation") if isinstance(params.get("localisation"), dict) else {}
+    if not localisation:
+        zone = params.get("zone_geographique")
+        if isinstance(zone, dict):
+            localisation = {
+                "pays": zone.get("pays", zone.get("zone_geographique", [])),
+                "regions": zone.get("regions", []),
+                "villes": zone.get("villes", []),
+            }
+
+    pays = localisation.get("pays", [])
+    if not pays:
+        pays = localisation.get("zone_geographique", [])
+    if not pays:
+        pays = params.get("pays", [])
+    if not pays:
+        zone_raw = params.get("zone_geographique", [])
+        if not isinstance(zone_raw, dict):
+            pays = zone_raw
+
+    regions = localisation.get("regions", []) or params.get("regions", [])
+    villes = localisation.get("villes", []) or params.get("villes", [])
+
+    max_resultats = params.get("max_resultats", params.get("max_prospects_total"))
+
+    return {
+        "crit_secteurs_activite": _as_text_list(secteurs),
+        "crit_types_entreprise": _as_text_list(types),
+        "crit_tailles_entreprise": _as_text_list(tailles),
+        "crit_pays": _as_text_list(pays),
+        "crit_regions": _as_text_list(regions),
+        "crit_villes": _as_text_list(villes),
+        "crit_max_resultats": _safe_int(max_resultats),
+    }
+
+
+def _as_text_list(value: Any) -> List[str]:
+    if value is None:
+        return []
+    if isinstance(value, str):
+        text = value.strip()
+        return [text] if text else []
+    if isinstance(value, (list, tuple, set)):
+        result: List[str] = []
+        for item in value:
+            text = str(item).strip()
+            if text:
+                result.append(text)
+        return result
+    text = str(value).strip()
+    return [text] if text else []
+
+
+def _safe_int(value: Any) -> Optional[int]:
+    try:
+        return int(value) if value is not None else None
+    except (TypeError, ValueError):
+        return None

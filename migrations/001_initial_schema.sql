@@ -18,6 +18,9 @@ CREATE TABLE IF NOT EXISTS prospects (
     -- Clé primaire : hash SHA-256 tronqué calculé par BaseScraper._make_hash
     hash_dedup          TEXT            PRIMARY KEY,
 
+    -- Job d'origine
+    job_id              TEXT            NOT NULL DEFAULT '',
+
     -- Identité
     nom_commercial      TEXT            NOT NULL DEFAULT '',
     raison_sociale      TEXT            NOT NULL DEFAULT '',
@@ -89,6 +92,9 @@ COMMENT ON COLUMN prospects.score_detail        IS 'Détail des points par crit�
 CREATE INDEX IF NOT EXISTS idx_prospects_statut
     ON prospects (statut);
 
+CREATE INDEX IF NOT EXISTS idx_prospects_job_id
+    ON prospects (job_id);
+
 CREATE INDEX IF NOT EXISTS idx_prospects_siren
     ON prospects (siren)
     WHERE siren <> '';
@@ -127,6 +133,15 @@ CREATE TABLE IF NOT EXISTS collection_jobs (
     type                TEXT            NOT NULL DEFAULT 'SCRAPING',
     status              TEXT            NOT NULL DEFAULT 'PENDING', -- PENDING | RUNNING | DONE | FAILED
     parameters_json     TEXT            NOT NULL DEFAULT '{}',
+
+    -- Critères de ciblage extraits de parameters_json
+    crit_secteurs_activite TEXT[]       NOT NULL DEFAULT '{}',
+    crit_types_entreprise  TEXT[]       NOT NULL DEFAULT '{}',
+    crit_tailles_entreprise TEXT[]      NOT NULL DEFAULT '{}',
+    crit_pays              TEXT[]       NOT NULL DEFAULT '{}',
+    crit_regions           TEXT[]       NOT NULL DEFAULT '{}',
+    crit_villes            TEXT[]       NOT NULL DEFAULT '{}',
+    crit_max_resultats     INTEGER,
 
     -- Timestamps du job
     started_at          TIMESTAMPTZ,
