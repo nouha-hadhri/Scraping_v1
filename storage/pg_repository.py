@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS prospects (
     hash_dedup          TEXT        PRIMARY KEY,
 
     -- Job d'origine
-    job_id              TEXT        NOT NULL DEFAULT '',
+    job_id              BIGINT      NOT NULL,
 
     -- Identité
     nom_commercial      TEXT        NOT NULL DEFAULT '',
@@ -103,6 +103,9 @@ CREATE TABLE IF NOT EXISTS prospects (
     enrich_score        INTEGER     NOT NULL DEFAULT 0,
     email_mx_verified   BOOLEAN     NOT NULL DEFAULT FALSE,
 
+    -- Soft delete (aligné avec Spring Boot AutoProspectionEntity.isDeleted)
+    is_deleted          BOOLEAN     NOT NULL DEFAULT FALSE,
+
     -- Timestamps
     created_at          TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     updated_at          TIMESTAMPTZ NOT NULL DEFAULT NOW()
@@ -123,7 +126,7 @@ CREATE INDEX IF NOT EXISTS idx_prospects_created   ON prospects (created_at DESC
 
 _DDL_JOBS = """
 CREATE TABLE IF NOT EXISTS collection_jobs (
-    id                  TEXT        PRIMARY KEY,
+    id                  BIGINT      PRIMARY KEY,
     name                TEXT        NOT NULL DEFAULT '',
     type                TEXT        NOT NULL DEFAULT 'SCRAPING',
     status              TEXT        NOT NULL DEFAULT 'PENDING',
@@ -147,13 +150,19 @@ CREATE TABLE IF NOT EXISTS collection_jobs (
     total_duplicates    INTEGER     NOT NULL DEFAULT 0,
     sources_used        TEXT[]      NOT NULL DEFAULT '{}',
     errors              TEXT[]      NOT NULL DEFAULT '{}',
+    is_deleted          BOOLEAN     NOT NULL DEFAULT FALSE,
     created_at          TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 """
 
 _SQL_ALTER_PROSPECTS_ADD_JOB_ID = """
 ALTER TABLE prospects
-    ADD COLUMN IF NOT EXISTS job_id TEXT NOT NULL DEFAULT '';
+    ADD COLUMN IF NOT EXISTS job_id BIGINT;
+"""
+
+_SQL_ALTER_PROSPECTS_ADD_IS_DELETED = """
+ALTER TABLE prospects
+    ADD COLUMN IF NOT EXISTS is_deleted BOOLEAN NOT NULL DEFAULT FALSE;
 """
 
 _SQL_ALTER_JOBS_ADD_CRITERIA_FIELDS = """
@@ -168,6 +177,11 @@ ALTER TABLE collection_jobs
     ADD COLUMN IF NOT EXISTS crit_max_resultats INTEGER;
 """
 
+_SQL_ALTER_JOBS_ADD_IS_DELETED = """
+ALTER TABLE collection_jobs
+    ADD COLUMN IF NOT EXISTS is_deleted BOOLEAN NOT NULL DEFAULT FALSE;
+"""
+
 _SQL_DROP_JOB_ARRAY_CRITERIA_COLUMNS = """
 ALTER TABLE collection_jobs
     DROP COLUMN IF EXISTS crit_secteurs_activite,
@@ -179,10 +193,8 @@ ALTER TABLE collection_jobs
     DROP COLUMN IF EXISTS crit_keywords;
 """
 
-# Upsert (INSERT … ON CONFLICT) pour éviter les doublons par hash_dedup.
-# Les champs de scoring et d'enrichissement sont TOUJOURS mis à jour
-# car ils peuvent évoluer entre deux runs (re-score, re-enrich).
-_SQL_UPSERT_PROSPECT = """
+# Insert idempotent prospects (compatible schema CRM sans unique hash_dedup)
+_SQL_INSERT_PROSPECT = """
 INSERT INTO prospects (
     hash_dedup, job_id, nom_commercial, raison_sociale,
     email, telephone, website, linkedin_url,
@@ -195,8 +207,9 @@ INSERT INTO prospects (
     source, segment, sector_confidence,
     email_valid, website_active,
     enrich_score, email_mx_verified,
-    created_at, updated_at
-) VALUES (
+    created_at, is_deleted
+)
+SELECT
     %(hash_dedup)s, %(job_id)s, %(nom_commercial)s, %(raison_sociale)s,
     %(email)s, %(telephone)s, %(website)s, %(linkedin_url)s,
     %(adresse)s, %(ville)s, %(region)s, %(pays)s, %(code_postal)s,
@@ -208,47 +221,16 @@ INSERT INTO prospects (
     %(source)s, %(segment)s, %(sector_confidence)s,
     %(email_valid)s, %(website_active)s,
     %(enrich_score)s, %(email_mx_verified)s,
-    %(created_at)s, NOW()
-)
-ON CONFLICT (hash_dedup) DO UPDATE SET
-    job_id              = EXCLUDED.job_id,
-    nom_commercial      = EXCLUDED.nom_commercial,
-    raison_sociale      = EXCLUDED.raison_sociale,
-    email               = EXCLUDED.email,
-    telephone           = EXCLUDED.telephone,
-    website             = EXCLUDED.website,
-    linkedin_url        = EXCLUDED.linkedin_url,
-    adresse             = EXCLUDED.adresse,
-    ville               = EXCLUDED.ville,
-    region              = EXCLUDED.region,
-    pays                = EXCLUDED.pays,
-    code_postal         = EXCLUDED.code_postal,
-    secteur_activite    = EXCLUDED.secteur_activite,
-    type_entreprise     = EXCLUDED.type_entreprise,
-    taille_entreprise   = EXCLUDED.taille_entreprise,
-    nombre_employes     = EXCLUDED.nombre_employes,
-    chiffre_affaires    = EXCLUDED.chiffre_affaires,
-    description         = EXCLUDED.description,
-    code_naf            = EXCLUDED.code_naf,
-    siren               = EXCLUDED.siren,
-    siret               = EXCLUDED.siret,
-    qualification_score = EXCLUDED.qualification_score,
-    score_pct           = EXCLUDED.score_pct,
-    statut              = EXCLUDED.statut,
-    score_detail        = EXCLUDED.score_detail,
-    criteria_met        = EXCLUDED.criteria_met,
-    criteria_total      = EXCLUDED.criteria_total,
-    source              = EXCLUDED.source,
-    segment             = EXCLUDED.segment,
-    sector_confidence   = EXCLUDED.sector_confidence,
-    email_valid         = EXCLUDED.email_valid,
-    website_active      = EXCLUDED.website_active,
-    enrich_score        = EXCLUDED.enrich_score,
-    email_mx_verified   = EXCLUDED.email_mx_verified,
-    updated_at          = NOW();
+    %(created_at)s, false
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM prospects p
+    WHERE p.hash_dedup = %(hash_dedup)s
+      AND p.job_id = %(job_id)s
+);
 """
 
-_SQL_UPSERT_JOB = """
+_SQL_INSERT_JOB = """
 INSERT INTO collection_jobs (
     id, name, type, status, parameters_json,
     crit_secteurs_activite_txt, crit_types_entreprise_txt, crit_tailles_entreprise_txt,
@@ -257,7 +239,7 @@ INSERT INTO collection_jobs (
     started_at, finished_at,
     total_collected, total_cleaned, total_deduped,
     total_scored, total_saved, total_qualified, total_duplicates,
-    sources_used, errors
+    sources_used, errors, is_deleted
 ) VALUES (
     %(id)s, %(name)s, %(type)s, %(status)s, %(parameters_json)s,
     %(crit_secteurs_activite_txt)s, %(crit_types_entreprise_txt)s, %(crit_tailles_entreprise_txt)s,
@@ -266,10 +248,11 @@ INSERT INTO collection_jobs (
     %(started_at)s, %(finished_at)s,
     %(total_collected)s, %(total_cleaned)s, %(total_deduped)s,
     %(total_scored)s, %(total_saved)s, %(total_qualified)s, %(total_duplicates)s,
-    %(sources_used)s, %(errors)s
-)
-ON CONFLICT (id) DO UPDATE SET
-    status          = EXCLUDED.status,
+    %(sources_used)s, %(errors)s, false
+) ON CONFLICT (id) DO UPDATE SET
+    name = EXCLUDED.name,
+    type = EXCLUDED.type,
+    status = EXCLUDED.status,
     parameters_json = EXCLUDED.parameters_json,
     crit_secteurs_activite_txt = EXCLUDED.crit_secteurs_activite_txt,
     crit_types_entreprise_txt = EXCLUDED.crit_types_entreprise_txt,
@@ -279,16 +262,18 @@ ON CONFLICT (id) DO UPDATE SET
     crit_villes_txt = EXCLUDED.crit_villes_txt,
     crit_keywords_txt = EXCLUDED.crit_keywords_txt,
     crit_max_resultats = EXCLUDED.crit_max_resultats,
-    finished_at     = EXCLUDED.finished_at,
+    started_at = EXCLUDED.started_at,
+    finished_at = EXCLUDED.finished_at,
     total_collected = EXCLUDED.total_collected,
-    total_cleaned   = EXCLUDED.total_cleaned,
-    total_deduped   = EXCLUDED.total_deduped,
-    total_scored    = EXCLUDED.total_scored,
-    total_saved     = EXCLUDED.total_saved,
+    total_cleaned = EXCLUDED.total_cleaned,
+    total_deduped = EXCLUDED.total_deduped,
+    total_scored = EXCLUDED.total_scored,
+    total_saved = EXCLUDED.total_saved,
     total_qualified = EXCLUDED.total_qualified,
     total_duplicates = EXCLUDED.total_duplicates,
-    sources_used    = EXCLUDED.sources_used,
-    errors          = EXCLUDED.errors;
+    sources_used = EXCLUDED.sources_used,
+    errors = EXCLUDED.errors,
+    is_deleted = FALSE;
 """
 
 
@@ -396,9 +381,57 @@ class PgRepository:
             with self._cursor() as cur:
                 cur.execute(_DDL_PROSPECTS)
                 cur.execute(_SQL_ALTER_PROSPECTS_ADD_JOB_ID)
+                # Alignement non-destructif : convertir TEXT -> BIGINT si la base
+                # est encore sur l'ancien schéma Python.
+                cur.execute(
+                    """
+                    DO $$
+                    BEGIN
+                        IF EXISTS (
+                            SELECT 1
+                            FROM information_schema.columns
+                            WHERE table_schema = 'public'
+                              AND table_name = 'prospects'
+                              AND column_name = 'job_id'
+                              AND data_type <> 'bigint'
+                        ) THEN
+                            ALTER TABLE prospects
+                                ALTER COLUMN job_id TYPE BIGINT
+                                USING NULLIF(TRIM(job_id::text), '')::bigint;
+                        END IF;
+                    EXCEPTION WHEN others THEN
+                        -- Si conversion impossible (valeurs non numériques), on garde le type
+                        -- actuel et l'erreur sera rendue explicite au moment des inserts.
+                        NULL;
+                    END $$;
+                    """
+                )
+                cur.execute(_SQL_ALTER_PROSPECTS_ADD_IS_DELETED)
                 cur.execute(_DDL_PROSPECTS_INDEXES)
                 cur.execute(_DDL_JOBS)
+                cur.execute(
+                    """
+                    DO $$
+                    BEGIN
+                        IF EXISTS (
+                            SELECT 1
+                            FROM information_schema.columns
+                            WHERE table_schema = 'public'
+                              AND table_name = 'collection_jobs'
+                              AND column_name = 'id'
+                              AND data_type <> 'bigint'
+                        ) THEN
+                            ALTER TABLE collection_jobs
+                                ALTER COLUMN id TYPE BIGINT
+                                USING NULLIF(TRIM(id::text), '')::bigint;
+                        END IF;
+                    EXCEPTION WHEN others THEN
+                        NULL;
+                    END $$;
+                    """
+                )
                 cur.execute(_SQL_ALTER_JOBS_ADD_CRITERIA_FIELDS)
+                cur.execute(_SQL_ALTER_JOBS_ADD_IS_DELETED)
                 cur.execute(_SQL_DROP_JOB_ARRAY_CRITERIA_COLUMNS)
             logger.info("[PgRepo] Schéma PostgreSQL vérifié/créé.")
         except Exception as e:
@@ -430,8 +463,8 @@ class PgRepository:
         if non_qualified:
             logger.info(f"[PgRepo] {non_qualified} prospect(s) non qualifiés ignorés.")
 
-        rows    = [self._prospect_to_row(p, job_id=job_id) for p in qualified]
-        valid   = [r for r in rows if r.get("hash_dedup")]
+        rows = [self._prospect_to_row(p, job_id=job_id) for p in qualified]
+        valid = [r for r in rows if r.get("hash_dedup") and r.get("job_id") is not None]
         skipped = len(rows) - len(valid)
 
         if skipped:
@@ -444,11 +477,11 @@ class PgRepository:
 
         try:
             with self._cursor() as cur:
-                psycopg2.extras.execute_batch(cur, _SQL_UPSERT_PROSPECT, valid, page_size=100)
-            logger.info(f"[PgRepo] {len(valid)} prospects qualifiés upsertés dans PostgreSQL.")
+                psycopg2.extras.execute_batch(cur, _SQL_INSERT_PROSPECT, valid, page_size=100)
+            logger.info(f"[PgRepo] {len(valid)} prospects qualifiés insérés dans PostgreSQL.")
             return {"upserted": len(valid), "skipped": skipped, "non_qualified": non_qualified}
         except Exception as e:
-            logger.error(f"[PgRepo] Erreur upsert prospects : {e}")
+            logger.error(f"[PgRepo] Erreur insert prospects : {e}")
             raise
 
     # ──────────────────────────────────────────
@@ -459,9 +492,10 @@ class PgRepository:
         """Insère ou met à jour un CollectionJob."""
         params = _parse_json_dict(job.parameters_json)
         criteria = _extract_job_criteria(params)
+        resolved_job_id = _coerce_job_id_bigint(job.id)
 
         row = {
-            "id":               job.id,
+            "id":               resolved_job_id,
             "name":             job.name,
             "type":             getattr(job, "type", "SCRAPING"),
             "status":           job.status,
@@ -486,12 +520,17 @@ class PgRepository:
             "sources_used":     job.sources_used or [],
             "errors":           job.errors or [],
         }
+        if row["id"] is None:
+            raise ValueError(
+                f"[PgRepo] job.id invalide pour PostgreSQL BIGINT: {job.id!r}. "
+                "Le backend Spring doit fournir un jobId numérique."
+            )
         try:
             with self._cursor() as cur:
-                cur.execute(_SQL_UPSERT_JOB, row)
-            logger.info(f"[PgRepo] Job {job.id!r} sauvegardé dans PostgreSQL.")
+                cur.execute(_SQL_INSERT_JOB, row)
+            logger.info(f"[PgRepo] Job {job.id!r} inséré dans PostgreSQL.")
         except Exception as e:
-            logger.error(f"[PgRepo] Erreur sauvegarde job : {e}")
+            logger.error(f"[PgRepo] Erreur insert job : {e}")
             raise
 
     # ──────────────────────────────────────────
@@ -630,9 +669,13 @@ class PgRepository:
             score_detail = json.dumps(score_detail, ensure_ascii=False, default=str)
 
         created_at = _parse_dt(d.get("created_at")) or datetime.now()
-        resolved_job_id = _str(job_id) or _str(d.get("job_id"))
+        resolved_job_id_raw = _str(job_id) or _str(d.get("job_id"))
+        resolved_job_id = _int(resolved_job_id_raw)
         hash_raw = _str(d.get("hash_dedup"))
-        hash_scoped = PgRepository._scope_hash_with_job(hash_raw, resolved_job_id)
+        hash_scoped = PgRepository._scope_hash_with_job(
+            hash_raw,
+            str(resolved_job_id) if resolved_job_id is not None else "",
+        )
 
         return {
             "hash_dedup":           hash_scoped,
@@ -671,6 +714,7 @@ class PgRepository:
             "enrich_score":         _int(d.get("enrich_score")) or 0,
             "email_mx_verified":    _bool(d.get("email_mx_verified")),
             "created_at":           created_at,
+            "is_deleted":           False,
         }
 
     @staticmethod
@@ -825,6 +869,31 @@ def _safe_int(value: Any) -> Optional[int]:
         return int(value) if value is not None else None
     except (TypeError, ValueError):
         return None
+
+
+def _coerce_job_id_bigint(value: Any) -> Optional[int]:
+    """
+    Convertit un job_id en BIGINT PostgreSQL.
+
+    - Si numérique: conserve la valeur.
+    - Si texte non numérique (ex: uuid court): dérive un entier positif stable.
+    - Si vide: retourne None.
+    """
+    direct = _safe_int(value)
+    if direct is not None:
+        return direct
+
+    if value is None:
+        return None
+
+    text = str(value).strip()
+    if not text:
+        return None
+
+    # 63 bits signés positifs pour rester dans le range BIGINT PostgreSQL.
+    derived = int.from_bytes(hashlib.sha256(text.encode("utf-8")).digest()[:8], "big")
+    derived &= (1 << 63) - 1
+    return derived or 1
 
 
 def _join_text_list(values: List[str]) -> str:

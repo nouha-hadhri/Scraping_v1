@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS prospects (
     hash_dedup          TEXT            PRIMARY KEY,
 
     -- Job d'origine
-    job_id              TEXT            NOT NULL DEFAULT '',
+    job_id              BIGINT          NOT NULL,
 
     -- Identité
     nom_commercial      TEXT            NOT NULL DEFAULT '',
@@ -71,6 +71,9 @@ CREATE TABLE IF NOT EXISTS prospects (
     -- Enrichissement contacts (0-4)
     enrich_score        INTEGER         NOT NULL DEFAULT 0,
     email_mx_verified   BOOLEAN         NOT NULL DEFAULT FALSE,
+
+    -- Soft delete (aligné avec Spring Boot AutoProspectionEntity.isDeleted)
+    is_deleted          BOOLEAN         NOT NULL DEFAULT FALSE,
 
     -- Timestamps
     created_at          TIMESTAMPTZ     NOT NULL DEFAULT NOW(),
@@ -128,7 +131,7 @@ CREATE INDEX IF NOT EXISTS idx_prospects_qualified_score
 
 CREATE TABLE IF NOT EXISTS collection_jobs (
 
-    id                  TEXT            PRIMARY KEY,        -- UUID tronqué
+    id                  BIGINT          PRIMARY KEY,        -- Aligné Spring Boot (IDENTITY)
     name                TEXT            NOT NULL DEFAULT '', -- scraping_YYYYMMDD_HHMMSS
     type                TEXT            NOT NULL DEFAULT 'SCRAPING',
     status              TEXT            NOT NULL DEFAULT 'PENDING', -- PENDING | RUNNING | DONE | FAILED
@@ -159,6 +162,9 @@ CREATE TABLE IF NOT EXISTS collection_jobs (
     -- Sources utilisées et erreurs
     sources_used        TEXT[]          NOT NULL DEFAULT '{}',
     errors              TEXT[]          NOT NULL DEFAULT '{}',
+
+    -- Soft delete (aligné avec Spring Boot AutoCollectionJobEntity.isDeleted)
+    is_deleted          BOOLEAN         NOT NULL DEFAULT FALSE,
 
     -- Timestamp de création
     created_at          TIMESTAMPTZ     NOT NULL DEFAULT NOW()
@@ -206,3 +212,11 @@ ORDER BY qualification_score DESC, enrich_score DESC;
 
 COMMENT ON VIEW v_qualified_prospects IS
     'Prospects qualifiés triés par score — colonnes utiles pour export CRM';
+
+-- ── Migration rétroactive : ajouter is_deleted si les colonnes n'existent pas ────
+
+ALTER TABLE prospects
+    ADD COLUMN IF NOT EXISTS is_deleted BOOLEAN NOT NULL DEFAULT FALSE;
+
+ALTER TABLE collection_jobs
+    ADD COLUMN IF NOT EXISTS is_deleted BOOLEAN NOT NULL DEFAULT FALSE;

@@ -1,38 +1,38 @@
 [
   {
-    "nom_commercial": "BARBOT ASSURANCES SA",
-    "raison_sociale": "BARBOT ASSURANCES SA",
-    "email": "nadine.palas@barbotassurances.com",
-    "telephone": "02 62 71 22 23",
-    "website": "http://www.barbotassurances.fr",
+    "nom_commercial": "LE LOGICIEL G.I.T",
+    "raison_sociale": "LE LOGICIEL G.I.T",
+    "email": "contact@logicielgit.fr",
+    "telephone": "+33 0565733105",
+    "website": "https://www.logicielgit.com",
     "linkedin_url": "",
-    "adresse": "10 RUE AUGUSTE BABET 97410 SAINT-PIERRE",
-    "ville": "Saint-Pierre",
+    "adresse": "RESIDENCE LE SUD A 9 AVENUE JEAN MONNET 12000 RODEZ",
+    "ville": "Rodez",
     "region": "",
     "pays": "France",
-    "code_postal": "97410",
-    "secteur_activite": "Finance",
+    "code_postal": "12000",
+    "secteur_activite": "Informatique",
     "type_entreprise": "",
-    "taille_entreprise": "PME",
-    "nombre_employes": 10,
+    "taille_entreprise": "",
+    "nombre_employes": null,
     "chiffre_affaires": null,
-    "description": "Courtier assurance, Runion, Barbot Assurances",
-    "code_naf": "65.12Z",
-    "siren": "402766174",
-    "siret": "40276617400013",
-    "qualification_score": 85,
-    "score_pct": 85.0,
+    "description": "le logiciel de maitrise d'oeuvre GIT permet de traiter : CCAP, CCTP, DPGF, DQE, Métré, récupération des fichiers BIM, Gestion financière, suivi de chantier",
+    "code_naf": "62.02A",
+    "siren": "444822688",
+    "siret": "44482268800024",
+    "qualification_score": 70,
+    "score_pct": 70.0,
     "statut": "QUALIFIE",
     "score_detail": {
       "sector_match": {
         "points": 20,
         "max": 20,
-        "note": "match:Finance"
+        "note": "match:Informatique"
       },
       "size_match": {
-        "points": 15,
+        "points": 0,
         "max": 15,
-        "note": "match:PME"
+        "note": "no_size_data"
       },
       "type_match": {
         "points": 0,
@@ -47,515 +47,17 @@
       "email_valid": {
         "points": 10,
         "max": 10,
-        "note": "nadine.palas@barbotassurances.com"
+        "note": "contact@logicielgit.fr"
       },
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "http://www.barbotassurances.fr"
+        "note": "https://www.logicielgit.com"
       },
       "phone_present": {
         "points": 10,
         "max": 10,
-        "note": "02 62 71 22 23"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 8,
-    "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
-    "segment": "",
-    "sector_confidence": 1.0,
-    "email_valid": true,
-    "website_active": true,
-    "enrich_score": 3,
-    "hash_dedup": "62b7edb74603b097",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.582833"
-  },
-  {
-    "nom_commercial": "CAISSE MUTUELLE MARNAISE D ASSURANCES (CMMA)",
-    "raison_sociale": "CAISSE MUTUELLE MARNAISE D ASSURANCES",
-    "email": "dpo@cmma.fr",
-    "telephone": "03 26 65 60 50",
-    "website": "https://www.cmma.fr/fr/chalons-en-champagne-1_-f.html",
-    "linkedin_url": "",
-    "adresse": "3 COURS D'ORMESSON 51000 CHALONS-EN-CHAMPAGNE",
-    "ville": "Chalons-en-Champagne",
-    "region": "",
-    "pays": "France",
-    "code_postal": "51000",
-    "secteur_activite": "Finance",
-    "type_entreprise": "",
-    "taille_entreprise": "PME",
-    "nombre_employes": 20,
-    "chiffre_affaires": null,
-    "description": "Votre Mutuelle d'Assurance qui s'adapte à vos besoins et à votre budget. Vous recherchez une assurance proche de Châlons-en-Champagne avec de très bonnes garanties adaptées à vos besoins et votre budget ?",
-    "code_naf": "65.12Z",
-    "siren": "311415327",
-    "siret": "31141532700015",
-    "qualification_score": 85,
-    "score_pct": 85.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Finance"
-      },
-      "size_match": {
-        "points": 15,
-        "max": 15,
-        "note": "match:PME"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 10,
-        "max": 10,
-        "note": "dpo@cmma.fr"
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://www.cmma.fr/fr/chalons-en-champagne-1_-f.html"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "03 26 65 60 50"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 8,
-    "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
-    "segment": "",
-    "sector_confidence": 0.5,
-    "email_valid": true,
-    "website_active": true,
-    "enrich_score": 3,
-    "hash_dedup": "66351f1e0ff0b8b5",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.583853"
-  },
-  {
-    "nom_commercial": "COEOS ASSURANCES (COEOS)",
-    "raison_sociale": "COEOS ASSURANCES",
-    "email": "contact@coeos.eu",
-    "telephone": "01 84 16 76 35",
-    "website": "https://www.coeos.eu",
-    "linkedin_url": "https://www.linkedin.com/company/2744132",
-    "adresse": "IMMEUBLE PANEL - N°76 AU 78 76 RUE SAINT-LAZARE 75009 PARIS",
-    "ville": "Paris",
-    "region": "",
-    "pays": "France",
-    "code_postal": "75009",
-    "secteur_activite": "Finance",
-    "type_entreprise": "",
-    "taille_entreprise": "TPE",
-    "nombre_employes": 1,
-    "chiffre_affaires": null,
-    "description": "COEOS : Solutions d'assurance RC Circulation, poids lourds et garantie décennale pour professionnels du transport. Protection sur mesure pour votre activité.",
-    "code_naf": "65.12Z",
-    "siren": "520437922",
-    "siret": "52043792200021",
-    "qualification_score": 85,
-    "score_pct": 85.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Finance"
-      },
-      "size_match": {
-        "points": 15,
-        "max": 15,
-        "note": "match:TPE"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 10,
-        "max": 10,
-        "note": "contact@coeos.eu"
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://www.coeos.eu"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "01 84 16 76 35"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 8,
-    "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
-    "segment": "",
-    "sector_confidence": 1.0,
-    "email_valid": true,
-    "website_active": true,
-    "enrich_score": 4,
-    "hash_dedup": "5205605c8683e0dc",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.584848"
-  },
-  {
-    "nom_commercial": "ASSURANCES NOYON",
-    "raison_sociale": "ASSURANCES NOYON",
-    "email": "socrambanque@socrambanque.fr",
-    "telephone": "09 69 39 49 49",
-    "website": "https://www.macif.fr",
-    "linkedin_url": "",
-    "adresse": "-BUREAU 326- 59 RUE DE PONTHIEU 75008 PARIS",
-    "ville": "Paris",
-    "region": "",
-    "pays": "France",
-    "code_postal": "75008",
-    "secteur_activite": "Finance",
-    "type_entreprise": "",
-    "taille_entreprise": "TPE",
-    "nombre_employes": 1,
-    "chiffre_affaires": null,
-    "description": "Assurance auto, assurance habitation, assurance santé, crédit, assurance vie… La MACIF protège les particuliers à chaque étape de leur vie. Faites un devis !",
-    "code_naf": "65.12Z",
-    "siren": "495018855",
-    "siret": "49501885500033",
-    "qualification_score": 85,
-    "score_pct": 85.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Finance"
-      },
-      "size_match": {
-        "points": 15,
-        "max": 15,
-        "note": "match:TPE"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 10,
-        "max": 10,
-        "note": "socrambanque@socrambanque.fr"
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://www.macif.fr"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "09 69 39 49 49"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 8,
-    "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
-    "segment": "",
-    "sector_confidence": 1.0,
-    "email_valid": true,
-    "website_active": true,
-    "enrich_score": 3,
-    "hash_dedup": "7ee4bfb1de8d316c",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.584848"
-  },
-  {
-    "nom_commercial": "MADP ASSURANCES",
-    "raison_sociale": "MADP ASSURANCES",
-    "email": "courtier@madpassurances.fr",
-    "telephone": "01 53 20 17 17",
-    "website": "https://www.madp.fr",
-    "linkedin_url": "https://linkedin.com/company/madp-assurances?originalSubdomain=fr",
-    "adresse": "44 AVENUE GEORGE V 75008 PARIS",
-    "ville": "Paris",
-    "region": "",
-    "pays": "France",
-    "code_postal": "75008",
-    "secteur_activite": "Finance",
-    "type_entreprise": "",
-    "taille_entreprise": "PME",
-    "nombre_employes": 20,
-    "chiffre_affaires": null,
-    "description": "Assurance pour professionnels de santé : RC pro, multirisque, mutuelle et prévoyance. Solutions sur-mesure MADP. Devis rapide en ligne.",
-    "code_naf": "65.12Z",
-    "siren": "784394371",
-    "siret": "78439437100024",
-    "qualification_score": 85,
-    "score_pct": 85.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Finance"
-      },
-      "size_match": {
-        "points": 15,
-        "max": 15,
-        "note": "match:PME"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 10,
-        "max": 10,
-        "note": "courtier@madpassurances.fr"
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://www.madp.fr"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "01 53 20 17 17"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 8,
-    "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
-    "segment": "",
-    "sector_confidence": 1.0,
-    "email_valid": true,
-    "website_active": true,
-    "enrich_score": 4,
-    "hash_dedup": "a7aba09e9fdb5f07",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.584848"
-  },
-  {
-    "nom_commercial": "ASSURANCE MUTUELLE D OUTRE MER (MUTAM)",
-    "raison_sociale": "ASSURANCE MUTUELLE D OUTRE MER",
-    "email": "accueil@assurance-outremer.fr",
-    "telephone": "05 96 73 60 88",
-    "website": "https://assurance-outremer.com",
-    "linkedin_url": "",
-    "adresse": "2 AVENUE DES ARAWAKS 97200 FORT-DE-FRANCE",
-    "ville": "Fort-de-France",
-    "region": "",
-    "pays": "France",
-    "code_postal": "97200",
-    "secteur_activite": "Finance",
-    "type_entreprise": "",
-    "taille_entreprise": "PME",
-    "nombre_employes": 20,
-    "chiffre_affaires": null,
-    "description": "Découvrez nos offres d'assurances adaptées aux particuliers et aux professionnels. Sécurisez votre quotidien et votre activité avec Assurance OutreMer.",
-    "code_naf": "65.12Z",
-    "siren": "399965524",
-    "siret": "39996552400032",
-    "qualification_score": 85,
-    "score_pct": 85.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Finance"
-      },
-      "size_match": {
-        "points": 15,
-        "max": 15,
-        "note": "match:PME"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 10,
-        "max": 10,
-        "note": "accueil@assurance-outremer.fr"
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://assurance-outremer.com"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "05 96 73 60 88"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 8,
-    "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
-    "segment": "",
-    "sector_confidence": 0.5,
-    "email_valid": true,
-    "website_active": true,
-    "enrich_score": 3,
-    "hash_dedup": "4f0a43017ee7efd5",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.585851"
-  },
-  {
-    "nom_commercial": "BADARD / MARTIN ASSURANCES",
-    "raison_sociale": "BADARD / MARTIN ASSURANCES",
-    "email": "",
-    "telephone": "03 27 60 61 19",
-    "website": "https://agence.allianz.fr/fourmies-59610-H95915",
-    "linkedin_url": "https://fr.linkedin.com/company/allianz-france",
-    "adresse": "5 RUE COUSIN CORBIER 59610 FOURMIES",
-    "ville": "Fourmies",
-    "region": "",
-    "pays": "France",
-    "code_postal": "59610",
-    "secteur_activite": "Finance",
-    "type_entreprise": "",
-    "taille_entreprise": "TPE",
-    "nombre_employes": 6,
-    "chiffre_affaires": null,
-    "description": "Bienvenue dans votre agence de Fourmies (59610) BADARD MATHIEU & Steve MARTIN. Nous sommes à votre écoute pour vous accompagner dans vos projets et vos besoins d'assurances aussi bien pour votre vie privée que pour votre activité professionnelle.",
-    "code_naf": "65.12Z",
-    "siren": "839982139",
-    "siret": "83998213900017",
-    "qualification_score": 75,
-    "score_pct": 75.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Finance"
-      },
-      "size_match": {
-        "points": 15,
-        "max": 15,
-        "note": "match:TPE"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://agence.allianz.fr/fourmies-59610-H95915"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "03 27 60 61 19"
+        "note": "+33 0565733105"
       },
       "name_complete": {
         "points": 5,
@@ -570,50 +72,50 @@
     },
     "criteria_met": 7,
     "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
+    "source": "annuaire-entreprises.data.gouv.fr",
     "segment": "",
     "sector_confidence": 1.0,
-    "email_valid": false,
+    "email_valid": true,
     "website_active": true,
     "enrich_score": 3,
-    "hash_dedup": "cedb5c328f1e40c4",
+    "hash_dedup": "0637db54a48c2bef",
     "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.583853"
+    "created_at": "2026-04-13T17:58:28.680553"
   },
   {
-    "nom_commercial": "JOUVENOZ ASSURANCES",
-    "raison_sociale": "JOUVENOZ ASSURANCES",
-    "email": "",
-    "telephone": "04 50 01 31 13",
-    "website": "https://jouvenoz-assurances.com",
-    "linkedin_url": "https://www.linkedin.com/company/jouvenoz-assurances",
-    "adresse": "30 ROUTE DE SAINT-FELIX 74150 RUMILLY",
-    "ville": "Rumilly",
+    "nom_commercial": "EP LOGICIELS (EP LOGICIELS)",
+    "raison_sociale": "EP LOGICIELS",
+    "email": "contact@eplogiciels.fr",
+    "telephone": "09 78 82 84 81",
+    "website": "https://eplogiciels.fr",
+    "linkedin_url": "",
+    "adresse": "3 CHE DE L'OBSERVATOIRE 57720 HOTTVILLER",
+    "ville": "Hottviller",
     "region": "",
     "pays": "France",
-    "code_postal": "74150",
-    "secteur_activite": "Finance",
+    "code_postal": "57720",
+    "secteur_activite": "Informatique",
     "type_entreprise": "",
-    "taille_entreprise": "PME",
-    "nombre_employes": 20,
+    "taille_entreprise": "",
+    "nombre_employes": null,
     "chiffre_affaires": null,
     "description": "",
-    "code_naf": "65.12Z",
-    "siren": "523286607",
-    "siret": "52328660700032",
-    "qualification_score": 75,
-    "score_pct": 75.0,
+    "code_naf": "62.02A",
+    "siren": "912139821",
+    "siret": "91213982100017",
+    "qualification_score": 70,
+    "score_pct": 70.0,
     "statut": "QUALIFIE",
     "score_detail": {
       "sector_match": {
         "points": 20,
         "max": 20,
-        "note": "match:Finance"
+        "note": "match:Informatique"
       },
       "size_match": {
-        "points": 15,
+        "points": 0,
         "max": 15,
-        "note": "match:PME"
+        "note": "no_size_data"
       },
       "type_match": {
         "points": 0,
@@ -626,19 +128,19 @@
         "note": "pays:france"
       },
       "email_valid": {
-        "points": 0,
+        "points": 10,
         "max": 10,
-        "note": ""
+        "note": "contact@eplogiciels.fr"
       },
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://jouvenoz-assurances.com"
+        "note": "https://eplogiciels.fr"
       },
       "phone_present": {
         "points": 10,
         "max": 10,
-        "note": "04 50 01 31 13"
+        "note": "09 78 82 84 81"
       },
       "name_complete": {
         "points": 5,
@@ -653,50 +155,50 @@
     },
     "criteria_met": 7,
     "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
+    "source": "annuaire-entreprises.data.gouv.fr",
     "segment": "",
     "sector_confidence": 1.0,
-    "email_valid": false,
+    "email_valid": true,
     "website_active": true,
     "enrich_score": 3,
-    "hash_dedup": "5a3cf4e6d7eaf67c",
+    "hash_dedup": "539a06ced57b09c9",
     "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.583853"
+    "created_at": "2026-04-13T17:58:28.680553"
   },
   {
-    "nom_commercial": "GROUPE VAR ASSURANCES",
-    "raison_sociale": "GROUPE VAR ASSURANCES",
-    "email": "",
-    "telephone": "04 94 65 81 91",
-    "website": "https://www.allbiz.fr/groupe-var-assurances_2Z-04-94-65-42-05",
+    "nom_commercial": "ASSISTANCE LOGICIEL INFORMATIQUE EQUIPEMENT RESEAU (ALIER)",
+    "raison_sociale": "ASSISTANCE LOGICIEL INFORMATIQUE EQUIPEMENT RESEAU",
+    "email": "assistancelogici.118666@spamfree.bookmyname.com",
+    "telephone": "01 48 94 88 27",
+    "website": "https://www.allbiz.fr/alier-assistance-logiciel-informatique-01-48-94-88-27",
     "linkedin_url": "",
-    "adresse": "14 RUE JEAN AICARD 83400 HYERES",
-    "ville": "Hyeres",
+    "adresse": "68 RUE DE NEUILLY 93250 VILLEMOMBLE",
+    "ville": "Villemomble",
     "region": "",
     "pays": "France",
-    "code_postal": "83400",
-    "secteur_activite": "Finance",
+    "code_postal": "93250",
+    "secteur_activite": "Informatique",
     "type_entreprise": "",
-    "taille_entreprise": "TPE",
-    "nombre_employes": 6,
+    "taille_entreprise": "",
+    "nombre_employes": null,
     "chiffre_affaires": null,
-    "description": "Roger Saponaro est le contact principal chez Groupe Var Assurances. Vous pouvez contacter Groupe Var Assurances par téléphone au numéro 04 94 65 42 05.",
-    "code_naf": "65.12Z",
-    "siren": "894029370",
-    "siret": "89402937000018",
-    "qualification_score": 75,
-    "score_pct": 75.0,
+    "description": "Vous pouvez contacter Alier Assistance Logiciel Informatique Equipement Reseaux par téléphone au numéro 01 48 94 88 27.",
+    "code_naf": "62.02A",
+    "siren": "379321227",
+    "siret": "37932122700025",
+    "qualification_score": 70,
+    "score_pct": 70.0,
     "statut": "QUALIFIE",
     "score_detail": {
       "sector_match": {
         "points": 20,
         "max": 20,
-        "note": "match:Finance"
+        "note": "match:Informatique"
       },
       "size_match": {
-        "points": 15,
+        "points": 0,
         "max": 15,
-        "note": "match:TPE"
+        "note": "no_size_data"
       },
       "type_match": {
         "points": 0,
@@ -709,19 +211,19 @@
         "note": "pays:france"
       },
       "email_valid": {
-        "points": 0,
+        "points": 10,
         "max": 10,
-        "note": ""
+        "note": "assistancelogici.118666@spamfree.bookmyname.com"
       },
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://www.allbiz.fr/groupe-var-assurances_2Z-04-94-65-42-05"
+        "note": "https://www.allbiz.fr/alier-assistance-logiciel-informatique-01-48-94-88-27"
       },
       "phone_present": {
         "points": 10,
         "max": 10,
-        "note": "04 94 65 81 91"
+        "note": "01 48 94 88 27"
       },
       "name_complete": {
         "points": 5,
@@ -738,118 +240,118 @@
     "criteria_total": 9,
     "source": "data.gouv.fr/Sirene",
     "segment": "",
-    "sector_confidence": 1.0,
-    "email_valid": false,
-    "website_active": true,
-    "enrich_score": 2,
-    "hash_dedup": "5642885750cf55a7",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.583853"
-  },
-  {
-    "nom_commercial": "IF ASSURANCES FRANCE I.A.R.D.",
-    "raison_sociale": "IF ASSURANCES FRANCE I.A.R.D.",
-    "email": "",
-    "telephone": "01 42 86 00 64",
-    "website": "https://www.if-insurance.com/large-enterprises/contact-large-enterprises/france-office-contact",
-    "linkedin_url": "https://www.linkedin.com/company/ifinsurance/",
-    "adresse": "STOCKHOM SVEAVAGEN 4 4 S-103 50 SUEDE",
-    "ville": "",
-    "region": "",
-    "pays": "France",
-    "code_postal": null,
-    "secteur_activite": "Finance",
-    "type_entreprise": "",
-    "taille_entreprise": "TPE",
-    "nombre_employes": 6,
-    "chiffre_affaires": null,
-    "description": "Contact information for If P&C Insurance Ltd (publ) in France.",
-    "code_naf": "65.12Z",
-    "siren": "428661227",
-    "siret": "42866122700010",
-    "qualification_score": 75,
-    "score_pct": 75.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Finance"
-      },
-      "size_match": {
-        "points": 15,
-        "max": 15,
-        "note": "match:TPE"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://www.if-insurance.com/large-enterprises/contact-large-enterprises/france-office-contact"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "01 42 86 00 64"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 7,
-    "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
-    "segment": "",
-    "sector_confidence": 1.0,
-    "email_valid": false,
+    "sector_confidence": 0.493,
+    "email_valid": true,
     "website_active": true,
     "enrich_score": 3,
-    "hash_dedup": "7e85c585bf01df32",
+    "hash_dedup": "a6e3a63887592dc0",
     "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.585851"
+    "created_at": "2026-04-13T17:58:33.269584"
   },
   {
-    "nom_commercial": "CAISSE DE CREDIT MUTUEL DE NICE GARNIER SOCIETE COOPERATIVE DE CREDIT ET DE COURTAGE D'ASSURANCES A RESPONSABILITE STAT",
-    "raison_sociale": "CAISSE DE CREDIT MUTUEL DE NICE GARNIER SOCIETE COOPERATIVE DE CREDIT ET DE COURTAGE D'ASSURANCES A RESPONSABILITE STAT",
-    "email": "nom@domaine.com",
-    "telephone": "01 53 21 51 70",
-    "website": "https://www.creditmutuel.fr/fr/caisse/provence-alpes-cote-d%27azur/alpes-maritimes/10278-07905-00",
-    "linkedin_url": "https://www.linkedin.com/company/cr-dit-mutuel",
-    "adresse": "RESIDENCE NATACHA 28 BOULEVARD JOSEPH GARNIER 06000 NICE",
+    "nom_commercial": "LOGICIEL POUR TOUS",
+    "raison_sociale": "LOGICIEL POUR TOUS",
+    "email": "commercial@logicielpourtous.com",
+    "telephone": "0258472234",
+    "website": "https://www.logicielpourtous.com",
+    "linkedin_url": "https://www.linkedin.com/company/logiciel-pour-tous/",
+    "adresse": "COWORK ALL DE L ANCIENNE GARE 72800 LE LUDE",
+    "ville": "Le Lude",
+    "region": "",
+    "pays": "France",
+    "code_postal": "72800",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Optimisez votre informatique avec Logiciel Pour Tous. Support technique, sécurité Netguardian et développement sur mesure au Lude. Profitez de 30 ans d'expertise. Contactez-nous pour un devis !",
+    "code_naf": "62.02B",
+    "siren": "978660207",
+    "siret": "97866020700017",
+    "qualification_score": 70,
+    "score_pct": 70.0,
+    "statut": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "pays:france"
+      },
+      "email_valid": {
+        "points": 10,
+        "max": 10,
+        "note": "commercial@logicielpourtous.com"
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://www.logicielpourtous.com"
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "0258472234"
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 7,
+    "criteria_total": 9,
+    "source": "data.gouv.fr/Sirene",
+    "segment": "",
+    "sector_confidence": 1.0,
+    "email_valid": true,
+    "website_active": true,
+    "enrich_score": 4,
+    "hash_dedup": "5e6e8cd16e55bd04",
+    "raw_text": "",
+    "created_at": "2026-04-13T17:58:36.328778"
+  },
+  {
+    "nom_commercial": "LOGICIEL ASSISTANCE",
+    "raison_sociale": "LOGICIEL ASSISTANCE",
+    "email": "legal@niceforyou.com",
+    "telephone": "+400264453127",
+    "website": "https://www.niceforyou.com/fr/espace-professionnel",
+    "linkedin_url": "https://www.linkedin.com/company/nice-spa",
+    "adresse": "LES NATCHEZ 6 B AVENUE CHATEAUBRIAND 06100 NICE",
     "ville": "Nice",
     "region": "",
     "pays": "France",
-    "code_postal": "06000",
-    "secteur_activite": "Finance",
+    "code_postal": "06100",
+    "secteur_activite": "Informatique",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
-    "description": "",
-    "code_naf": "64.19Z",
-    "siren": "512936071",
-    "siret": "51293607100012",
+    "description": "Besoin d'aide avec vos produits Nice? Rendez-vous sur notre Espace professionnel: une assistance clientèle dédiée et des ressources en ligne utiles.",
+    "code_naf": "62.02B",
+    "siren": "399617554",
+    "siret": "39961755400031",
     "qualification_score": 70,
     "score_pct": 70.0,
     "statut": "QUALIFIE",
@@ -857,7 +359,7 @@
       "sector_match": {
         "points": 20,
         "max": 20,
-        "note": "match:Finance"
+        "note": "match:Informatique"
       },
       "size_match": {
         "points": 0,
@@ -877,17 +379,100 @@
       "email_valid": {
         "points": 10,
         "max": 10,
-        "note": "nom@domaine.com"
+        "note": "legal@niceforyou.com"
       },
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://www.creditmutuel.fr/fr/caisse/provence-alpes-cote-d%27azur/alpes-maritimes/10278-07905-00"
+        "note": "https://www.niceforyou.com/fr/espace-professionnel"
       },
       "phone_present": {
         "points": 10,
         "max": 10,
-        "note": "01 53 21 51 70"
+        "note": "+400264453127"
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 7,
+    "criteria_total": 9,
+    "source": "data.gouv.fr/Sirene",
+    "segment": "",
+    "sector_confidence": 1.0,
+    "email_valid": true,
+    "website_active": true,
+    "enrich_score": 4,
+    "hash_dedup": "64a9c7ad3711e257",
+    "raw_text": "",
+    "created_at": "2026-04-13T17:58:36.328778"
+  },
+  {
+    "nom_commercial": "LOGICIEL INFORMATIQUE FRANCAIS (LIFRA)",
+    "raison_sociale": "LOGICIEL INFORMATIQUE FRANCAIS",
+    "email": "teddy.loiseau@lnacre.com",
+    "telephone": "02.38.66.83.20",
+    "website": "https://www.lifra.fr/lifra.html",
+    "linkedin_url": "https://fr.linkedin.com/company/lifra-sa",
+    "adresse": "40 RUE DES BOUVREUILS 45590 SAINT-CYR-EN-VAL",
+    "ville": "Saint-Cyr-en-Val",
+    "region": "",
+    "pays": "France",
+    "code_postal": "45590",
+    "secteur_activite": "Conseil IT",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.02A",
+    "siren": "323168484",
+    "siret": "32316848400018",
+    "qualification_score": 60,
+    "score_pct": 60.0,
+    "statut": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 10,
+        "max": 20,
+        "note": "partial:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "pays:france"
+      },
+      "email_valid": {
+        "points": 10,
+        "max": 10,
+        "note": "teddy.loiseau@lnacre.com"
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://www.lifra.fr/lifra.html"
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "02.38.66.83.20"
       },
       "name_complete": {
         "points": 5,
@@ -904,43 +489,126 @@
     "criteria_total": 9,
     "source": "annuaire-entreprises.data.gouv.fr",
     "segment": "",
-    "sector_confidence": 0.469,
+    "sector_confidence": 0.347,
     "email_valid": true,
     "website_active": true,
     "enrich_score": 4,
-    "hash_dedup": "82c6a239670e37db",
+    "hash_dedup": "071eac8a0d5fedb5",
     "raw_text": "",
-    "created_at": "2026-04-10T18:37:20.879266"
+    "created_at": "2026-04-13T17:58:28.680553"
   },
   {
-    "nom_commercial": "MUTUELLE SAINT-CHRISTOPHE ASSURANCES (MSC)",
-    "raison_sociale": "MUTUELLE SAINT-CHRISTOPHE ASSURANCES",
-    "email": "service.commercial.scp@msc-assurance.fr",
-    "telephone": "01 84 01 02 50",
-    "website": "https://www.saint-christophe-assurances.fr",
-    "linkedin_url": "https://www.linkedin.com/company/saint-christophe-assurances",
-    "adresse": "277 RUE SAINT-JACQUES 75005 PARIS",
+    "nom_commercial": "LA FABRIQUE LOGICIELLE",
+    "raison_sociale": "LA FABRIQUE LOGICIELLE",
+    "email": "",
+    "telephone": "06 84 61 50 05",
+    "website": "https://www.la-fabrique-logicielle.fr",
+    "linkedin_url": "",
+    "adresse": "9 RUE STANISLAS 75006 PARIS",
     "ville": "Paris",
     "region": "",
     "pays": "France",
-    "code_postal": "75005",
-    "secteur_activite": "Finance",
+    "code_postal": "75006",
+    "secteur_activite": "Informatique",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
-    "description": "La Mutuelle Saint-Christophe assurances est là pour vous accompagner ! Un assureur engagé et solidaire, découvrez nos produits : auto, habitation, santé…",
-    "code_naf": "65.12Z",
-    "siren": "775662497",
-    "siret": "77566249700012",
-    "qualification_score": 70,
-    "score_pct": 70.0,
+    "description": "",
+    "code_naf": "62.02A",
+    "siren": "450308259",
+    "siret": "45030825900016",
+    "qualification_score": 60,
+    "score_pct": 60.0,
     "statut": "QUALIFIE",
     "score_detail": {
       "sector_match": {
         "points": 20,
         "max": 20,
-        "note": "match:Finance"
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "pays:france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://www.la-fabrique-logicielle.fr"
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "06 84 61 50 05"
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 6,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "segment": "",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 1,
+    "hash_dedup": "8e6e33681ae6fa20",
+    "raw_text": "",
+    "created_at": "2026-04-13T17:58:28.680553"
+  },
+  {
+    "nom_commercial": "MGP LOGICIEL",
+    "raison_sociale": "MGP LOGICIEL",
+    "email": "contact@mgp-logiciel.fr",
+    "telephone": "",
+    "website": "https://mgp-logiciel.fr",
+    "linkedin_url": "",
+    "adresse": "27 LA CHESNAIE 61100 AUBUSSON",
+    "ville": "Aubusson",
+    "region": "",
+    "pays": "France",
+    "code_postal": "61100",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "MGP Logiciel developpeur de logiciels, sites web ainsi que de nombreuses préstations informatiques",
+    "code_naf": "62.02A",
+    "siren": "803859768",
+    "siret": "80385976800019",
+    "qualification_score": 60,
+    "score_pct": 60.0,
+    "statut": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
       },
       "size_match": {
         "points": 0,
@@ -960,17 +628,17 @@
       "email_valid": {
         "points": 10,
         "max": 10,
-        "note": "service.commercial.scp@msc-assurance.fr"
+        "note": "contact@mgp-logiciel.fr"
       },
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://www.saint-christophe-assurances.fr"
+        "note": "https://mgp-logiciel.fr"
       },
       "phone_present": {
-        "points": 10,
+        "points": 0,
         "max": 10,
-        "note": "01 84 01 02 50"
+        "note": ""
       },
       "name_complete": {
         "points": 5,
@@ -983,7 +651,422 @@
         "note": ""
       }
     },
-    "criteria_met": 7,
+    "criteria_met": 6,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "segment": "",
+    "sector_confidence": 1.0,
+    "email_valid": true,
+    "website_active": true,
+    "enrich_score": 2,
+    "hash_dedup": "7d6ecfe86f3c79b4",
+    "raw_text": "",
+    "created_at": "2026-04-13T17:58:28.680553"
+  },
+  {
+    "nom_commercial": "LOGICIELS HERTZIENS",
+    "raison_sociale": "LOGICIELS HERTZIENS",
+    "email": "",
+    "telephone": "03 88 95 33 55",
+    "website": "https://www.mon-informaticien.com/entreprise/logiciels-hertziens-441069531-00040",
+    "linkedin_url": "",
+    "adresse": "9 RUE DU FAUBOURG SAINT-HONORE 75008 PARIS",
+    "ville": "Paris",
+    "region": "",
+    "pays": "France",
+    "code_postal": "75008",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Faites appel à l'entreprise d'informatique LOGICIELS HERTZIENS (SARL) située à Paris-8 (75008). Cet informaticien est notamment spécialisé en Prestations informatiques.",
+    "code_naf": "62.02A",
+    "siren": "441069531",
+    "siret": "44106953100040",
+    "qualification_score": 60,
+    "score_pct": 60.0,
+    "statut": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "pays:france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://www.mon-informaticien.com/entreprise/logiciels-hertziens-441069531-00040"
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "03 88 95 33 55"
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 6,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "segment": "",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 2,
+    "hash_dedup": "fb29e18f219c84e5",
+    "raw_text": "",
+    "created_at": "2026-04-13T17:58:28.680553"
+  },
+  {
+    "nom_commercial": "VOTRE LOGICIEL ADAPTE (VOTRE LOGICIEL ADAPTE) (VLA)",
+    "raison_sociale": "VOTRE LOGICIEL ADAPTE",
+    "email": "contact@v-l-a.fr",
+    "telephone": "",
+    "website": "https://www.allbiz.fr/votre-logiciel-adapt%C3%A9",
+    "linkedin_url": "",
+    "adresse": "15 RUE DU GENERAL LECLERC 60420 MAIGNELAY-MONTIGNY",
+    "ville": "Maignelay-Montigny",
+    "region": "",
+    "pays": "France",
+    "code_postal": "60420",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Votre Logiciel Adapté est située à 15 Rue Général Leclerc, 60420 Maignelay-Montigny, France.",
+    "code_naf": "62.02A",
+    "siren": "810174292",
+    "siret": "81017429200021",
+    "qualification_score": 60,
+    "score_pct": 60.0,
+    "statut": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "pays:france"
+      },
+      "email_valid": {
+        "points": 10,
+        "max": 10,
+        "note": "contact@v-l-a.fr"
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://www.allbiz.fr/votre-logiciel-adapt%C3%A9"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 6,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "segment": "",
+    "sector_confidence": 0.381,
+    "email_valid": true,
+    "website_active": true,
+    "enrich_score": 2,
+    "hash_dedup": "34aa074bc4010bbf",
+    "raw_text": "",
+    "created_at": "2026-04-13T17:58:28.680553"
+  },
+  {
+    "nom_commercial": "PERFORMANCE LOGICIEL",
+    "raison_sociale": "PERFORMANCE LOGICIEL",
+    "email": "contact@performance-logiciel.fr",
+    "telephone": "",
+    "website": "https://datalegal.fr/entreprises/890027360",
+    "linkedin_url": "",
+    "adresse": "24 RUE FRANCOIS LUNEAU 44330 VALLET",
+    "ville": "Vallet",
+    "region": "",
+    "pays": "France",
+    "code_postal": "44330",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "➥ Accédez gratuitement aux informations légales et économiques de la société PERFORMANCE LOGICIEL (44330) ✓ SIREN – KBIS",
+    "code_naf": "62.02A",
+    "siren": "890027360",
+    "siret": "89002736000019",
+    "qualification_score": 60,
+    "score_pct": 60.0,
+    "statut": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "pays:france"
+      },
+      "email_valid": {
+        "points": 10,
+        "max": 10,
+        "note": "contact@performance-logiciel.fr"
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://datalegal.fr/entreprises/890027360"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 6,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "segment": "",
+    "sector_confidence": 1.0,
+    "email_valid": true,
+    "website_active": true,
+    "enrich_score": 2,
+    "hash_dedup": "deaac93d717cd836",
+    "raw_text": "",
+    "created_at": "2026-04-13T17:58:28.680553"
+  },
+  {
+    "nom_commercial": "LA COMPAGNIE ROCHELAISE DU LOGICIEL (OLIOKS)",
+    "raison_sociale": "LA COMPAGNIE ROCHELAISE DU LOGICIEL",
+    "email": "contact@corolo.fr",
+    "telephone": "",
+    "website": "https://corolo.fr",
+    "linkedin_url": "",
+    "adresse": "5 RUE JACQUES MONOD 17000 LA ROCHELLE",
+    "ville": "La Rochelle",
+    "region": "",
+    "pays": "France",
+    "code_postal": "17000",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "58.29A",
+    "siren": "833192453",
+    "siret": "83319245300011",
+    "qualification_score": 60,
+    "score_pct": 60.0,
+    "statut": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "pays:france"
+      },
+      "email_valid": {
+        "points": 10,
+        "max": 10,
+        "note": "contact@corolo.fr"
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://corolo.fr"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 6,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "segment": "",
+    "sector_confidence": 1.0,
+    "email_valid": true,
+    "website_active": true,
+    "enrich_score": 2,
+    "hash_dedup": "e38c2e8d9fe7dbc6",
+    "raw_text": "",
+    "created_at": "2026-04-13T17:58:45.082091"
+  },
+  {
+    "nom_commercial": "RESEAU LOGICIEL COMMUNICATION (RLCOM)",
+    "raison_sociale": "RESEAU LOGICIEL COMMUNICATION",
+    "email": "contact@pirrha.re",
+    "telephone": "0262 77 51 53",
+    "website": "https://rlcom.re",
+    "linkedin_url": "https://www.linkedin.com/company/rlcom/",
+    "adresse": "BELLEMENE 57 CHEMIN DE LA SAVANE 97460 SAINT-PAUL",
+    "ville": "Saint-Paul",
+    "region": "",
+    "pays": "France",
+    "code_postal": "97460",
+    "secteur_activite": "Marketing & Communication",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "RLCom intervient dans la mise en place de logiciels, l’Ingénierie et l’administration de systèmes Informatiques et Télécoms à la Réunion.",
+    "code_naf": "62.02A",
+    "siren": "790730915",
+    "siret": "79073091500010",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "statut": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 0,
+        "max": 20,
+        "note": "no_match (marketing & communication)"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "pays:france"
+      },
+      "email_valid": {
+        "points": 10,
+        "max": 10,
+        "note": "contact@pirrha.re"
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://rlcom.re"
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "0262 77 51 53"
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 6,
     "criteria_total": 9,
     "source": "annuaire-entreprises.data.gouv.fr",
     "segment": "",
@@ -991,205 +1074,39 @@
     "email_valid": true,
     "website_active": true,
     "enrich_score": 4,
-    "hash_dedup": "eb2998b6fe7859c3",
+    "hash_dedup": "20e02750af974210",
     "raw_text": "",
-    "created_at": "2026-04-10T18:37:47.173953"
+    "created_at": "2026-04-13T17:58:28.680553"
   },
   {
-    "nom_commercial": "ACTA ASSURANCE",
-    "raison_sociale": "ACTA ASSURANCE",
-    "email": "protectiondonnees@lyon-entreprises.com",
-    "telephone": "04 72 19 19 43",
-    "website": "https://www.lyon-entreprises.com/entreprise/acta-assurance/presentation-limonest",
-    "linkedin_url": "https://www.linkedin.com/company/9376494/admin/",
-    "adresse": "CS 80117 PARC DES TUILERIES 69760 LIMONEST",
-    "ville": "Limonest",
-    "region": "",
-    "pays": "France",
-    "code_postal": "69760",
-    "secteur_activite": "Finance",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "Créé en 1992, le Groupe ACTA Assistance est aujourd'hui l'un des leaders de l'assistance automobile pour les Constructeurs et les Loueurs Longue Durée. Le groupe est composé de trois sociétés",
-    "code_naf": "65.12Z",
-    "siren": "493466254",
-    "siret": "49346625400015",
-    "qualification_score": 70,
-    "score_pct": 70.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Finance"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 10,
-        "max": 10,
-        "note": "protectiondonnees@lyon-entreprises.com"
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://www.lyon-entreprises.com/entreprise/acta-assurance/presentation-limonest"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "04 72 19 19 43"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 7,
-    "criteria_total": 9,
-    "source": "annuaire-entreprises.data.gouv.fr",
-    "segment": "",
-    "sector_confidence": 1.0,
-    "email_valid": true,
-    "website_active": true,
-    "enrich_score": 4,
-    "hash_dedup": "b86100fdc446576c",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:47.173953"
-  },
-  {
-    "nom_commercial": "OPTEVEN ASSURANCES",
-    "raison_sociale": "OPTEVEN ASSURANCES",
-    "email": "accueil@opteven.com",
-    "telephone": "+33472435252",
-    "website": "https://fr.opteven.com/contactez-nous",
-    "linkedin_url": "https://www.linkedin.com/company/9361011/",
-    "adresse": "10 RUE OLYMPE DE GOUGES 69100 VILLEURBANNE",
-    "ville": "Villeurbanne",
-    "region": "",
-    "pays": "France",
-    "code_postal": "69100",
-    "secteur_activite": "Finance",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "Contactez-nous pour toutes questions – Découvrez nos solutions et services pour vous accompagner au quotidien.",
-    "code_naf": "65.12Z",
-    "siren": "379954886",
-    "siret": "37995488600048",
-    "qualification_score": 70,
-    "score_pct": 70.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Finance"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 10,
-        "max": 10,
-        "note": "accueil@opteven.com"
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://fr.opteven.com/contactez-nous"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "+33472435252"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 7,
-    "criteria_total": 9,
-    "source": "annuaire-entreprises.data.gouv.fr",
-    "segment": "",
-    "sector_confidence": 1.0,
-    "email_valid": true,
-    "website_active": true,
-    "enrich_score": 4,
-    "hash_dedup": "290f84d9c9cffd68",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:47.173953"
-  },
-  {
-    "nom_commercial": "ET SI GUYANE ASSURANCES (ET SI... GUYANE)",
-    "raison_sociale": "ET SI GUYANE ASSURANCES",
-    "email": "contact@telephone.city",
-    "telephone": "09 70 80 89 11",
-    "website": "https://www.telephone.city/assurance/et-si-guyane-cayenne-658484.html",
+    "nom_commercial": "CFD LOGICIELS",
+    "raison_sociale": "CFD LOGICIELS",
+    "email": "",
+    "telephone": "",
+    "website": "https://entreprises.annuairefrancais.fr/68130/cfd-logiciels-altkirch-68-haut-rhin-883568594-00013.html",
     "linkedin_url": "",
-    "adresse": "GRANDE CONSOUDE CITE REBARD 3 RUE DE LA MAKOUZA 97300 CAYENNE",
-    "ville": "Cayenne",
+    "adresse": "2 RUE HENRI DUNANT 68130 ALTKIRCH",
+    "ville": "Altkirch",
     "region": "",
     "pays": "France",
-    "code_postal": "97300",
-    "secteur_activite": "Finance",
+    "code_postal": "68130",
+    "secteur_activite": "Informatique",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
-    "description": "Et Si... Guyane à Cayenne (97300), Assurance, téléphone et informations pratiques. Informations vérifiées et contactez cet établissement.",
-    "code_naf": "65.12Z",
-    "siren": "498094655",
-    "siret": "49809465500012",
-    "qualification_score": 70,
-    "score_pct": 70.0,
+    "description": "CFD LOGICIELS (siren n° 883568594) est installé dans la commune de ALTKIRCH à l'adresse 2 RUE HENRI DUNANT dans le département du Haut rhin téléphone... CFD LOGICIELS est référencé dans l'Annuaire Français dans la catégorie internet Communication Publicite, informations complètes Bilans gratuits, statuts, chiffre d'affaires, dirigeants, actionnaires, levées de fonds, annonces légales, APE, NAF, TVA, RCS, KBIS, SIREN, SIRET, BODACC, INSEE, INPI.",
+    "code_naf": "62.02A",
+    "siren": "883568594",
+    "siret": "88356859400013",
+    "qualification_score": 50,
+    "score_pct": 50.0,
     "statut": "QUALIFIE",
     "score_detail": {
       "sector_match": {
         "points": 20,
         "max": 20,
-        "note": "match:Finance"
+        "note": "match:Informatique"
       },
       "size_match": {
         "points": 0,
@@ -1207,19 +1124,19 @@
         "note": "pays:france"
       },
       "email_valid": {
-        "points": 10,
+        "points": 0,
         "max": 10,
-        "note": "contact@telephone.city"
+        "note": ""
       },
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://www.telephone.city/assurance/et-si-guyane-cayenne-658484.html"
+        "note": "https://entreprises.annuairefrancais.fr/68130/cfd-logiciels-altkirch-68-haut-rhin-883568594-00013.html"
       },
       "phone_present": {
-        "points": 10,
+        "points": 0,
         "max": 10,
-        "note": "09 70 80 89 11"
+        "note": ""
       },
       "name_complete": {
         "points": 5,
@@ -1232,47 +1149,213 @@
         "note": ""
       }
     },
-    "criteria_met": 7,
+    "criteria_met": 5,
     "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
+    "source": "annuaire-entreprises.data.gouv.fr",
     "segment": "",
     "sector_confidence": 1.0,
-    "email_valid": true,
+    "email_valid": false,
     "website_active": true,
-    "enrich_score": 3,
-    "hash_dedup": "6dd9d92c6a2b35ce",
+    "enrich_score": 1,
+    "hash_dedup": "7008071e89cce921",
     "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.583853"
+    "created_at": "2026-04-13T17:58:28.680553"
   },
   {
-    "nom_commercial": "LML ASSURANCE SANTE",
-    "raison_sociale": "LML ASSURANCE SANTE",
-    "email": "dpo-lml@lamedecinelibre.com",
-    "telephone": "01 53 27 72 30",
-    "website": "https://www.lamedecinelibre.com",
-    "linkedin_url": "https://fr.linkedin.com/company/lmlsante",
-    "adresse": "15 RUE SAINT-BERNARD 75011 PARIS",
-    "ville": "Paris",
+    "nom_commercial": "LE LOGICIEL FRANCAIS (LLF)",
+    "raison_sociale": "LE LOGICIEL FRANCAIS",
+    "email": "",
+    "telephone": "",
+    "website": "https://entreprises.lefigaro.fr/le-logiciel-francais-llf-06/entreprise-329121941",
+    "linkedin_url": "",
+    "adresse": "LE FRAGONARD AVENUE DE LA COLLE 06270 VILLENEUVE-LOUBET",
+    "ville": "Villeneuve-Loubet",
     "region": "",
     "pays": "France",
-    "code_postal": "75011",
-    "secteur_activite": "Finance",
+    "code_postal": "06270",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Société Le Logiciel Francais - LLF (Villeneuve-Loubet, 06270) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire...",
+    "code_naf": "62.02A",
+    "siren": "329121941",
+    "siret": "32912194100044",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "statut": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "pays:france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://entreprises.lefigaro.fr/le-logiciel-francais-llf-06/entreprise-329121941"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "segment": "",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "hash_dedup": "beee256d978680ee",
+    "raw_text": "",
+    "created_at": "2026-04-13T17:58:28.680553"
+  },
+  {
+    "nom_commercial": "DA LOGICIEL (DA LOGICIEL)",
+    "raison_sociale": "DA LOGICIEL",
+    "email": "",
+    "telephone": "",
+    "website": "https://rennes.cataloxy.org/firms/da-logiciel-sarl-unipersonnelle.1974221_c.htm",
+    "linkedin_url": "",
+    "adresse": "9 RUE NATHALIE LEMEL 35000 RENNES",
+    "ville": "Rennes",
+    "region": "",
+    "pays": "France",
+    "code_postal": "35000",
+    "secteur_activite": "Informatique",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
     "description": "",
-    "code_naf": "65.12Z",
-    "siren": "793882937",
-    "siret": "79388293700014",
-    "qualification_score": 70,
-    "score_pct": 70.0,
+    "code_naf": "62.02A",
+    "siren": "839313723",
+    "siret": "83931372300018",
+    "qualification_score": 50,
+    "score_pct": 50.0,
     "statut": "QUALIFIE",
     "score_detail": {
       "sector_match": {
         "points": 20,
         "max": 20,
-        "note": "match:Finance"
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "pays:france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://rennes.cataloxy.org/firms/da-logiciel-sarl-unipersonnelle.1974221_c.htm"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "segment": "",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "hash_dedup": "eb30bd5213eb8227",
+    "raw_text": "",
+    "created_at": "2026-04-13T17:58:28.680553"
+  },
+  {
+    "nom_commercial": "SEMA FRANCE LOGICIELS DE CONSTRUCTIONS EN BOIS",
+    "raison_sociale": "SEMA FRANCE LOGICIELS DE CONSTRUCTIONS EN BOIS",
+    "email": "info@sema-soft.fr",
+    "telephone": "0389204394",
+    "website": "https://www.sema-soft.com/fr",
+    "linkedin_url": "https://www.linkedin.com/company/sema-3d-cad-cam-software",
+    "adresse": "50 AVENUE D'ALSACE 68000 COLMAR",
+    "ville": "Colmar",
+    "region": "",
+    "pays": "France",
+    "code_postal": "68000",
+    "secteur_activite": "BTP",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Transformez votre processus de conception de la construction avec les logiciels de SEMA. Utilisez des outils spécialisés pour la construction en bois, la préfabrication, la toiture et bien plus encore !",
+    "code_naf": "62.02A",
+    "siren": "441711843",
+    "siret": "44171184300017",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "statut": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 0,
+        "max": 20,
+        "note": "no_match (btp)"
       },
       "size_match": {
         "points": 0,
@@ -1292,17 +1375,17 @@
       "email_valid": {
         "points": 10,
         "max": 10,
-        "note": "dpo-lml@lamedecinelibre.com"
+        "note": "info@sema-soft.fr"
       },
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://www.lamedecinelibre.com"
+        "note": "https://www.sema-soft.com/fr"
       },
       "phone_present": {
         "points": 10,
         "max": 10,
-        "note": "01 53 27 72 30"
+        "note": "0389204394"
       },
       "name_complete": {
         "points": 5,
@@ -1315,52 +1398,52 @@
         "note": ""
       }
     },
-    "criteria_met": 7,
+    "criteria_met": 6,
     "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
+    "source": "annuaire-entreprises.data.gouv.fr",
     "segment": "",
-    "sector_confidence": 1.0,
+    "sector_confidence": 0.392,
     "email_valid": true,
     "website_active": true,
     "enrich_score": 4,
-    "hash_dedup": "4b528eae8b5f8601",
+    "hash_dedup": "ae6165e9d81c5b56",
     "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.585851"
+    "created_at": "2026-04-13T17:58:28.681560"
   },
   {
-    "nom_commercial": "CENTRE DEPARTEMENTAL D'ASSURANCES ET DE CREDITS (CEDAC 36) (CEDAC 36)",
-    "raison_sociale": "CENTRE DEPARTEMENTAL D'ASSURANCES ET DE CREDITS",
+    "nom_commercial": "OMNIS LOGICIEL PUBLIC",
+    "raison_sociale": "OMNIS LOGICIEL PUBLIC",
     "email": "",
     "telephone": "",
-    "website": "https://entreprises.annuairefrancais.fr/36000/centre-departemental-d-assurances-et-de-credits-cedac-36-chateauroux-36-indre-509976791-00020.html",
+    "website": "https://app.dataprospects.fr/entreprises/OMNIS-LOGICIEL-PUBLIC/491008298",
     "linkedin_url": "",
-    "adresse": "39 RUE JEAN-JACQUES ROUSSEAU 36000 CHATEAUROUX",
-    "ville": "Chateauroux",
+    "adresse": "2 RUE GEORGES ROSSET 51530 SAINT-MARTIN-D'ABLOIS",
+    "ville": "Saint-Martin-d'Ablois",
     "region": "",
     "pays": "France",
-    "code_postal": "36000",
-    "secteur_activite": "Finance",
+    "code_postal": "51530",
+    "secteur_activite": "Informatique",
     "type_entreprise": "",
-    "taille_entreprise": "TPE",
-    "nombre_employes": 3,
+    "taille_entreprise": "",
+    "nombre_employes": null,
     "chiffre_affaires": null,
-    "description": "CENTRE DEPARTEMENTAL D'ASSURANCES ET DE CREDITS CEDAC 36 (siren n° 509976791) est installé dans la commune de Châteauroux à l'adresse 39 RUE JEAN JACQUES ROUSSEAU dans le département de l'Indre téléphone... CENTRE DEPARTEMENTAL D'ASSURANCES ET DE CREDITS CEDAC 36 est référencé dans l'Annuaire Français dans la catégorie crédit à la consommation, informations complètes Bilans gratuits, statuts, chiffre d'affaires, dirigeants, actionnaires, levées de fonds, annonces légales, APE, NAF, TVA, RCS, KBI",
-    "code_naf": "64.92Z",
-    "siren": "509976791",
-    "siret": "50997679100020",
-    "qualification_score": 65,
-    "score_pct": 65.0,
+    "description": "OMNIS LOGICIEL PUBLIC est une Socit  responsabilit limite (sans autre indication) immatriculée sous le SIREN 491008298. Elle a été fondée il y a 20 ans en 2006. Le siège social est établi à SAINT-MARTIN-D'ABLOIS (le code postal est le 51530). Elle a pour code NAF : 6202A (Conseil en systmes et logiciels informatiques).",
+    "code_naf": "62.02A",
+    "siren": "491008298",
+    "siret": "49100829800011",
+    "qualification_score": 50,
+    "score_pct": 50.0,
     "statut": "QUALIFIE",
     "score_detail": {
       "sector_match": {
         "points": 20,
         "max": 20,
-        "note": "match:Finance"
+        "note": "match:Informatique"
       },
       "size_match": {
-        "points": 15,
+        "points": 0,
         "max": 15,
-        "note": "match:TPE"
+        "note": "no_size_data"
       },
       "type_match": {
         "points": 0,
@@ -1380,7 +1463,7 @@
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://entreprises.annuairefrancais.fr/36000/centre-departemental-d-assurances-et-de-credits-cedac-36-chateauroux-36-indre-509976791-00020.html"
+        "note": "https://app.dataprospects.fr/entreprises/OMNIS-LOGICIEL-PUBLIC/491008298"
       },
       "phone_present": {
         "points": 0,
@@ -1398,124 +1481,41 @@
         "note": ""
       }
     },
-    "criteria_met": 6,
+    "criteria_met": 5,
     "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
-    "segment": "",
-    "sector_confidence": 0.393,
-    "email_valid": false,
-    "website_active": true,
-    "enrich_score": 1,
-    "hash_dedup": "d4ad218a00392314",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:32.846611"
-  },
-  {
-    "nom_commercial": "ASSURANCES LE FLAMBOYANT",
-    "raison_sociale": "ASSURANCES LE FLAMBOYANT",
-    "email": "",
-    "telephone": "",
-    "website": "https://agence.allianz.fr/saint-denis-97400-IA0003700",
-    "linkedin_url": "https://fr.linkedin.com/company/allianz-france",
-    "adresse": "165 RUE DU GENERAL DE GAULLE 97400 SAINT-DENIS",
-    "ville": "Saint-Denis",
-    "region": "",
-    "pays": "France",
-    "code_postal": "97400",
-    "secteur_activite": "Finance",
-    "type_entreprise": "",
-    "taille_entreprise": "TPE",
-    "nombre_employes": 6,
-    "chiffre_affaires": null,
-    "description": "Bienvenue dans votre agence de Saint denis (97400) Assurances LE FLAMBOYANT. Nous sommes à votre écoute pour vous accompagner dans vos projets et vos besoins d'assurances aussi bien pour votre vie privée que pour votre activité professionnelle.",
-    "code_naf": "65.12Z",
-    "siren": "488497850",
-    "siret": "48849785000021",
-    "qualification_score": 65,
-    "score_pct": 65.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Finance"
-      },
-      "size_match": {
-        "points": 15,
-        "max": 15,
-        "note": "match:TPE"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://agence.allianz.fr/saint-denis-97400-IA0003700"
-      },
-      "phone_present": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 6,
-    "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
+    "source": "annuaire-entreprises.data.gouv.fr",
     "segment": "",
     "sector_confidence": 1.0,
     "email_valid": false,
     "website_active": true,
-    "enrich_score": 2,
-    "hash_dedup": "7ffc5d31df83d09c",
+    "enrich_score": 1,
+    "hash_dedup": "b02b4c7fc1c47f41",
     "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.582833"
+    "created_at": "2026-04-13T17:58:28.681560"
   },
   {
-    "nom_commercial": "BUREAU EUROPEEN D ASSURANCE HOSPITALIERE (BEAH) (BEAH)",
-    "raison_sociale": "BUREAU EUROPEEN D ASSURANCE HOSPITALIERE",
-    "email": "hello@pixies-agency.fr",
-    "telephone": "03.81.48.09.09",
-    "website": "https://www.beagroup.eu/beah",
-    "linkedin_url": "https://www.linkedin.com/company/bureau-europ%C3%A9en-d'assurance-hospitali%C3%A8re---beah/",
-    "adresse": "16-18 16 RUE DE LONDRES 75009 PARIS",
-    "ville": "Paris",
+    "nom_commercial": "DERAY MEDICAL & LOGICIELS (DML)",
+    "raison_sociale": "DERAY MEDICAL & LOGICIELS",
+    "email": "contact@stdml.eu",
+    "telephone": "01 43 24 22 33",
+    "website": "https://www.stdml.eu",
+    "linkedin_url": "",
+    "adresse": "31 BOULEVARD DE LA LIBERTE 94170 LE PERREUX-SUR-MARNE",
+    "ville": "Le Perreux-sur-Marne",
     "region": "",
     "pays": "France",
-    "code_postal": "75009",
+    "code_postal": "94170",
     "secteur_activite": "Santé",
     "type_entreprise": "",
-    "taille_entreprise": "PME",
-    "nombre_employes": 50,
+    "taille_entreprise": "",
+    "nombre_employes": null,
     "chiffre_affaires": null,
-    "description": "Ds solutions d’assurance innovantes pour les établissements et acteurs de la santé notamment en responsabilité civile, dommages aux biens, cyber...",
-    "code_naf": "65.12Z",
-    "siren": "513348524",
-    "siret": "51334852400069",
-    "qualification_score": 65,
-    "score_pct": 65.0,
+    "description": "Services informatiques dédiés aux entreprises, nous sommes à votre service pour les installations et formations internes.",
+    "code_naf": "62.03Z",
+    "siren": "353582000",
+    "siret": "35358200000058",
+    "qualification_score": 50,
+    "score_pct": 50.0,
     "statut": "QUALIFIE",
     "score_detail": {
       "sector_match": {
@@ -1524,9 +1524,9 @@
         "note": "no_match (santé)"
       },
       "size_match": {
-        "points": 15,
+        "points": 0,
         "max": 15,
-        "note": "match:PME"
+        "note": "no_size_data"
       },
       "type_match": {
         "points": 0,
@@ -1541,183 +1541,17 @@
       "email_valid": {
         "points": 10,
         "max": 10,
-        "note": "hello@pixies-agency.fr"
+        "note": "contact@stdml.eu"
       },
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://www.beagroup.eu/beah"
+        "note": "https://www.stdml.eu"
       },
       "phone_present": {
         "points": 10,
         "max": 10,
-        "note": "03.81.48.09.09"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 7,
-    "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
-    "segment": "",
-    "sector_confidence": 0.418,
-    "email_valid": true,
-    "website_active": true,
-    "enrich_score": 4,
-    "hash_dedup": "386f5903a296ab67",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.583853"
-  },
-  {
-    "nom_commercial": "CAISSE MEUSIENNE ASSURANCES MUTUELLES (CMAM)",
-    "raison_sociale": "CAISSE MEUSIENNE ASSURANCES MUTUELLES",
-    "email": "accueil@cmam.fr",
-    "telephone": "03 29 79 30 79",
-    "website": "https://www.cmam.fr/siege-social-bar-le-duc",
-    "linkedin_url": "https://www.linkedin.com/company/cmam/",
-    "adresse": "22 RUE DU DOCTEUR NEVE 55000 BAR-LE-DUC",
-    "ville": "Bar-le-Duc",
-    "region": "",
-    "pays": "France",
-    "code_postal": "55000",
-    "secteur_activite": "Cybersécurité",
-    "type_entreprise": "",
-    "taille_entreprise": "PME",
-    "nombre_employes": 20,
-    "chiffre_affaires": null,
-    "description": "Bienvenue à notre siège social CMAM au cœur de Bar-le-Duc (55), nous sommes à votre écoute pour vous accompagner dans vos projets et vos besoins d'assurances.",
-    "code_naf": "65.12Z",
-    "siren": "311767305",
-    "siret": "31176730500064",
-    "qualification_score": 65,
-    "score_pct": 65.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 0,
-        "max": 20,
-        "note": "no_match (cybersécurité)"
-      },
-      "size_match": {
-        "points": 15,
-        "max": 15,
-        "note": "match:PME"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 10,
-        "max": 10,
-        "note": "accueil@cmam.fr"
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://www.cmam.fr/siege-social-bar-le-duc"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "03 29 79 30 79"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 7,
-    "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
-    "segment": "",
-    "sector_confidence": 0.344,
-    "email_valid": true,
-    "website_active": true,
-    "enrich_score": 4,
-    "hash_dedup": "af5bb062a16f50ec",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.583853"
-  },
-  {
-    "nom_commercial": "AGL ASSURANCES",
-    "raison_sociale": "AGL ASSURANCES",
-    "email": "",
-    "telephone": "",
-    "website": "https://www.findglocal.com/FR/Neuves-Maisons/765424573604079/AGL-Assurances-neuves-maisons",
-    "linkedin_url": "",
-    "adresse": "27 RUE DU CAPITAINE CAILLON 54230 NEUVES-MAISONS",
-    "ville": "Neuves-Maisons",
-    "region": "",
-    "pays": "France",
-    "code_postal": "54230",
-    "secteur_activite": "Finance",
-    "type_entreprise": "",
-    "taille_entreprise": "TPE",
-    "nombre_employes": 3,
-    "chiffre_affaires": null,
-    "description": "",
-    "code_naf": "65.12Z",
-    "siren": "799170618",
-    "siret": "79917061800026",
-    "qualification_score": 65,
-    "score_pct": 65.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Finance"
-      },
-      "size_match": {
-        "points": 15,
-        "max": 15,
-        "note": "match:TPE"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://www.findglocal.com/FR/Neuves-Maisons/765424573604079/AGL-Assurances-neuves-maisons"
-      },
-      "phone_present": {
-        "points": 0,
-        "max": 10,
-        "note": ""
+        "note": "01 43 24 22 33"
       },
       "name_complete": {
         "points": 5,
@@ -1732,1282 +1566,37 @@
     },
     "criteria_met": 6,
     "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
+    "source": "annuaire-entreprises.data.gouv.fr",
     "segment": "",
-    "sector_confidence": 1.0,
-    "email_valid": false,
-    "website_active": true,
-    "enrich_score": 1,
-    "hash_dedup": "f271002174d0a5ee",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.584848"
-  },
-  {
-    "nom_commercial": "SAS BALBOLIA ASSURANCES",
-    "raison_sociale": "SAS BALBOLIA ASSURANCES",
-    "email": "contact@telephone.city",
-    "telephone": "09 70 80 89 11",
-    "website": "https://www.telephone.city/assurance/balbolia-saint-louis-653952.html",
-    "linkedin_url": "",
-    "adresse": "49 RUE SARDA GARRIGA 97450 SAINT-LOUIS",
-    "ville": "Saint-Louis",
-    "region": "",
-    "pays": "France",
-    "code_postal": "97450",
-    "secteur_activite": "Intelligence artificielle",
-    "type_entreprise": "",
-    "taille_entreprise": "TPE",
-    "nombre_employes": 3,
-    "chiffre_affaires": null,
-    "description": "Balbolia à Saint-Louis (97450), Assurance, téléphone et informations pratiques. Informations vérifiées et contactez cet établissement.",
-    "code_naf": "65.12Z",
-    "siren": "407572221",
-    "siret": "40757222100015",
-    "qualification_score": 65,
-    "score_pct": 65.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 0,
-        "max": 20,
-        "note": "no_match (intelligence artificielle)"
-      },
-      "size_match": {
-        "points": 15,
-        "max": 15,
-        "note": "match:TPE"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 10,
-        "max": 10,
-        "note": "contact@telephone.city"
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://www.telephone.city/assurance/balbolia-saint-louis-653952.html"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "09 70 80 89 11"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 7,
-    "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
-    "segment": "",
-    "sector_confidence": 0.5,
+    "sector_confidence": 0.451,
     "email_valid": true,
     "website_active": true,
     "enrich_score": 3,
-    "hash_dedup": "b65f58026ef66277",
+    "hash_dedup": "0d1c3b96bb187f18",
     "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.585851"
+    "created_at": "2026-04-13T17:58:33.711891"
   },
   {
-    "nom_commercial": "OUEST ASSURANCES PLAISANCE",
-    "raison_sociale": "OUEST ASSURANCES PLAISANCE",
-    "email": "contact@ouest-assurances.fr",
-    "telephone": "02 99 82 53 34",
-    "website": "https://www.ouest-assurances-plaisance.fr",
-    "linkedin_url": "",
-    "adresse": "16 AVENUE JEAN JAURES 35400 SAINT-MALO",
-    "ville": "Saint-Malo",
-    "region": "",
-    "pays": "France",
-    "code_postal": "35400",
-    "secteur_activite": "BTP",
-    "type_entreprise": "",
-    "taille_entreprise": "TPE",
-    "nombre_employes": 3,
-    "chiffre_affaires": null,
-    "description": "Basée à Saint-Malo, Ouest Assurances Plaisance assure une gestion en temps réel, tant en ce qui concerne les souscriptions que les sinistres.",
-    "code_naf": "65.12Z",
-    "siren": "921759445",
-    "siret": "92175944500015",
-    "qualification_score": 65,
-    "score_pct": 65.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 0,
-        "max": 20,
-        "note": "no_match (btp)"
-      },
-      "size_match": {
-        "points": 15,
-        "max": 15,
-        "note": "match:TPE"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 10,
-        "max": 10,
-        "note": "contact@ouest-assurances.fr"
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://www.ouest-assurances-plaisance.fr"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "02 99 82 53 34"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 7,
-    "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
-    "segment": "",
-    "sector_confidence": 0.411,
-    "email_valid": true,
-    "website_active": true,
-    "enrich_score": 3,
-    "hash_dedup": "cd7b1ca80a045b0d",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.585851"
-  },
-  {
-    "nom_commercial": "ASSURANCES MUTUELLES DE L INDRE",
-    "raison_sociale": "ASSURANCES MUTUELLES DE L INDRE",
-    "email": "dpo@harmonie-mutuelle.fr",
-    "telephone": "",
-    "website": "https://www.harmonie-mutuelle.fr",
-    "linkedin_url": "",
-    "adresse": "53 GRANDE RUE 23260 CROCQ",
-    "ville": "Crocq",
-    "region": "",
-    "pays": "France",
-    "code_postal": "23260",
-    "secteur_activite": "Finance",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "Mutuelle, prévoyance, épargne retraite pour particuliers, entrepreneurs, entreprises. Obtenez votre devis en 5 min ! Harmonie Mutuelle, Avançons collectif.",
-    "code_naf": "65.12Z",
-    "siren": "440656742",
-    "siret": "44065674200010",
-    "qualification_score": 60,
-    "score_pct": 60.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Finance"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 10,
-        "max": 10,
-        "note": "dpo@harmonie-mutuelle.fr"
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://www.harmonie-mutuelle.fr"
-      },
-      "phone_present": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 6,
-    "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
-    "segment": "",
-    "sector_confidence": 0.5,
-    "email_valid": true,
-    "website_active": true,
-    "enrich_score": 2,
-    "hash_dedup": "07abd962ae54efc9",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.585851"
-  },
-  {
-    "nom_commercial": "SACDROP ASSURANCE DIRECTE",
-    "raison_sociale": "SACDROP ASSURANCE DIRECTE",
-    "email": "",
-    "telephone": "05 90 22 28 08",
-    "website": "https://entreprises.lefigaro.fr/sacdrop-assurance-directe-971/entreprise-410604672",
-    "linkedin_url": "",
-    "adresse": "ZONNE INDUSTRIELLE JARRY BD DU MARQUISAT DU HOUELBOURG 97122 BAIE-MAHAULT",
-    "ville": "Baie-Mahault",
-    "region": "",
-    "pays": "France",
-    "code_postal": "97122",
-    "secteur_activite": "Finance",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "Société Sacdrop Assurance Directe (Baie-Mahault, 97122) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire...",
-    "code_naf": "65.12Z",
-    "siren": "410604672",
-    "siret": "41060467200015",
-    "qualification_score": 60,
-    "score_pct": 60.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Finance"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://entreprises.lefigaro.fr/sacdrop-assurance-directe-971/entreprise-410604672"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "05 90 22 28 08"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 6,
-    "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
-    "segment": "",
-    "sector_confidence": 1.0,
-    "email_valid": false,
-    "website_active": true,
-    "enrich_score": 2,
-    "hash_dedup": "746c8f7a58e3929e",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.585851"
-  },
-  {
-    "nom_commercial": "AC COURTAGE CREDIT ASSURANCE",
-    "raison_sociale": "AC COURTAGE CREDIT ASSURANCE",
-    "email": "",
-    "telephone": "",
+    "nom_commercial": "ICP LOGICIEL",
+    "raison_sociale": "ICP LOGICIEL",
+    "email": "contact@icplogiciel.fr",
+    "telephone": "02 78 98 97 65",
     "website": "",
     "linkedin_url": "",
-    "adresse": "3 AVENUE DE LA REPUBLIQUE 15000 AURILLAC",
-    "ville": "Aurillac",
+    "adresse": "17 RUE DU PORT 27400 LOUVIERS",
+    "ville": "Louviers",
     "region": "",
     "pays": "France",
-    "code_postal": "15000",
-    "secteur_activite": "Finance",
-    "type_entreprise": "",
-    "taille_entreprise": "TPE",
-    "nombre_employes": 1,
-    "chiffre_affaires": null,
-    "description": "",
-    "code_naf": "64.92Z",
-    "siren": "794351163",
-    "siret": "79435116300025",
-    "qualification_score": 55,
-    "score_pct": 55.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Finance"
-      },
-      "size_match": {
-        "points": 15,
-        "max": 15,
-        "note": "match:TPE"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "phone_present": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 5,
-    "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
-    "segment": "",
-    "sector_confidence": 0.441,
-    "email_valid": false,
-    "website_active": false,
-    "enrich_score": 0,
-    "hash_dedup": "e122b2b872046f30",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:32.846611"
-  },
-  {
-    "nom_commercial": "LES ASSURANCES MUTUELLES DE PICARDIE (AMP)",
-    "raison_sociale": "LES ASSURANCES MUTUELLES DE PICARDIE",
-    "email": "",
-    "telephone": "",
-    "website": "",
-    "linkedin_url": "",
-    "adresse": "2 RUE DE L'ILE MYSTERIEUSE 80440 BOVES",
-    "ville": "Boves",
-    "region": "",
-    "pays": "France",
-    "code_postal": "80440",
-    "secteur_activite": "Finance",
-    "type_entreprise": "",
-    "taille_entreprise": "PME",
-    "nombre_employes": 50,
-    "chiffre_affaires": null,
-    "description": "",
-    "code_naf": "65.12Z",
-    "siren": "317142644",
-    "siret": "31714264400168",
-    "qualification_score": 55,
-    "score_pct": 55.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Finance"
-      },
-      "size_match": {
-        "points": 15,
-        "max": 15,
-        "note": "match:PME"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "phone_present": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 5,
-    "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
-    "segment": "",
-    "sector_confidence": 0.5,
-    "email_valid": false,
-    "website_active": false,
-    "enrich_score": 0,
-    "hash_dedup": "eb4a590a83cd6cd8",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.582833"
-  },
-  {
-    "nom_commercial": "SMACL ASSURANCES (SMACL)",
-    "raison_sociale": "SMACL ASSURANCES",
-    "email": "",
-    "telephone": "",
-    "website": "",
-    "linkedin_url": "",
-    "adresse": "79031 NIORT CEDEX 9 141 AVENUE SALVADOR ALLENDE 79000 NIORT",
-    "ville": "Niort",
-    "region": "",
-    "pays": "France",
-    "code_postal": "79000",
-    "secteur_activite": "Finance",
-    "type_entreprise": "",
-    "taille_entreprise": "PME",
-    "nombre_employes": 20,
-    "chiffre_affaires": null,
-    "description": "",
-    "code_naf": "65.12Z",
-    "siren": "301309605",
-    "siret": "30130960500410",
-    "qualification_score": 55,
-    "score_pct": 55.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Finance"
-      },
-      "size_match": {
-        "points": 15,
-        "max": 15,
-        "note": "match:PME"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "phone_present": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 5,
-    "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
-    "segment": "",
-    "sector_confidence": 1.0,
-    "email_valid": false,
-    "website_active": false,
-    "enrich_score": 0,
-    "hash_dedup": "4ab69482df043bd9",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.582833"
-  },
-  {
-    "nom_commercial": "GARONNE ASSURANCES",
-    "raison_sociale": "GARONNE ASSURANCES",
-    "email": "",
-    "telephone": "",
-    "website": "",
-    "linkedin_url": "",
-    "adresse": "729 AVENUE DU GENERAL LECLERC 47000 AGEN",
-    "ville": "Agen",
-    "region": "",
-    "pays": "France",
-    "code_postal": "47000",
-    "secteur_activite": "Finance",
-    "type_entreprise": "",
-    "taille_entreprise": "TPE",
-    "nombre_employes": 3,
-    "chiffre_affaires": null,
-    "description": "",
-    "code_naf": "65.12Z",
-    "siren": "891909244",
-    "siret": "89190924400032",
-    "qualification_score": 55,
-    "score_pct": 55.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Finance"
-      },
-      "size_match": {
-        "points": 15,
-        "max": 15,
-        "note": "match:TPE"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "phone_present": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 5,
-    "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
-    "segment": "",
-    "sector_confidence": 1.0,
-    "email_valid": false,
-    "website_active": false,
-    "enrich_score": 0,
-    "hash_dedup": "9e8f74d0f8cec2ad",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.583853"
-  },
-  {
-    "nom_commercial": "OPTIM ASSURANCE",
-    "raison_sociale": "OPTIM ASSURANCE",
-    "email": "",
-    "telephone": "",
-    "website": "",
-    "linkedin_url": "",
-    "adresse": "14 RUE PASTEUR 01000 BOURG-EN-BRESSE",
-    "ville": "Bourg-en-Bresse",
-    "region": "",
-    "pays": "France",
-    "code_postal": "01000",
-    "secteur_activite": "Finance",
-    "type_entreprise": "",
-    "taille_entreprise": "TPE",
-    "nombre_employes": 6,
-    "chiffre_affaires": null,
-    "description": "",
-    "code_naf": "65.12Z",
-    "siren": "779313329",
-    "siret": "77931332900020",
-    "qualification_score": 55,
-    "score_pct": 55.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Finance"
-      },
-      "size_match": {
-        "points": 15,
-        "max": 15,
-        "note": "match:TPE"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "phone_present": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 5,
-    "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
-    "segment": "",
-    "sector_confidence": 1.0,
-    "email_valid": false,
-    "website_active": false,
-    "enrich_score": 0,
-    "hash_dedup": "b7545027db3543cf",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.583853"
-  },
-  {
-    "nom_commercial": "SPEC AVEYRON LOZERE ASSURANCES",
-    "raison_sociale": "SPEC AVEYRON LOZERE ASSURANCES",
-    "email": "",
-    "telephone": "",
-    "website": "",
-    "linkedin_url": "",
-    "adresse": "110 RUE DU DOCTEUR THEODOR MATHIEU 12000 RODEZ",
-    "ville": "Rodez",
-    "region": "",
-    "pays": "France",
-    "code_postal": "12000",
-    "secteur_activite": "Finance",
-    "type_entreprise": "",
-    "taille_entreprise": "TPE",
-    "nombre_employes": 6,
-    "chiffre_affaires": null,
-    "description": "",
-    "code_naf": "65.12Z",
-    "siren": "510328248",
-    "siret": "51032824800073",
-    "qualification_score": 55,
-    "score_pct": 55.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Finance"
-      },
-      "size_match": {
-        "points": 15,
-        "max": 15,
-        "note": "match:TPE"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "phone_present": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 5,
-    "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
-    "segment": "",
-    "sector_confidence": 1.0,
-    "email_valid": false,
-    "website_active": false,
-    "enrich_score": 0,
-    "hash_dedup": "d0f79fcd427c3b5a",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.583853"
-  },
-  {
-    "nom_commercial": "JULIEN PONCET ASSURANCES",
-    "raison_sociale": "JULIEN PONCET ASSURANCES",
-    "email": "",
-    "telephone": "",
-    "website": "",
-    "linkedin_url": "",
-    "adresse": "86 ROUTE DE MACON 01310 POLLIAT",
-    "ville": "Polliat",
-    "region": "",
-    "pays": "France",
-    "code_postal": "01310",
-    "secteur_activite": "Finance",
-    "type_entreprise": "",
-    "taille_entreprise": "TPE",
-    "nombre_employes": 1,
-    "chiffre_affaires": null,
-    "description": "",
-    "code_naf": "65.12Z",
-    "siren": "844258640",
-    "siret": "84425864000029",
-    "qualification_score": 55,
-    "score_pct": 55.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Finance"
-      },
-      "size_match": {
-        "points": 15,
-        "max": 15,
-        "note": "match:TPE"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "phone_present": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 5,
-    "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
-    "segment": "",
-    "sector_confidence": 1.0,
-    "email_valid": false,
-    "website_active": false,
-    "enrich_score": 0,
-    "hash_dedup": "8aaa726339c51a26",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.583853"
-  },
-  {
-    "nom_commercial": "PIERRE ASSURANCES (PA)",
-    "raison_sociale": "PIERRE ASSURANCES",
-    "email": "",
-    "telephone": "",
-    "website": "",
-    "linkedin_url": "",
-    "adresse": "12 PLACE DU CALVAIRE 77130 MONTEREAU-FAULT-YONNE",
-    "ville": "Montereau-Fault-Yonne",
-    "region": "",
-    "pays": "France",
-    "code_postal": "77130",
-    "secteur_activite": "Finance",
-    "type_entreprise": "",
-    "taille_entreprise": "TPE",
-    "nombre_employes": 1,
-    "chiffre_affaires": null,
-    "description": "",
-    "code_naf": "65.12Z",
-    "siren": "393611744",
-    "siret": "39361174400029",
-    "qualification_score": 55,
-    "score_pct": 55.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Finance"
-      },
-      "size_match": {
-        "points": 15,
-        "max": 15,
-        "note": "match:TPE"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "phone_present": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 5,
-    "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
-    "segment": "",
-    "sector_confidence": 1.0,
-    "email_valid": false,
-    "website_active": false,
-    "enrich_score": 0,
-    "hash_dedup": "1eab9e777a2814f8",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.584848"
-  },
-  {
-    "nom_commercial": "ADVANCE ASSURANCES",
-    "raison_sociale": "ADVANCE ASSURANCES",
-    "email": "",
-    "telephone": "04 72 50 96 24",
-    "website": "https://www.advance-assurances.fr",
-    "linkedin_url": "",
-    "adresse": "68 RUE VICTOR HUGO 69200 VENISSIEUX",
-    "ville": "Venissieux",
-    "region": "",
-    "pays": "France",
-    "code_postal": "69200",
-    "secteur_activite": "Cybersécurité",
-    "type_entreprise": "",
-    "taille_entreprise": "TPE",
-    "nombre_employes": 1,
-    "chiffre_affaires": null,
-    "description": "Advance Assurances, vous accompagner pour mieux avancer. \nCourtier en assurance nous vous accompagnons dans la sélection de vos contrats d'assurance parmi une large gamme de produits.\nNotre domaine d'activité s'élargit dans de nombreux produits d’assurance : auto, moto, habitation, santé, assurance de prêt, prévoyance, assurances professionnelles ou encore",
-    "code_naf": "65.12Z",
-    "siren": "891751273",
-    "siret": "89175127300022",
-    "qualification_score": 55,
-    "score_pct": 55.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 0,
-        "max": 20,
-        "note": "no_match (cybersécurité)"
-      },
-      "size_match": {
-        "points": 15,
-        "max": 15,
-        "note": "match:TPE"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://www.advance-assurances.fr"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "04 72 50 96 24"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 6,
-    "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
-    "segment": "",
-    "sector_confidence": 0.37,
-    "email_valid": false,
-    "website_active": true,
-    "enrich_score": 2,
-    "hash_dedup": "8a712530463444ba",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.584848"
-  },
-  {
-    "nom_commercial": "SOCIETE D'ASSURANCE MUTUELLE DES ARMATEURS ET PROFESSIONNELS DE LA MER (SAMAP)",
-    "raison_sociale": "SOCIETE D'ASSURANCE MUTUELLE DES ARMATEURS ET PROFESSIONNELS DE LA MER",
-    "email": "",
-    "telephone": "02 40 62 32 37",
-    "website": "https://www.allbiz.fr/samap-soci%C3%A9t%C3%A9-dassurance-mutuelle-des_1F-02-40-11-65-19",
-    "linkedin_url": "https://www.linkedin.com/company/samapfrance",
-    "adresse": "IMMEUBLE METEOR 1 6 PLACE PIERRE SEMARD 44600 SAINT-NAZAIRE",
-    "ville": "Saint-Nazaire",
-    "region": "",
-    "pays": "France",
-    "code_postal": "44600",
-    "secteur_activite": "Ressources humaines",
-    "type_entreprise": "",
-    "taille_entreprise": "PME",
-    "nombre_employes": 10,
-    "chiffre_affaires": null,
-    "description": "Vous pouvez contacter SAMAP (Société d'Assurance Mutuelle des Armateurs et) par téléphone au numéro 02 40 11 65 19.",
-    "code_naf": "65.12Z",
-    "siren": "775617095",
-    "siret": "77561709500093",
-    "qualification_score": 55,
-    "score_pct": 55.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 0,
-        "max": 20,
-        "note": "no_match (ressources humaines)"
-      },
-      "size_match": {
-        "points": 15,
-        "max": 15,
-        "note": "match:PME"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://www.allbiz.fr/samap-soci%C3%A9t%C3%A9-dassurance-mutuelle-des_1F-02-40-11-65-19"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "02 40 62 32 37"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 6,
-    "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
-    "segment": "",
-    "sector_confidence": 0.421,
-    "email_valid": false,
-    "website_active": true,
-    "enrich_score": 3,
-    "hash_dedup": "96982be71ae1b3dd",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.584848"
-  },
-  {
-    "nom_commercial": "MUTUELLE D'ASSURANCES VILLE DE MULHOUSE",
-    "raison_sociale": "MUTUELLE D'ASSURANCES VILLE DE MULHOUSE",
-    "email": "",
-    "telephone": "",
-    "website": "",
-    "linkedin_url": "",
-    "adresse": "8 RUE DES CORDIERS 68100 MULHOUSE",
-    "ville": "Mulhouse",
-    "region": "",
-    "pays": "France",
-    "code_postal": "68100",
-    "secteur_activite": "Finance",
-    "type_entreprise": "",
-    "taille_entreprise": "PME",
-    "nombre_employes": 10,
-    "chiffre_affaires": null,
-    "description": "",
-    "code_naf": "65.12Z",
-    "siren": "778945295",
-    "siret": "77894529500013",
-    "qualification_score": 55,
-    "score_pct": 55.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Finance"
-      },
-      "size_match": {
-        "points": 15,
-        "max": 15,
-        "note": "match:PME"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "phone_present": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 5,
-    "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
-    "segment": "",
-    "sector_confidence": 0.5,
-    "email_valid": false,
-    "website_active": false,
-    "enrich_score": 0,
-    "hash_dedup": "340be62935ff70f8",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.585851"
-  },
-  {
-    "nom_commercial": "CAISSE LOCALE DEPARTEMENTALE ASSURANCES DE CREDIT AGRICOLE MUTULE DE LA CORSE",
-    "raison_sociale": "CAISSE LOCALE DEPARTEMENTALE ASSURANCES DE CREDIT AGRICOLE MUTULE DE LA CORSE",
-    "email": "",
-    "telephone": "",
-    "website": "https://www.creditagricole.info/les-39-caisses-regionales",
-    "linkedin_url": "",
-    "adresse": "1 AVENUE NAPOLEON 3 20000 AJACCIO",
-    "ville": "Ajaccio",
-    "region": "",
-    "pays": "France",
-    "code_postal": "20000",
-    "secteur_activite": "Finance",
+    "code_postal": "27400",
+    "secteur_activite": "Informatique",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
     "description": "",
-    "code_naf": "64.19Z",
-    "siren": "794092361",
-    "siret": "79409236100011",
+    "code_naf": "58.29A",
+    "siren": "905287587",
+    "siret": "90528758700026",
     "qualification_score": 50,
     "score_pct": 50.0,
     "statut": "QUALIFIE",
@@ -3015,7 +1604,7 @@
       "sector_match": {
         "points": 20,
         "max": 20,
-        "note": "match:Finance"
+        "note": "match:Informatique"
       },
       "size_match": {
         "points": 0,
@@ -3035,17 +1624,17 @@
       "email_valid": {
         "points": 0,
         "max": 10,
-        "note": ""
+        "note": "contact@icplogiciel.fr"
       },
       "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://www.creditagricole.info/les-39-caisses-regionales"
-      },
-      "phone_present": {
         "points": 0,
         "max": 10,
         "note": ""
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "02 78 98 97 65"
       },
       "name_complete": {
         "points": 5,
@@ -3062,1114 +1651,35 @@
     "criteria_total": 9,
     "source": "annuaire-entreprises.data.gouv.fr",
     "segment": "",
-    "sector_confidence": 0.443,
-    "email_valid": false,
-    "website_active": false,
-    "enrich_score": 0,
-    "hash_dedup": "42f986063ab025d6",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:20.879266"
-  },
-  {
-    "nom_commercial": "BANQUE MAROQUAINE COMMERCE ET INDUSTRIE (BMCI)",
-    "raison_sociale": "BANQUE MAROQUAINE COMMERCE ET INDUSTRIE",
-    "email": "qualite.bmci@bnpparibas.com",
-    "telephone": "05 35 94 04 44",
-    "website": "https://www.bmci.ma",
-    "linkedin_url": "",
-    "adresse": "26 PL MOHAMED 5 CASABLANCA MAROC",
-    "ville": "",
-    "region": "",
-    "pays": "France",
-    "code_postal": null,
-    "secteur_activite": "Commerce de détail",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "BMCI - Banque marocaine pour le commerce et l'industrie vous invite à découvrir ses produits bancaires pour les Particuliers,Professionnels,Entreprises,MRE.",
-    "code_naf": "64.19Z",
-    "siren": "325216166",
-    "siret": "32521616600018",
-    "qualification_score": 50,
-    "score_pct": 50.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 0,
-        "max": 20,
-        "note": "no_match (commerce de détail)"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 10,
-        "max": 10,
-        "note": "qualite.bmci@bnpparibas.com"
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://www.bmci.ma"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "05 35 94 04 44"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 6,
-    "criteria_total": 9,
-    "source": "annuaire-entreprises.data.gouv.fr",
-    "segment": "",
-    "sector_confidence": 0.446,
-    "email_valid": true,
-    "website_active": true,
-    "enrich_score": 3,
-    "hash_dedup": "4d4854e373afa0be",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:20.879266"
-  },
-  {
-    "nom_commercial": "DROUOT ASSURANCES",
-    "raison_sociale": "DROUOT ASSURANCES",
-    "email": "",
-    "telephone": "",
-    "website": "https://entreprises.annuairefrancais.fr/84000/drouot-assurances-avignon-84-vaucluse-378665533-00014.html",
-    "linkedin_url": "",
-    "adresse": "25 PLACE DES CARMES 84000 AVIGNON",
-    "ville": "Avignon",
-    "region": "",
-    "pays": "France",
-    "code_postal": "84000",
-    "secteur_activite": "Finance",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "DROUOT ASSURANCES (siren n° 378665533) est installé dans la commune de Avignon à l'adresse 25 PLACE DES CARMES dans le département du Vaucluse téléphone... DROUOT ASSURANCES est référencé dans l'Annuaire Français dans la catégorie assurance Ste, informations complètes Bilans gratuits, statuts, chiffre d'affaires, dirigeants, actionnaires, levées de fonds, annonces légales, APE, NAF, TVA, RCS, KBIS, SIREN, SIRET, BODACC, INSEE, INPI.",
-    "code_naf": "65.11Z",
-    "siren": "378665533",
-    "siret": "37866553300014",
-    "qualification_score": 50,
-    "score_pct": 50.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Finance"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://entreprises.annuairefrancais.fr/84000/drouot-assurances-avignon-84-vaucluse-378665533-00014.html"
-      },
-      "phone_present": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 5,
-    "criteria_total": 9,
-    "source": "annuaire-entreprises.data.gouv.fr",
-    "segment": "",
-    "sector_confidence": 1.0,
-    "email_valid": false,
-    "website_active": true,
-    "enrich_score": 1,
-    "hash_dedup": "19c807e0bdb6abba",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:36.947289"
-  },
-  {
-    "nom_commercial": "ASSURANCE SANTE VIE (ASSURANCE SANTE VIE)",
-    "raison_sociale": "ASSURANCE SANTE VIE",
-    "email": "",
-    "telephone": "",
-    "website": "https://entreprises.lefigaro.fr/assurance-sante-vie-94/entreprise-414807289",
-    "linkedin_url": "",
-    "adresse": "18 AVENUE DU MESNIL 94210 SAINT-MAUR-DES-FOSSES",
-    "ville": "Saint-Maur-des-Fosses",
-    "region": "",
-    "pays": "France",
-    "code_postal": "94210",
-    "secteur_activite": "Finance",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "Société Assurance Sante Vie (Saint-Maur-des-Fossés, 94210) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire, bilan gratuit...",
-    "code_naf": "65.11Z",
-    "siren": "414807289",
-    "siret": "41480728900023",
-    "qualification_score": 50,
-    "score_pct": 50.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Finance"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://entreprises.lefigaro.fr/assurance-sante-vie-94/entreprise-414807289"
-      },
-      "phone_present": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 5,
-    "criteria_total": 9,
-    "source": "annuaire-entreprises.data.gouv.fr",
-    "segment": "",
-    "sector_confidence": 1.0,
-    "email_valid": false,
-    "website_active": true,
-    "enrich_score": 1,
-    "hash_dedup": "a7520cecf967e916",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:36.947289"
-  },
-  {
-    "nom_commercial": "LA SECURITE FAMILIALE ASSURANCES",
-    "raison_sociale": "LA SECURITE FAMILIALE ASSURANCES",
-    "email": "bonjour@letb-synergie.com",
-    "telephone": "01 42 96 45 15",
-    "website": "https://lasecuritefamiliale.com",
-    "linkedin_url": "",
-    "adresse": "4 RUE DE CLICHY 75009 PARIS",
-    "ville": "Paris",
-    "region": "",
-    "pays": "France",
-    "code_postal": "75009",
-    "secteur_activite": "Cybersécurité",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "La Sécurité Familiale, une autre conception de l’assurance vie en euros. Découvrez notre stratégie, nos atouts, et SF Euro Sécurité.",
-    "code_naf": "65.11Z",
-    "siren": "784338501",
-    "siret": "78433850100041",
-    "qualification_score": 50,
-    "score_pct": 50.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 0,
-        "max": 20,
-        "note": "no_match (cybersécurité)"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 10,
-        "max": 10,
-        "note": "bonjour@letb-synergie.com"
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://lasecuritefamiliale.com"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "01 42 96 45 15"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 6,
-    "criteria_total": 9,
-    "source": "annuaire-entreprises.data.gouv.fr",
-    "segment": "",
-    "sector_confidence": 0.363,
-    "email_valid": true,
-    "website_active": true,
-    "enrich_score": 3,
-    "hash_dedup": "af5b2ef862ea876c",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:36.947871"
-  },
-  {
-    "nom_commercial": "ASSU VIE",
-    "raison_sociale": "ASSU VIE",
-    "email": "presse@acpr.banque-france.fr",
-    "telephone": "01 64 80 20 20",
-    "website": "https://acpr.banque-france.fr/fr/fiche-detaillee/assu-vie",
-    "linkedin_url": "https://fr.linkedin.com/company/autorit-de-contr-le-prudentiel",
-    "adresse": "8 A 10 8 RUE D'ASTORG 75008 PARIS",
-    "ville": "Paris",
-    "region": "",
-    "pays": "France",
-    "code_postal": "75008",
-    "secteur_activite": "Agriculture",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "",
-    "code_naf": "65.11Z",
-    "siren": "999990666",
-    "siret": "99999066600037",
-    "qualification_score": 50,
-    "score_pct": 50.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 0,
-        "max": 20,
-        "note": "no_match (agriculture)"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 10,
-        "max": 10,
-        "note": "presse@acpr.banque-france.fr"
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://acpr.banque-france.fr/fr/fiche-detaillee/assu-vie"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "01 64 80 20 20"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 6,
-    "criteria_total": 9,
-    "source": "annuaire-entreprises.data.gouv.fr",
-    "segment": "",
-    "sector_confidence": 0.324,
-    "email_valid": true,
-    "website_active": true,
-    "enrich_score": 4,
-    "hash_dedup": "4dd4482065eabb45",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:36.947871"
-  },
-  {
-    "nom_commercial": "ASSURANCE MUTUELLE DES MOTARDS (AMDM)",
-    "raison_sociale": "ASSURANCE MUTUELLE DES MOTARDS",
-    "email": "",
-    "telephone": "04 67 50 67 50",
-    "website": "",
-    "linkedin_url": "",
-    "adresse": "270 IMPASSE ADAM SMITH 34470 PEROLS",
-    "ville": "Perols",
-    "region": "",
-    "pays": "France",
-    "code_postal": "34470",
-    "secteur_activite": "Finance",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "",
-    "code_naf": "65.12Z",
-    "siren": "328538335",
-    "siret": "32853833500824",
-    "qualification_score": 50,
-    "score_pct": 50.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Finance"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "04 67 50 67 50"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 5,
-    "criteria_total": 9,
-    "source": "annuaire-entreprises.data.gouv.fr",
-    "segment": "",
-    "sector_confidence": 0.5,
+    "sector_confidence": 0.313,
     "email_valid": false,
     "website_active": false,
     "enrich_score": 1,
-    "hash_dedup": "e0f5d77f02081ce7",
+    "hash_dedup": "6c2260b8d43cc3df",
     "raw_text": "",
-    "created_at": "2026-04-10T18:37:47.173953"
+    "created_at": "2026-04-13T17:58:45.082091"
   },
   {
-    "nom_commercial": "GESTION PROFESSIONELLE SERVICE ASSURANCE (GPSA)",
-    "raison_sociale": "GESTION PROFESSIONELLE SERVICE ASSURANCE",
-    "email": "dpd@gpsa.fr",
-    "telephone": "09 72 10 10 07",
-    "website": "https://www.gpsa.fr",
-    "linkedin_url": "https://www.linkedin.com/company/gpsa-france/",
-    "adresse": "26 BOULEVARD HAUSSMANN 75009 PARIS",
-    "ville": "Paris",
-    "region": "",
-    "pays": "France",
-    "code_postal": "75009",
-    "secteur_activite": "Ressources humaines",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "",
-    "code_naf": "65.12Z",
-    "siren": "349786038",
-    "siret": "34978603800076",
-    "qualification_score": 50,
-    "score_pct": 50.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 0,
-        "max": 20,
-        "note": "no_match (ressources humaines)"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 10,
-        "max": 10,
-        "note": "dpd@gpsa.fr"
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://www.gpsa.fr"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "09 72 10 10 07"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 6,
-    "criteria_total": 9,
-    "source": "annuaire-entreprises.data.gouv.fr",
-    "segment": "",
-    "sector_confidence": 0.421,
-    "email_valid": true,
-    "website_active": true,
-    "enrich_score": 4,
-    "hash_dedup": "2e9194d2e10feba5",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:47.173953"
-  },
-  {
-    "nom_commercial": "GPM ASSURANCES SA (GPMA)",
-    "raison_sociale": "GPM ASSURANCES SA",
-    "email": "contact@alwaysdata.com",
-    "telephone": "01 40 54 54 54",
-    "website": "https://www.gpm.fr",
-    "linkedin_url": "https://www.linkedin.com/company/groupe-pasteur-mutualit%C3%A9",
-    "adresse": "1 BOULEVARD PASTEUR 75015 PARIS",
-    "ville": "Paris",
-    "region": "",
-    "pays": "France",
-    "code_postal": "75015",
-    "secteur_activite": "Cybersécurité",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "Notre mutuelle dédiée aux professionnels de santé, s'engage partout en France au bien-être des personnes issues du milieu médical.",
-    "code_naf": "65.12Z",
-    "siren": "412887606",
-    "siret": "41288760600025",
-    "qualification_score": 50,
-    "score_pct": 50.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 0,
-        "max": 20,
-        "note": "no_match (cybersécurité)"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 10,
-        "max": 10,
-        "note": "contact@alwaysdata.com"
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://www.gpm.fr"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "01 40 54 54 54"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 6,
-    "criteria_total": 9,
-    "source": "annuaire-entreprises.data.gouv.fr",
-    "segment": "",
-    "sector_confidence": 0.41,
-    "email_valid": true,
-    "website_active": true,
-    "enrich_score": 4,
-    "hash_dedup": "906d2601507fe2a0",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:47.173953"
-  },
-  {
-    "nom_commercial": "AGPM ASSURANCES",
-    "raison_sociale": "AGPM ASSURANCES",
-    "email": "",
-    "telephone": "0100512677",
-    "website": "",
-    "linkedin_url": "",
-    "adresse": "STE MUSSE RUE NICOLAS APPERT 83100 TOULON",
-    "ville": "Toulon",
-    "region": "",
-    "pays": "France",
-    "code_postal": "83100",
-    "secteur_activite": "Finance",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "",
-    "code_naf": "65.12Z",
-    "siren": "312786163",
-    "siret": "31278616300013",
-    "qualification_score": 50,
-    "score_pct": 50.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Finance"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "0100512677"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 5,
-    "criteria_total": 9,
-    "source": "annuaire-entreprises.data.gouv.fr",
-    "segment": "",
-    "sector_confidence": 1.0,
-    "email_valid": false,
-    "website_active": false,
-    "enrich_score": 1,
-    "hash_dedup": "d593a684283f5c9e",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:47.173953"
-  },
-  {
-    "nom_commercial": "EUROMAF ASSURANCE DES INGENIEURS ET ARCHITECTES EUROPEENS",
-    "raison_sociale": "EUROMAF ASSURANCE DES INGENIEURS ET ARCHITECTES EUROPEENS",
-    "email": "communication@maf.fr",
-    "telephone": "01 53 70 30 00",
-    "website": "https://www.maf.fr/euromaf",
-    "linkedin_url": "https://fr.linkedin.com/company/mutuelle-des-architectes-fran%C3%A7ais-assurances",
-    "adresse": "189 BOULEVARD MALESHERBES 75017 PARIS",
-    "ville": "Paris",
-    "region": "",
-    "pays": "France",
-    "code_postal": "75017",
-    "secteur_activite": "BTP",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "Société d’assurance créée en 2000 et détenue à 100 % par la MAF, EUROMAF exerce son activité en France et en Europe.",
-    "code_naf": "65.12Z",
-    "siren": "429599509",
-    "siret": "42959950900024",
-    "qualification_score": 50,
-    "score_pct": 50.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 0,
-        "max": 20,
-        "note": "no_match (btp)"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 10,
-        "max": 10,
-        "note": "communication@maf.fr"
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://www.maf.fr/euromaf"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "01 53 70 30 00"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 6,
-    "criteria_total": 9,
-    "source": "annuaire-entreprises.data.gouv.fr",
-    "segment": "",
-    "sector_confidence": 0.316,
-    "email_valid": true,
-    "website_active": true,
-    "enrich_score": 4,
-    "hash_dedup": "2f81b9c900a6f7b4",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:47.173953"
-  },
-  {
-    "nom_commercial": "BPCE IARD",
-    "raison_sociale": "BPCE IARD",
-    "email": "caroline.tordjman@bpce.fr",
-    "telephone": "+33699887766",
-    "website": "https://www.assurances.groupebpce.com/assurer-votre-serenite/bpce-assurances-iard",
-    "linkedin_url": "https://fr.linkedin.com/company/assurancesbpce",
-    "adresse": "RTE CHABAN 79180 CHAURAY",
-    "ville": "Chauray",
-    "region": "",
-    "pays": "France",
-    "code_postal": "79180",
-    "secteur_activite": "Éducation & Formation",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "Auto, habitation, santé, avenir : BPCE Assurances IARD vous propose des solutions sur mesure pour accompagner vos projets.",
-    "code_naf": "65.12Z",
-    "siren": "401380472",
-    "siret": "40138047200019",
-    "qualification_score": 50,
-    "score_pct": 50.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 0,
-        "max": 20,
-        "note": "no_match (éducation & formation)"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 10,
-        "max": 10,
-        "note": "caroline.tordjman@bpce.fr"
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://www.assurances.groupebpce.com/assurer-votre-serenite/bpce-assurances-iard"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "+33699887766"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 6,
-    "criteria_total": 9,
-    "source": "annuaire-entreprises.data.gouv.fr",
-    "segment": "",
-    "sector_confidence": 0.373,
-    "email_valid": true,
-    "website_active": true,
-    "enrich_score": 4,
-    "hash_dedup": "3fa5a7ad6fae8931",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:47.173953"
-  },
-  {
-    "nom_commercial": "PRONOE PREVOYANCE (PRONOE PREVOYANCE)",
-    "raison_sociale": "PRONOE PREVOYANCE",
-    "email": "presse@acpr.banque-france.fr",
-    "telephone": "01 64 80 20 20",
-    "website": "https://acpr.banque-france.fr/fr/fiche-detaillee/pronoe-prevoyance",
-    "linkedin_url": "https://fr.linkedin.com/company/autorit-de-contr-le-prudentiel",
-    "adresse": "LIEU-DIT BOIS DU FIEF CLAIRET 86240 LIGUGE",
-    "ville": "Liguge",
-    "region": "",
-    "pays": "France",
-    "code_postal": "86240",
-    "secteur_activite": "Non spécifié",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "",
-    "code_naf": "65.12Z",
-    "siren": "907614804",
-    "siret": "90761480400017",
-    "qualification_score": 50,
-    "score_pct": 50.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 0,
-        "max": 20,
-        "note": "no_match (non spécifié)"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 10,
-        "max": 10,
-        "note": "presse@acpr.banque-france.fr"
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://acpr.banque-france.fr/fr/fiche-detaillee/pronoe-prevoyance"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "01 64 80 20 20"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 6,
-    "criteria_total": 9,
-    "source": "annuaire-entreprises.data.gouv.fr",
-    "segment": "",
-    "sector_confidence": 0.0,
-    "email_valid": true,
-    "website_active": true,
-    "enrich_score": 4,
-    "hash_dedup": "777c07ab1d0041f7",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:47.173953"
-  },
-  {
-    "nom_commercial": "GESTI ASSUR REASS RISQU ATTEN ACTES TERR (GAREAT)",
-    "raison_sociale": "GESTI ASSUR REASS RISQU ATTEN ACTES TERR",
-    "email": "dpd@gpsa.fr",
-    "telephone": "09 72 10 10 07",
-    "website": "https://www.gareat.com",
-    "linkedin_url": "",
-    "adresse": "26 BOULEVARD HAUSSMANN 75009 PARIS",
-    "ville": "Paris",
-    "region": "",
-    "pays": "France",
-    "code_postal": "75009",
-    "secteur_activite": "Non spécifié",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "",
-    "code_naf": "65.20Z",
-    "siren": "440576486",
-    "siret": "44057648600037",
-    "qualification_score": 50,
-    "score_pct": 50.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 0,
-        "max": 20,
-        "note": "no_match (non spécifié)"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 10,
-        "max": 10,
-        "note": "dpd@gpsa.fr"
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://www.gareat.com"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "09 72 10 10 07"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 6,
-    "criteria_total": 9,
-    "source": "annuaire-entreprises.data.gouv.fr",
-    "segment": "",
-    "sector_confidence": 0.0,
-    "email_valid": true,
-    "website_active": true,
-    "enrich_score": 3,
-    "hash_dedup": "88dd0b1eab54712b",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:51.857823"
-  },
-  {
-    "nom_commercial": "GERLING NAMUR ASSURANCES DU CREDIT",
-    "raison_sociale": "GERLING NAMUR ASSURANCES DU CREDIT",
+    "nom_commercial": "PASCAL BIHL INGENIERIE LOGICIEL",
+    "raison_sociale": "PASCAL BIHL INGENIERIE LOGICIEL",
     "email": "",
     "telephone": "",
-    "website": "https://www.dnb.com/business-directory/company-profiles.gerling_namur_assurances_du_credit.eabc0b6eab70be945a7b3e8320e8b665.html",
+    "website": "https://entreprises.lefigaro.fr/pb-il-95/entreprise-500101019",
     "linkedin_url": "",
-    "adresse": "BELGIQUE",
-    "ville": "",
+    "adresse": "3 AVENUE SAMSON DAVILLIER 95600 EAUBONNE",
+    "ville": "Eaubonne",
     "region": "",
     "pays": "France",
-    "code_postal": null,
-    "secteur_activite": "Finance",
+    "code_postal": "95600",
+    "secteur_activite": "Informatique",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
-    "description": "",
-    "code_naf": "65.12Z",
-    "siren": "775749161",
-    "siret": "77574916100011",
+    "description": "Société Pascal Bihl Ingenierie Logiciel (Eaubonne, 95600) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire...",
+    "code_naf": "62.02A",
+    "siren": "500101019",
+    "siret": "50010101900015",
     "qualification_score": 50,
     "score_pct": 50.0,
     "statut": "QUALIFIE",
@@ -4177,7 +1687,7 @@
       "sector_match": {
         "points": 20,
         "max": 20,
-        "note": "match:Finance"
+        "note": "match:Informatique"
       },
       "size_match": {
         "points": 0,
@@ -4202,90 +1712,7 @@
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://www.dnb.com/business-directory/company-profiles.gerling_namur_assurances_du_credit.eabc0b6eab70be945a7b3e8320e8b665.html"
-      },
-      "phone_present": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 5,
-    "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
-    "segment": "",
-    "sector_confidence": 0.385,
-    "email_valid": false,
-    "website_active": false,
-    "enrich_score": 0,
-    "hash_dedup": "e817c3594e0ed967",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.582833"
-  },
-  {
-    "nom_commercial": "LES ASSURANCES DE L'OUEST",
-    "raison_sociale": "LES ASSURANCES DE L'OUEST",
-    "email": "",
-    "telephone": "",
-    "website": "https://entreprises.lefigaro.fr/les-assurances-de-l-ouest-974/entreprise-345029060",
-    "linkedin_url": "",
-    "adresse": "5 RUE EVARISTE DE PARNY 97420 LE PORT",
-    "ville": "Le Port",
-    "region": "",
-    "pays": "France",
-    "code_postal": "97420",
-    "secteur_activite": "Finance",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "Société Les Assurances De L'ouest (Le Port, 97420) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire...",
-    "code_naf": "65.12Z",
-    "siren": "345029060",
-    "siret": "34502906000018",
-    "qualification_score": 50,
-    "score_pct": 50.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Finance"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://entreprises.lefigaro.fr/les-assurances-de-l-ouest-974/entreprise-345029060"
+        "note": "https://entreprises.lefigaro.fr/pb-il-95/entreprise-500101019"
       },
       "phone_present": {
         "points": 0,
@@ -4311,31 +1738,31 @@
     "email_valid": false,
     "website_active": true,
     "enrich_score": 1,
-    "hash_dedup": "079fc57bbeaaef74",
+    "hash_dedup": "648414566199f0c6",
     "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.584848"
+    "created_at": "2026-04-13T17:58:33.269584"
   },
   {
-    "nom_commercial": "L ASSURANCE DENTAIRE",
-    "raison_sociale": "L ASSURANCE DENTAIRE",
+    "nom_commercial": "CHALLENGER CONSEIL ET EDITION DE LOGICIEL (C.C.E.L.)",
+    "raison_sociale": "CHALLENGER CONSEIL ET EDITION DE LOGICIEL",
     "email": "",
     "telephone": "",
-    "website": "https://www.ameli.fr/assure/remboursements/rembourse/soins-protheses-dentaires-optique-audition/consultations-soins-protheses-dentaires/soins-dentaires-comprendre-le-100-sante",
+    "website": "https://datalegal.fr/entreprises/807898051",
     "linkedin_url": "",
-    "adresse": "19 B RUE LEGENDRE 75017 PARIS",
-    "ville": "Paris",
+    "adresse": "35- 35 RUE DU PORT 02300 CHAUNY",
+    "ville": "Chauny",
     "region": "",
     "pays": "France",
-    "code_postal": "75017",
-    "secteur_activite": "Finance",
+    "code_postal": "02300",
+    "secteur_activite": "Informatique",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
     "description": "",
-    "code_naf": "65.12Z",
-    "siren": "784702359",
-    "siret": "78470235900034",
+    "code_naf": "62.02A",
+    "siren": "807898051",
+    "siret": "80789805100022",
     "qualification_score": 50,
     "score_pct": 50.0,
     "statut": "QUALIFIE",
@@ -4343,7 +1770,7 @@
       "sector_match": {
         "points": 20,
         "max": 20,
-        "note": "match:Finance"
+        "note": "match:Informatique"
       },
       "size_match": {
         "points": 0,
@@ -4368,7 +1795,7 @@
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://www.ameli.fr/assure/remboursements/rembourse/soins-protheses-dentaires-optique-audition/consultations-soins-protheses-dentaires/soins-dentaires-comprendre-le-100-sante"
+        "note": "https://datalegal.fr/entreprises/807898051"
       },
       "phone_present": {
         "points": 0,
@@ -4394,280 +1821,31 @@
     "email_valid": false,
     "website_active": true,
     "enrich_score": 1,
-    "hash_dedup": "d88c8b452082eb1a",
+    "hash_dedup": "2ec15058848665c9",
     "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.584848"
+    "created_at": "2026-04-13T17:58:33.269584"
   },
   {
-    "nom_commercial": "ROYAL EXCHANGE ASSURANCE ACCIDENT",
-    "raison_sociale": "ROYAL EXCHANGE ASSURANCE ACCIDENT",
+    "nom_commercial": "MAXIME MULDER (MAXIME MULDER CONSULTANT LOGICIEL)",
+    "raison_sociale": "MAXIME MULDER (MAXIME MULDER CONSULTANT LOGICIEL)",
     "email": "",
     "telephone": "",
-    "website": "https://ies.royalexchangelife.com/ieslife",
-    "linkedin_url": "http://https://www.linkedin.com/company/royalexchangeplc",
-    "adresse": "ROYAUME-UNI",
-    "ville": "",
-    "region": "",
-    "pays": "France",
-    "code_postal": null,
-    "secteur_activite": "Finance",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "",
-    "code_naf": "65.12Z",
-    "siren": "775750508",
-    "siret": "77575050800019",
-    "qualification_score": 50,
-    "score_pct": 50.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Finance"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://ies.royalexchangelife.com/ieslife"
-      },
-      "phone_present": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 5,
-    "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
-    "segment": "",
-    "sector_confidence": 1.0,
-    "email_valid": false,
-    "website_active": true,
-    "enrich_score": 2,
-    "hash_dedup": "794889ee89f5d6ec",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.585851"
-  },
-  {
-    "nom_commercial": "AGENCE D'ASSURANCES DE CARROS",
-    "raison_sociale": "AGENCE D'ASSURANCES DE CARROS",
-    "email": "",
-    "telephone": "",
-    "website": "https://agence.mma.fr/assurance-carros-06510",
-    "linkedin_url": "https://www.linkedin.com/company/mma-insurance",
-    "adresse": "13 AVENUE DES CIGALES 06510 CARROS",
-    "ville": "Carros",
-    "region": "",
-    "pays": "France",
-    "code_postal": "06510",
-    "secteur_activite": "Finance",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "Trouvez votre agence MMA à Carros📍pour une assurance habitation, auto ou pour professionnels. Horaires, accès et offres personnalisées.",
-    "code_naf": "65.12Z",
-    "siren": "403686363",
-    "siret": "40368636300017",
-    "qualification_score": 50,
-    "score_pct": 50.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Finance"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://agence.mma.fr/assurance-carros-06510"
-      },
-      "phone_present": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 5,
-    "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
-    "segment": "",
-    "sector_confidence": 0.5,
-    "email_valid": false,
-    "website_active": true,
-    "enrich_score": 2,
-    "hash_dedup": "398e97d60256f054",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.585851"
-  },
-  {
-    "nom_commercial": "ASSURANCES DU BOERENBOND BELGE (ABB)",
-    "raison_sociale": "ASSURANCES DU BOERENBOND BELGE",
-    "email": "",
-    "telephone": "",
-    "website": "https://www.nbb.be/fr/supervision-financiere/controle-prudentiel/domaines-de-controle/entreprises-dassurance-et-de-24",
-    "linkedin_url": "https://www.linkedin.com/company/national-bank-of-belgium",
-    "adresse": "8 MINDERBROEDERSSTRAAT LEUVE BELGIQUE",
-    "ville": "",
-    "region": "",
-    "pays": "France",
-    "code_postal": null,
-    "secteur_activite": "Finance",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "",
-    "code_naf": "65.12Z",
-    "siren": "318812245",
-    "siret": "31881224500013",
-    "qualification_score": 50,
-    "score_pct": 50.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Finance"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://www.nbb.be/fr/supervision-financiere/controle-prudentiel/domaines-de-controle/entreprises-dassurance-et-de-24"
-      },
-      "phone_present": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 5,
-    "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
-    "segment": "",
-    "sector_confidence": 1.0,
-    "email_valid": false,
-    "website_active": true,
-    "enrich_score": 2,
-    "hash_dedup": "7d604da195601aa0",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.585851"
-  },
-  {
-    "nom_commercial": "UNION DES ASSURANCES DE PARIS (UAP)",
-    "raison_sociale": "UNION DES ASSURANCES DE PARIS",
-    "email": "",
-    "telephone": "",
-    "website": "https://entreprises.lefigaro.fr/union-des-assurances-de-paris-uap-72/entreprise-410515613",
+    "website": "https://entreprises.lefigaro.fr/monsieur-maxime-mulder-76/entreprise-851329128",
     "linkedin_url": "",
-    "adresse": "17 GRANDE RUE 72210 LA SUZE-SUR-SARTHE",
-    "ville": "La Suze-sur-Sarthe",
+    "adresse": "15 CHEMIN DU MONT A CAT 76130 MONT-SAINT-AIGNAN",
+    "ville": "Mont-Saint-Aignan",
     "region": "",
     "pays": "France",
-    "code_postal": "72210",
-    "secteur_activite": "Finance",
+    "code_postal": "76130",
+    "secteur_activite": "Informatique",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
-    "description": "Société Union Des Assurances De Paris - Uap (La Suze-sur-Sarthe, 72210) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire...",
-    "code_naf": "65.12Z",
-    "siren": "410515613",
-    "siret": "41051561300017",
+    "description": "Société Monsieur Maxime Mulder (Mont-Saint-Aignan, 76130) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire...",
+    "code_naf": "62.02A",
+    "siren": "851329128",
+    "siret": "85132912800025",
     "qualification_score": 50,
     "score_pct": 50.0,
     "statut": "QUALIFIE",
@@ -4675,7 +1853,7 @@
       "sector_match": {
         "points": 20,
         "max": 20,
-        "note": "match:Finance"
+        "note": "match:Informatique"
       },
       "size_match": {
         "points": 0,
@@ -4700,7 +1878,7 @@
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://entreprises.lefigaro.fr/union-des-assurances-de-paris-uap-72/entreprise-410515613"
+        "note": "https://entreprises.lefigaro.fr/monsieur-maxime-mulder-76/entreprise-851329128"
       },
       "phone_present": {
         "points": 0,
@@ -4726,39 +1904,39 @@
     "email_valid": false,
     "website_active": true,
     "enrich_score": 1,
-    "hash_dedup": "fa6401bd037affed",
+    "hash_dedup": "8267362f6bbc1af8",
     "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.585851"
+    "created_at": "2026-04-13T17:58:33.270582"
   },
   {
-    "nom_commercial": "ASSURANCE MUTUELLE FEDERALE",
-    "raison_sociale": "ASSURANCE MUTUELLE FEDERALE",
-    "email": "sinistres.ffa@luxior.fr",
-    "telephone": "01 41 85 99 94",
-    "website": "https://www.ffa.eu",
+    "nom_commercial": "JEAN GALINAT (S.L.O.E-SOLUTIONS LOGICIELLES & ORGANISATION ENTREPRISE)",
+    "raison_sociale": "JEAN GALINAT (S.L.O.E-SOLUTIONS LOGICIELLES & ORGANISATION ENTREPRISE)",
+    "email": "",
+    "telephone": "",
+    "website": "https://entreprises.lefigaro.fr/s-l-o-e-solutions-logicielles-organi-66/entreprise-438821399",
     "linkedin_url": "",
-    "adresse": "50 RUE DE LA PROCESSION 75015 PARIS",
-    "ville": "Paris",
+    "adresse": "RESIDENCE NURIA 55 PROMENADE DE LA COTE VERMEILLE 66140 CANET-EN-ROUSSILLON",
+    "ville": "Canet-en-Roussillon",
     "region": "",
     "pays": "France",
-    "code_postal": "75015",
-    "secteur_activite": "Immobilier",
+    "code_postal": "66140",
+    "secteur_activite": "Informatique",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
-    "description": "",
-    "code_naf": "65.12Z",
-    "siren": "779838382",
-    "siret": "77983838200041",
+    "description": "Société Monsieur Jean Galinat (Canet-en-Roussillon, 66140) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire...",
+    "code_naf": "62.02A",
+    "siren": "438821399",
+    "siret": "43882139900039",
     "qualification_score": 50,
     "score_pct": 50.0,
     "statut": "QUALIFIE",
     "score_detail": {
       "sector_match": {
-        "points": 0,
+        "points": 20,
         "max": 20,
-        "note": "no_match (immobilier)"
+        "note": "match:Informatique"
       },
       "size_match": {
         "points": 0,
@@ -4776,19 +1954,19 @@
         "note": "pays:france"
       },
       "email_valid": {
-        "points": 10,
+        "points": 0,
         "max": 10,
-        "note": "sinistres.ffa@luxior.fr"
+        "note": ""
       },
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://www.ffa.eu"
+        "note": "https://entreprises.lefigaro.fr/s-l-o-e-solutions-logicielles-organi-66/entreprise-438821399"
       },
       "phone_present": {
-        "points": 10,
+        "points": 0,
         "max": 10,
-        "note": "01 41 85 99 94"
+        "note": ""
       },
       "name_complete": {
         "points": 5,
@@ -4801,99 +1979,16 @@
         "note": ""
       }
     },
-    "criteria_met": 6,
+    "criteria_met": 5,
     "criteria_total": 9,
     "source": "data.gouv.fr/Sirene",
     "segment": "",
-    "sector_confidence": 0.344,
-    "email_valid": true,
+    "sector_confidence": 1.0,
+    "email_valid": false,
     "website_active": true,
-    "enrich_score": 3,
-    "hash_dedup": "7d6b04187c4bef82",
+    "enrich_score": 1,
+    "hash_dedup": "cfc9824d210d4834",
     "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.585851"
-  },
-  {
-    "nom_commercial": "HERMES COURTAGE ASSURANCES",
-    "raison_sociale": "HERMES COURTAGE ASSURANCES",
-    "email": "hermes.assu@gmail.com",
-    "telephone": "04 34 27 37 54",
-    "website": "https://www.hermes-assurances.com",
-    "linkedin_url": "",
-    "adresse": "6 AVENUE GUTENBERG 31120 PORTET-SUR-GARONNE",
-    "ville": "Portet-sur-Garonne",
-    "region": "",
-    "pays": "France",
-    "code_postal": "31120",
-    "secteur_activite": "Juridique & Droit",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "HERMES ASSURANCE Une assurance en toute sérénité Assurance auto, habitation, santé… Nous avons toutes les solutions. Contact Pourquoi nous choisir HERMES Expertise en assurance Nous avons une connaissance approfondie du marché de l’assurance. Nous aidons nos clients à trouver la meilleure couverture pour leurs besoins spécifiques. Conseils personnalisés Nos clients trouvent les solutions d’assurance adaptées…",
-    "code_naf": "65.12Z",
-    "siren": "533319505",
-    "siret": "53331950500038",
-    "qualification_score": 50,
-    "score_pct": 50.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 0,
-        "max": 20,
-        "note": "no_match (juridique & droit)"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "pays:france"
-      },
-      "email_valid": {
-        "points": 10,
-        "max": 10,
-        "note": "hermes.assu@gmail.com"
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://www.hermes-assurances.com"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "04 34 27 37 54"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 6,
-    "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
-    "segment": "",
-    "sector_confidence": 0.342,
-    "email_valid": true,
-    "website_active": true,
-    "enrich_score": 3,
-    "hash_dedup": "a98ce7ba26d2de63",
-    "raw_text": "",
-    "created_at": "2026-04-10T18:37:53.585851"
+    "created_at": "2026-04-13T17:58:33.270582"
   }
 ]

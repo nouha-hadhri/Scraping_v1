@@ -89,6 +89,8 @@ from config.targets import (
     load_search_config,
 )
 
+from config.criteria_normalizer import normalize_criteria
+
 from config.settings import (
     SOURCES_CONFIG,
     COLLECTION_LIMITS,
@@ -291,6 +293,7 @@ class ProspectCollector:
         self,
         target:     Optional[SearchTarget] = None,
         max_enrich: int = 0,
+        external_job_id: Optional[str] = None,
     ) -> CollectionJob:
         """
         Lance le pipeline complet.
@@ -311,8 +314,10 @@ class ProspectCollector:
         active_subsources = self._active_subsources()
         n_threads = len(active_subsources)
 
+        resolved_job_id = str(external_job_id).strip() if external_job_id else str(uuid.uuid4())[:8]
+
         job = CollectionJob(
-            id              = str(uuid.uuid4())[:8],
+            id              = resolved_job_id,
             name            = f"scraping_{datetime.now().strftime('%Y%m%d_%H%M%S')}",
             status          = JobStatut.RUNNING.value,
             parameters_json = json.dumps(criteria, ensure_ascii=False, default=str),
@@ -1743,48 +1748,127 @@ def main() -> int:
             "Bridge payload must contain a non-empty 'criteria' object."
         )
 
-    # Construire un SearchTarget depuis les critères Spring (strict, sans fallback)
+    # Normaliser les critères Spring (camelCase) vers format interne (snake_case)
+    # La fonction centralisée gère tous les fallbacks et variantes
+    _bridge_criteria_normalized = normalize_criteria(_bridge_criteria_raw)
+
+    # Construire un SearchTarget depuis les critères normalisés
     from config.targets import SearchTarget as _ST
     try:
         target = _ST(
-            secteur_activite  = _bridge_criteria_raw.get("secteurActivite")
-                                or _bridge_criteria_raw.get("secteurs_activite", []),
-            taille_entreprise = _bridge_criteria_raw.get("tailleEntreprise")
-                                or _bridge_criteria_raw.get("tailles_entreprise", []),
-            types_entreprise  = _bridge_criteria_raw.get("typesEntreprise")
-                                or _bridge_criteria_raw.get("types_entreprise", []),
-            pays              = _bridge_criteria_raw.get("pays", ["France"]),
-            regions           = _bridge_criteria_raw.get("regions", []),
-            villes            = _bridge_criteria_raw.get("villes", []),
-            keywords          = _bridge_criteria_raw.get("motsCles")
-                                or _bridge_criteria_raw.get("keywords", []),
-            max_resultats     = int(_bridge_criteria_raw.get("maxResultats")
-                                    or _bridge_criteria_raw.get("max_resultats", 700)),
-            max_par_source    = int(_bridge_criteria_raw.get("maxParSource")
-                                    or _bridge_criteria_raw.get("max_par_source", 100)),
+            secteur_activite  = _bridge_criteria_normalized.get("secteurs_activite", []),
+            taille_entreprise = _bridge_criteria_normalized.get("tailles_entreprise", []),
+            types_entreprise  = _bridge_criteria_normalized.get("types_entreprise", []),
+            pays              = _bridge_criteria_normalized.get("pays", ["France"]),
+            regions           = _bridge_criteria_normalized.get("regions", []),
+            villes            = _bridge_criteria_normalized.get("villes", []),
+            keywords          = _bridge_criteria_normalized.get("keywords", []),
+            max_resultats     = int(_bridge_criteria_normalized.get("max_resultats", 700)),
+            max_par_source    = int(_bridge_criteria_normalized.get("max_par_source", 100)),
         )
-        logger.info("[Bridge] Critères backend convertis en SearchTarget")
+        logger.info("[Bridge] Critères normalisés convertis en SearchTarget")
     except Exception as _bt_err:
         return _emit_bridge_error(
-            f"Unable to build SearchTarget from backend criteria: {_bt_err}"
+            f"Unable to build SearchTarget from bridge criteria: {_bt_err}"
         )
 
-    job = collector.run(target, max_enrich=args.max_enrich)
+    job = collector.run(target, max_enrich=args.max_enrich, external_job_id=_bridge_job_id)
 
     # ── Sortie JSON bridge (--json-output) ─────────────────────────────────────
     # Attendu par fastapi_app._parse_bridge_stdout() → Spring AutoProspectionOrchestratorService
     if args.json_output:
+        def _to_int_or_none(v: Any) -> Optional[int]:
+            try:
+                if v is None or str(v).strip() == "":
+                    return None
+                return int(str(v).strip())
+            except (ValueError, TypeError):
+                return None
+
+        def _to_iso_or_none(v: Any) -> Optional[str]:
+            if v is None:
+                return None
+            s = str(v).strip()
+            return s or None
+
+        def _to_json_text(v: Any) -> str:
+            if isinstance(v, str):
+                return v
+            try:
+                return json.dumps(v if v is not None else {}, ensure_ascii=False, default=str)
+            except Exception:
+                return "{}"
+
+        def _text_list_join(v: Any) -> str:
+            if isinstance(v, list):
+                return ",".join(str(x).strip() for x in v if str(x).strip())
+            if v is None:
+                return ""
+            return str(v).strip()
+
         # Charger les prospects qualifiés depuis le repo pour les renvoyer à Spring
         _qualified_prospects: list = []
         try:
             _repo_out = ProspectRepository()
             _all_scored = _repo_out.load_scored()
-            # Filtrer par job_id bridge si fourni (le job Python a son propre UUID court)
-            _qualified_prospects = [
-                p.__dict__ if hasattr(p, "__dict__") else dict(p)
-                for p in _all_scored
-                if getattr(p, "statut", None) == "QUALIFIE"
-            ]
+            expected_job_id_raw = str(_bridge_job_id).strip() if _bridge_job_id else str(job.id)
+            expected_job_id_num = _to_int_or_none(expected_job_id_raw)
+
+            _qualified_prospects = []
+            for p in _all_scored:
+                p_dict = p.__dict__ if hasattr(p, "__dict__") else dict(p)
+                statut = str(p_dict.get("statut", "")).upper()
+                if statut != "QUALIFIE":
+                    continue
+
+                existing_job_id = str(p_dict.get("job_id", "")).strip()
+                if _bridge_job_id and existing_job_id and existing_job_id != expected_job_id_raw:
+                    continue
+
+                prospect_out = {
+                    # Aligné avec AutoProspectionEntity
+                    "id": None,
+                    "hash_dedup": p_dict.get("hash_dedup"),
+                    "job_id": expected_job_id_num if expected_job_id_num is not None else expected_job_id_raw,
+                    "nom_commercial": p_dict.get("nom_commercial", ""),
+                    "raison_sociale": p_dict.get("raison_sociale", ""),
+                    "email": p_dict.get("email", ""),
+                    "telephone": p_dict.get("telephone", ""),
+                    "website": p_dict.get("website", ""),
+                    "linkedin_url": p_dict.get("linkedin_url", ""),
+                    "adresse": p_dict.get("adresse", ""),
+                    "ville": p_dict.get("ville", ""),
+                    "region": p_dict.get("region", ""),
+                    "pays": p_dict.get("pays", ""),
+                    "code_postal": p_dict.get("code_postal", ""),
+                    "secteur_activite": p_dict.get("secteur_activite", ""),
+                    "type_entreprise": p_dict.get("type_entreprise", ""),
+                    "taille_entreprise": p_dict.get("taille_entreprise", ""),
+                    "nombre_employes": p_dict.get("nombre_employes"),
+                    "chiffre_affaires": p_dict.get("chiffre_affaires"),
+                    "description": p_dict.get("description", ""),
+                    "code_naf": p_dict.get("code_naf", ""),
+                    "siren": p_dict.get("siren", ""),
+                    "siret": p_dict.get("siret", ""),
+                    "qualification_score": int(p_dict.get("qualification_score", 0) or 0),
+                    "score_pct": p_dict.get("score_pct", 0),
+                    "statut": p_dict.get("statut", "NON_QUALIFIE"),
+                    "score_detail": _to_json_text(p_dict.get("score_detail", {})),
+                    "enrich_score": int(p_dict.get("enrich_score", 0) or 0),
+                    "criteria_met": int(p_dict.get("criteria_met", 0) or 0),
+                    "criteria_total": int(p_dict.get("criteria_total", 0) or 0),
+                    "email_valid": bool(p_dict.get("email_valid", False)),
+                    "website_active": bool(p_dict.get("website_active", False)),
+                    "email_mx_verified": bool(p_dict.get("email_mx_verified", False)),
+                    "source": p_dict.get("source", "SCRAPING"),
+                    "segment": p_dict.get("segment", ""),
+                    "sector_confidence": p_dict.get("sector_confidence", 0),
+                    "created_at": _to_iso_or_none(p_dict.get("created_at")),
+                    "updated_at": _to_iso_or_none(p_dict.get("updated_at") or p_dict.get("created_at")),
+                    "is_deleted": bool(p_dict.get("is_deleted", False)),
+                    "deleted_token": p_dict.get("deleted_token"),
+                }
+                _qualified_prospects.append(prospect_out)
         except Exception as _repo_err:
             logger.warning(f"[Bridge] Impossible de charger les prospects qualifiés : {_repo_err}")
 
@@ -1792,16 +1876,35 @@ def main() -> int:
             "success": job.status == JobStatut.DONE.value,
             "canceled": False,
             "job": {
-                "total_collected":  job.total_collected,
-                "total_cleaned":    job.total_cleaned,
-                "total_deduped":    job.total_deduped,
-                "total_scored":     job.total_scored,
-                "total_qualified":  job.total_qualified,
-                "total_duplicates": job.total_duplicates,
-                "sources_used":     job.sources_used if isinstance(job.sources_used, list) else [],
-                "errors":           job.errors       if isinstance(job.errors, list)       else [],
-                "started_at":       job.started_at,
-                "finished_at":      job.finished_at,
+                # Aligné avec CollectionJobEntity (payload API, non entité persistée directe)
+                "id": _to_int_or_none(_bridge_job_id) if _bridge_job_id else _to_int_or_none(job.id),
+                "external_job_id": str(job.id),
+                "name": job.name,
+                "type": "SCRAPING",
+                "status": job.status,
+                "parameters_json": job.parameters_json,
+                "started_at": _to_iso_or_none(job.started_at),
+                "finished_at": _to_iso_or_none(job.finished_at),
+                "created_at": _to_iso_or_none(job.started_at),
+                "is_deleted": False,
+                "deleted_token": None,
+                "total_collected": int(job.total_collected or 0),
+                "total_cleaned": int(job.total_cleaned or 0),
+                "total_deduped": int(job.total_deduped or 0),
+                "total_scored": int(job.total_scored or 0),
+                "total_saved": int(job.total_saved or 0),
+                "total_qualified": int(job.total_qualified or 0),
+                "total_duplicates": int(job.total_duplicates or 0),
+                "sources_used": job.sources_used if isinstance(job.sources_used, list) else [],
+                "errors": job.errors if isinstance(job.errors, list) else [],
+                "crit_secteurs_activite_txt": _text_list_join(_bridge_criteria_normalized.get("secteurs_activite", [])),
+                "crit_types_entreprise_txt": _text_list_join(_bridge_criteria_normalized.get("types_entreprise", [])),
+                "crit_tailles_entreprise_txt": _text_list_join(_bridge_criteria_normalized.get("tailles_entreprise", [])),
+                "crit_pays_txt": _text_list_join(_bridge_criteria_normalized.get("pays", [])),
+                "crit_regions_txt": _text_list_join(_bridge_criteria_normalized.get("regions", [])),
+                "crit_villes_txt": _text_list_join(_bridge_criteria_normalized.get("villes", [])),
+                "crit_keywords_txt": _text_list_join(_bridge_criteria_normalized.get("keywords", [])),
+                "crit_max_resultats": _to_int_or_none(_bridge_criteria_normalized.get("max_resultats")),
             },
             "qualified_prospects": _qualified_prospects,
         }

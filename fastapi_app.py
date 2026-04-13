@@ -32,103 +32,10 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
 from storage.repository import ProspectRepository
+from config.criteria_normalizer import normalize_criteria
 
 APP_ROOT = Path(__file__).resolve().parent
 ORCHESTRATOR_PATH = APP_ROOT / "orchestrator.py"
-
-# ─────────────────────────────────────────────
-# NORMALISATION CRITÈRES (Frontend Spring Boot → Backend Python)
-# ─────────────────────────────────────────────
-
-_CATEGORY_MAP = {
-    "1-10":     "TPE",
-    "11-50":    "PME",
-    "51-250":   "ETI",
-    "251-5000": "ETI",
-    "251+":     "GE",
-    "5000+":    "GE",
-    "5000":     "GE",
-    # Variantes possibles venant du frontend
-    "tpe":      "TPE",
-    "pme":      "PME",
-    "eti":      "ETI",
-    "ge":       "GE",
-    "grande":   "GE",
-}
-
-
-def normalize_criteria(criteria: dict) -> dict:
-    """
-    Normalise les critères envoyés par le frontend Spring Boot
-    avant de les passer au pipeline Python (orchestrator).
-
-    Transformations principales :
-      - Mapping des catégories de taille d'entreprise (1-10 → TPE, etc.)
-      - Aplatissement des structures pour compatibilité avec SearchTarget et ProspectScorer
-      - Renommage de clés camelCase → snake_case quand nécessaire
-    """
-    if not isinstance(criteria, dict):
-        return criteria
-
-    # Copie profonde pour éviter de modifier l'original
-    crit = copy.deepcopy(criteria)
-
-    # 1. Normalisation de la taille d'entreprise
-    taille = crit.get("taille_entreprise") or crit.get("tailleEntreprise")
-    if isinstance(taille, dict):
-        raw_categories = taille.get("categories") or taille.get("category") or []
-        if isinstance(raw_categories, list):
-            normalized_cats = [
-                _CATEGORY_MAP.get(str(cat).strip(), str(cat).strip())
-                for cat in raw_categories if cat
-            ]
-            taille["categories"] = normalized_cats
-
-        # Mise à plat pour SearchTarget + Scorer
-        crit["tailles_entreprise"] = taille.get("categories", [])
-        crit["employes_min"] = taille.get("nb_employes_min") or taille.get("nbEmployesMin", 1)
-        crit["employes_max"] = taille.get("nb_employes_max") or taille.get("nbEmployesMax", None)
-
-        # On garde aussi la structure originale si besoin
-        crit["taille_entreprise"] = taille
-
-    # 2. Normalisation des autres champs (camelCase → snake_case)
-    if "secteurActivite" in crit:
-        crit["secteurs_activite"] = crit.pop("secteurActivite")
-
-    if "typesEntreprise" in crit:
-        crit["types_entreprise"] = crit.pop("typesEntreprise")
-
-    if "motsCles" in crit:
-        crit["keywords"] = crit.pop("motsCles")
-
-    # Support payload snake_case (Spring DTO sérialisé)
-    if "mots_cles" in crit and "keywords" not in crit:
-        crit["keywords"] = crit.pop("mots_cles")
-
-    if "zoneGeographique" in crit:
-        zone = crit.pop("zoneGeographique")
-        if isinstance(zone, dict):
-            crit["pays"]    = zone.get("pays") or zone.get("zone_geographique", ["France"])
-            crit["regions"] = zone.get("regions", [])
-            crit["villes"]  = zone.get("villes", [])
-
-    # Support payload snake_case (Spring DTO sérialisé)
-    if "zone_geographique" in crit:
-        zone = crit.pop("zone_geographique")
-        if isinstance(zone, dict):
-            crit["pays"] = zone.get("pays") or zone.get("zone_geographique", ["France"])
-            crit["regions"] = zone.get("regions", [])
-            crit["villes"] = zone.get("villes", [])
-
-    # 3. Max résultats
-    if "max_prospects_total" in crit:
-        crit["max_resultats"] = crit.pop("max_prospects_total")
-
-    if "maxResultats" in crit:
-        crit["max_resultats"] = crit.pop("maxResultats")
-
-    return crit
 
 
 # ─────────────────────────────────────────────
@@ -264,10 +171,53 @@ def _parse_bridge_stdout(stdout: str) -> Dict[str, Any]:
     lines = [line.strip() for line in stdout.splitlines() if line.strip()]
     if not lines:
         return {}
+
+    # Cas nominal : dernière ligne = JSON bridge.
     try:
-        return json.loads(lines[-1])
+        parsed = json.loads(lines[-1])
+        return parsed if isinstance(parsed, dict) else {}
     except json.JSONDecodeError:
-        return {"raw_stdout": stdout}
+        pass
+
+    # Fallback 1 : chercher la dernière ligne JSON valide en remontant.
+    for line in reversed(lines):
+        if not (line.startswith("{") and line.endswith("}")):
+            continue
+        try:
+            parsed = json.loads(line)
+            if isinstance(parsed, dict):
+                return parsed
+        except json.JSONDecodeError:
+            continue
+
+    # Fallback 2 : tolérer des logs avant/après en extrayant un objet JSON final.
+    blob = stdout.strip()
+    for idx in range(len(blob) - 1, -1, -1):
+        if blob[idx] != "{":
+            continue
+        candidate = blob[idx:]
+        try:
+            parsed = json.loads(candidate)
+            if isinstance(parsed, dict):
+                return parsed
+        except json.JSONDecodeError:
+            continue
+
+    return {"raw_stdout": stdout}
+
+
+def _load_job_from_repo(job_id: str) -> Dict[str, Any]:
+    """Fallback: recharge les stats job depuis output/jobs.json."""
+    try:
+        jobs = _REPO.load_jobs()
+    except Exception:
+        return {}
+
+    target = str(job_id)
+    for item in reversed(jobs):
+        if str(item.get("id", "")) == target:
+            return dict(item)
+    return {}
 
 
 def _watch_job(job_id: str) -> None:
@@ -423,27 +373,29 @@ def _build_spring_response(job: JobState) -> Dict[str, Any]:
 
     response = job.response or {}
     bridge_job = response.get("job", {})
+    bridge_job = bridge_job if isinstance(bridge_job, dict) else {}
+    if not bridge_job:
+        bridge_job = _load_job_from_repo(job.id)
 
-    job_stats = {
-        "totalCollected":  int(bridge_job.get("total_collected", 0) or 0),
-        "totalCleaned":    int(bridge_job.get("total_cleaned", 0) or 0),
-        "totalDeduped":    int(bridge_job.get("total_deduped", 0) or 0),
-        "totalScored":     int(bridge_job.get("total_scored", 0) or 0),
-        "totalQualified":  int(bridge_job.get("total_qualified", 0) or 0),
-        "totalDuplicates": int(bridge_job.get("total_duplicates", 0) or 0),
-        "sourcesUsed":     bridge_job.get("sources_used", []),
-        "errors":          bridge_job.get("errors", []),
-        # snake_case fallback
-        "total_collected":  int(bridge_job.get("total_collected", 0) or 0),
-        "total_cleaned":    int(bridge_job.get("total_cleaned", 0) or 0),
-        "total_deduped":    int(bridge_job.get("total_deduped", 0) or 0),
-        "total_scored":     int(bridge_job.get("total_scored", 0) or 0),
-        "total_qualified":  int(bridge_job.get("total_qualified", 0) or 0),
-        "total_duplicates": int(bridge_job.get("total_duplicates", 0) or 0),
-        "sources_used":     bridge_job.get("sources_used", []),
-        "started_at":       bridge_job.get("started_at"),
-        "finished_at":      bridge_job.get("finished_at"),
-    }
+    # Préserve le payload job complet émis par orchestrator, puis ajoute
+    # des alias camelCase pour compatibilité avec les consommateurs existants.
+    job_stats = dict(bridge_job)
+    job_stats["total_collected"] = int(bridge_job.get("total_collected", 0) or 0)
+    job_stats["total_cleaned"] = int(bridge_job.get("total_cleaned", 0) or 0)
+    job_stats["total_deduped"] = int(bridge_job.get("total_deduped", 0) or 0)
+    job_stats["total_scored"] = int(bridge_job.get("total_scored", 0) or 0)
+    job_stats["total_qualified"] = int(bridge_job.get("total_qualified", 0) or 0)
+    job_stats["total_duplicates"] = int(bridge_job.get("total_duplicates", 0) or 0)
+    job_stats["sources_used"] = bridge_job.get("sources_used", [])
+    job_stats["errors"] = bridge_job.get("errors", [])
+
+    job_stats["totalCollected"] = job_stats["total_collected"]
+    job_stats["totalCleaned"] = job_stats["total_cleaned"]
+    job_stats["totalDeduped"] = job_stats["total_deduped"]
+    job_stats["totalScored"] = job_stats["total_scored"]
+    job_stats["totalQualified"] = job_stats["total_qualified"]
+    job_stats["totalDuplicates"] = job_stats["total_duplicates"]
+    job_stats["sourcesUsed"] = job_stats["sources_used"]
 
     qualified_prospects = (
         response.get("qualified_prospects")
@@ -451,12 +403,50 @@ def _build_spring_response(job: JobState) -> Dict[str, Any]:
         or []
     )
 
+    total_collected = int(job_stats.get("total_collected", 0) or 0)
+    total_cleaned = int(job_stats.get("total_cleaned", 0) or 0)
+    total_deduped = int(job_stats.get("total_deduped", 0) or 0)
+    total_scored = int(job_stats.get("total_scored", 0) or 0)
+    total_saved = int(job_stats.get("total_saved", 0) or 0)
+    total_qualified = int(job_stats.get("total_qualified", 0) or 0)
+    total_duplicates = int(job_stats.get("total_duplicates", 0) or 0)
+
     return {
         "success": True,
         "job": job_stats,
         "qualified_prospects": qualified_prospects,
+        # Compat mapping: certains consommateurs lisent les totaux au root
+        # (et non dans job). On les expose en snake_case et camelCase.
+        "total_collected": total_collected,
+        "total_cleaned": total_cleaned,
+        "total_deduped": total_deduped,
+        "total_scored": total_scored,
+        "total_saved": total_saved,
+        "total_qualified": total_qualified,
+        "total_duplicates": total_duplicates,
+        "totalCollected": total_collected,
+        "totalCleaned": total_cleaned,
+        "totalDeduped": total_deduped,
+        "totalScored": total_scored,
+        "totalSaved": total_saved,
+        "totalQualified": total_qualified,
+        "totalDuplicates": total_duplicates,
         "output": {
             "qualified_prospects": qualified_prospects,
+            "total_collected": total_collected,
+            "total_cleaned": total_cleaned,
+            "total_deduped": total_deduped,
+            "total_scored": total_scored,
+            "total_saved": total_saved,
+            "total_qualified": total_qualified,
+            "total_duplicates": total_duplicates,
+            "totalCollected": total_collected,
+            "totalCleaned": total_cleaned,
+            "totalDeduped": total_deduped,
+            "totalScored": total_scored,
+            "totalSaved": total_saved,
+            "totalQualified": total_qualified,
+            "totalDuplicates": total_duplicates,
         },
     }
 
@@ -506,8 +496,19 @@ def get_status(job_id: str) -> Dict[str, Any]:
         "jobId": job.id,
         "status": job.status,
         "totalCollected": int(bridge_job.get("total_collected", 0) or 0),
+        "totalCleaned": int(bridge_job.get("total_cleaned", 0) or 0),
+        "totalDeduped": int(bridge_job.get("total_deduped", 0) or 0),
+        "totalScored": int(bridge_job.get("total_scored", 0) or 0),
+        "totalSaved": int(bridge_job.get("total_saved", 0) or 0),
         "totalQualified": int(bridge_job.get("total_qualified", 0) or 0),
         "totalDuplicates": int(bridge_job.get("total_duplicates", 0) or 0),
+        "total_collected": int(bridge_job.get("total_collected", 0) or 0),
+        "total_cleaned": int(bridge_job.get("total_cleaned", 0) or 0),
+        "total_deduped": int(bridge_job.get("total_deduped", 0) or 0),
+        "total_scored": int(bridge_job.get("total_scored", 0) or 0),
+        "total_saved": int(bridge_job.get("total_saved", 0) or 0),
+        "total_qualified": int(bridge_job.get("total_qualified", 0) or 0),
+        "total_duplicates": int(bridge_job.get("total_duplicates", 0) or 0),
         "startedAt": bridge_job.get("started_at"),
         "finishedAt": bridge_job.get("finished_at"),
         "errors": errors if isinstance(errors, list) else [str(errors)],

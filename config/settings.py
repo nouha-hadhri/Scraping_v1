@@ -472,12 +472,12 @@ PG_ENABLED: bool = os.getenv("PG_ENABLED", "true").lower() in ("true", "1", "yes
 
 # DSN complet (prioritaire sur les composants individuels ci-dessous).
 # Format : postgresql://user:password@host:port/dbname
-PG_DSN: str = os.getenv("DATABASE_URL", "postgresql://postgres:nouha@localhost:5433/scraping_v1")
+PG_DSN: str = os.getenv("DATABASE_URL", "postgresql://postgres:nouha@localhost:5433/CRM")
 
 # Composants DSN (utilisés uniquement si DATABASE_URL est absent).
 _PG_HOST:     str = os.getenv("PG_HOST",     "localhost")
 _PG_PORT:     str = os.getenv("PG_PORT",     "5433")
-_PG_DB:       str = os.getenv("PG_DB",       "scraping_v1")
+_PG_DB:       str = os.getenv("PG_DB",       "CRM")
 _PG_USER:     str = os.getenv("PG_USER",     "postgres")
 _PG_PASSWORD: str = os.getenv("PG_PASSWORD", "nouha")
 
