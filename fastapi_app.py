@@ -1,21 +1,17 @@
 """
 FastAPI bridge for SCRAPING_V1.
 
-Expose des endpoints HTTP internes appelés par Spring Boot (AutoProspectionOrchestratorService).
 Routes exposées (utilisées par Spring) :
-  POST /launch              ← Spring appelle ça via AutoProspectionOrchestratorService
-  GET  /status/{jobId}      ← polling Spring (si besoin futur)
-  POST /cancel/{jobId}      ← annulation depuis Spring
-  GET  /results/{jobId}     ← pagination résultats
-
-Les routes /api/crm/auto-prospection/* sont gérées exclusivement par Spring Controller.
-
-Run:
-  uvicorn fastapi_app:app --host 0.0.0.0 --port 8000
+  POST /launch
+  GET  /status/{jobId}
+  POST /cancel/{jobId}   ← Amélioré pour tuer correctement l'orchestrateur
+  GET  /results/{jobId}
 """
+
 from __future__ import annotations
 
 import json
+import logging
 import os
 import subprocess
 import sys
@@ -23,7 +19,6 @@ import tempfile
 import threading
 import time
 import uuid
-import copy
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Dict, Optional
@@ -37,16 +32,23 @@ from config.criteria_normalizer import normalize_criteria
 APP_ROOT = Path(__file__).resolve().parent
 ORCHESTRATOR_PATH = APP_ROOT / "orchestrator.py"
 
+# ─────────────────────────────────────────────
+# Configuration du logger
+# ─────────────────────────────────────────────
+
+logger = logging.getLogger("fastapi_app")
+if not logger.handlers:
+    handler = logging.StreamHandler()
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    handler.setFormatter(formatter)
+    logger.addHandler(handler)
+    logger.setLevel(logging.INFO)
 
 # ─────────────────────────────────────────────
 # Modèles de requête
 # ─────────────────────────────────────────────
 
 class CrmLaunchRequest(BaseModel):
-    """
-    Body envoyé par AutoProspectionOrchestratorService.invokeScrapingApi() :
-      { "jobId": "...", "criteria": { ... } }
-    """
     jobId: Optional[str] = None
     criteria: Optional[Dict[str, Any]] = None
     source_filter: Optional[str] = None
@@ -78,11 +80,23 @@ class JobState:
 
 app = FastAPI(title="SCRAPING_V1 API", version="1.0.0")
 
+# ─────────────────────────────────────────────
+# Middleware pour logger les requêtes HTTP
+# ─────────────────────────────────────────────
+
+@app.middleware("http")
+async def log_requests(request, call_next):
+    """Log chaque requête HTTP reçue"""
+    method = request.method
+    url = request.url.path
+    logger.info(f"[HTTP REQUEST] {method} {url}")
+    response = await call_next(request)
+    return response
+
 _JOBS: Dict[str, JobState] = {}
 _JOBS_LOCK = threading.Lock()
 _REPO = ProspectRepository()
 
-# Windows NTSTATUS returned when a process is terminated by CTRL+C / CTRL+BREAK.
 _STATUS_CONTROL_C_EXIT = 3221225786
 _STATUS_CONTROL_C_EXIT_SIGNED = -1073741510
 
@@ -131,7 +145,6 @@ def _request_to_payload(req: CrmLaunchRequest, job_id: str) -> Dict[str, Any]:
     if req.criteria is not None:
         normalized_criteria = normalize_criteria(req.criteria)
         payload["criteria"] = normalized_criteria
-        logger.info(f"[Normalize] Critères normalisés → tailles={normalized_criteria.get('tailles_entreprise')}")
 
     if req.source_filter:
         payload["source_filter"] = req.source_filter
@@ -143,11 +156,7 @@ def _request_to_payload(req: CrmLaunchRequest, job_id: str) -> Dict[str, Any]:
 
 def _write_payload_file(payload: Dict[str, Any]) -> str:
     handle = tempfile.NamedTemporaryFile(
-        mode="w",
-        suffix=".json",
-        prefix="scraping_bridge_",
-        delete=False,
-        encoding="utf-8",
+        mode="w", suffix=".json", prefix="scraping_bridge_", delete=False, encoding="utf-8"
     )
     try:
         json.dump(payload, handle, ensure_ascii=False)
@@ -158,28 +167,19 @@ def _write_payload_file(payload: Dict[str, Any]) -> str:
 
 
 def _build_command(payload_file: str) -> list[str]:
-    return [
-        sys.executable,
-        str(ORCHESTRATOR_PATH),
-        "--bridge-json-file",
-        payload_file,
-        "--json-output",
-    ]
-
+    return [sys.executable, str(ORCHESTRATOR_PATH), "--bridge-json-file", payload_file, "--json-output"]
 
 def _parse_bridge_stdout(stdout: str) -> Dict[str, Any]:
     lines = [line.strip() for line in stdout.splitlines() if line.strip()]
     if not lines:
         return {}
 
-    # Cas nominal : dernière ligne = JSON bridge.
     try:
         parsed = json.loads(lines[-1])
         return parsed if isinstance(parsed, dict) else {}
     except json.JSONDecodeError:
         pass
 
-    # Fallback 1 : chercher la dernière ligne JSON valide en remontant.
     for line in reversed(lines):
         if not (line.startswith("{") and line.endswith("}")):
             continue
@@ -190,24 +190,10 @@ def _parse_bridge_stdout(stdout: str) -> Dict[str, Any]:
         except json.JSONDecodeError:
             continue
 
-    # Fallback 2 : tolérer des logs avant/après en extrayant un objet JSON final.
-    blob = stdout.strip()
-    for idx in range(len(blob) - 1, -1, -1):
-        if blob[idx] != "{":
-            continue
-        candidate = blob[idx:]
-        try:
-            parsed = json.loads(candidate)
-            if isinstance(parsed, dict):
-                return parsed
-        except json.JSONDecodeError:
-            continue
-
     return {"raw_stdout": stdout}
 
 
 def _load_job_from_repo(job_id: str) -> Dict[str, Any]:
-    """Fallback: recharge les stats job depuis output/jobs.json."""
     try:
         jobs = _REPO.load_jobs()
     except Exception:
@@ -227,7 +213,16 @@ def _watch_job(job_id: str) -> None:
         return
 
     proc = job.process
-    stdout, stderr = proc.communicate()
+    try:
+        stdout, stderr = proc.communicate()
+    except Exception as exc:
+        with _JOBS_LOCK:
+            current = _JOBS.get(job_id)
+            if current is not None:
+                current.status = "FAILED"
+                current.finished_at = time.time()
+                current.error = f"watcher communicate failed: {exc}"
+        return
 
     with _JOBS_LOCK:
         current = _JOBS.get(job_id)
@@ -237,7 +232,6 @@ def _watch_job(job_id: str) -> None:
         current.return_code = proc.returncode
         current.finished_at = time.time()
         current.stderr_tail = (stderr or "")[-4000:]
-
         bridge_response = _parse_bridge_stdout(stdout or "")
         current.response = bridge_response if bridge_response else None
 
@@ -246,17 +240,16 @@ def _watch_job(job_id: str) -> None:
 
         if isinstance(bridge_response, dict) and bridge_response.get("canceled"):
             current.status = "CANCELED"
-        elif proc.returncode in (_STATUS_CONTROL_C_EXIT, _STATUS_CONTROL_C_EXIT_SIGNED):
+        elif proc.returncode in (_STATUS_CONTROL_C_EXIT, _STATUS_CONTROL_C_EXIT_SIGNED, 3):
             current.status = "CANCELED"
-            current.error = "orchestrator terminated by console control signal"
+            if not current.error:
+                current.error = "orchestrator canceled"
         elif proc.returncode == 0:
             current.status = "DONE"
         else:
             current.status = "FAILED"
             if isinstance(bridge_response, dict):
                 current.error = bridge_response.get("error") or current.error
-            if not current.error and proc.returncode == 2:
-                current.error = "orchestrator exited with code 2 (invalid payload/arguments)"
             if not current.error:
                 current.error = f"orchestrator exited with code {proc.returncode}"
             if current.stderr_tail and not current.error.endswith(current.stderr_tail):
@@ -273,9 +266,7 @@ def _launch_job(payload: Dict[str, Any], job_id: str) -> JobState:
     if not ORCHESTRATOR_PATH.exists():
         raise RuntimeError(f"orchestrator.py introuvable: {ORCHESTRATOR_PATH}")
 
-    creationflags = 0
-    if os.name == "nt" and hasattr(subprocess, "CREATE_NEW_PROCESS_GROUP"):
-        creationflags = subprocess.CREATE_NEW_PROCESS_GROUP
+    creationflags = subprocess.CREATE_NEW_PROCESS_GROUP if os.name == "nt" else 0
 
     payload_file = _write_payload_file(payload)
     cmd = _build_command(payload_file)
@@ -291,7 +282,8 @@ def _launch_job(payload: Dict[str, Any], job_id: str) -> JobState:
             errors="replace",
             creationflags=creationflags,
         )
-    except Exception:
+    except Exception as e:
+        logger.error(f"[LAUNCH_JOB] Failed to create process: {e}", exc_info=True)
         try:
             os.remove(payload_file)
         except OSError:
@@ -304,6 +296,7 @@ def _launch_job(payload: Dict[str, Any], job_id: str) -> JobState:
 
     watcher = threading.Thread(target=_watch_job, args=(job_id,), daemon=True)
     watcher.start()
+
     return state
 
 
@@ -315,7 +308,7 @@ def _get_job_or_404(job_id: str) -> JobState:
     return job
 
 
-def _wait_for_job(job_id: str, timeout: int = 600) -> JobState:
+def _wait_for_job(job_id: str, timeout: Optional[int] = 600) -> JobState:
     elapsed = 0
     while True:
         with _JOBS_LOCK:
@@ -332,7 +325,7 @@ def _wait_for_job(job_id: str, timeout: int = 600) -> JobState:
                     if current is not None and current.status == "RUNNING":
                         current.return_code = rc
                         current.finished_at = time.time()
-                        if rc in (_STATUS_CONTROL_C_EXIT, _STATUS_CONTROL_C_EXIT_SIGNED):
+                        if rc in (_STATUS_CONTROL_C_EXIT, _STATUS_CONTROL_C_EXIT_SIGNED, 3):
                             current.status = "CANCELED"
                         elif rc == 0:
                             current.status = "DONE"
@@ -349,8 +342,8 @@ def _wait_for_job(job_id: str, timeout: int = 600) -> JobState:
                     current.error = f"timeout waiting for job completion ({timeout}s)"
             return _get_job_or_404(job_id)
 
-        time.sleep(2)
-        elapsed += 2
+        time.sleep(1)
+        elapsed += 1
 
 
 def _build_spring_response(job: JobState) -> Dict[str, Any]:
@@ -372,18 +365,17 @@ def _build_spring_response(job: JobState) -> Dict[str, Any]:
         }
 
     response = job.response or {}
-    bridge_job = response.get("job", {})
+    bridge_job = response.get("job", {}) if isinstance(response, dict) else {}
     bridge_job = bridge_job if isinstance(bridge_job, dict) else {}
     if not bridge_job:
         bridge_job = _load_job_from_repo(job.id)
 
-    # Préserve le payload job complet émis par orchestrator, puis ajoute
-    # des alias camelCase pour compatibilité avec les consommateurs existants.
     job_stats = dict(bridge_job)
     job_stats["total_collected"] = int(bridge_job.get("total_collected", 0) or 0)
     job_stats["total_cleaned"] = int(bridge_job.get("total_cleaned", 0) or 0)
     job_stats["total_deduped"] = int(bridge_job.get("total_deduped", 0) or 0)
     job_stats["total_scored"] = int(bridge_job.get("total_scored", 0) or 0)
+    job_stats["total_saved"] = int(bridge_job.get("total_saved", 0) or 0)
     job_stats["total_qualified"] = int(bridge_job.get("total_qualified", 0) or 0)
     job_stats["total_duplicates"] = int(bridge_job.get("total_duplicates", 0) or 0)
     job_stats["sources_used"] = bridge_job.get("sources_used", [])
@@ -393,76 +385,107 @@ def _build_spring_response(job: JobState) -> Dict[str, Any]:
     job_stats["totalCleaned"] = job_stats["total_cleaned"]
     job_stats["totalDeduped"] = job_stats["total_deduped"]
     job_stats["totalScored"] = job_stats["total_scored"]
+    job_stats["totalSaved"] = job_stats["total_saved"]
     job_stats["totalQualified"] = job_stats["total_qualified"]
     job_stats["totalDuplicates"] = job_stats["total_duplicates"]
     job_stats["sourcesUsed"] = job_stats["sources_used"]
 
-    qualified_prospects = (
-        response.get("qualified_prospects")
-        or response.get("qualifiedProspects")
-        or []
-    )
-
-    total_collected = int(job_stats.get("total_collected", 0) or 0)
-    total_cleaned = int(job_stats.get("total_cleaned", 0) or 0)
-    total_deduped = int(job_stats.get("total_deduped", 0) or 0)
-    total_scored = int(job_stats.get("total_scored", 0) or 0)
-    total_saved = int(job_stats.get("total_saved", 0) or 0)
-    total_qualified = int(job_stats.get("total_qualified", 0) or 0)
-    total_duplicates = int(job_stats.get("total_duplicates", 0) or 0)
+    qualified_prospects = []
+    if isinstance(response, dict):
+        qualified_prospects = (
+            response.get("qualified_prospects")
+            or response.get("qualifiedProspects")
+            or []
+        )
 
     return {
         "success": True,
         "job": job_stats,
         "qualified_prospects": qualified_prospects,
-        # Compat mapping: certains consommateurs lisent les totaux au root
-        # (et non dans job). On les expose en snake_case et camelCase.
-        "total_collected": total_collected,
-        "total_cleaned": total_cleaned,
-        "total_deduped": total_deduped,
-        "total_scored": total_scored,
-        "total_saved": total_saved,
-        "total_qualified": total_qualified,
-        "total_duplicates": total_duplicates,
-        "totalCollected": total_collected,
-        "totalCleaned": total_cleaned,
-        "totalDeduped": total_deduped,
-        "totalScored": total_scored,
-        "totalSaved": total_saved,
-        "totalQualified": total_qualified,
-        "totalDuplicates": total_duplicates,
-        "output": {
-            "qualified_prospects": qualified_prospects,
-            "total_collected": total_collected,
-            "total_cleaned": total_cleaned,
-            "total_deduped": total_deduped,
-            "total_scored": total_scored,
-            "total_saved": total_saved,
-            "total_qualified": total_qualified,
-            "total_duplicates": total_duplicates,
-            "totalCollected": total_collected,
-            "totalCleaned": total_cleaned,
-            "totalDeduped": total_deduped,
-            "totalScored": total_scored,
-            "totalSaved": total_saved,
-            "totalQualified": total_qualified,
-            "totalDuplicates": total_duplicates,
-        },
     }
 
 
 # ─────────────────────────────────────────────
-# Logging (ajouté ici car utilisé dans normalize)
+# CANCEL AMÉLIORÉ
 # ─────────────────────────────────────────────
 
-import logging
-logger = logging.getLogger("fastapi_app")
+@app.post("/cancel/{job_id}")
+def cancel_job(job_id: str) -> bool:
+    logger.info(f"[CANCEL REQUEST] Received for job_id={job_id}")
+
+    job = _get_job_or_404(job_id)
+
+    if job.status in ("DONE", "FAILED", "CANCELED"):
+        logger.info(f"[CANCEL] Job already in terminal state: {job.status}")
+        return True
+
+    proc = job.process
+    if proc is None:
+        logger.warning(f"[CANCEL] Job {job_id} has no process attached")
+        with _JOBS_LOCK:
+            job.status = "CANCELED"
+            job.finished_at = time.time()
+            job.error = "no process to cancel"
+        return True
+
+    logger.info(f"[CANCEL] Killing process tree - PID={proc.pid}")
+
+    killed_successfully = False
+
+    try:
+        # Méthode principale Windows : tuer tout l'arbre de processus
+        taskkill_result = subprocess.run(
+            ['taskkill', '/F', '/T', '/PID', str(proc.pid)],
+            check=False,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            timeout=12
+        )
+        logger.info(f"[CANCEL] taskkill /F /T returned code={taskkill_result.returncode}")
+        if taskkill_result.stdout:
+            logger.debug(f"[CANCEL] taskkill stdout: {taskkill_result.stdout.strip()}")
+        if taskkill_result.stderr:
+            logger.warning(f"[CANCEL] taskkill stderr: {taskkill_result.stderr.strip()}")
+
+        killed_successfully = taskkill_result.returncode in (0, 128)
+
+    except subprocess.TimeoutExpired:
+        logger.warning("[CANCEL] taskkill timed out")
+    except Exception as e:
+        logger.error(f"[CANCEL] Error during taskkill: {e}", exc_info=True)
+
+    # Fallback robuste si taskkill n'a pas tout tué
+    if not killed_successfully:
+        try:
+            logger.info("[CANCEL] Fallback: proc.terminate()")
+            proc.terminate()
+            try:
+                proc.wait(timeout=8)
+                killed_successfully = True
+            except subprocess.TimeoutExpired:
+                logger.warning("[CANCEL] terminate() timeout → force kill()")
+                proc.kill()
+                proc.wait(timeout=5)
+                killed_successfully = True
+        except Exception as e:
+            logger.error(f"[CANCEL] Fallback kill failed: {e}", exc_info=True)
+
+    # Mise à jour de l'état du job
+    with _JOBS_LOCK:
+        current = _JOBS.get(job_id)
+        if current is not None:
+            current.status = "CANCELED"
+            current.finished_at = time.time()
+            current.error = "job canceled by API request"
+            if current.return_code is None:
+                current.return_code = -9   # Killed
+
+    logger.info(f"[CANCEL] Job {job_id} successfully marked as CANCELED (killed={killed_successfully})")
+    return True
 
 
-# ─────────────────────────────────────────────
-# Endpoints
-# ─────────────────────────────────────────────
-
+# Les autres endpoints restent inchangés
 @app.get("/health")
 def health() -> Dict[str, str]:
     return {"status": "ok"}
@@ -470,9 +493,6 @@ def health() -> Dict[str, str]:
 
 @app.post("/launch")
 def launch(req: CrmLaunchRequest) -> Dict[str, Any]:
-    """
-    Appelé par AutoProspectionOrchestratorService.invokeScrapingApi().
-    """
     job_id = req.jobId or str(uuid.uuid4())
     payload = _request_to_payload(req, job_id)
 
@@ -481,7 +501,8 @@ def launch(req: CrmLaunchRequest) -> Dict[str, Any]:
     except Exception as exc:
         raise HTTPException(status_code=500, detail=str(exc)) from exc
 
-    final_job = _wait_for_job(job_id, timeout=req.wait_timeout_seconds)
+    timeout = req.wait_timeout_seconds if req.wait_timeout_seconds is not None else 600
+    final_job = _wait_for_job(job_id, timeout=timeout)
     return _build_spring_response(final_job)
 
 
@@ -489,62 +510,21 @@ def launch(req: CrmLaunchRequest) -> Dict[str, Any]:
 def get_status(job_id: str) -> Dict[str, Any]:
     job = _get_job_or_404(job_id)
     response = job.response or {}
-    bridge_job = response.get("job", {})
-    errors = bridge_job.get("errors", [])
+    bridge_job = response.get("job", {}) if isinstance(response, dict) else {}
+    errors = bridge_job.get("errors", []) if isinstance(bridge_job, dict) else []
 
     return {
         "jobId": job.id,
         "status": job.status,
-        "totalCollected": int(bridge_job.get("total_collected", 0) or 0),
-        "totalCleaned": int(bridge_job.get("total_cleaned", 0) or 0),
-        "totalDeduped": int(bridge_job.get("total_deduped", 0) or 0),
-        "totalScored": int(bridge_job.get("total_scored", 0) or 0),
-        "totalSaved": int(bridge_job.get("total_saved", 0) or 0),
-        "totalQualified": int(bridge_job.get("total_qualified", 0) or 0),
-        "totalDuplicates": int(bridge_job.get("total_duplicates", 0) or 0),
-        "total_collected": int(bridge_job.get("total_collected", 0) or 0),
-        "total_cleaned": int(bridge_job.get("total_cleaned", 0) or 0),
-        "total_deduped": int(bridge_job.get("total_deduped", 0) or 0),
-        "total_scored": int(bridge_job.get("total_scored", 0) or 0),
-        "total_saved": int(bridge_job.get("total_saved", 0) or 0),
-        "total_qualified": int(bridge_job.get("total_qualified", 0) or 0),
-        "total_duplicates": int(bridge_job.get("total_duplicates", 0) or 0),
-        "startedAt": bridge_job.get("started_at"),
-        "finishedAt": bridge_job.get("finished_at"),
+        "totalCollected": int(_nested_get(bridge_job, "total_collected", default=0) or 0),
+        "totalCleaned": int(_nested_get(bridge_job, "total_cleaned", default=0) or 0),
+        "totalDeduped": int(_nested_get(bridge_job, "total_deduped", default=0) or 0),
+        "totalScored": int(_nested_get(bridge_job, "total_scored", default=0) or 0),
+        "totalSaved": int(_nested_get(bridge_job, "total_saved", default=0) or 0),
+        "totalQualified": int(_nested_get(bridge_job, "total_qualified", default=0) or 0),
+        "totalDuplicates": int(_nested_get(bridge_job, "total_duplicates", default=0) or 0),
         "errors": errors if isinstance(errors, list) else [str(errors)],
     }
-
-
-@app.post("/cancel/{job_id}")
-def cancel_job(job_id: str) -> bool:
-    job = _get_job_or_404(job_id)
-
-    if job.status in ("DONE", "FAILED", "CANCELED"):
-        return True
-
-    proc = job.process
-    if proc is None:
-        raise HTTPException(status_code=409, detail="job process unavailable")
-
-    try:
-        proc.terminate()
-        try:
-            proc.wait(timeout=5)
-        except subprocess.TimeoutExpired:
-            proc.kill()
-            proc.wait(timeout=5)
-    except Exception as exc:
-        raise HTTPException(status_code=500, detail=f"cancel failed: {exc}") from exc
-
-    with _JOBS_LOCK:
-        current = _JOBS.get(job_id)
-        if current is not None:
-            current.status = "CANCELED"
-            current.finished_at = time.time()
-            current.return_code = proc.returncode
-            current.error = "job canceled by API request"
-
-    return True
 
 
 @app.get("/results/{job_id}")

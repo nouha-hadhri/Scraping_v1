@@ -47,6 +47,7 @@ import time
 import random
 import uuid
 import threading
+import signal
 from datetime import datetime
 from typing import List, Dict, Any, Optional, Tuple
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -76,6 +77,11 @@ logging.basicConfig(
     ],
 )
 logger = logging.getLogger("orchestrator")
+
+
+def _handle_cancel_signal(signum, frame):
+    logger.info(f"[CANCEL] Received signal {signum} -> stopping gracefully")
+    raise SystemExit(3)
 
 # ── Imports internes ───────────────────────────────────────────────────────────
 
@@ -334,6 +340,11 @@ class ProspectCollector:
         logger.info(f" Max prospects        : {criteria.get('max_resultats', '—')}")
         logger.info(f" PostgreSQL           : {'activé' if PG_ENABLED else 'désactivé'}")
         logger.info("=" * 60)
+
+        signal.signal(signal.SIGTERM, _handle_cancel_signal)
+        signal.signal(signal.SIGINT, _handle_cancel_signal)
+        if os.name != "nt":
+            signal.signal(signal.SIGQUIT, _handle_cancel_signal)
 
         start_time   = time.time()
         step_timings = {}
@@ -1919,7 +1930,6 @@ def main() -> int:
     if job.status == JobStatut.CANCELED.value:
         return 3
     return 1
-
 
 if __name__ == "__main__":
     raise SystemExit(main())
