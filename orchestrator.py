@@ -410,10 +410,21 @@ class ProspectCollector:
                 f"{sum(1 for p in enriched if p.telephone)} téléphones ( {step_5_elapsed:.2f}s)"
             )
 
+            # ── Step 5B : Validation d'emails ─────────────────────────
+            logger.info("\n [Step 5B/7] Validation d'emails…")
+            step_5b_start = time.time()
+            validated = self._validate_emails(enriched)
+            step_5b_elapsed = time.time() - step_5b_start
+            step_timings["5B. Validation emails"] = step_5b_elapsed
+            email_valid_count = sum(1 for p in validated if p.email_valid)
+            logger.info(
+                f"    {email_valid_count}/{sum(1 for p in validated if p.email)} emails valides ( {step_5b_elapsed:.2f}s)"
+            )
+
             # ── Step 6 : Scoring ──────────────────────────────────────
             logger.info("\n [Step 6/7] Scoring & qualification…")
             step_6_start = time.time()
-            scored = self.scorer.score_all(enriched)
+            scored = self.scorer.score_all(validated)
             step_6_elapsed = time.time() - step_6_start
             step_timings["6. Scoring"] = step_6_elapsed
             stats  = ProspectScorer.get_stats(scored)
@@ -992,6 +1003,38 @@ class ProspectCollector:
         
         return prospects
 
+    def _validate_emails(self, prospects: List[Prospect]) -> List[Prospect]:
+        """
+        Valide tous les emails des prospects.
+        Met à jour le champ email_valid avec une validation robuste:
+          - Syntaxe regex
+          - Domaine non bloqué (pas gmail, yahoo, etc.)
+          - Pas de noreply, contact générique, etc.
+        
+        Note: MX check (DNS) n'est pas fait par défaut (trop lent pour batch).
+              Pourrait être activé via settings si besoin.
+        """
+        from utils.email_validator import validate_email
+        
+        validated = 0
+        invalid = 0
+        
+        for p in prospects:
+            if p.email:
+                result = validate_email(p.email, check_mx=False)
+                p.email_valid = result["is_valid"]
+                
+                if result["is_valid"]:
+                    validated += 1
+                else:
+                    invalid += 1
+                    logger.debug(f"[EmailValidation] {p.nom_commercial}: {result['reason']}")
+        
+        if validated > 0 or invalid > 0:
+            logger.info(f"[EmailValidation] {validated} valides, {invalid} invalides / {len([p for p in prospects if p.email])} emails")
+        
+        return prospects
+
     def _filter_by_geo(self, prospects: List[Prospect], criteria: Dict[str, Any]) -> List[Prospect]:
         loc = criteria.get("localisation") or {}
         target_pays_raw    = loc.get("pays", []) or []
@@ -1268,8 +1311,8 @@ class ProspectCollector:
         """
         import re as _re
         from urllib.parse import urlparse as _urlparse
-        _EMAIL_RE  = _re.compile(r"^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$")
-        _INVALID_E = {"noreply", "no-reply", "donotreply", "example.com", ".png", ".jpg"}
+        from utils.email_validator import validate_email_syntax, validate_email_domain, validate_email_type
+        
         _ANNUAIRE_DOMAINS = {
             "infonet.fr", "northdata.com", "lagazettefrance.fr", "societe.com",
             "infogreffe.fr", "pappers.fr", "verif.com", "bodacc.fr",
@@ -1297,13 +1340,19 @@ class ProspectCollector:
                 if attr in ("email", "telephone", "website"):
                     changed = True
 
+        # Email validation améliorée
         if p.email:
-            p.email_valid = bool(
-                _EMAIL_RE.match(p.email)
-                and not any(bad in p.email for bad in _INVALID_E)
+            p.email_valid = (
+                validate_email_syntax(p.email) and
+                validate_email_domain(p.email) and
+                validate_email_type(p.email)
             )
+            logger.debug(f"[MergeContact] Email {p.email}: valid={p.email_valid}")
+        
+        # Website validation
         if p.website:
             p.website_active = bool(_re.match(r"https?://[^\s]+\.[^\s]{2,}", p.website))
+        
         return changed
 
     def _ddg_find_website(self, p: Prospect) -> str:
