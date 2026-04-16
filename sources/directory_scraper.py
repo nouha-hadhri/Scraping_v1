@@ -82,6 +82,12 @@ def _get_qbuilder() -> "SireneQueryBuilder":
 
 logger = logging.getLogger(__name__)
 
+
+def _is_france_target(pays: List[str]) -> bool:
+    if not pays:
+        return True
+    return any(str(p).strip().lower() == "france" for p in pays)
+
 _EXCLUDED_DOMAINS = {
     "pagesjaunes.fr", "facebook.com", "twitter.com", "instagram.com",
     "linkedin.com", "youtube.com", "google.com", "apple.com",
@@ -177,7 +183,7 @@ class DirectoryScraper(BaseScraper):
 
         # ── 1. annuaire-entreprises.data.gouv.fr ─────────────────────
         # FIX C : .get("data_gouv_dir", False) — source active uniquement si explicitement True
-        if _dir_cfg.get("data_gouv_dir", False) and (not pays or "France" in pays):
+        if _dir_cfg.get("data_gouv_dir", False) and _is_france_target(pays):
             taille_cfg  = criteria.get("taille_entreprise", {})
             tailles_cat = (
                 criteria.get("tailles_entreprise", [])
@@ -207,7 +213,7 @@ class DirectoryScraper(BaseScraper):
 
         # ── 2. PagesJaunes ───────────────────────────────────────────
         # FIX C : .get("pagesjaunes", False)
-        if _dir_cfg.get("pagesjaunes", False) and (not pays or "France" in pays):
+        if _dir_cfg.get("pagesjaunes", False) and _is_france_target(pays):
             for kw in keywords[:3]:
                 for ville in (villes[:2] or ["Paris"]):
                     try:
@@ -270,7 +276,7 @@ class DirectoryScraper(BaseScraper):
 
         # ── 5. Verif.com (France uniquement) ─────────────────────────
         # FIX C : .get("verif", False)
-        if _dir_cfg.get("verif", False) and (not pays or "France" in pays):
+        if _dir_cfg.get("verif", False) and _is_france_target(pays):
             vf_max    = COLLECTION_LIMITS.get("verif_max_par_run", 100)
             vf_detail = COLLECTION_LIMITS.get("verif_max_detail_pages", 15)
             search_terms = (keywords + secteurs)[:5]

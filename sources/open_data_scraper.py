@@ -98,6 +98,12 @@ def _set_qbuilder_for_tests(builder: "SireneQueryBuilder") -> None:
 
 logger = logging.getLogger(__name__)
 
+
+def _is_france_target(pays: List[str]) -> bool:
+    if not pays:
+        return True
+    return any(str(p).strip().lower() == "france" for p in pays)
+
 # ─────────────────────────────────────────────
 # Résolution géographique — geo.api.gouv.fr
 # FIX E : URLs importées depuis settings, plus définies ici
@@ -335,7 +341,7 @@ class OpenDataScraper(BaseScraper):
         geo_resolver = _GeoResolver(self.client)
 
         # ── 1. Sirene / data.gouv.fr ───────────────────────────────────
-        if _od_cfg.get("sirene", True) and (not pays or "France" in pays):
+        if _od_cfg.get("sirene", True) and _is_france_target(pays):
             # BUG 5 FIX : résolution villes + régions → codes postaux CSV
             codes_postaux = geo_resolver.resolve_all(villes, regions)
 
@@ -379,7 +385,7 @@ class OpenDataScraper(BaseScraper):
             osm_villes = (
                 villes[:6] if villes
                 else geo_resolver.regions_to_capitals(regions)[:4] if regions
-                else (["Paris","Lyon","Marseille","Bordeaux","Toulouse"] if (not pays or "France" in pays) else [])
+                else (["Paris","Lyon","Marseille","Bordeaux","Toulouse"] if _is_france_target(pays) else [])
             )
             osm_office_filter = self._secteurs_to_osm_offices(secteurs)
             for ville in osm_villes:
@@ -396,7 +402,7 @@ class OpenDataScraper(BaseScraper):
         # ── 4. BODACC ──────────────────────────────────────────────────
         # FIX A : valeur par défaut False
         # FIX B : utilise geo_resolver existant
-        if _od_cfg.get("bodacc", False) and (not pays or "France" in pays):
+        if _od_cfg.get("bodacc", False) and _is_france_target(pays):
             bodacc_naf    = codes_naf or self._secteurs_to_naf(secteurs)
             bodacc_locs   = (
                 villes[:6] if villes

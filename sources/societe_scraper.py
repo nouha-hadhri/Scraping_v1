@@ -52,6 +52,12 @@ from storage.models               import Prospect
 
 logger = logging.getLogger(__name__)
 
+
+def _is_france_target(pays: List[str]) -> bool:
+    if not pays:
+        return True
+    return any(str(p).strip().lower() == "france" for p in pays)
+
 # ---------------------------------------------------------------------------
 # FIX – Lazy singleton pour _qbuilder (même pattern que open_data_scraper.py)
 # ---------------------------------------------------------------------------
@@ -126,7 +132,7 @@ class SocieteScraper(BaseScraper):
         )
 
         # Pappers et societe.com = France uniquement
-        if pays and "France" not in pays:
+        if not _is_france_target(pays):
             return []
 
         _soc_cfg = SOURCES_CONFIG.get("societe", {})

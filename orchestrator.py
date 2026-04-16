@@ -43,11 +43,13 @@ import argparse
 import copy
 import json
 import logging
+import re
 import time
 import random
 import uuid
 import threading
 import signal
+import unicodedata
 from datetime import datetime
 from typing import List, Dict, Any, Optional, Tuple
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -121,6 +123,7 @@ from sources.open_data_scraper import OpenDataScraper
 from sources.directory_scraper import DirectoryScraper
 from sources.societe_scraper   import SocieteScraper
 from sources.website_scraper   import WebsiteScraper
+from sources.sirene_query_builder import SireneQueryBuilder
 
 from pipeline.cleaner       import ProspectCleaner
 from pipeline.deduplication import Deduplicator
@@ -284,6 +287,7 @@ class ProspectCollector:
         self.dry_run       = dry_run
         self.source_filter = source_filter
         self._thread_local = threading.local()  # Storage isolé par thread
+        self._geo_qbuilder: Optional[SireneQueryBuilder] = None
 
         self.cleaner      = ProspectCleaner()
         self.deduplicator = Deduplicator()
@@ -363,15 +367,21 @@ class ProspectCollector:
             logger.info("\n [Step 2/7] Nettoyage & normalisation…")
             step_2_start = time.time()
             cleaned = self.cleaner.clean_batch(raw)
+            enriched_region = self._enrich_region(cleaned)
+            cleaned_geo = self._filter_by_geo(enriched_region, criteria)
             step_2_elapsed = time.time() - step_2_start
             step_timings["2. Nettoyage"] = step_2_elapsed
-            job.total_cleaned = len(cleaned)
-            logger.info(f"    {len(cleaned)} après nettoyage ( {step_2_elapsed:.2f}s)")
+            job.total_cleaned = len(cleaned_geo)
+            logger.info(
+                f"    {len(cleaned)} après nettoyage, "
+                f"{len(enriched_region)} après enrichissement région, "
+                f"{len(cleaned_geo)} après filtre géographique strict ( {step_2_elapsed:.2f}s)"
+            )
 
             # ── Step 3 : Déduplication ────────────────────────────────
             logger.info("\n [Step 3/7] Déduplication…")
             step_3_start = time.time()
-            unique, n_dups = self.deduplicator.deduplicate(cleaned)
+            unique, n_dups = self.deduplicator.deduplicate(cleaned_geo)
             step_3_elapsed = time.time() - step_3_start
             step_timings["3. Déduplication"] = step_3_elapsed
             job.total_deduped    = len(unique)
@@ -591,7 +601,7 @@ class ProspectCollector:
             "employes_min":       employes_min,
             "employes_max":       employes_max,
             "localisation": {
-                "pays":    geo.get("pays", []),
+                "pays":    geo.get("pays") or geo.get("zone_geographique", ["France"]),
                 "regions": geo.get("regions", []),
                 "villes":  geo.get("villes", []),
             },
@@ -891,6 +901,135 @@ class ProspectCollector:
             name for name in self._SOURCE_REGISTRY
             if SOURCES_CONFIG.get(name, {}).get("enabled", True)
         ]
+
+    def _get_geo_qbuilder(self) -> SireneQueryBuilder:
+        if self._geo_qbuilder is None:
+            self._geo_qbuilder = SireneQueryBuilder()
+        return self._geo_qbuilder
+
+    @staticmethod
+    def _norm_geo_text(value: Any) -> str:
+        text = str(value or "").strip().lower()
+        text = unicodedata.normalize("NFKD", text)
+        return "".join(ch for ch in text if not unicodedata.combining(ch))
+
+    @classmethod
+    def _geo_text_match(cls, value: str, targets: List[str]) -> bool:
+        v = cls._norm_geo_text(value)
+        if not v:
+            return False
+        for t in targets:
+            tv = cls._norm_geo_text(t)
+            if not tv:
+                continue
+            if tv in v or v in tv:
+                return True
+        return False
+
+    @staticmethod
+    def _cp_match(code_postal: str, prefixes: List[str]) -> bool:
+        cp = re.sub(r"\D", "", str(code_postal or ""))
+        if not cp:
+            return False
+        for p in prefixes:
+            pref = re.sub(r"\D", "", str(p or ""))
+            if pref and cp.startswith(pref):
+                return True
+        return False
+
+    def _enrich_region(self, prospects: List[Prospect]) -> List[Prospect]:
+        """
+        Enrichit les prospects avec leur région basée sur le code postal.
+        Utilise le SireneQueryBuilder pour faire un reverse lookup : CP → région.
+        
+        Cela corrige le fait que les scrapers ne remplissent jamais le champ région,
+        donc on l'enrichit automatiquement depuis le code postal.
+        """
+        qb = self._get_geo_qbuilder()
+        enriched = 0
+        
+        for p in prospects:
+            # Si région vide mais CP fourni, cherche région depuis CP
+            if not p.region or not str(p.region).strip():
+                if p.code_postal:
+                    region = qb.get_region_for_postal(p.code_postal)
+                    if region:
+                        p.region = region
+                        enriched += 1
+        
+        if enriched > 0:
+            logger.debug(f"[EnrichRegion] {enriched} prospects enrichis avec région depuis CP")
+        
+        return prospects
+
+    def _filter_by_geo(self, prospects: List[Prospect], criteria: Dict[str, Any]) -> List[Prospect]:
+        loc = criteria.get("localisation") or {}
+        target_pays_raw    = loc.get("pays", []) or []
+        target_regions_raw = loc.get("regions", []) or []
+        target_villes_raw  = loc.get("villes", []) or []
+
+        target_pays    = [str(x).strip() for x in target_pays_raw if str(x).strip()]
+        target_regions = [str(x).strip() for x in target_regions_raw if str(x).strip()]
+        target_villes  = [str(x).strip() for x in target_villes_raw if str(x).strip()]
+
+        if not any([target_pays, target_regions, target_villes]):
+            return prospects
+
+        city_cp_prefixes: List[str] = []
+        region_cp_prefixes: List[str] = []
+        try:
+            qb = self._get_geo_qbuilder()
+
+            def _canonicalize(values: List[str], catalog: List[str]) -> List[str]:
+                out: List[str] = []
+                for value in values:
+                    nv = self._norm_geo_text(value)
+                    chosen = value
+                    for item in catalog:
+                        ni = self._norm_geo_text(item)
+                        if nv == ni or nv in ni or ni in nv:
+                            chosen = item
+                            break
+                    out.append(chosen)
+                return list(dict.fromkeys(out))
+
+            canonical_villes = _canonicalize(target_villes, qb.list_villes()) if target_villes else []
+            canonical_regions = _canonicalize(target_regions, qb.list_regions()) if target_regions else []
+
+            if canonical_villes:
+                city_cp_prefixes = qb._map_geo(regions=[], villes=canonical_villes)
+            if canonical_regions:
+                region_cp_prefixes = qb._map_geo(regions=canonical_regions, villes=[])
+        except Exception as geo_err:
+            logger.warning(f"[GeoFilter] Mapping geo indisponible: {geo_err}")
+
+        filtered: List[Prospect] = []
+        for p in prospects:
+            if target_pays and not self._geo_text_match(p.pays, target_pays):
+                continue
+
+            # Priorité stricte : ville > région > pays.
+            if target_villes:
+                if self._geo_text_match(p.ville, target_villes):
+                    filtered.append(p)
+                    continue
+                if self._cp_match(p.code_postal, city_cp_prefixes):
+                    filtered.append(p)
+                    continue
+                continue
+
+            if target_regions:
+                if self._geo_text_match(p.region, target_regions):
+                    filtered.append(p)
+                    continue
+                if self._cp_match(p.code_postal, region_cp_prefixes):
+                    filtered.append(p)
+                    continue
+                continue
+
+            filtered.append(p)
+
+        return filtered
 
     # ──────────────────────────────────────────
     # Enrichissement contacts (step 5)

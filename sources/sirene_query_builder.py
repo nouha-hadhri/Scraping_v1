@@ -200,6 +200,7 @@ class SireneQueryBuilder:
     def _map_geo(self, regions: List[str], villes: List[str]) -> List[str]:
         """
         Convertit régions et villes en liste de préfixes codes postaux.
+        Priorité métier : villes > régions > national.
         Si aucune région ni ville n'est renseignée, retourne [] (pas de filtre CP,
         l'API couvre tout le pays via etat_administratif=A).
         """
@@ -207,7 +208,13 @@ class SireneQueryBuilder:
         regions_data = self._postal.get("regions", {})
         villes_data  = self._postal.get("villes",  {})
 
-        for region in regions:
+        # Si une ville est fournie, on filtre strictement sur les villes.
+        if villes:
+            selected_regions: List[str] = []
+        else:
+            selected_regions = regions
+
+        for region in selected_regions:
             entry = regions_data.get(region)
             if entry:
                 prefixes.extend(entry.get("prefixes", []))
@@ -220,7 +227,7 @@ class SireneQueryBuilder:
                 else:
                     logger.warning(f"[SireneQueryBuilder] Région inconnue : {region!r}")
 
-        for ville in villes:
+        for ville in (villes or []):
             entry = villes_data.get(ville)
             if entry:
                 prefixes.extend(entry.get("prefixes", []))
@@ -322,6 +329,32 @@ class SireneQueryBuilder:
     def get_postal_for_ville(self, ville: str) -> List[str]:
         """Retourne les CP pour une ville donnée (debug)."""
         return self._postal.get("villes", {}).get(ville, {}).get("prefixes", [])
+
+    def get_region_for_postal(self, code_postal: str) -> Optional[str]:
+        """
+        Reverse lookup : retourne la région pour un code postal donné.
+        Ex: "75001" -> "Île-de-France", "69001" -> "Auvergne-Rhône-Alpes"
+        
+        Utilisé pour enrichir les prospects avec leur région quand
+        le scraper n'a fourni que le code postal.
+        """
+        if not code_postal:
+            return None
+        
+        cp = str(code_postal).strip()
+        if not cp:
+            return None
+        
+        # Cherche ligne région dont les préfixes matchent
+        regions_data = self._postal.get("regions", {})
+        for region_name, region_info in regions_data.items():
+            if isinstance(region_info, dict):
+                prefixes = region_info.get("prefixes", [])
+                for prefix in prefixes:
+                    if cp.startswith(str(prefix)):
+                        return region_name
+        
+        return None
 
     def get_region_insee_code(self, region: str) -> str:
         """
