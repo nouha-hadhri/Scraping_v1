@@ -1,25 +1,25 @@
 [
   {
-    "nom_commercial": "La pépite",
-    "raison_sociale": "La pépite",
-    "email": "hello@pepite.paris",
-    "telephone": "06 86 82 07 17",
-    "website": "https://pepite.paris",
-    "linkedin_url": "https://www.linkedin.com/company/pepite-paris",
-    "adresse": "40 Rue Laffitte",
+    "nom_commercial": "C I L-CONVERGENCE INGENIERIE LOGICIEL",
+    "raison_sociale": "C I L-CONVERGENCE INGENIERIE LOGICIEL",
+    "email": "contact@auplafond.com",
+    "telephone": "09 55 00 66 33",
+    "website": "https://www.convergence-ing.com",
+    "linkedin_url": "https://www.linkedin.com/company/convergence-ing%C3%A9nierie-conseil/",
+    "adresse": "49 AVENUE KLEBER 75016 PARIS",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
-    "code_postal": "",
+    "code_postal": "75016",
     "secteur_activite": "Informatique",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
-    "description": "Des séminaires, ateliers de cohésion d'équipe, teambuildings engagés : ateliers culinaires, dégustations, ateliers floraux, jeux, rallyes...",
-    "code_naf": "",
-    "siren": "",
-    "siret": "",
+    "description": "BIENVENUE NOS MÉTIERS TEAM DRAWMYBUILDING® LE LAB STUDIO DÉCOUVRIR L’ACTU CONTACT X Nous dessinons vos expériences sur-mesure rencontrons-nous Nos articles à la Une Bougez comme vous êtes ! CES ENTREPRISES QUI FONT TOUT POUR LEURS SALARIÉS ! L’expérience de l’utilisateur est-elle vraiment sa priorité ? L’ENTREPRISE SURFE SUR LES BUREAUX SOCIAUX ! Votre immeuble est une marque. Unique. Fort […]",
+    "code_naf": "62.01Z",
+    "siren": "342081965",
+    "siret": "34208196500010",
     "qualification_score": 70,
     "score_pct": 70.0,
     "statut": "QUALIFIE",
@@ -42,22 +42,22 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
         "max": 10,
-        "note": "hello@pepite.paris"
+        "note": "contact@auplafond.com"
       },
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://pepite.paris"
+        "note": "https://www.convergence-ing.com"
       },
       "phone_present": {
         "points": 10,
         "max": 10,
-        "note": "06 86 82 07 17"
+        "note": "09 55 00 66 33"
       },
       "name_complete": {
         "points": 5,
@@ -72,37 +72,37 @@
     },
     "criteria_met": 7,
     "criteria_total": 9,
-    "source": "OpenStreetMap",
+    "source": "data.gouv.fr/Sirene",
     "segment": "",
     "sector_confidence": 1.0,
     "email_valid": true,
     "website_active": true,
     "enrich_score": 4,
-    "hash_dedup": "d43fa9daff10ed18",
+    "hash_dedup": "af03f536e196c7a5",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.649544"
+    "created_at": "2026-04-16T12:58:52.462673"
   },
   {
-    "nom_commercial": "MAC Store Green",
-    "raison_sociale": "MAC Store Green",
-    "email": "macstoregreen@gmail.com",
-    "telephone": "+33783543298",
-    "website": "https://macstoregreen.fr/en",
+    "nom_commercial": "LOGICIELS HERTZIENS",
+    "raison_sociale": "LOGICIELS HERTZIENS",
+    "email": "contact@mon-informaticien.com",
+    "telephone": "03 88 95 33 55",
+    "website": "https://www.mon-informaticien.com/entreprise/logiciels-hertziens-441069531-00040",
     "linkedin_url": "",
-    "adresse": "",
+    "adresse": "9 RUE DU FAUBOURG SAINT-HONORE 75008 PARIS",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
-    "code_postal": "",
+    "code_postal": "75008",
     "secteur_activite": "Informatique",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
-    "description": "MAC STORE Green est votre boutique en ligne spécialisée dans la réparation et la vente de produits reconditionnés Apple. Trouvez les meilleurs prix sur les iPhone, MacBook et iPad reconditionnés.",
-    "code_naf": "",
-    "siren": "",
-    "siret": "",
+    "description": "Faites appel à l'entreprise d'informatique LOGICIELS HERTZIENS (SARL) située à Paris-8 (75008). Cet informaticien est notamment spécialisé en Prestations informatiques.",
+    "code_naf": "62.02A",
+    "siren": "441069531",
+    "siret": "44106953100040",
     "qualification_score": 70,
     "score_pct": 70.0,
     "statut": "QUALIFIE",
@@ -125,22 +125,22 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
         "max": 10,
-        "note": "macstoregreen@gmail.com"
+        "note": "contact@mon-informaticien.com"
       },
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://macstoregreen.fr/en"
+        "note": "https://www.mon-informaticien.com/entreprise/logiciels-hertziens-441069531-00040"
       },
       "phone_present": {
         "points": 10,
         "max": 10,
-        "note": "+33783543298"
+        "note": "03 88 95 33 55"
       },
       "name_complete": {
         "points": 5,
@@ -155,26 +155,109 @@
     },
     "criteria_met": 7,
     "criteria_total": 9,
-    "source": "OpenStreetMap",
+    "source": "annuaire-entreprises.data.gouv.fr",
     "segment": "",
     "sector_confidence": 1.0,
     "email_valid": true,
     "website_active": true,
     "enrich_score": 3,
-    "hash_dedup": "b1086a6f970ee5bd",
+    "hash_dedup": "fb29e18f219c84e5",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.649544"
+    "created_at": "2026-04-16T12:58:56.030270"
   },
   {
-    "nom_commercial": "Microsoft France",
-    "raison_sociale": "Microsoft France",
-    "email": "ms-enterprise.fi@sktes.com",
-    "telephone": "+33 1 57 75 10 00",
-    "website": "http://www.microsoft.com/fr/fr",
-    "linkedin_url": "",
-    "adresse": "",
+    "nom_commercial": "CONSULTING TEST LOGICIELS",
+    "raison_sociale": "CONSULTING TEST LOGICIELS",
+    "email": "sourcing@dsyconsulting.fr",
+    "telephone": "07 82 14 43 93",
+    "website": "https://dsyconsulting.fr",
+    "linkedin_url": "https://www.linkedin.com/company/dsyconsulting/",
+    "adresse": "8 B RUE ABEL 75012 PARIS",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75012",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "DSY Consulting, cabinet spécialisé en test logiciel et assurance qualité : tests fonctionnels, tests automatisés, qualification UAT, bonnes pratiques QA et intégration dans des chaînes CI/CD.",
+    "code_naf": "62.02A",
+    "siren": "913295093",
+    "siret": "91329509300011",
+    "qualification_score": 70,
+    "score_pct": 70.0,
+    "statut": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 10,
+        "max": 10,
+        "note": "sourcing@dsyconsulting.fr"
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://dsyconsulting.fr"
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "07 82 14 43 93"
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 7,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "segment": "",
+    "sector_confidence": 1.0,
+    "email_valid": true,
+    "website_active": true,
+    "enrich_score": 4,
+    "hash_dedup": "57e5e7b6b278326f",
+    "raw_text": "",
+    "created_at": "2026-04-16T12:58:56.030270"
+  },
+  {
+    "nom_commercial": "La pépite",
+    "raison_sociale": "La pépite",
+    "email": "privacy@urecommend.co",
+    "telephone": "+33954040480",
+    "website": "https://lespepitesparis.fr/fr",
+    "linkedin_url": "",
+    "adresse": "40 Rue Laffitte",
+    "ville": "Paris",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -208,12 +291,178 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
         "max": 10,
-        "note": "ms-enterprise.fi@sktes.com"
+        "note": "privacy@urecommend.co"
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://lespepitesparis.fr/fr"
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "+33954040480"
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 7,
+    "criteria_total": 9,
+    "source": "OpenStreetMap",
+    "segment": "",
+    "sector_confidence": 1.0,
+    "email_valid": true,
+    "website_active": true,
+    "enrich_score": 3,
+    "hash_dedup": "d43fa9daff10ed18",
+    "raw_text": "",
+    "created_at": "2026-04-16T12:58:57.899607"
+  },
+  {
+    "nom_commercial": "Sébastien Bourgine",
+    "raison_sociale": "Sébastien Bourgine",
+    "email": "contact@sebastienbourgine.com",
+    "telephone": "06 82 40 90 20",
+    "website": "https://www.sebastienbourgine.com",
+    "linkedin_url": "",
+    "adresse": "88 Avenue Simón Bolívar",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Webdesign services",
+    "code_naf": "",
+    "siren": "",
+    "siret": "",
+    "qualification_score": 70,
+    "score_pct": 70.0,
+    "statut": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 10,
+        "max": 10,
+        "note": "contact@sebastienbourgine.com"
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://www.sebastienbourgine.com"
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "06 82 40 90 20"
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 7,
+    "criteria_total": 9,
+    "source": "OpenStreetMap",
+    "segment": "",
+    "sector_confidence": 1.0,
+    "email_valid": true,
+    "website_active": true,
+    "enrich_score": 3,
+    "hash_dedup": "82001e09adfab49f",
+    "raw_text": "",
+    "created_at": "2026-04-16T12:58:57.899607"
+  },
+  {
+    "nom_commercial": "Microsoft France",
+    "raison_sociale": "Microsoft France",
+    "email": "ms-enterprise.ca@sktes.com",
+    "telephone": "+33 1 57 75 10 00",
+    "website": "http://www.microsoft.com/fr/fr",
+    "linkedin_url": "",
+    "adresse": "",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "",
+    "siren": "",
+    "siret": "",
+    "qualification_score": 70,
+    "score_pct": 70.0,
+    "statut": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 10,
+        "max": 10,
+        "note": "ms-enterprise.ca@sktes.com"
       },
       "website_active": {
         "points": 10,
@@ -246,90 +495,7 @@
     "enrich_score": 3,
     "hash_dedup": "26aec3f08f22c975",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.649544"
-  },
-  {
-    "nom_commercial": "Aerow SAS",
-    "raison_sociale": "Aerow SAS",
-    "email": "contact@aerow.fr",
-    "telephone": "01 42 25 29 31",
-    "website": "http://www.aerow.fr",
-    "linkedin_url": "",
-    "adresse": "",
-    "ville": "Paris",
-    "region": "",
-    "pays": "France",
-    "code_postal": "",
-    "secteur_activite": "Informatique",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "AEROW est un projet collectif aujourd’hui mené par des experts passionnés pour répondre aux enjeux de transformation digitale et gestion documentaire de nos clients. \nAerow Group | Smart Contents",
-    "code_naf": "",
-    "siren": "",
-    "siret": "",
-    "qualification_score": 70,
-    "score_pct": 70.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Informatique"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "ville:paris"
-      },
-      "email_valid": {
-        "points": 10,
-        "max": 10,
-        "note": "contact@aerow.fr"
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "http://www.aerow.fr"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "01 42 25 29 31"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 7,
-    "criteria_total": 9,
-    "source": "OpenStreetMap",
-    "segment": "",
-    "sector_confidence": 1.0,
-    "email_valid": true,
-    "website_active": true,
-    "enrich_score": 3,
-    "hash_dedup": "7d8b647d0dc423f1",
-    "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.649544"
+    "created_at": "2026-04-16T12:58:57.899607"
   },
   {
     "nom_commercial": "Easter-eggs",
@@ -340,7 +506,7 @@
     "linkedin_url": "",
     "adresse": "44/46, rue de l'Ouest75014ParisFrance",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -374,7 +540,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
@@ -412,7 +578,7 @@
     "enrich_score": 3,
     "hash_dedup": "0f48038bfa8204b4",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.649544"
+    "created_at": "2026-04-16T12:58:57.899607"
   },
   {
     "nom_commercial": "/ut7",
@@ -423,7 +589,7 @@
     "linkedin_url": "",
     "adresse": "14 avenue Ledru-Rollin 75012 Paris - France",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -457,7 +623,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
@@ -495,7 +661,7 @@
     "enrich_score": 3,
     "hash_dedup": "56e128fc36def039",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.649544"
+    "created_at": "2026-04-16T12:58:57.899607"
   },
   {
     "nom_commercial": "Zenika",
@@ -578,7 +744,7 @@
     "enrich_score": 4,
     "hash_dedup": "9d0f9fbe4007f315",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.650545"
+    "created_at": "2026-04-16T12:58:57.899607"
   },
   {
     "nom_commercial": "Openska",
@@ -589,7 +755,7 @@
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -623,7 +789,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
@@ -661,7 +827,7 @@
     "enrich_score": 3,
     "hash_dedup": "852ada2a39ad3913",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.650545"
+    "created_at": "2026-04-16T12:58:57.899607"
   },
   {
     "nom_commercial": "Mathworks",
@@ -672,7 +838,7 @@
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -706,7 +872,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
@@ -744,7 +910,7 @@
     "enrich_score": 3,
     "hash_dedup": "15040ce3a6c448eb",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.650545"
+    "created_at": "2026-04-16T12:58:57.900606"
   },
   {
     "nom_commercial": "E.S.R.",
@@ -755,7 +921,7 @@
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -789,7 +955,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
@@ -827,7 +993,7 @@
     "enrich_score": 3,
     "hash_dedup": "8931b480e5b1f74a",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.650545"
+    "created_at": "2026-04-16T12:58:57.900606"
   },
   {
     "nom_commercial": "Openbridge",
@@ -838,7 +1004,7 @@
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -872,7 +1038,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
@@ -910,7 +1076,7 @@
     "enrich_score": 3,
     "hash_dedup": "a94ae1adff99230c",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.650545"
+    "created_at": "2026-04-16T12:58:57.900606"
   },
   {
     "nom_commercial": "Alten (Groupe)",
@@ -921,7 +1087,7 @@
     "linkedin_url": "https://fr.linkedin.com/company/alten",
     "adresse": "ALTEN France Siège social 221 bis boulevard Jean Jaures 92100 Boulogne Billancourt 65 avenue Edouard Vaillant 92514 Boulogne-Billancourt Cedex",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -955,7 +1121,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
@@ -993,7 +1159,7 @@
     "enrich_score": 4,
     "hash_dedup": "7c0ff089c7d55de1",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.650545"
+    "created_at": "2026-04-16T12:58:57.900606"
   },
   {
     "nom_commercial": "DL Santé",
@@ -1004,7 +1170,7 @@
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -1038,7 +1204,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
@@ -1076,90 +1242,7 @@
     "enrich_score": 3,
     "hash_dedup": "612747ce65393624",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.650545"
-  },
-  {
-    "nom_commercial": "Artifica",
-    "raison_sociale": "Artifica",
-    "email": "info@artifica.fr",
-    "telephone": "01 40 09 77 12",
-    "website": "https://www.artifica.fr",
-    "linkedin_url": "https://www.linkedin.com/company/artifica/",
-    "adresse": "2 Rue du Repos",
-    "ville": "Paris",
-    "region": "Île-de-France",
-    "pays": "France",
-    "code_postal": "75020",
-    "secteur_activite": "Informatique",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "Tél. 01 40 09 77 12 - Création sites web, plans interactifs.",
-    "code_naf": "",
-    "siren": "",
-    "siret": "",
-    "qualification_score": 70,
-    "score_pct": 70.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Informatique"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "region:île-de-france"
-      },
-      "email_valid": {
-        "points": 10,
-        "max": 10,
-        "note": "info@artifica.fr"
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://www.artifica.fr"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "01 40 09 77 12"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 7,
-    "criteria_total": 9,
-    "source": "OpenStreetMap",
-    "segment": "",
-    "sector_confidence": 1.0,
-    "email_valid": true,
-    "website_active": true,
-    "enrich_score": 4,
-    "hash_dedup": "356f9628420d615e",
-    "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.650545"
+    "created_at": "2026-04-16T12:58:57.900606"
   },
   {
     "nom_commercial": "Excelcio",
@@ -1242,7 +1325,7 @@
     "enrich_score": 3,
     "hash_dedup": "de857ec6af0b98f3",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.650545"
+    "created_at": "2026-04-16T12:58:57.900606"
   },
   {
     "nom_commercial": "Subskill",
@@ -1253,7 +1336,7 @@
     "linkedin_url": "https://www.linkedin.com/company/subskill/",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -1287,7 +1370,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
@@ -1325,7 +1408,7 @@
     "enrich_score": 4,
     "hash_dedup": "e4d83596eb1e81bb",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.650545"
+    "created_at": "2026-04-16T12:58:57.900606"
   },
   {
     "nom_commercial": "Varcap Informatique",
@@ -1408,7 +1491,7 @@
     "enrich_score": 3,
     "hash_dedup": "52074ec80b3dcfba",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.651544"
+    "created_at": "2026-04-16T12:58:57.900606"
   },
   {
     "nom_commercial": "Probayes",
@@ -1491,7 +1574,7 @@
     "enrich_score": 3,
     "hash_dedup": "4baacb8ae9a543ce",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.651544"
+    "created_at": "2026-04-16T12:58:57.900606"
   },
   {
     "nom_commercial": "Nuxly",
@@ -1574,7 +1657,7 @@
     "enrich_score": 3,
     "hash_dedup": "e50aa16d54477bcf",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.651544"
+    "created_at": "2026-04-16T12:58:57.900606"
   },
   {
     "nom_commercial": "Capgemini",
@@ -1585,7 +1668,7 @@
     "linkedin_url": "https://www.linkedin.com/company/capgemini",
     "adresse": "11 Rue de Tilsitt",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -1619,7 +1702,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
@@ -1657,7 +1740,7 @@
     "enrich_score": 4,
     "hash_dedup": "ba65e9c7520382fb",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.651544"
+    "created_at": "2026-04-16T12:58:57.900606"
   },
   {
     "nom_commercial": "BDD Computing",
@@ -1668,7 +1751,7 @@
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -1702,7 +1785,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
@@ -1740,18 +1823,18 @@
     "enrich_score": 3,
     "hash_dedup": "1029954e9afab0c8",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.651544"
+    "created_at": "2026-04-16T12:58:57.901606"
   },
   {
     "nom_commercial": "fastmag",
     "raison_sociale": "fastmag",
     "email": "contact@fastmag.fr",
-    "telephone": "0857734500",
+    "telephone": "0208943772",
     "website": "https://www.fastmag.fr",
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -1785,7 +1868,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
@@ -1800,7 +1883,7 @@
       "phone_present": {
         "points": 10,
         "max": 10,
-        "note": "0857734500"
+        "note": "0208943772"
       },
       "name_complete": {
         "points": 5,
@@ -1823,173 +1906,7 @@
     "enrich_score": 3,
     "hash_dedup": "49fb189d1d18e345",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.651544"
-  },
-  {
-    "nom_commercial": "Gandi",
-    "raison_sociale": "Gandi",
-    "email": "direction@gandi.net",
-    "telephone": "01 70 39 37 45",
-    "website": "https://www.gandi.net",
-    "linkedin_url": "https://www.linkedin.com/company/gandi/",
-    "adresse": "",
-    "ville": "Paris",
-    "region": "",
-    "pays": "France",
-    "code_postal": "",
-    "secteur_activite": "Informatique",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "➤ Gérez votre site web, vos emails, vos certificats SSL et vos serveurs VPS. ✅ Inclus avec un nom de domaine : 1 certificat SSL offert, Alias et redirections illimités et notre serveur de nom LiveDNS.",
-    "code_naf": "",
-    "siren": "",
-    "siret": "",
-    "qualification_score": 70,
-    "score_pct": 70.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Informatique"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "ville:paris"
-      },
-      "email_valid": {
-        "points": 10,
-        "max": 10,
-        "note": "direction@gandi.net"
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://www.gandi.net"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "01 70 39 37 45"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 7,
-    "criteria_total": 9,
-    "source": "OpenStreetMap",
-    "segment": "",
-    "sector_confidence": 1.0,
-    "email_valid": true,
-    "website_active": true,
-    "enrich_score": 4,
-    "hash_dedup": "b2d2091b5c91b308",
-    "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.651544"
-  },
-  {
-    "nom_commercial": "Chronodisk",
-    "raison_sociale": "Chronodisk",
-    "email": "contact@chronodisk.com",
-    "telephone": "01 40 60 00 00",
-    "website": "https://www.chronodisk-recuperation-de-donnees.fr",
-    "linkedin_url": "",
-    "adresse": "",
-    "ville": "Paris",
-    "region": "",
-    "pays": "France",
-    "code_postal": "",
-    "secteur_activite": "Informatique",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "Chronodisk, Récupération de données Disques Durs / Ssd Téléphones serveurs Raid / Nas clés Usb cartes Sd. Devis / Enlèvement gratuits, Paris 15e.",
-    "code_naf": "",
-    "siren": "",
-    "siret": "",
-    "qualification_score": 70,
-    "score_pct": 70.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Informatique"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "ville:paris"
-      },
-      "email_valid": {
-        "points": 10,
-        "max": 10,
-        "note": "contact@chronodisk.com"
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://www.chronodisk-recuperation-de-donnees.fr"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "01 40 60 00 00"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 7,
-    "criteria_total": 9,
-    "source": "OpenStreetMap",
-    "segment": "",
-    "sector_confidence": 1.0,
-    "email_valid": true,
-    "website_active": true,
-    "enrich_score": 3,
-    "hash_dedup": "25f3efa29499a97c",
-    "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.651544"
+    "created_at": "2026-04-16T12:58:57.901606"
   },
   {
     "nom_commercial": "24ème",
@@ -2072,7 +1989,7 @@
     "enrich_score": 4,
     "hash_dedup": "1f3aed4977cd9836",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.651544"
+    "created_at": "2026-04-16T12:58:57.901606"
   },
   {
     "nom_commercial": "Threekit",
@@ -2155,7 +2072,90 @@
     "enrich_score": 3,
     "hash_dedup": "ab9c267132a796a7",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.651544"
+    "created_at": "2026-04-16T12:58:57.901606"
+  },
+  {
+    "nom_commercial": "Adisinfo",
+    "raison_sociale": "Adisinfo",
+    "email": "byvivre.tnl@cnevf.se",
+    "telephone": "01 49 52 42 81",
+    "website": "https://www.paris.fr/?+=",
+    "linkedin_url": "https://www.linkedin.com/company/villedeparis/",
+    "adresse": "",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "",
+    "siren": "",
+    "siret": "",
+    "qualification_score": 70,
+    "score_pct": 70.0,
+    "statut": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 10,
+        "max": 10,
+        "note": "byvivre.tnl@cnevf.se"
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://www.paris.fr/?+="
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "01 49 52 42 81"
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 7,
+    "criteria_total": 9,
+    "source": "OpenStreetMap",
+    "segment": "",
+    "sector_confidence": 1.0,
+    "email_valid": true,
+    "website_active": true,
+    "enrich_score": 4,
+    "hash_dedup": "234706367b488755",
+    "raw_text": "",
+    "created_at": "2026-04-16T12:58:57.901606"
   },
   {
     "nom_commercial": "AlloMarcel",
@@ -2166,7 +2166,7 @@
     "linkedin_url": "https://www.linkedin.com/company/allomarcel-com?trk=company_logo",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -2200,7 +2200,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
@@ -2238,7 +2238,7 @@
     "enrich_score": 4,
     "hash_dedup": "a837c29e248f06ac",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.652544"
+    "created_at": "2026-04-16T12:58:57.901606"
   },
   {
     "nom_commercial": "Yichnal",
@@ -2321,7 +2321,7 @@
     "enrich_score": 3,
     "hash_dedup": "1586b12e7e5ea836",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.652544"
+    "created_at": "2026-04-16T12:58:57.901606"
   },
   {
     "nom_commercial": "Salesforce",
@@ -2332,7 +2332,7 @@
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -2366,7 +2366,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
@@ -2404,7 +2404,7 @@
     "enrich_score": 3,
     "hash_dedup": "2effa780d24862ba",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.652544"
+    "created_at": "2026-04-16T12:58:57.902606"
   },
   {
     "nom_commercial": "ipéfix",
@@ -2415,7 +2415,7 @@
     "linkedin_url": "https://www.linkedin.com/company/ipefix/about/",
     "adresse": "4 Rue Severo 75014 Paris",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -2449,7 +2449,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
@@ -2487,7 +2487,7 @@
     "enrich_score": 4,
     "hash_dedup": "9d062248a54d2d56",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.652544"
+    "created_at": "2026-04-16T12:58:57.902606"
   },
   {
     "nom_commercial": "Digitad",
@@ -2570,7 +2570,7 @@
     "enrich_score": 4,
     "hash_dedup": "df35c14de9631e9b",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.652544"
+    "created_at": "2026-04-16T12:58:57.902606"
   },
   {
     "nom_commercial": "Synacktiv",
@@ -2653,7 +2653,90 @@
     "enrich_score": 3,
     "hash_dedup": "3753f7c01be5188a",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.652544"
+    "created_at": "2026-04-16T12:58:57.902606"
+  },
+  {
+    "nom_commercial": "Data-tricks",
+    "raison_sociale": "Data-tricks",
+    "email": "contact@data-tricks.com",
+    "telephone": "0140907863",
+    "website": "https://www.data-tricks.com",
+    "linkedin_url": "",
+    "adresse": "",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "",
+    "siren": "",
+    "siret": "",
+    "qualification_score": 70,
+    "score_pct": 70.0,
+    "statut": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 10,
+        "max": 10,
+        "note": "contact@data-tricks.com"
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://www.data-tricks.com"
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "0140907863"
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 7,
+    "criteria_total": 9,
+    "source": "OpenStreetMap",
+    "segment": "",
+    "sector_confidence": 1.0,
+    "email_valid": true,
+    "website_active": true,
+    "enrich_score": 3,
+    "hash_dedup": "c40e535e1e2b696d",
+    "raw_text": "",
+    "created_at": "2026-04-16T12:58:57.902606"
   },
   {
     "nom_commercial": "Auzou éditions",
@@ -2664,7 +2747,7 @@
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -2698,7 +2781,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
@@ -2736,18 +2819,18 @@
     "enrich_score": 3,
     "hash_dedup": "2f0fd8a5648b5e66",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.652544"
+    "created_at": "2026-04-16T12:58:57.902606"
   },
   {
     "nom_commercial": "Tastycloud",
     "raison_sociale": "Tastycloud",
     "email": "contact@tastycloud.fr",
-    "telephone": "06 30 47 63 17",
+    "telephone": "01 88 33 91 97",
     "website": "https://www.tastycloud.fr",
     "linkedin_url": "https://www.linkedin.com/company/tastycloud/?originalSubdomain=fr",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -2781,7 +2864,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
@@ -2796,7 +2879,7 @@
       "phone_present": {
         "points": 10,
         "max": 10,
-        "note": "06 30 47 63 17"
+        "note": "01 88 33 91 97"
       },
       "name_complete": {
         "points": 5,
@@ -2819,114 +2902,31 @@
     "enrich_score": 4,
     "hash_dedup": "77e00cbd6d470333",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.652544"
+    "created_at": "2026-04-16T12:58:57.902606"
   },
   {
-    "nom_commercial": "Zyteck",
-    "raison_sociale": "Zyteck",
-    "email": "contact@zyteck.fr",
-    "telephone": "01 53 04 05 05",
-    "website": "https://www.zyteck.fr",
+    "nom_commercial": "LA FABRIQUE LOGICIELLE",
+    "raison_sociale": "LA FABRIQUE LOGICIELLE",
+    "email": "contact@la-fabrique-logicielle.fr",
+    "telephone": "",
+    "website": "https://www.la-fabrique-logicielle.fr",
     "linkedin_url": "",
-    "adresse": "",
-    "ville": "Paris",
-    "region": "",
-    "pays": "France",
-    "code_postal": "",
-    "secteur_activite": "Informatique",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "Zyteck spécialiste en informatique. Rapidité d'intervention, Proximité, Réactivité. Une équipe de techniciens diplômés, à votre écoute.",
-    "code_naf": "",
-    "siren": "",
-    "siret": "",
-    "qualification_score": 70,
-    "score_pct": 70.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Informatique"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "ville:paris"
-      },
-      "email_valid": {
-        "points": 10,
-        "max": 10,
-        "note": "contact@zyteck.fr"
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://www.zyteck.fr"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "01 53 04 05 05"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 7,
-    "criteria_total": 9,
-    "source": "OpenStreetMap",
-    "segment": "",
-    "sector_confidence": 1.0,
-    "email_valid": true,
-    "website_active": true,
-    "enrich_score": 3,
-    "hash_dedup": "2a4e01b88a2e3df7",
-    "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.653544"
-  },
-  {
-    "nom_commercial": "LOGICIELS HERTZIENS",
-    "raison_sociale": "LOGICIELS HERTZIENS",
-    "email": "contact@mon-informaticien.com",
-    "telephone": "03 88 95 33 55",
-    "website": "https://www.mon-informaticien.com/entreprise/logiciels-hertziens-441069531-00040",
-    "linkedin_url": "",
-    "adresse": "9 RUE DU FAUBOURG SAINT-HONORE 75008 PARIS",
+    "adresse": "9 RUE STANISLAS 75006 PARIS",
     "ville": "Paris",
     "region": "Île-de-France",
     "pays": "France",
-    "code_postal": "75008",
+    "code_postal": "75006",
     "secteur_activite": "Informatique",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
-    "description": "Faites appel à l'entreprise d'informatique LOGICIELS HERTZIENS (SARL) située à Paris-8 (75008). Cet informaticien est notamment spécialisé en Prestations informatiques.",
+    "description": "",
     "code_naf": "62.02A",
-    "siren": "441069531",
-    "siret": "44106953100040",
-    "qualification_score": 70,
-    "score_pct": 70.0,
+    "siren": "450308259",
+    "siret": "45030825900016",
+    "qualification_score": 60,
+    "score_pct": 60.0,
     "statut": "QUALIFIE",
     "score_detail": {
       "sector_match": {
@@ -2952,17 +2952,17 @@
       "email_valid": {
         "points": 10,
         "max": 10,
-        "note": "contact@mon-informaticien.com"
+        "note": "contact@la-fabrique-logicielle.fr"
       },
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://www.mon-informaticien.com/entreprise/logiciels-hertziens-441069531-00040"
+        "note": "https://www.la-fabrique-logicielle.fr"
       },
       "phone_present": {
-        "points": 10,
+        "points": 0,
         "max": 10,
-        "note": "03 88 95 33 55"
+        "note": ""
       },
       "name_complete": {
         "points": 5,
@@ -2975,28 +2975,28 @@
         "note": ""
       }
     },
-    "criteria_met": 7,
+    "criteria_met": 6,
     "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
+    "source": "annuaire-entreprises.data.gouv.fr",
     "segment": "",
     "sector_confidence": 1.0,
     "email_valid": true,
-    "website_active": true,
-    "enrich_score": 3,
-    "hash_dedup": "fb29e18f219c84e5",
+    "website_active": false,
+    "enrich_score": 1,
+    "hash_dedup": "8e6e33681ae6fa20",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:22.274626"
+    "created_at": "2026-04-16T12:58:56.030270"
   },
   {
-    "nom_commercial": "Sébastien Bourgine",
-    "raison_sociale": "Sébastien Bourgine",
-    "email": "contact@sebastienbourgine.com",
+    "nom_commercial": "Aerow SAS",
+    "raison_sociale": "Aerow SAS",
+    "email": "contact@aerow.fr",
     "telephone": "",
-    "website": "https://www.sebastienbourgine.com",
+    "website": "http://www.aerow.fr",
     "linkedin_url": "",
-    "adresse": "88 Avenue Simón Bolívar",
+    "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -3004,7 +3004,7 @@
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
-    "description": "Webdesign services",
+    "description": "AEROW est un projet collectif aujourd’hui mené par des experts passionnés pour répondre aux enjeux de transformation digitale et gestion documentaire de nos clients. \nAerow Group | Smart Contents",
     "code_naf": "",
     "siren": "",
     "siret": "",
@@ -3030,17 +3030,17 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
         "max": 10,
-        "note": "contact@sebastienbourgine.com"
+        "note": "contact@aerow.fr"
       },
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://www.sebastienbourgine.com"
+        "note": "http://www.aerow.fr"
       },
       "phone_present": {
         "points": 0,
@@ -3066,9 +3066,9 @@
     "email_valid": true,
     "website_active": true,
     "enrich_score": 2,
-    "hash_dedup": "82001e09adfab49f",
+    "hash_dedup": "7d8b647d0dc423f1",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.649544"
+    "created_at": "2026-04-16T12:58:57.899607"
   },
   {
     "nom_commercial": "Quadra Informatique",
@@ -3079,7 +3079,7 @@
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -3113,7 +3113,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 0,
@@ -3151,256 +3151,7 @@
     "enrich_score": 2,
     "hash_dedup": "5e69264ba4bbd90d",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.650545"
-  },
-  {
-    "nom_commercial": "Le Cargo",
-    "raison_sociale": "Le Cargo",
-    "email": "",
-    "telephone": "07 53 00 57 05",
-    "website": "http://www.lecargo.paris",
-    "linkedin_url": "",
-    "adresse": "",
-    "ville": "Paris",
-    "region": "",
-    "pays": "France",
-    "code_postal": "",
-    "secteur_activite": "Informatique",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "This domain may be for sale!",
-    "code_naf": "",
-    "siren": "",
-    "siret": "",
-    "qualification_score": 60,
-    "score_pct": 60.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Informatique"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "ville:paris"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "http://www.lecargo.paris"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "07 53 00 57 05"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 6,
-    "criteria_total": 9,
-    "source": "OpenStreetMap",
-    "segment": "",
-    "sector_confidence": 1.0,
-    "email_valid": false,
-    "website_active": true,
-    "enrich_score": 2,
-    "hash_dedup": "21bd623c02e8ecfb",
-    "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.650545"
-  },
-  {
-    "nom_commercial": "Métamicro",
-    "raison_sociale": "Métamicro",
-    "email": "dpo@metamicro.com",
-    "telephone": "",
-    "website": "https://www.metamicro.com",
-    "linkedin_url": "https://fr.linkedin.com/company/metamicro",
-    "adresse": "",
-    "ville": "Paris",
-    "region": "",
-    "pays": "France",
-    "code_postal": "",
-    "secteur_activite": "Informatique",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "Conception et édition de solutions logicielles métiers pour la gestion de processus financiers, juridiques et administratifs complexes (recouvrement, successions, ATD...)",
-    "code_naf": "",
-    "siren": "",
-    "siret": "",
-    "qualification_score": 60,
-    "score_pct": 60.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Informatique"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "ville:paris"
-      },
-      "email_valid": {
-        "points": 10,
-        "max": 10,
-        "note": "dpo@metamicro.com"
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://www.metamicro.com"
-      },
-      "phone_present": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 6,
-    "criteria_total": 9,
-    "source": "OpenStreetMap",
-    "segment": "",
-    "sector_confidence": 1.0,
-    "email_valid": true,
-    "website_active": true,
-    "enrich_score": 3,
-    "hash_dedup": "b32f01f6949fb410",
-    "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.650545"
-  },
-  {
-    "nom_commercial": "Caoba Conseil",
-    "raison_sociale": "Caoba Conseil",
-    "email": "contact@caoba.fr",
-    "telephone": "",
-    "website": "http://www.caoba.fr",
-    "linkedin_url": "",
-    "adresse": "23 Rue du Buisson Saint-Louis",
-    "ville": "Paris",
-    "region": "Île-de-France",
-    "pays": "France",
-    "code_postal": "75010",
-    "secteur_activite": "Informatique",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "",
-    "code_naf": "",
-    "siren": "",
-    "siret": "",
-    "qualification_score": 60,
-    "score_pct": 60.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Informatique"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "region:île-de-france"
-      },
-      "email_valid": {
-        "points": 10,
-        "max": 10,
-        "note": "contact@caoba.fr"
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "http://www.caoba.fr"
-      },
-      "phone_present": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 6,
-    "criteria_total": 9,
-    "source": "OpenStreetMap",
-    "segment": "",
-    "sector_confidence": 1.0,
-    "email_valid": true,
-    "website_active": true,
-    "enrich_score": 2,
-    "hash_dedup": "d98f10716717a57c",
-    "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.650545"
+    "created_at": "2026-04-16T12:58:57.899607"
   },
   {
     "nom_commercial": "Defensive Lab Agency",
@@ -3411,7 +3162,7 @@
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -3445,7 +3196,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
@@ -3483,7 +3234,7 @@
     "enrich_score": 2,
     "hash_dedup": "9af791bcc748b84d",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.650545"
+    "created_at": "2026-04-16T12:58:57.900606"
   },
   {
     "nom_commercial": "WebFabrick",
@@ -3494,7 +3245,7 @@
     "linkedin_url": "https://www.linkedin.com/company/webfabrick",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -3528,7 +3279,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
@@ -3566,90 +3317,7 @@
     "enrich_score": 3,
     "hash_dedup": "7f3435bd0634e8e1",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.650545"
-  },
-  {
-    "nom_commercial": "None",
-    "raison_sociale": "None",
-    "email": "contact@noemeparis.com",
-    "telephone": "",
-    "website": "https://noemeparis.com",
-    "linkedin_url": "",
-    "adresse": "",
-    "ville": "Paris",
-    "region": "",
-    "pays": "France",
-    "code_postal": "",
-    "secteur_activite": "Informatique",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "Noème Paris, \"l'inaccessible\", est une Maison de haute parfumerie française. Découvrez nos fragrances exceptionnelles, une présentation unique et une invitation au voyage. Explorez l'univers du luxe et de la niche pour éveiller vos sens avec chaque parfum.",
-    "code_naf": "",
-    "siren": "",
-    "siret": "",
-    "qualification_score": 60,
-    "score_pct": 60.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Informatique"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "ville:paris"
-      },
-      "email_valid": {
-        "points": 10,
-        "max": 10,
-        "note": "contact@noemeparis.com"
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://noemeparis.com"
-      },
-      "phone_present": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 6,
-    "criteria_total": 9,
-    "source": "OpenStreetMap",
-    "segment": "",
-    "sector_confidence": 1.0,
-    "email_valid": true,
-    "website_active": true,
-    "enrich_score": 2,
-    "hash_dedup": "eb1bc7bf3ceeda58",
-    "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.651544"
+    "created_at": "2026-04-16T12:58:57.900606"
   },
   {
     "nom_commercial": "Deep Block",
@@ -3660,7 +3328,7 @@
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -3694,7 +3362,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
@@ -3732,7 +3400,7 @@
     "enrich_score": 2,
     "hash_dedup": "40d40cca29e9c8db",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.651544"
+    "created_at": "2026-04-16T12:58:57.901606"
   },
   {
     "nom_commercial": "Contrôle-C",
@@ -3743,7 +3411,7 @@
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -3777,7 +3445,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
@@ -3815,18 +3483,18 @@
     "enrich_score": 2,
     "hash_dedup": "4b8cff2a67994cbb",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.651544"
+    "created_at": "2026-04-16T12:58:57.901606"
   },
   {
     "nom_commercial": "Scality",
     "raison_sociale": "Scality",
-    "email": "dpo@scality.com",
+    "email": "sales.eu@scality.com",
     "telephone": "",
     "website": "https://www.scality.com",
     "linkedin_url": "https://www.linkedin.com/company/scality",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -3860,12 +3528,12 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
         "max": 10,
-        "note": "dpo@scality.com"
+        "note": "sales.eu@scality.com"
       },
       "website_active": {
         "points": 10,
@@ -3898,7 +3566,7 @@
     "enrich_score": 3,
     "hash_dedup": "a8e52aff32a36708",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.651544"
+    "created_at": "2026-04-16T12:58:57.901606"
   },
   {
     "nom_commercial": "Alioscopy",
@@ -3909,7 +3577,7 @@
     "linkedin_url": "",
     "adresse": "3 rue du Jourdain 75020 Paris FR",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -3943,7 +3611,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
@@ -3981,7 +3649,7 @@
     "enrich_score": 2,
     "hash_dedup": "3e51440ea2cbcbde",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.651544"
+    "created_at": "2026-04-16T12:58:57.901606"
   },
   {
     "nom_commercial": "NeosLab",
@@ -3992,7 +3660,7 @@
     "linkedin_url": "https://linkedin.com/company/neoslabx",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -4026,7 +3694,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
@@ -4064,18 +3732,18 @@
     "enrich_score": 3,
     "hash_dedup": "76395976409b00e1",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.651544"
+    "created_at": "2026-04-16T12:58:57.901606"
   },
   {
-    "nom_commercial": "comAvenue",
-    "raison_sociale": "comAvenue",
-    "email": "info@comavenue.com",
-    "telephone": "01 45 55 00 07",
-    "website": "https://www.comavenue.com",
+    "nom_commercial": "Cozy Cloud",
+    "raison_sociale": "Cozy Cloud",
+    "email": "",
+    "telephone": "09 72 17 53 75",
+    "website": "https://cozy.io/fr/legal",
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -4109,22 +3777,22 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 0,
         "max": 10,
-        "note": "info@comavenue.com"
+        "note": ""
       },
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://www.comavenue.com"
+        "note": "https://cozy.io/fr/legal"
       },
       "phone_present": {
         "points": 10,
         "max": 10,
-        "note": "01 45 55 00 07"
+        "note": "09 72 17 53 75"
       },
       "name_complete": {
         "points": 5,
@@ -4145,9 +3813,92 @@
     "email_valid": false,
     "website_active": true,
     "enrich_score": 2,
-    "hash_dedup": "b58f150a51ca3e45",
+    "hash_dedup": "276b6d21e8195bec",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.651544"
+    "created_at": "2026-04-16T12:58:57.901606"
+  },
+  {
+    "nom_commercial": "Gandi",
+    "raison_sociale": "Gandi",
+    "email": "direction@gandi.net",
+    "telephone": "",
+    "website": "https://www.gandi.net",
+    "linkedin_url": "https://www.linkedin.com/company/gandi/",
+    "adresse": "",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "➤ Gérez votre site web, vos emails, vos certificats SSL et vos serveurs VPS. ✅ Inclus avec un nom de domaine : 1 certificat SSL offert, Alias et redirections illimités et notre serveur de nom LiveDNS.",
+    "code_naf": "",
+    "siren": "",
+    "siret": "",
+    "qualification_score": 60,
+    "score_pct": 60.0,
+    "statut": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 10,
+        "max": 10,
+        "note": "direction@gandi.net"
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://www.gandi.net"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 6,
+    "criteria_total": 9,
+    "source": "OpenStreetMap",
+    "segment": "",
+    "sector_confidence": 1.0,
+    "email_valid": true,
+    "website_active": true,
+    "enrich_score": 3,
+    "hash_dedup": "b2d2091b5c91b308",
+    "raw_text": "",
+    "created_at": "2026-04-16T12:58:57.901606"
   },
   {
     "nom_commercial": "AXE E-Santé",
@@ -4158,7 +3909,7 @@
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -4192,7 +3943,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 0,
@@ -4230,7 +3981,7 @@
     "enrich_score": 2,
     "hash_dedup": "73f4aad89a900d48",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.651544"
+    "created_at": "2026-04-16T12:58:57.901606"
   },
   {
     "nom_commercial": "Reciproque",
@@ -4241,7 +3992,7 @@
     "linkedin_url": "https://fr.linkedin.com/company/reciproque",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -4275,7 +4026,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
@@ -4313,7 +4064,7 @@
     "enrich_score": 3,
     "hash_dedup": "30ca27369942a634",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.651544"
+    "created_at": "2026-04-16T12:58:57.901606"
   },
   {
     "nom_commercial": "Indexima",
@@ -4324,7 +4075,7 @@
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -4358,7 +4109,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
@@ -4396,7 +4147,7 @@
     "enrich_score": 2,
     "hash_dedup": "8373345fce970665",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.651544"
+    "created_at": "2026-04-16T12:58:57.901606"
   },
   {
     "nom_commercial": "Innovela",
@@ -4407,7 +4158,7 @@
     "linkedin_url": "https://fr.linkedin.com/company/innovela",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -4441,7 +4192,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
@@ -4479,7 +4230,7 @@
     "enrich_score": 3,
     "hash_dedup": "973b44f768a2f14a",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.652544"
+    "created_at": "2026-04-16T12:58:57.901606"
   },
   {
     "nom_commercial": "NBS System",
@@ -4490,7 +4241,7 @@
     "linkedin_url": "https://www.linkedin.com/company/nbs-system/",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -4524,7 +4275,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
@@ -4562,7 +4313,7 @@
     "enrich_score": 3,
     "hash_dedup": "1ac63b0758d1e8fd",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.652544"
+    "created_at": "2026-04-16T12:58:57.902606"
   },
   {
     "nom_commercial": "Worteks",
@@ -4573,7 +4324,7 @@
     "linkedin_url": "https://www.linkedin.com/company/worteks",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -4607,7 +4358,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
@@ -4645,7 +4396,7 @@
     "enrich_score": 3,
     "hash_dedup": "58ac9c7d41a6f9d9",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.652544"
+    "created_at": "2026-04-16T12:58:57.902606"
   },
   {
     "nom_commercial": "Resix",
@@ -4656,7 +4407,7 @@
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -4690,7 +4441,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
@@ -4728,18 +4479,18 @@
     "enrich_score": 2,
     "hash_dedup": "eb6ce5c00392763b",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.652544"
+    "created_at": "2026-04-16T12:58:57.902606"
   },
   {
-    "nom_commercial": "Data-tricks",
-    "raison_sociale": "Data-tricks",
-    "email": "contact@data-tricks.com",
+    "nom_commercial": "OrdiPhone Services",
+    "raison_sociale": "OrdiPhone Services",
+    "email": "contact@superordi.fr",
     "telephone": "",
-    "website": "https://www.data-tricks.com",
+    "website": "https://superordi.fr/75/paris/ordiphone-services-92h",
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -4747,7 +4498,7 @@
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
-    "description": "",
+    "description": "Magasin d'informatique « Ordiphone Services » rue d'Amsterdam à Paris : adresse, téléphone, horaires, email, site web",
     "code_naf": "",
     "siren": "",
     "siret": "",
@@ -4773,17 +4524,17 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
         "max": 10,
-        "note": "contact@data-tricks.com"
+        "note": "contact@superordi.fr"
       },
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://www.data-tricks.com"
+        "note": "https://superordi.fr/75/paris/ordiphone-services-92h"
       },
       "phone_present": {
         "points": 0,
@@ -4809,39 +4560,39 @@
     "email_valid": true,
     "website_active": true,
     "enrich_score": 2,
-    "hash_dedup": "c40e535e1e2b696d",
+    "hash_dedup": "e72c44fb51031e1f",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.652544"
+    "created_at": "2026-04-16T12:58:57.902606"
   },
   {
-    "nom_commercial": "OCP INCUBATEUR LOGICIEL",
-    "raison_sociale": "OCP INCUBATEUR LOGICIEL",
+    "nom_commercial": "AMI INFORMATIQUE",
+    "raison_sociale": "AMI INFORMATIQUE",
     "email": "contact@bodacc.fr",
-    "telephone": "01 83 64 31 00",
-    "website": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A201100771047",
+    "telephone": "",
+    "website": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A202600391628",
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
     "region": "Île-de-France",
     "pays": "France",
-    "code_postal": "75008",
-    "secteur_activite": "Éducation & Formation",
-    "type_entreprise": "Société anonyme",
+    "code_postal": "75018",
+    "secteur_activite": "Conseil IT",
+    "type_entreprise": "Société par actions simplifiée",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
     "description": "Bulletin officiel des annonces civiles et commerciales",
     "code_naf": "",
-    "siren": "531528982",
+    "siren": "101216091",
     "siret": "",
     "qualification_score": 50,
     "score_pct": 50.0,
     "statut": "QUALIFIE",
     "score_detail": {
       "sector_match": {
-        "points": 0,
+        "points": 10,
         "max": 20,
-        "note": "no_match (éducation & formation)"
+        "note": "partial:Informatique"
       },
       "size_match": {
         "points": 0,
@@ -4851,7 +4602,7 @@
       "type_match": {
         "points": 0,
         "max": 15,
-        "note": "no_match:SOCIÉTÉ ANONYME"
+        "note": "no_match:SOCIÉTÉ PAR ACTIONS SIMPLIFIÉE"
       },
       "geo_match": {
         "points": 10,
@@ -4866,12 +4617,12 @@
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A201100771047"
+        "note": "https://www.bodacc.fr/pages/annonces-commerciales-detail/?q.id=id:A202600391628"
       },
       "phone_present": {
-        "points": 10,
+        "points": 0,
         "max": 10,
-        "note": "01 83 64 31 00"
+        "note": ""
       },
       "name_complete": {
         "points": 5,
@@ -4888,18 +4639,267 @@
     "criteria_total": 9,
     "source": "BODACC",
     "segment": "",
-    "sector_confidence": 0.337,
+    "sector_confidence": 0.451,
+    "email_valid": true,
+    "website_active": true,
+    "enrich_score": 2,
+    "hash_dedup": "736b3a6aafcd9ad4",
+    "raw_text": "",
+    "created_at": "2026-04-16T12:58:52.559041"
+  },
+  {
+    "nom_commercial": "CIVISOFT-CVOX LOGICIEL",
+    "raison_sociale": "CIVISOFT-CVOX LOGICIEL",
+    "email": "",
+    "telephone": "",
+    "website": "https://entreprises.lefigaro.fr/civisoft-civivox-logiciels-75/entreprise-950880674",
+    "linkedin_url": "",
+    "adresse": "55 AVENUE MARCEAU 75016 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75016",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Société Civisoft-Cvox Logiciel (Paris, 75016) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire...",
+    "code_naf": "62.01Z",
+    "siren": "950880674",
+    "siret": "95088067400011",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "statut": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://entreprises.lefigaro.fr/civisoft-civivox-logiciels-75/entreprise-950880674"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "data.gouv.fr/Sirene",
+    "segment": "",
+    "sector_confidence": 0.369,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "hash_dedup": "89430d9789df8e9a",
+    "raw_text": "",
+    "created_at": "2026-04-16T12:58:52.463231"
+  },
+  {
+    "nom_commercial": "SOC CIVILE PROPRIETAIRE DES LOGICIELS",
+    "raison_sociale": "SOC CIVILE PROPRIETAIRE DES LOGICIELS",
+    "email": "contact@mon-informaticien.com",
+    "telephone": "03 88 95 33 55",
+    "website": "https://www.mon-informaticien.com/entreprise/soc-civile-proprietaire-des-logiciels-392509022-00019",
+    "linkedin_url": "",
+    "adresse": "9 RUE BEETHOVEN 75016 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75016",
+    "secteur_activite": "Agriculture",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Faites appel à l'entreprise d'informatique SOC CIVILE PROPRIETAIRE DES LOGICIELS située à Paris-16 (75016). Cet informaticien est notamment spécialisé en Prestations informatiques.",
+    "code_naf": "62.01Z",
+    "siren": "392509022",
+    "siret": "39250902200019",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "statut": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 0,
+        "max": 20,
+        "note": "no_match (agriculture)"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 10,
+        "max": 10,
+        "note": "contact@mon-informaticien.com"
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://www.mon-informaticien.com/entreprise/soc-civile-proprietaire-des-logiciels-392509022-00019"
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "03 88 95 33 55"
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 6,
+    "criteria_total": 9,
+    "source": "data.gouv.fr/Sirene",
+    "segment": "",
+    "sector_confidence": 0.313,
     "email_valid": true,
     "website_active": true,
     "enrich_score": 3,
-    "hash_dedup": "736b3a6aafcd9ad4",
+    "hash_dedup": "859ef96e5e015eba",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:18.924134"
+    "created_at": "2026-04-16T12:58:52.463231"
+  },
+  {
+    "nom_commercial": "CONSEIL LOGICIEL SECURITE (CLS)",
+    "raison_sociale": "CONSEIL LOGICIEL SECURITE",
+    "email": "contact@cls.to",
+    "telephone": "",
+    "website": "http://www.cls.to",
+    "linkedin_url": "",
+    "adresse": "20 RUE MALAR 75007 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75007",
+    "secteur_activite": "Cybersécurité",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "|",
+    "code_naf": "62.02A",
+    "siren": "502281926",
+    "siret": "50228192600035",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "statut": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 10,
+        "max": 20,
+        "note": "partial:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 10,
+        "max": 10,
+        "note": "contact@cls.to"
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "http://www.cls.to"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 6,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "segment": "",
+    "sector_confidence": 0.386,
+    "email_valid": true,
+    "website_active": true,
+    "enrich_score": 2,
+    "hash_dedup": "4748d886b7321280",
+    "raw_text": "",
+    "created_at": "2026-04-16T12:58:56.030270"
   },
   {
     "nom_commercial": "Le Laptop Jourdain",
     "raison_sociale": "Le Laptop Jourdain",
-    "email": "welcome@lelaptop.com",
+    "email": "support@ovh.com",
     "telephone": "+33 1 77 16 65 24",
     "website": "https://www.lelaptop.com",
     "linkedin_url": "",
@@ -4944,7 +4944,7 @@
       "email_valid": {
         "points": 10,
         "max": 10,
-        "note": "welcome@lelaptop.com"
+        "note": "support@ovh.com"
       },
       "website_active": {
         "points": 10,
@@ -4977,7 +4977,7 @@
     "enrich_score": 3,
     "hash_dedup": "8eb5639cc3512154",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.649544"
+    "created_at": "2026-04-16T12:58:57.899607"
   },
   {
     "nom_commercial": "Hove",
@@ -5060,18 +5060,18 @@
     "enrich_score": 1,
     "hash_dedup": "913cafcaac3d13ac",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.649544"
+    "created_at": "2026-04-16T12:58:57.899607"
   },
   {
     "nom_commercial": "Studio",
     "raison_sociale": "Studio",
-    "email": "contact@balkinbureau.com",
+    "email": "contact@studio-parisien.com",
     "telephone": "09 72 47 68 61",
     "website": "https://studio-parisien.com",
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Restauration",
@@ -5105,12 +5105,12 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
         "max": 10,
-        "note": "contact@balkinbureau.com"
+        "note": "contact@studio-parisien.com"
       },
       "website_active": {
         "points": 10,
@@ -5143,7 +5143,90 @@
     "enrich_score": 3,
     "hash_dedup": "7fa364da247b18b4",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.649544"
+    "created_at": "2026-04-16T12:58:57.899607"
+  },
+  {
+    "nom_commercial": "Le Cargo",
+    "raison_sociale": "Le Cargo",
+    "email": "",
+    "telephone": "",
+    "website": "http://www.lecargo.paris",
+    "linkedin_url": "",
+    "adresse": "",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "This domain may be for sale!",
+    "code_naf": "",
+    "siren": "",
+    "siret": "",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "statut": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "http://www.lecargo.paris"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "OpenStreetMap",
+    "segment": "",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "hash_dedup": "21bd623c02e8ecfb",
+    "raw_text": "",
+    "created_at": "2026-04-16T12:58:57.899607"
   },
   {
     "nom_commercial": "Incka (Groupe Astek)",
@@ -5154,7 +5237,7 @@
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -5188,7 +5271,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 0,
@@ -5226,7 +5309,7 @@
     "enrich_score": 1,
     "hash_dedup": "48c3a72cddd01611",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.650545"
+    "created_at": "2026-04-16T12:58:57.900606"
   },
   {
     "nom_commercial": "B45",
@@ -5237,7 +5320,7 @@
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Non spécifié",
@@ -5271,7 +5354,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
@@ -5309,26 +5392,26 @@
     "enrich_score": 3,
     "hash_dedup": "e14404cabcd67358",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.650545"
+    "created_at": "2026-04-16T12:58:57.900606"
   },
   {
-    "nom_commercial": "Coworking Republic",
-    "raison_sociale": "Coworking Republic",
-    "email": "contact@coworkingrepublic.com",
-    "telephone": "+33 1 42 72 53 86",
-    "website": "https://coworkingrepublic.com/accueil",
+    "nom_commercial": "Artifica",
+    "raison_sociale": "Artifica",
+    "email": "info@artifica.fr",
+    "telephone": "",
+    "website": "",
     "linkedin_url": "",
-    "adresse": "",
+    "adresse": "2 Rue du Repos",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
-    "code_postal": "",
-    "secteur_activite": "Agriculture",
+    "code_postal": "75020",
+    "secteur_activite": "Informatique",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
-    "description": "",
+    "description": "Tél. 01 40 09 77 12 - Création sites web, plans interactifs.",
     "code_naf": "",
     "siren": "",
     "siret": "",
@@ -5337,9 +5420,9 @@
     "statut": "QUALIFIE",
     "score_detail": {
       "sector_match": {
-        "points": 0,
+        "points": 20,
         "max": 20,
-        "note": "no_match (agriculture)"
+        "note": "match:Informatique"
       },
       "size_match": {
         "points": 0,
@@ -5354,22 +5437,22 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
         "max": 10,
-        "note": "contact@coworkingrepublic.com"
+        "note": "info@artifica.fr"
       },
       "website_active": {
-        "points": 10,
+        "points": 0,
         "max": 10,
-        "note": "https://coworkingrepublic.com/accueil"
+        "note": ""
       },
       "phone_present": {
-        "points": 10,
+        "points": 0,
         "max": 10,
-        "note": "+33 1 42 72 53 86"
+        "note": ""
       },
       "name_complete": {
         "points": 5,
@@ -5382,17 +5465,17 @@
         "note": ""
       }
     },
-    "criteria_met": 6,
+    "criteria_met": 5,
     "criteria_total": 9,
     "source": "OpenStreetMap",
     "segment": "",
-    "sector_confidence": 0.34,
+    "sector_confidence": 1.0,
     "email_valid": true,
-    "website_active": true,
-    "enrich_score": 3,
-    "hash_dedup": "1afff4991b420ea9",
+    "website_active": false,
+    "enrich_score": 1,
+    "hash_dedup": "356f9628420d615e",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.650545"
+    "created_at": "2026-04-16T12:58:57.900606"
   },
   {
     "nom_commercial": "La Cordée",
@@ -5403,7 +5486,7 @@
     "linkedin_url": "https://www.linkedin.com/company/lacordee/",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Non spécifié",
@@ -5437,7 +5520,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
@@ -5475,7 +5558,7 @@
     "enrich_score": 4,
     "hash_dedup": "47495664988cd22c",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.650545"
+    "created_at": "2026-04-16T12:58:57.900606"
   },
   {
     "nom_commercial": "Le Tank",
@@ -5486,7 +5569,7 @@
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Non spécifié",
@@ -5520,7 +5603,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
@@ -5558,7 +5641,7 @@
     "enrich_score": 3,
     "hash_dedup": "93cb01df22606b27",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.650545"
+    "created_at": "2026-04-16T12:58:57.900606"
   },
   {
     "nom_commercial": "WISE Partners",
@@ -5569,7 +5652,7 @@
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -5603,7 +5686,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 0,
@@ -5641,18 +5724,18 @@
     "enrich_score": 1,
     "hash_dedup": "a83afbf27d7acb2c",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.651544"
+    "created_at": "2026-04-16T12:58:57.900606"
   },
   {
-    "nom_commercial": "Cozy Cloud",
-    "raison_sociale": "Cozy Cloud",
+    "nom_commercial": "comAvenue",
+    "raison_sociale": "comAvenue",
     "email": "",
     "telephone": "",
-    "website": "https://cozy.io/fr/legal",
+    "website": "https://www.comavenue.com",
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -5686,7 +5769,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 0,
@@ -5696,7 +5779,7 @@
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://cozy.io/fr/legal"
+        "note": "https://www.comavenue.com"
       },
       "phone_present": {
         "points": 0,
@@ -5722,9 +5805,9 @@
     "email_valid": false,
     "website_active": true,
     "enrich_score": 1,
-    "hash_dedup": "276b6d21e8195bec",
+    "hash_dedup": "b58f150a51ca3e45",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.651544"
+    "created_at": "2026-04-16T12:58:57.901606"
   },
   {
     "nom_commercial": "Le Coffice",
@@ -5735,7 +5818,7 @@
     "linkedin_url": "",
     "adresse": "79 Rue de Patay 75013 Paris FR",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Non spécifié",
@@ -5769,7 +5852,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
@@ -5807,90 +5890,7 @@
     "enrich_score": 3,
     "hash_dedup": "f15d5ffbed450d24",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.651544"
-  },
-  {
-    "nom_commercial": "DEPU Technologie",
-    "raison_sociale": "DEPU Technologie",
-    "email": "",
-    "telephone": "",
-    "website": "https://deputech.wordpress.com",
-    "linkedin_url": "",
-    "adresse": "149 Rue Amelot, 75011 Paris",
-    "ville": "Paris",
-    "region": "",
-    "pays": "France",
-    "code_postal": "",
-    "secteur_activite": "Informatique",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "Spécialiste de la réparation de vos appareils et vente de vos pièces détachées",
-    "code_naf": "",
-    "siren": "",
-    "siret": "",
-    "qualification_score": 50,
-    "score_pct": 50.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Informatique"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "ville:paris"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://deputech.wordpress.com"
-      },
-      "phone_present": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 5,
-    "criteria_total": 9,
-    "source": "OpenStreetMap",
-    "segment": "",
-    "sector_confidence": 1.0,
-    "email_valid": false,
-    "website_active": true,
-    "enrich_score": 1,
-    "hash_dedup": "8bc1b0cb8b1d84d0",
-    "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.651544"
+    "created_at": "2026-04-16T12:58:57.901606"
   },
   {
     "nom_commercial": "acial",
@@ -5901,7 +5901,7 @@
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -5935,7 +5935,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 0,
@@ -5973,90 +5973,7 @@
     "enrich_score": 1,
     "hash_dedup": "cdb91cb19cb0ffd1",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.652544"
-  },
-  {
-    "nom_commercial": "Chais de France",
-    "raison_sociale": "Chais de France",
-    "email": "contact@ace-si.com",
-    "telephone": "03 88 71 79 79",
-    "website": "https://www.groupegcf.fr",
-    "linkedin_url": "https://www.linkedin.com/company/les-grands-chais-de-france/",
-    "adresse": "6 Chemin des Montquartiers",
-    "ville": "Paris",
-    "region": "",
-    "pays": "France",
-    "code_postal": "",
-    "secteur_activite": "Non spécifié",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "Groupe GCF est une entreprise mondiale du secteur des vins & spiritueux. Découvrez le groupe, ses forces, domaines, marques, métiers, offres d’emploi.",
-    "code_naf": "",
-    "siren": "",
-    "siret": "",
-    "qualification_score": 50,
-    "score_pct": 50.0,
-    "statut": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 0,
-        "max": 20,
-        "note": "no_match (non spécifié)"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "ville:paris"
-      },
-      "email_valid": {
-        "points": 10,
-        "max": 10,
-        "note": "contact@ace-si.com"
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://www.groupegcf.fr"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "03 88 71 79 79"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 6,
-    "criteria_total": 9,
-    "source": "OpenStreetMap",
-    "segment": "",
-    "sector_confidence": 0.0,
-    "email_valid": true,
-    "website_active": true,
-    "enrich_score": 4,
-    "hash_dedup": "a3825d26f29e5e30",
-    "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.652544"
+    "created_at": "2026-04-16T12:58:57.902606"
   },
   {
     "nom_commercial": "Prophesee",
@@ -6067,7 +5984,7 @@
     "linkedin_url": "https://www.linkedin.com/company/9297365/",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -6101,7 +6018,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 0,
@@ -6139,7 +6056,7 @@
     "enrich_score": 2,
     "hash_dedup": "f4f239a1b30bbc80",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.652544"
+    "created_at": "2026-04-16T12:58:57.902606"
   },
   {
     "nom_commercial": "Morning",
@@ -6150,7 +6067,7 @@
     "linkedin_url": "https://www.linkedin.com/company/morning-coworking/",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Non spécifié",
@@ -6184,7 +6101,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
@@ -6222,32 +6139,32 @@
     "enrich_score": 4,
     "hash_dedup": "80eaea897c8349c3",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.652544"
+    "created_at": "2026-04-16T12:58:57.902606"
   },
   {
-    "nom_commercial": "BEST OF BREED CONSULTING (SAAS ADVISOR)",
-    "raison_sociale": "BEST OF BREED CONSULTING",
-    "email": "hello@saas-advisor.com",
+    "nom_commercial": "CONCEPTION HAUTE TECHNOLOGIE & LOGICIELS (CH LOG)",
+    "raison_sociale": "CONCEPTION HAUTE TECHNOLOGIE & LOGICIELS",
+    "email": "",
     "telephone": "",
-    "website": "https://saas-advisor.com",
-    "linkedin_url": "https://www.linkedin.com/company/saasadvisor",
-    "adresse": "23 RUE DULONG 75017 PARIS",
+    "website": "https://entreprises.lefigaro.fr/conception-haute-technologie-logicie-ch-log-75/entreprise-392744751",
+    "linkedin_url": "",
+    "adresse": "12 AVENUE DE CLICHY 75018 PARIS",
     "ville": "Paris",
     "region": "Île-de-France",
     "pays": "France",
-    "code_postal": "75017",
-    "secteur_activite": "Développement logiciel",
+    "code_postal": "75018",
+    "secteur_activite": "Conseil IT",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
-    "description": "SaaS Advisor est une société de conseil spécialisée en choix de solutions SaaS pour entreprises, agences et en particulier pour les directions marketing.",
+    "description": "Société Conception Haute Technologie & Logiciels - CH Log (Paris, 75018) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire...",
     "code_naf": "62.01Z",
-    "siren": "829981349",
-    "siret": "82998134900022",
-    "qualification_score": 50,
-    "score_pct": 50.0,
-    "statut": "QUALIFIE",
+    "siren": "392744751",
+    "siret": "39274475100026",
+    "qualification_score": 40,
+    "score_pct": 40.0,
+    "statut": "NON_QUALIFIE",
     "score_detail": {
       "sector_match": {
         "points": 10,
@@ -6270,14 +6187,14 @@
         "note": "region:île-de-france"
       },
       "email_valid": {
-        "points": 10,
+        "points": 0,
         "max": 10,
-        "note": "hello@saas-advisor.com"
+        "note": ""
       },
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://saas-advisor.com"
+        "note": "https://entreprises.lefigaro.fr/conception-haute-technologie-logicie-ch-log-75/entreprise-392744751"
       },
       "phone_present": {
         "points": 0,
@@ -6295,28 +6212,111 @@
         "note": ""
       }
     },
-    "criteria_met": 6,
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "data.gouv.fr/Sirene",
+    "segment": "",
+    "sector_confidence": 0.405,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "hash_dedup": "bdbf769590a70be4",
+    "raw_text": "",
+    "created_at": "2026-04-16T12:58:52.463231"
+  },
+  {
+    "nom_commercial": "GAVANIER INGENIERIE LOGICIELLE",
+    "raison_sociale": "GAVANIER INGENIERIE LOGICIELLE",
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "229 RUE SAINT-HONORE 75001 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75001",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.01Z",
+    "siren": "910040591",
+    "siret": "91004059100034",
+    "qualification_score": 40,
+    "score_pct": 40.0,
+    "statut": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 4,
     "criteria_total": 9,
     "source": "annuaire-entreprises.data.gouv.fr",
     "segment": "",
-    "sector_confidence": 0.5,
-    "email_valid": true,
-    "website_active": true,
-    "enrich_score": 3,
-    "hash_dedup": "5f7737e1a4db2dad",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 0,
+    "hash_dedup": "9a5797eb6a3ce258",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:38.531511"
+    "created_at": "2026-04-16T12:58:52.457572"
   },
   {
-    "nom_commercial": "TechCare",
-    "raison_sociale": "TechCare",
+    "nom_commercial": "MAC Store Green",
+    "raison_sociale": "MAC Store Green",
     "email": "",
     "telephone": "",
     "website": "",
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -6350,7 +6350,90 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 4,
+    "criteria_total": 9,
+    "source": "OpenStreetMap",
+    "segment": "",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 0,
+    "hash_dedup": "b1086a6f970ee5bd",
+    "raw_text": "",
+    "created_at": "2026-04-16T12:58:57.899607"
+  },
+  {
+    "nom_commercial": "TechCare",
+    "raison_sociale": "TechCare",
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "",
+    "siren": "",
+    "siret": "",
+    "qualification_score": 40,
+    "score_pct": 40.0,
+    "statut": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 0,
@@ -6388,21 +6471,21 @@
     "enrich_score": 0,
     "hash_dedup": "cc38f8e38246218f",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.649544"
+    "created_at": "2026-04-16T12:58:57.899607"
   },
   {
-    "nom_commercial": "Hubsy République",
-    "raison_sociale": "Hubsy République",
+    "nom_commercial": "Hubsy Café & Coworking",
+    "raison_sociale": "Hubsy Café & Coworking",
     "email": "",
     "telephone": "01 71 93 17 54",
     "website": "https://www.hubsy.fr",
     "linkedin_url": "",
-    "adresse": "",
+    "adresse": "41 Rue Réaumur",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
-    "code_postal": "",
-    "secteur_activite": "Non spécifié",
+    "code_postal": "75003",
+    "secteur_activite": "Restauration",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
@@ -6418,7 +6501,7 @@
       "sector_match": {
         "points": 0,
         "max": 20,
-        "note": "no_match (non spécifié)"
+        "note": "no_match (restauration)"
       },
       "size_match": {
         "points": 0,
@@ -6433,7 +6516,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 0,
@@ -6465,13 +6548,96 @@
     "criteria_total": 9,
     "source": "OpenStreetMap",
     "segment": "",
+    "sector_confidence": 0.518,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 2,
+    "hash_dedup": "6d37903107a69513",
+    "raw_text": "",
+    "created_at": "2026-04-16T12:58:57.899607"
+  },
+  {
+    "nom_commercial": "Hubsy République",
+    "raison_sociale": "Hubsy République",
+    "email": "",
+    "telephone": "01 71 93 17 54",
+    "website": "https://www.hubsy.fr/cafes/republique",
+    "linkedin_url": "",
+    "adresse": "",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "",
+    "secteur_activite": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Notre café Hubsy République situé au 9B Rue Lucien Sampaix, 75010 Paris est joignable au 01 71 93 17 54 avec une ouverture 7j/7, 3 salles de réunion et 3 salles d'appel !",
+    "code_naf": "",
+    "siren": "",
+    "siret": "",
+    "qualification_score": 40,
+    "score_pct": 40.0,
+    "statut": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 0,
+        "max": 20,
+        "note": "no_match (non spécifié)"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://www.hubsy.fr/cafes/republique"
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "01 71 93 17 54"
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "OpenStreetMap",
+    "segment": "",
     "sector_confidence": 0.0,
     "email_valid": false,
     "website_active": true,
     "enrich_score": 2,
     "hash_dedup": "d47d8fda9c96108b",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.650545"
+    "created_at": "2026-04-16T12:58:57.900606"
   },
   {
     "nom_commercial": "RR Informatique",
@@ -6482,7 +6648,7 @@
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -6516,7 +6682,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 0,
@@ -6554,7 +6720,90 @@
     "enrich_score": 0,
     "hash_dedup": "a4a3b69a3a95fc1b",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.650545"
+    "created_at": "2026-04-16T12:58:57.900606"
+  },
+  {
+    "nom_commercial": "Coworking Republic",
+    "raison_sociale": "Coworking Republic",
+    "email": "contact@coworkingrepublic.com",
+    "telephone": "+33 1 42 72 53 86",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "",
+    "secteur_activite": "Agriculture",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "",
+    "siren": "",
+    "siret": "",
+    "qualification_score": 40,
+    "score_pct": 40.0,
+    "statut": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 0,
+        "max": 20,
+        "note": "no_match (agriculture)"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 10,
+        "max": 10,
+        "note": "contact@coworkingrepublic.com"
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "+33 1 42 72 53 86"
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "OpenStreetMap",
+    "segment": "",
+    "sector_confidence": 0.34,
+    "email_valid": true,
+    "website_active": false,
+    "enrich_score": 2,
+    "hash_dedup": "1afff4991b420ea9",
+    "raw_text": "",
+    "created_at": "2026-04-16T12:58:57.900606"
   },
   {
     "nom_commercial": "Viewpay",
@@ -6637,7 +6886,173 @@
     "enrich_score": 0,
     "hash_dedup": "29eea161882c37f4",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.650545"
+    "created_at": "2026-04-16T12:58:57.900606"
+  },
+  {
+    "nom_commercial": "Métamicro",
+    "raison_sociale": "Métamicro",
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "",
+    "siren": "",
+    "siret": "",
+    "qualification_score": 40,
+    "score_pct": 40.0,
+    "statut": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 4,
+    "criteria_total": 9,
+    "source": "OpenStreetMap",
+    "segment": "",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 0,
+    "hash_dedup": "b32f01f6949fb410",
+    "raw_text": "",
+    "created_at": "2026-04-16T12:58:57.900606"
+  },
+  {
+    "nom_commercial": "Caoba Conseil",
+    "raison_sociale": "Caoba Conseil",
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "23 Rue du Buisson Saint-Louis",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75010",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "",
+    "siren": "",
+    "siret": "",
+    "qualification_score": 40,
+    "score_pct": 40.0,
+    "statut": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 4,
+    "criteria_total": 9,
+    "source": "OpenStreetMap",
+    "segment": "",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 0,
+    "hash_dedup": "d98f10716717a57c",
+    "raw_text": "",
+    "created_at": "2026-04-16T12:58:57.900606"
   },
   {
     "nom_commercial": "Nuage Café",
@@ -6648,7 +7063,7 @@
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Restauration",
@@ -6682,7 +7097,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 10,
@@ -6720,7 +7135,7 @@
     "enrich_score": 2,
     "hash_dedup": "ee71794ea6a8d304",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.650545"
+    "created_at": "2026-04-16T12:58:57.900606"
   },
   {
     "nom_commercial": "Octopuce",
@@ -6803,18 +7218,18 @@
     "enrich_score": 0,
     "hash_dedup": "93af13837a7b9066",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.650545"
+    "created_at": "2026-04-16T12:58:57.900606"
   },
   {
-    "nom_commercial": "OdyNous",
-    "raison_sociale": "OdyNous",
+    "nom_commercial": "None",
+    "raison_sociale": "None",
     "email": "",
     "telephone": "",
     "website": "",
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -6848,7 +7263,90 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 4,
+    "criteria_total": 9,
+    "source": "OpenStreetMap",
+    "segment": "",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 0,
+    "hash_dedup": "eb1bc7bf3ceeda58",
+    "raw_text": "",
+    "created_at": "2026-04-16T12:58:57.901606"
+  },
+  {
+    "nom_commercial": "OdyNous",
+    "raison_sociale": "OdyNous",
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "",
+    "siren": "",
+    "siret": "",
+    "qualification_score": 40,
+    "score_pct": 40.0,
+    "statut": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 0,
@@ -6886,7 +7384,7 @@
     "enrich_score": 0,
     "hash_dedup": "c37d83949bde8506",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.651544"
+    "created_at": "2026-04-16T12:58:57.901606"
   },
   {
     "nom_commercial": "Diskeon",
@@ -6897,7 +7395,7 @@
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -6931,7 +7429,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 0,
@@ -6969,101 +7467,18 @@
     "enrich_score": 0,
     "hash_dedup": "87551ed84e729443",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.651544"
+    "created_at": "2026-04-16T12:58:57.901606"
   },
   {
-    "nom_commercial": "Wework",
-    "raison_sociale": "Wework",
-    "email": "",
-    "telephone": "0314960811",
-    "website": "https://www.wework.com/fr-FR/l/office-space/paris",
-    "linkedin_url": "https://www.linkedin.com/company/wework",
-    "adresse": "64-66 Rue des Archives Paris, Île-de-France 75003",
-    "ville": "Paris",
-    "region": "",
-    "pays": "France",
-    "code_postal": "",
-    "secteur_activite": "Ressources humaines",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "Parcourez nos bureaux haut de gamme à louer au Paris. Profitez d'espaces privés et d'étages complets avec des services inclus professionnels et des conditions flexibles chez WeWork.",
-    "code_naf": "",
-    "siren": "",
-    "siret": "",
-    "qualification_score": 40,
-    "score_pct": 40.0,
-    "statut": "NON_QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 0,
-        "max": 20,
-        "note": "no_match (ressources humaines)"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "ville:paris"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://www.wework.com/fr-FR/l/office-space/paris"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "0314960811"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 5,
-    "criteria_total": 9,
-    "source": "OpenStreetMap",
-    "segment": "",
-    "sector_confidence": 0.4,
-    "email_valid": false,
-    "website_active": true,
-    "enrich_score": 3,
-    "hash_dedup": "742b70348c701b9d",
-    "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.651544"
-  },
-  {
-    "nom_commercial": "Adisinfo",
-    "raison_sociale": "Adisinfo",
+    "nom_commercial": "DEPU Technologie",
+    "raison_sociale": "DEPU Technologie",
     "email": "",
     "telephone": "",
     "website": "",
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -7097,7 +7512,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 0,
@@ -7133,9 +7548,92 @@
     "email_valid": false,
     "website_active": false,
     "enrich_score": 0,
-    "hash_dedup": "234706367b488755",
+    "hash_dedup": "8bc1b0cb8b1d84d0",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.652544"
+    "created_at": "2026-04-16T12:58:57.901606"
+  },
+  {
+    "nom_commercial": "Chronodisk",
+    "raison_sociale": "Chronodisk",
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "",
+    "siren": "",
+    "siret": "",
+    "qualification_score": 40,
+    "score_pct": 40.0,
+    "statut": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 4,
+    "criteria_total": 9,
+    "source": "OpenStreetMap",
+    "segment": "",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 0,
+    "hash_dedup": "25f3efa29499a97c",
+    "raw_text": "",
+    "created_at": "2026-04-16T12:58:57.901606"
   },
   {
     "nom_commercial": "Le colibri",
@@ -7146,7 +7644,7 @@
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Développement logiciel",
@@ -7180,7 +7678,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 0,
@@ -7218,7 +7716,7 @@
     "enrich_score": 1,
     "hash_dedup": "c035fecc77d5ba5f",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.652544"
+    "created_at": "2026-04-16T12:58:57.902606"
   },
   {
     "nom_commercial": "Prestashop",
@@ -7229,7 +7727,7 @@
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -7263,7 +7761,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 0,
@@ -7301,7 +7799,7 @@
     "enrich_score": 0,
     "hash_dedup": "2c8680705d40e568",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.652544"
+    "created_at": "2026-04-16T12:58:57.902606"
   },
   {
     "nom_commercial": "avangarde",
@@ -7312,7 +7810,7 @@
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -7346,7 +7844,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 0,
@@ -7384,7 +7882,7 @@
     "enrich_score": 0,
     "hash_dedup": "aaba22a0bf7bcb11",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.652544"
+    "created_at": "2026-04-16T12:58:57.902606"
   },
   {
     "nom_commercial": "Galadrim",
@@ -7395,7 +7893,7 @@
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -7429,7 +7927,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 0,
@@ -7467,7 +7965,7 @@
     "enrich_score": 0,
     "hash_dedup": "fa28214c97204c50",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.652544"
+    "created_at": "2026-04-16T12:58:57.902606"
   },
   {
     "nom_commercial": "Hongli Informatique",
@@ -7478,7 +7976,7 @@
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -7512,7 +8010,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 0,
@@ -7550,90 +8048,7 @@
     "enrich_score": 0,
     "hash_dedup": "80701e5519abc31d",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.652544"
-  },
-  {
-    "nom_commercial": "OrdiPhone Services",
-    "raison_sociale": "OrdiPhone Services",
-    "email": "",
-    "telephone": "",
-    "website": "",
-    "linkedin_url": "",
-    "adresse": "",
-    "ville": "Paris",
-    "region": "",
-    "pays": "France",
-    "code_postal": "",
-    "secteur_activite": "Informatique",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "",
-    "code_naf": "",
-    "siren": "",
-    "siret": "",
-    "qualification_score": 40,
-    "score_pct": 40.0,
-    "statut": "NON_QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Informatique"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "ville:paris"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "phone_present": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 4,
-    "criteria_total": 9,
-    "source": "OpenStreetMap",
-    "segment": "",
-    "sector_confidence": 1.0,
-    "email_valid": false,
-    "website_active": false,
-    "enrich_score": 0,
-    "hash_dedup": "e72c44fb51031e1f",
-    "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.653544"
+    "created_at": "2026-04-16T12:58:57.902606"
   },
   {
     "nom_commercial": "Informatique world",
@@ -7644,7 +8059,7 @@
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Informatique",
@@ -7678,7 +8093,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 0,
@@ -7716,29 +8131,29 @@
     "enrich_score": 0,
     "hash_dedup": "0902611a968365f7",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.653544"
+    "created_at": "2026-04-16T12:58:57.902606"
   },
   {
-    "nom_commercial": "LA FABRIQUE LOGICIELLE",
-    "raison_sociale": "LA FABRIQUE LOGICIELLE",
+    "nom_commercial": "Zyteck",
+    "raison_sociale": "Zyteck",
     "email": "",
     "telephone": "",
     "website": "",
     "linkedin_url": "",
-    "adresse": "9 RUE STANISLAS 75006 PARIS",
+    "adresse": "",
     "ville": "Paris",
     "region": "Île-de-France",
     "pays": "France",
-    "code_postal": "75006",
+    "code_postal": "",
     "secteur_activite": "Informatique",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
     "description": "",
-    "code_naf": "62.02A",
-    "siren": "450308259",
-    "siret": "45030825900016",
+    "code_naf": "",
+    "siren": "",
+    "siret": "",
     "qualification_score": 40,
     "score_pct": 40.0,
     "statut": "NON_QUALIFIE",
@@ -7791,45 +8206,128 @@
     },
     "criteria_met": 4,
     "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
+    "source": "OpenStreetMap",
     "segment": "",
     "sector_confidence": 1.0,
     "email_valid": false,
     "website_active": false,
     "enrich_score": 0,
-    "hash_dedup": "8e6e33681ae6fa20",
+    "hash_dedup": "2a4e01b88a2e3df7",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:22.274626"
+    "created_at": "2026-04-16T12:58:57.902606"
   },
   {
-    "nom_commercial": "CONSULTING TEST LOGICIELS",
-    "raison_sociale": "CONSULTING TEST LOGICIELS",
+    "nom_commercial": "POLYWORKS EUROPA",
+    "raison_sociale": "POLYWORKS EUROPA",
     "email": "",
     "telephone": "",
     "website": "",
     "linkedin_url": "",
-    "adresse": "8 B RUE ABEL 75012 PARIS",
+    "adresse": "62 RUE DE LA CHAUSSEE D'ANTIN 75009 PARIS",
     "ville": "Paris",
     "region": "Île-de-France",
     "pays": "France",
-    "code_postal": "75012",
-    "secteur_activite": "Informatique",
+    "code_postal": "75009",
+    "secteur_activite": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "PME",
+    "nombre_employes": 10,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.09Z",
+    "siren": "812673028",
+    "siret": "81267302800013",
+    "qualification_score": 35,
+    "score_pct": 35.0,
+    "statut": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 0,
+        "max": 20,
+        "note": "no_match (non spécifié)"
+      },
+      "size_match": {
+        "points": 15,
+        "max": 15,
+        "note": "match:PME"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 4,
+    "criteria_total": 9,
+    "source": "data.gouv.fr/Sirene",
+    "segment": "",
+    "sector_confidence": 0.0,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 0,
+    "hash_dedup": "2dcf178a3c855382",
+    "raw_text": "",
+    "created_at": "2026-04-16T12:59:01.549151"
+  },
+  {
+    "nom_commercial": "ASSISTANCE LOGICIELS",
+    "raison_sociale": "ASSISTANCE LOGICIELS",
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "48 RUE LABAT 75018 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75018",
+    "secteur_activite": "Cybersécurité",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
     "description": "",
-    "code_naf": "62.02A",
-    "siren": "913295093",
-    "siret": "91329509300011",
-    "qualification_score": 40,
-    "score_pct": 40.0,
+    "code_naf": "62.01Z",
+    "siren": "442464913",
+    "siret": "44246491300015",
+    "qualification_score": 30,
+    "score_pct": 30.0,
     "statut": "NON_QUALIFIE",
     "score_detail": {
       "sector_match": {
-        "points": 20,
+        "points": 10,
         "max": 20,
-        "note": "match:Informatique"
+        "note": "partial:Informatique"
       },
       "size_match": {
         "points": 0,
@@ -7876,13 +8374,262 @@
     "criteria_total": 9,
     "source": "data.gouv.fr/Sirene",
     "segment": "",
-    "sector_confidence": 1.0,
+    "sector_confidence": 0.321,
     "email_valid": false,
     "website_active": false,
     "enrich_score": 0,
-    "hash_dedup": "57e5e7b6b278326f",
+    "hash_dedup": "ed853b022a8097f7",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:22.274626"
+    "created_at": "2026-04-16T12:58:52.462673"
+  },
+  {
+    "nom_commercial": "KAKO SYSTECHCONSEIL EN SYSTEMES, LOGICIELS INFORMATIQUES, ET VENTES DE PRODUITS INFORMATIQUE",
+    "raison_sociale": "KAKO SYSTECHCONSEIL EN SYSTEMES, LOGICIELS INFORMATIQUES, ET VENTES DE PRODUITS INFORMATIQUE",
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "39 RUE DU FAUBOURG POISSONNIERE 75009 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75009",
+    "secteur_activite": "Conseil IT",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.02A",
+    "siren": "928604727",
+    "siret": "92860472700075",
+    "qualification_score": 30,
+    "score_pct": 30.0,
+    "statut": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 10,
+        "max": 20,
+        "note": "partial:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 4,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "segment": "",
+    "sector_confidence": 0.489,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 0,
+    "hash_dedup": "1d41c92cb1f75a5d",
+    "raw_text": "",
+    "created_at": "2026-04-16T12:58:56.030270"
+  },
+  {
+    "nom_commercial": "SOCIETE FRANCAISE DE DIFFUSION DE LOGICIELS CYBERLEX (SFDL CYBERLEX)",
+    "raison_sociale": "SOCIETE FRANCAISE DE DIFFUSION DE LOGICIELS CYBERLEX",
+    "email": "",
+    "telephone": "",
+    "website": "https://app.dataprospects.fr/entreprises/SOCIETE-FRANCAISE-DE-DIFFUSION-DE-LOGICIELS-CYBERLEX/901446526",
+    "linkedin_url": "",
+    "adresse": "37 RUE DES MATHURINS 75008 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75008",
+    "secteur_activite": "Santé",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "SOCIETE FRANCAISE DE DIFFUSION DE LOGICIELS CYBERLEX est une SAS, socit par actions simplifie. Le SIREN qui lui a été attribué est le 901446526. Son année de création est 2021, il y a 5 ans. Son siège social est à PARIS (75008). Son code NAF attribué est le 6202A (Conseil en systmes et logiciels informatiques).",
+    "code_naf": "62.02A",
+    "siren": "901446526",
+    "siret": "90144652600013",
+    "qualification_score": 30,
+    "score_pct": 30.0,
+    "statut": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 0,
+        "max": 20,
+        "note": "no_match (santé)"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://app.dataprospects.fr/entreprises/SOCIETE-FRANCAISE-DE-DIFFUSION-DE-LOGICIELS-CYBERLEX/901446526"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 4,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "segment": "",
+    "sector_confidence": 0.326,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "hash_dedup": "3d5f8cb2dd42d291",
+    "raw_text": "",
+    "created_at": "2026-04-16T12:58:56.030270"
+  },
+  {
+    "nom_commercial": "SOCIETE D'ORGANISATION ET DE DEVELOPPEMENT DE LOGICIELS ASSISTANCE AUX REALISATIONS INGENIERIE ET SERVICES (SOLARIS)",
+    "raison_sociale": "SOCIETE D'ORGANISATION ET DE DEVELOPPEMENT DE LOGICIELS ASSISTANCE AUX REALISATIONS INGENIERIE ET SERVICES",
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "18 RUE PAUL FORT 75014 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75014",
+    "secteur_activite": "Conseil IT",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.02A",
+    "siren": "352884191",
+    "siret": "35288419100045",
+    "qualification_score": 30,
+    "score_pct": 30.0,
+    "statut": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 10,
+        "max": 20,
+        "note": "partial:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 4,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "segment": "",
+    "sector_confidence": 0.394,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 0,
+    "hash_dedup": "c419d1de2b6de89b",
+    "raw_text": "",
+    "created_at": "2026-04-16T12:58:56.030270"
   },
   {
     "nom_commercial": "Mitwit Office",
@@ -7965,21 +8712,21 @@
     "enrich_score": 2,
     "hash_dedup": "8d32f6bd38a5524f",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.651544"
+    "created_at": "2026-04-16T12:58:57.901606"
   },
   {
-    "nom_commercial": "La galerie",
-    "raison_sociale": "La galerie",
+    "nom_commercial": "Wework",
+    "raison_sociale": "Wework",
     "email": "",
-    "telephone": "",
-    "website": "https://www.lagalerieparis.com",
+    "telephone": "0186652533",
+    "website": "",
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
-    "secteur_activite": "E-commerce",
+    "secteur_activite": "Ressources humaines",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
@@ -7995,7 +8742,7 @@
       "sector_match": {
         "points": 0,
         "max": 20,
-        "note": "no_match (e-commerce)"
+        "note": "no_match (ressources humaines)"
       },
       "size_match": {
         "points": 0,
@@ -8010,7 +8757,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 0,
@@ -8018,14 +8765,14 @@
         "note": ""
       },
       "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://www.lagalerieparis.com"
-      },
-      "phone_present": {
         "points": 0,
         "max": 10,
         "note": ""
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "0186652533"
       },
       "name_complete": {
         "points": 5,
@@ -8042,43 +8789,126 @@
     "criteria_total": 9,
     "source": "OpenStreetMap",
     "segment": "",
-    "sector_confidence": 0.328,
+    "sector_confidence": 0.4,
     "email_valid": false,
-    "website_active": true,
+    "website_active": false,
     "enrich_score": 1,
-    "hash_dedup": "76468bea99e54d6c",
+    "hash_dedup": "742b70348c701b9d",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.651544"
+    "created_at": "2026-04-16T12:58:57.901606"
   },
   {
-    "nom_commercial": "DISPLAY SAAS",
-    "raison_sociale": "DISPLAY SAAS",
+    "nom_commercial": "Chais de France",
+    "raison_sociale": "Chais de France",
+    "email": "info@leschaisdefrance.com",
+    "telephone": "03 88 71 79 79",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "6 Chemin des Montquartiers",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "",
+    "secteur_activite": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "",
+    "siren": "",
+    "siret": "",
+    "qualification_score": 30,
+    "score_pct": 30.0,
+    "statut": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 0,
+        "max": 20,
+        "note": "no_match (non spécifié)"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": "info@leschaisdefrance.com"
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "03 88 71 79 79"
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 4,
+    "criteria_total": 9,
+    "source": "OpenStreetMap",
+    "segment": "",
+    "sector_confidence": 0.0,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 1,
+    "hash_dedup": "a3825d26f29e5e30",
+    "raw_text": "",
+    "created_at": "2026-04-16T12:58:57.902606"
+  },
+  {
+    "nom_commercial": "SOC ETUDE LOGICIEL INFORMAT MEDIA (SELIM)",
+    "raison_sociale": "SOC ETUDE LOGICIEL INFORMAT MEDIA",
     "email": "",
     "telephone": "",
     "website": "",
     "linkedin_url": "",
-    "adresse": "60 RUE FRANCOIS IER 75008 PARIS",
+    "adresse": "4 RUE GREUZE 75016 PARIS",
     "ville": "Paris",
     "region": "Île-de-France",
     "pays": "France",
-    "code_postal": "75008",
-    "secteur_activite": "Développement logiciel",
+    "code_postal": "75016",
+    "secteur_activite": "Marketing & Communication",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
     "description": "",
     "code_naf": "62.01Z",
-    "siren": "978909992",
-    "siret": "97890999200015",
-    "qualification_score": 30,
-    "score_pct": 30.0,
+    "siren": "397519018",
+    "siret": "39751901800022",
+    "qualification_score": 20,
+    "score_pct": 20.0,
     "statut": "NON_QUALIFIE",
     "score_detail": {
       "sector_match": {
-        "points": 10,
+        "points": 0,
         "max": 20,
-        "note": "partial:Informatique"
+        "note": "no_match (marketing & communication)"
       },
       "size_match": {
         "points": 0,
@@ -8121,47 +8951,47 @@
         "note": ""
       }
     },
-    "criteria_met": 4,
+    "criteria_met": 3,
     "criteria_total": 9,
-    "source": "annuaire-entreprises.data.gouv.fr",
+    "source": "data.gouv.fr/Sirene",
     "segment": "",
-    "sector_confidence": 0.332,
+    "sector_confidence": 0.375,
     "email_valid": false,
     "website_active": false,
     "enrich_score": 0,
-    "hash_dedup": "2a14707369eb57d4",
+    "hash_dedup": "bf71f2f9473dc230",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:38.531511"
+    "created_at": "2026-04-16T12:58:52.463231"
   },
   {
-    "nom_commercial": "CONSEIL LOGICIEL SECURITE (CLS)",
-    "raison_sociale": "CONSEIL LOGICIEL SECURITE",
+    "nom_commercial": "BLUE RIDGE LOGICIELS",
+    "raison_sociale": "BLUE RIDGE LOGICIELS",
     "email": "",
     "telephone": "",
     "website": "",
     "linkedin_url": "",
-    "adresse": "20 RUE MALAR 75007 PARIS",
+    "adresse": "31 AVENUE DE SEGUR 75007 PARIS",
     "ville": "Paris",
     "region": "Île-de-France",
     "pays": "France",
     "code_postal": "75007",
-    "secteur_activite": "Cybersécurité",
+    "secteur_activite": "BTP",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
     "description": "",
-    "code_naf": "62.02A",
-    "siren": "502281926",
-    "siret": "50228192600035",
-    "qualification_score": 30,
-    "score_pct": 30.0,
+    "code_naf": "62.01Z",
+    "siren": "812533693",
+    "siret": "81253369300030",
+    "qualification_score": 20,
+    "score_pct": 20.0,
     "statut": "NON_QUALIFIE",
     "score_detail": {
       "sector_match": {
-        "points": 10,
+        "points": 0,
         "max": 20,
-        "note": "partial:Informatique"
+        "note": "no_match (btp)"
       },
       "size_match": {
         "points": 0,
@@ -8204,197 +9034,31 @@
         "note": ""
       }
     },
-    "criteria_met": 4,
+    "criteria_met": 3,
     "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
+    "source": "annuaire-entreprises.data.gouv.fr",
     "segment": "",
-    "sector_confidence": 0.386,
+    "sector_confidence": 0.32,
     "email_valid": false,
     "website_active": false,
     "enrich_score": 0,
-    "hash_dedup": "4748d886b7321280",
+    "hash_dedup": "65ff8bbf556e1dc9",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:22.274626"
+    "created_at": "2026-04-16T12:58:52.457572"
   },
   {
-    "nom_commercial": "KAKO SYSTECHCONSEIL EN SYSTEMES, LOGICIELS INFORMATIQUES, ET VENTES DE PRODUITS INFORMATIQUE",
-    "raison_sociale": "KAKO SYSTECHCONSEIL EN SYSTEMES, LOGICIELS INFORMATIQUES, ET VENTES DE PRODUITS INFORMATIQUE",
+    "nom_commercial": "La galerie",
+    "raison_sociale": "La galerie",
     "email": "",
     "telephone": "",
     "website": "",
     "linkedin_url": "",
-    "adresse": "39 RUE DU FAUBOURG POISSONNIERE 75009 PARIS",
+    "adresse": "",
     "ville": "Paris",
     "region": "Île-de-France",
     "pays": "France",
-    "code_postal": "75009",
-    "secteur_activite": "Conseil IT",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "",
-    "code_naf": "62.02A",
-    "siren": "928604727",
-    "siret": "92860472700075",
-    "qualification_score": 30,
-    "score_pct": 30.0,
-    "statut": "NON_QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 10,
-        "max": 20,
-        "note": "partial:Informatique"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "region:île-de-france"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "phone_present": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 4,
-    "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
-    "segment": "",
-    "sector_confidence": 0.489,
-    "email_valid": false,
-    "website_active": false,
-    "enrich_score": 0,
-    "hash_dedup": "1d41c92cb1f75a5d",
-    "raw_text": "",
-    "created_at": "2026-04-16T12:02:22.274626"
-  },
-  {
-    "nom_commercial": "SOCIETE D'ORGANISATION ET DE DEVELOPPEMENT DE LOGICIELS ASSISTANCE AUX REALISATIONS INGENIERIE ET SERVICES (SOLARIS)",
-    "raison_sociale": "SOCIETE D'ORGANISATION ET DE DEVELOPPEMENT DE LOGICIELS ASSISTANCE AUX REALISATIONS INGENIERIE ET SERVICES",
-    "email": "",
-    "telephone": "",
-    "website": "",
-    "linkedin_url": "",
-    "adresse": "18 RUE PAUL FORT 75014 PARIS",
-    "ville": "Paris",
-    "region": "Île-de-France",
-    "pays": "France",
-    "code_postal": "75014",
-    "secteur_activite": "Conseil IT",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "",
-    "code_naf": "62.02A",
-    "siren": "352884191",
-    "siret": "35288419100045",
-    "qualification_score": 30,
-    "score_pct": 30.0,
-    "statut": "NON_QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 10,
-        "max": 20,
-        "note": "partial:Informatique"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "region:île-de-france"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "phone_present": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 4,
-    "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
-    "segment": "",
-    "sector_confidence": 0.394,
-    "email_valid": false,
-    "website_active": false,
-    "enrich_score": 0,
-    "hash_dedup": "c419d1de2b6de89b",
-    "raw_text": "",
-    "created_at": "2026-04-16T12:02:22.274626"
-  },
-  {
-    "nom_commercial": "Hubsy Café & Coworking",
-    "raison_sociale": "Hubsy Café & Coworking",
-    "email": "",
-    "telephone": "",
-    "website": "",
-    "linkedin_url": "",
-    "adresse": "41 Rue Réaumur",
-    "ville": "Paris",
-    "region": "Île-de-France",
-    "pays": "France",
-    "code_postal": "75003",
-    "secteur_activite": "Restauration",
+    "code_postal": "",
+    "secteur_activite": "E-commerce",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
@@ -8410,7 +9074,7 @@
       "sector_match": {
         "points": 0,
         "max": 20,
-        "note": "no_match (restauration)"
+        "note": "no_match (e-commerce)"
       },
       "size_match": {
         "points": 0,
@@ -8457,13 +9121,13 @@
     "criteria_total": 9,
     "source": "OpenStreetMap",
     "segment": "",
-    "sector_confidence": 0.518,
+    "sector_confidence": 0.328,
     "email_valid": false,
     "website_active": false,
     "enrich_score": 0,
-    "hash_dedup": "6d37903107a69513",
+    "hash_dedup": "76468bea99e54d6c",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.649544"
+    "created_at": "2026-04-16T12:58:57.901606"
   },
   {
     "nom_commercial": "Du 72 au 78",
@@ -8474,7 +9138,7 @@
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Non spécifié",
@@ -8508,7 +9172,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 0,
@@ -8546,7 +9210,7 @@
     "enrich_score": 0,
     "hash_dedup": "7ecc9eca450e64ff",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.651544"
+    "created_at": "2026-04-16T12:58:57.901606"
   },
   {
     "nom_commercial": "Wojo",
@@ -8557,7 +9221,7 @@
     "linkedin_url": "",
     "adresse": "",
     "ville": "Paris",
-    "region": "",
+    "region": "Île-de-France",
     "pays": "France",
     "code_postal": "",
     "secteur_activite": "Non spécifié",
@@ -8591,7 +9255,7 @@
       "geo_match": {
         "points": 10,
         "max": 10,
-        "note": "ville:paris"
+        "note": "region:île-de-france"
       },
       "email_valid": {
         "points": 0,
@@ -8629,172 +9293,6 @@
     "enrich_score": 0,
     "hash_dedup": "9d0a0831dd48e1ee",
     "raw_text": "",
-    "created_at": "2026-04-16T12:02:23.652544"
-  },
-  {
-    "nom_commercial": "POLYWORKS EUROPA",
-    "raison_sociale": "POLYWORKS EUROPA",
-    "email": "",
-    "telephone": "",
-    "website": "",
-    "linkedin_url": "",
-    "adresse": "62 RUE DE LA CHAUSSEE D'ANTIN 75009 PARIS",
-    "ville": "Paris",
-    "region": "Île-de-France",
-    "pays": "France",
-    "code_postal": "75009",
-    "secteur_activite": "Non spécifié",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "",
-    "code_naf": "62.09Z",
-    "siren": "812673028",
-    "siret": "81267302800013",
-    "qualification_score": 20,
-    "score_pct": 20.0,
-    "statut": "NON_QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 0,
-        "max": 20,
-        "note": "no_match (non spécifié)"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "region:île-de-france"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "phone_present": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 3,
-    "criteria_total": 9,
-    "source": "annuaire-entreprises.data.gouv.fr",
-    "segment": "",
-    "sector_confidence": 0.0,
-    "email_valid": false,
-    "website_active": false,
-    "enrich_score": 0,
-    "hash_dedup": "2dcf178a3c855382",
-    "raw_text": "",
-    "created_at": "2026-04-16T12:02:26.303587"
-  },
-  {
-    "nom_commercial": "SOCIETE FRANCAISE DE DIFFUSION DE LOGICIELS CYBERLEX (SFDL CYBERLEX)",
-    "raison_sociale": "SOCIETE FRANCAISE DE DIFFUSION DE LOGICIELS CYBERLEX",
-    "email": "",
-    "telephone": "",
-    "website": "",
-    "linkedin_url": "",
-    "adresse": "37 RUE DES MATHURINS 75008 PARIS",
-    "ville": "Paris",
-    "region": "Île-de-France",
-    "pays": "France",
-    "code_postal": "75008",
-    "secteur_activite": "Santé",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "",
-    "code_naf": "62.02A",
-    "siren": "901446526",
-    "siret": "90144652600013",
-    "qualification_score": 20,
-    "score_pct": 20.0,
-    "statut": "NON_QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 0,
-        "max": 20,
-        "note": "no_match (santé)"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "region:île-de-france"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "phone_present": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 3,
-    "criteria_total": 9,
-    "source": "data.gouv.fr/Sirene",
-    "segment": "",
-    "sector_confidence": 0.326,
-    "email_valid": false,
-    "website_active": false,
-    "enrich_score": 0,
-    "hash_dedup": "3d5f8cb2dd42d291",
-    "raw_text": "",
-    "created_at": "2026-04-16T12:02:22.274626"
+    "created_at": "2026-04-16T12:58:57.902606"
   }
 ]

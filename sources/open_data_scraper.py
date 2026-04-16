@@ -703,7 +703,7 @@ class OpenDataScraper(BaseScraper):
             f'  nwr["amenity"~"^(coworking_space|office)$"]["name"]({south},{west},{north},{east});\n'
             f'  nwr["office:it"]["name"]({south},{west},{north},{east});\n'
             f');\n'
-            f'out tags;'
+            f'out center;'
         )
 
         raw_resp = self.client.post(
@@ -756,10 +756,33 @@ class OpenDataScraper(BaseScraper):
                 tags.get("addr:street", ""),
             ])).strip()
 
+            # Récupère la région via Nominatim reverse geocoding si coordonnées disponibles
+            region = ""
+            if "center" in el:
+                lat = el["center"].get("lat")
+                lon = el["center"].get("lon")
+                if lat and lon:
+                    region = self._get_region_from_nominatim(lat, lon) or ""
+            
+            # Fallback 1: Si pas de région et on a un code postal, essayer postal_by_geo.json
+            if not region and tags.get("addr:postcode"):
+                try:
+                    cp = tags.get("addr:postcode", "").strip()
+                    if cp:
+                        region = _get_qbuilder().get_region_for_postal(cp) or ""
+                        if region:
+                            logger.debug(f"[OSM/Fallback-CP] {cp} → {region}")
+                except Exception:
+                    pass
+            
+            # Fallback 2: Si rien n'a marché, utiliser la ville + orchestrator enrichissement
+            # (l'orchestrator a déjà _enrich_region qui le fait)
+
             raw = {
                 "nom_commercial":   name,
                 "adresse":          adresse,
                 "ville":            tags.get("addr:city", city),
+                "region":           region,
                 "code_postal":      tags.get("addr:postcode", ""),
                 "pays":             tags.get("addr:country", "France"),
                 "website":          website,
@@ -796,6 +819,37 @@ class OpenDataScraper(BaseScraper):
             return float(bb[0]), float(bb[2]), float(bb[1]), float(bb[3])
         except (ValueError, TypeError):
             return None
+
+    def _get_region_from_nominatim(self, lat: float, lon: float) -> Optional[str]:
+        """Récupère la région via reverse geocoding Nominatim (lat/lon → adresse)."""
+        from urllib.parse import urlencode
+        try:
+            params = {
+                "lat": lat,
+                "lon": lon,
+                "format": "json",
+                "zoom": 10,
+            }
+            url = f"{NOMINATIM_BASE_URL}/reverse?{urlencode(params)}"
+            data = self.client.get_json(
+                url,
+                headers={"User-Agent": NOMINATIM_USER_AGENT},
+                timeout=10,
+            )
+            if data and isinstance(data, dict) and "address" in data:
+                addr = data["address"]
+                # Cherche la région dans l'adresse (state, région, county...)
+                for region_key in ["state", "region", "county", "province"]:
+                    if region_key in addr:
+                        found_region = addr[region_key]
+                        logger.debug(f"[Nominatim] ({lat:.4f},{lon:.4f}) → {found_region}")
+                        return found_region
+                logger.debug(f"[Nominatim] ({lat:.4f},{lon:.4f}) → pas de région trouvée")
+            else:
+                logger.debug(f"[Nominatim] ({lat:.4f},{lon:.4f}) → pas d'adresse en réponse")
+        except Exception as e:
+            logger.debug(f"[Nominatim/ReverseGeo] Erreur ({lat:.4f},{lon:.4f}): {e}")
+        return None
 
     # ══════════════════════════════════════════
     # Helpers — Sirene

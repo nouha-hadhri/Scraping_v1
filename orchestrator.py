@@ -939,26 +939,56 @@ class ProspectCollector:
 
     def _enrich_region(self, prospects: List[Prospect]) -> List[Prospect]:
         """
-        Enrichit les prospects avec leur région basée sur le code postal.
+        Enrichit les prospects avec leur région basée sur le code postal, puis la ville en fallback.
         Utilise le SireneQueryBuilder pour faire un reverse lookup : CP → région.
-        
-        Cela corrige le fait que les scrapers ne remplissent jamais le champ région,
-        donc on l'enrichit automatiquement depuis le code postal.
+        Fallback: ville → région (cherche dans postal_by_geo.json).
         """
         qb = self._get_geo_qbuilder()
-        enriched = 0
+        enriched_cp = 0
+        enriched_ville = 0
         
         for p in prospects:
-            # Si région vide mais CP fourni, cherche région depuis CP
+            # Si région vide, chercher enrichissement
             if not p.region or not str(p.region).strip():
+                # Tentative 1: depuis code postal
                 if p.code_postal:
                     region = qb.get_region_for_postal(p.code_postal)
                     if region:
                         p.region = region
-                        enriched += 1
+                        enriched_cp += 1
+                        continue
+                
+                # Tentative 2 (fallback): depuis la ville
+                if p.ville:
+                    try:
+                        # Cherche dans les données de région si cette ville est mentionnée
+                        ville_lower = str(p.ville).lower().strip()
+                        postal_data = qb._postal.get("regions", {})
+                        
+                        # Logique spéciale pour les grandes villes
+                        ville_to_region = {
+                            "paris": "Île-de-France",
+                            "marseille": "Provence-Alpes-Côte d'Azur",
+                            "lyon": "Auvergne-Rhône-Alpes",
+                            "toulouse": "Midi-Pyrénées",
+                            "nice": "Provence-Alpes-Côte d'Azur",
+                            "nantes": "Pays de la Loire",
+                            "strasbourg": "Grand Est",
+                            "montpellier": "Occitanie",
+                            "bordeaux": "Nouvelle-Aquitaine",
+                            "lille": "Hauts-de-France",
+                        }
+                        
+                        if ville_lower in ville_to_region:
+                            p.region = ville_to_region[ville_lower]
+                            enriched_ville += 1
+                    except Exception:
+                        pass
         
-        if enriched > 0:
-            logger.debug(f"[EnrichRegion] {enriched} prospects enrichis avec région depuis CP")
+        if enriched_cp > 0:
+            logger.debug(f"[EnrichRegion] {enriched_cp} prospects enrichis via code postal")
+        if enriched_ville > 0:
+            logger.debug(f"[EnrichRegion] {enriched_ville} prospects enrichis via ville (fallback)")
         
         return prospects
 
