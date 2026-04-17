@@ -1130,5 +1130,252 @@
     ],
     "crit_villes": [],
     "crit_max_resultats": 700
+  },
+  {
+    "id": "83",
+    "name": "scraping_20260416_180813",
+    "status": "DONE",
+    "parameters_json": "{\"secteurs_activite\": [\"Informatique\"], \"tailles_entreprise\": [\"PME\"], \"types_entreprise\": [\"SAS\"], \"codes_naf\": [], \"employes_min\": 10, \"employes_max\": 249, \"localisation\": {\"pays\": [\"France\"], \"regions\": [\"Île-de-France\"], \"villes\": [\"Antony\"]}, \"keywords\": [\"cybersecurite\"], \"max_pages_annuaire\": 5, \"max_resultats\": 700, \"max_par_source\": 100}",
+    "started_at": "2026-04-16T18:08:13.684594",
+    "finished_at": "2026-04-16T18:08:36.808263",
+    "total_collected": 21,
+    "total_cleaned": 0,
+    "total_deduped": 0,
+    "total_scored": 0,
+    "total_saved": 0,
+    "total_qualified": 0,
+    "total_duplicates": 0,
+    "sources_used": [
+      "sirene",
+      "osm",
+      "bodacc",
+      "data_gouv_dir",
+      "societe_com"
+    ],
+    "errors": [],
+    "crit_secteurs_activite": [
+      "Informatique"
+    ],
+    "crit_types_entreprise": [
+      "SAS"
+    ],
+    "crit_tailles_entreprise": [
+      "PME"
+    ],
+    "crit_pays": [
+      "France"
+    ],
+    "crit_regions": [
+      "Île-de-France"
+    ],
+    "crit_villes": [
+      "Antony"
+    ],
+    "crit_max_resultats": 700
+  },
+  {
+    "id": "85",
+    "name": "scraping_20260416_182040",
+    "status": "DONE",
+    "parameters_json": "{\"secteurs_activite\": [\"Informatique\"], \"tailles_entreprise\": [\"PME\"], \"types_entreprise\": [\"SA\"], \"codes_naf\": [], \"employes_min\": 10, \"employes_max\": 249, \"localisation\": {\"pays\": [\"France\"], \"regions\": [\"Île-de-France\"], \"villes\": [\"Antony\"]}, \"keywords\": [\"saas\"], \"max_pages_annuaire\": 5, \"max_resultats\": 700, \"max_par_source\": 100}",
+    "started_at": "2026-04-16T18:20:40.654367",
+    "finished_at": "2026-04-16T18:21:03.378149",
+    "total_collected": 0,
+    "total_cleaned": 0,
+    "total_deduped": 0,
+    "total_scored": 0,
+    "total_saved": 0,
+    "total_qualified": 0,
+    "total_duplicates": 0,
+    "sources_used": [
+      "sirene",
+      "osm",
+      "bodacc",
+      "data_gouv_dir",
+      "societe_com"
+    ],
+    "errors": [],
+    "crit_secteurs_activite": [
+      "Informatique"
+    ],
+    "crit_types_entreprise": [
+      "SA"
+    ],
+    "crit_tailles_entreprise": [
+      "PME"
+    ],
+    "crit_pays": [
+      "France"
+    ],
+    "crit_regions": [
+      "Île-de-France"
+    ],
+    "crit_villes": [
+      "Antony"
+    ],
+    "crit_max_resultats": 700
+  },
+  {
+    "id": "86",
+    "name": "scraping_20260416_182152",
+    "status": "DONE",
+    "parameters_json": "{\"secteurs_activite\": [\"Informatique\"], \"tailles_entreprise\": [\"PME\"], \"types_entreprise\": [\"SAS\"], \"codes_naf\": [], \"employes_min\": 10, \"employes_max\": 249, \"localisation\": {\"pays\": [\"France\"], \"regions\": [\"Paris\"], \"villes\": []}, \"keywords\": [\"saas\"], \"max_pages_annuaire\": 5, \"max_resultats\": 700, \"max_par_source\": 100}",
+    "started_at": "2026-04-16T18:21:52.207306",
+    "finished_at": "2026-04-16T18:22:12.871542",
+    "total_collected": 21,
+    "total_cleaned": 0,
+    "total_deduped": 0,
+    "total_scored": 0,
+    "total_saved": 0,
+    "total_qualified": 0,
+    "total_duplicates": 0,
+    "sources_used": [
+      "sirene",
+      "osm",
+      "bodacc",
+      "data_gouv_dir",
+      "societe_com"
+    ],
+    "errors": [],
+    "crit_secteurs_activite": [
+      "Informatique"
+    ],
+    "crit_types_entreprise": [
+      "SAS"
+    ],
+    "crit_tailles_entreprise": [
+      "PME"
+    ],
+    "crit_pays": [
+      "France"
+    ],
+    "crit_regions": [
+      "Paris"
+    ],
+    "crit_villes": [],
+    "crit_max_resultats": 700
+  },
+  {
+    "id": "84",
+    "name": "scraping_20260416_180902",
+    "status": "DONE",
+    "parameters_json": "{\"secteurs_activite\": [\"Informatique\"], \"tailles_entreprise\": [\"PME\"], \"types_entreprise\": [\"SA\"], \"codes_naf\": [], \"employes_min\": 10, \"employes_max\": 249, \"localisation\": {\"pays\": [\"France\"], \"regions\": [\"Île-de-France\"], \"villes\": [\"Paris\"]}, \"keywords\": [\"informatique\", \"IT\", \"software\", \"logiciel\"], \"max_pages_annuaire\": 5, \"max_resultats\": 700, \"max_par_source\": 100}",
+    "started_at": "2026-04-16T18:09:02.444525",
+    "finished_at": "2026-04-16T18:28:56.535120",
+    "total_collected": 207,
+    "total_cleaned": 181,
+    "total_deduped": 174,
+    "total_scored": 174,
+    "total_saved": 174,
+    "total_qualified": 58,
+    "total_duplicates": 7,
+    "sources_used": [
+      "sirene",
+      "osm",
+      "bodacc",
+      "data_gouv_dir",
+      "societe_com"
+    ],
+    "errors": [],
+    "crit_secteurs_activite": [
+      "Informatique"
+    ],
+    "crit_types_entreprise": [
+      "SA"
+    ],
+    "crit_tailles_entreprise": [
+      "PME"
+    ],
+    "crit_pays": [
+      "France"
+    ],
+    "crit_regions": [
+      "Île-de-France"
+    ],
+    "crit_villes": [
+      "Paris"
+    ],
+    "crit_max_resultats": 700
+  },
+  {
+    "id": "87",
+    "name": "scraping_20260416_182329",
+    "status": "DONE",
+    "parameters_json": "{\"secteurs_activite\": [\"Informatique\"], \"tailles_entreprise\": [\"PME\"], \"types_entreprise\": [\"SA\", \"SARL\"], \"codes_naf\": [], \"employes_min\": 10, \"employes_max\": 249, \"localisation\": {\"pays\": [\"France\"], \"regions\": [\"Île-de-France\"], \"villes\": []}, \"keywords\": [\"cloud\"], \"max_pages_annuaire\": 5, \"max_resultats\": 700, \"max_par_source\": 100}",
+    "started_at": "2026-04-16T18:23:29.222751",
+    "finished_at": "2026-04-16T18:33:08.763420",
+    "total_collected": 88,
+    "total_cleaned": 88,
+    "total_deduped": 88,
+    "total_scored": 88,
+    "total_saved": 88,
+    "total_qualified": 7,
+    "total_duplicates": 0,
+    "sources_used": [
+      "sirene",
+      "osm",
+      "bodacc",
+      "data_gouv_dir",
+      "societe_com"
+    ],
+    "errors": [],
+    "crit_secteurs_activite": [
+      "Informatique"
+    ],
+    "crit_types_entreprise": [
+      "SA",
+      "SARL"
+    ],
+    "crit_tailles_entreprise": [
+      "PME"
+    ],
+    "crit_pays": [
+      "France"
+    ],
+    "crit_regions": [
+      "Île-de-France"
+    ],
+    "crit_villes": [],
+    "crit_max_resultats": 700
+  },
+  {
+    "id": "88",
+    "name": "scraping_20260417_101300",
+    "status": "DONE",
+    "parameters_json": "{\"secteurs_activite\": [\"Informatique\"], \"tailles_entreprise\": [\"PME\"], \"types_entreprise\": [\"SAS\"], \"codes_naf\": [], \"employes_min\": 10, \"employes_max\": 249, \"localisation\": {\"pays\": [\"France\"], \"regions\": [\"Île-de-France\"], \"villes\": []}, \"keywords\": [\"saas\"], \"max_pages_annuaire\": 5, \"max_resultats\": 700, \"max_par_source\": 100}",
+    "started_at": "2026-04-17T10:13:00.124859",
+    "finished_at": "2026-04-17T10:15:06.815023",
+    "total_collected": 4,
+    "total_cleaned": 4,
+    "total_deduped": 4,
+    "total_scored": 4,
+    "total_saved": 4,
+    "total_qualified": 0,
+    "total_duplicates": 0,
+    "sources_used": [
+      "sirene",
+      "osm",
+      "bodacc",
+      "data_gouv_dir",
+      "societe_com"
+    ],
+    "errors": [],
+    "crit_secteurs_activite": [
+      "Informatique"
+    ],
+    "crit_types_entreprise": [
+      "SAS"
+    ],
+    "crit_tailles_entreprise": [
+      "PME"
+    ],
+    "crit_pays": [
+      "France"
+    ],
+    "crit_regions": [
+      "Île-de-France"
+    ],
+    "crit_villes": [],
+    "crit_max_resultats": 700
   }
 ]
