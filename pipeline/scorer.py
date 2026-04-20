@@ -47,7 +47,7 @@ class ProspectScorer:
 
     def score_all(self, prospects: List[Prospect]) -> List[Prospect]:
         scored    = [self.score_one(p) for p in prospects]
-        qualified = sum(1 for p in scored if p.statut == "QUALIFIE")
+        qualified = sum(1 for p in scored if p.qualification == "QUALIFIE")
         logger.info(
             f"[Scorer] {len(scored)} scorés — "
             f"{qualified} qualifiés ({100*qualified//max(len(scored),1)}%)"
@@ -117,7 +117,7 @@ class ProspectScorer:
 
         p.qualification_score = score
         p.score_pct           = round(100 * score / MAX_SCORE, 1)
-        p.statut              = "QUALIFIE" if score >= QUALIFICATION_THRESHOLD else "NON_QUALIFIE"
+        p.qualification       = "QUALIFIE" if score >= QUALIFICATION_THRESHOLD else "NON_QUALIFIE"
         p.score_detail        = detail
         p.criteria_met        = sum(1 for v in detail.values() if v["points"] > 0)
         p.criteria_total      = len(detail)
@@ -240,7 +240,7 @@ class ProspectScorer:
             return getattr(p, field, None) if isinstance(p, Prospect) else p.get(field, default)
 
         scores    = [_get(p, "qualification_score") or 0 for p in prospects]
-        qualified = [p for p in prospects if (_get(p, "statut") or "") == "QUALIFIE"]
+        qualified = [p for p in prospects if (_get(p, "qualification") or _get(p, "statut") or "") == "QUALIFIE"]
 
         # ── Enrich score stats ────────────────────────────────────────
         e_scores  = [_get(p, "enrich_score") or 0 for p in prospects]

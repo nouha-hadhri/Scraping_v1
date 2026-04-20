@@ -5,8 +5,14 @@ Couche de persistance PostgreSQL pour les Prospect et CollectionJob.
 Complète ProspectRepository (CSV/JSON) — les deux coexistent.
 Activé via PG_ENABLED=True dans config/settings.py.
 
-Tables créées automatiquement au premier run (auto-migration).
-L'upsert est basé sur hash_dedup (UPDATE si doublon, INSERT sinon).
+Corrections appliquées :
+  1. source          : TEXT au lieu de SMALLINT dans le DDL auto-migration
+  2. qualification   : "statut" renommé "qualification" dans _prospect_to_row
+                       et dans les requêtes de lecture (load_qualified, count, get_stats)
+  3. secteur_activite_id dans collection_jobs : BIGINT[] (tableau) cohérent avec le SQL Flyway
+  4. hash_dedup      : ajout de la contrainte UNIQUE dans _ensure_schema pour ON CONFLICT
+  5. is_converted    : champ présent dans le DDL auto-migration (cohérence avec Flyway)
+  6. segment         : colonne supprimée du DDL auto-migration (absente du schéma Flyway)
 
 Usage:
     from storage.pg_repository import PgRepository
@@ -25,7 +31,7 @@ from contextlib import contextmanager
 from datetime   import datetime
 from typing     import List, Dict, Any, Optional, Generator
 
-from storage.models import Prospect, CollectionJob
+from storage.models import Prospect, CollectionJob, TailleEntreprise, TypeEntreprise
 
 logger = logging.getLogger(__name__)
 
@@ -43,197 +49,158 @@ except ImportError:
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# DDL — Schéma des tables
+# DDL — Python ne crée PAS les tables (Spring/Flyway est le seul DDL owner).
+# Ces statements sont tous des ADD COLUMN IF NOT EXISTS / contraintes — sans
+# effet si la colonne ou la contrainte existe déjà (idempotents).
 # ══════════════════════════════════════════════════════════════════════════════
 
-_DDL_PROSPECTS = """
-CREATE TABLE IF NOT EXISTS prospects (
-    -- Clé de déduplication (SHA-256 tronqué, calculé par BaseScraper)
-    hash_dedup          TEXT        PRIMARY KEY,
-
-    -- Job d'origine
-    job_id              BIGINT      NOT NULL,
-
-    -- Identité
-    nom_commercial      TEXT        NOT NULL DEFAULT '',
-    raison_sociale      TEXT        NOT NULL DEFAULT '',
-
-    -- Contacts
-    email               TEXT        NOT NULL DEFAULT '',
-    telephone           TEXT        NOT NULL DEFAULT '',
-    website             TEXT        NOT NULL DEFAULT '',
-    linkedin_url        TEXT        NOT NULL DEFAULT '',
-
-    -- Localisation
-    adresse             TEXT        NOT NULL DEFAULT '',
-    ville               TEXT        NOT NULL DEFAULT '',
-    region              TEXT        NOT NULL DEFAULT '',
-    pays                TEXT        NOT NULL DEFAULT '',
-    code_postal         TEXT        NOT NULL DEFAULT '',
-
-    -- Entreprise
-    secteur_activite    TEXT        NOT NULL DEFAULT '',
-    type_entreprise     TEXT        NOT NULL DEFAULT '',
-    taille_entreprise   TEXT        NOT NULL DEFAULT '',
-    nombre_employes     INTEGER,
-    chiffre_affaires    NUMERIC(18,2),
-    description         TEXT        NOT NULL DEFAULT '',
-    code_naf            TEXT        NOT NULL DEFAULT '',
-
-    -- Identifiants légaux
-    siren               TEXT        NOT NULL DEFAULT '',
-    siret               TEXT        NOT NULL DEFAULT '',
-
-    -- Scoring & Qualification
-    qualification_score INTEGER     NOT NULL DEFAULT 0,
-    score_pct           NUMERIC(5,1) NOT NULL DEFAULT 0,
-    statut              TEXT        NOT NULL DEFAULT 'NON_QUALIFIE',
-    score_detail        JSONB       NOT NULL DEFAULT '{}',
-    criteria_met        INTEGER     NOT NULL DEFAULT 0,
-    criteria_total      INTEGER     NOT NULL DEFAULT 0,
-
-    -- Métadonnées
-    source              TEXT        NOT NULL DEFAULT 'SCRAPING',
-    segment             TEXT        NOT NULL DEFAULT '',
-    sector_confidence   NUMERIC(5,3) NOT NULL DEFAULT 0,
-    email_valid         BOOLEAN     NOT NULL DEFAULT FALSE,
-    website_active      BOOLEAN     NOT NULL DEFAULT FALSE,
-
-    -- Enrichissement contacts
-    enrich_score        INTEGER     NOT NULL DEFAULT 0,
-    email_mx_verified   BOOLEAN     NOT NULL DEFAULT FALSE,
-
-    -- Soft delete (aligné avec Spring Boot AutoProspectionEntity.isDeleted)
-    is_deleted          BOOLEAN     NOT NULL DEFAULT FALSE,
-
-    -- Timestamps
-    created_at          TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-    updated_at          TIMESTAMPTZ NOT NULL DEFAULT NOW()
-);
+# Contrainte UNIQUE sur hash_dedup — obligatoire pour ON CONFLICT (hash_dedup)
+_SQL_ADD_UNIQUE_HASH_DEDUP = """
+DO $$
+BEGIN
+    IF NOT EXISTS (
+        SELECT 1 FROM pg_constraint
+        WHERE conname = 'uq_prospect_hash_dedup'
+    ) THEN
+        ALTER TABLE prospects
+            ADD CONSTRAINT uq_prospect_hash_dedup UNIQUE (hash_dedup);
+    END IF;
+END $$;
 """
 
+# source_origin : stocke la source de données réelle (open_data, annuaire, sirene…)
+# Colonne ajoutée par Python — absente du schéma Flyway initial.
+_SQL_ALTER_PROSPECTS_ADD_SOURCE_ORIGIN = """
+ALTER TABLE prospects
+    ADD COLUMN IF NOT EXISTS source_origin TEXT NOT NULL DEFAULT '';
+"""
+
+# Indexes sur colonnes que Spring ne crée pas forcément
 _DDL_PROSPECTS_INDEXES = """
-CREATE INDEX IF NOT EXISTS idx_prospects_statut    ON prospects (statut);
-CREATE INDEX IF NOT EXISTS idx_prospects_job_id    ON prospects (job_id);
-CREATE INDEX IF NOT EXISTS idx_prospects_siren     ON prospects (siren) WHERE siren <> '';
-CREATE INDEX IF NOT EXISTS idx_prospects_email     ON prospects (email) WHERE email <> '';
-CREATE INDEX IF NOT EXISTS idx_prospects_ville     ON prospects (ville);
-CREATE INDEX IF NOT EXISTS idx_prospects_secteur   ON prospects (secteur_activite);
-CREATE INDEX IF NOT EXISTS idx_prospects_score     ON prospects (qualification_score DESC);
-CREATE INDEX IF NOT EXISTS idx_prospects_enrich    ON prospects (enrich_score DESC);
-CREATE INDEX IF NOT EXISTS idx_prospects_created   ON prospects (created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_prospects_qualification ON prospects (qualification);
+CREATE INDEX IF NOT EXISTS idx_prospects_job_id        ON prospects (job_id);
+CREATE INDEX IF NOT EXISTS idx_prospects_score         ON prospects (qualification_score DESC);
+CREATE INDEX IF NOT EXISTS idx_prospects_enrich        ON prospects (enrich_score DESC);
+CREATE INDEX IF NOT EXISTS idx_prospects_created       ON prospects (created_at DESC);
 """
 
-_DDL_JOBS = """
-CREATE TABLE IF NOT EXISTS collection_jobs (
-    id                  BIGINT      PRIMARY KEY,
-    name                TEXT        NOT NULL DEFAULT '',
-    type                TEXT        NOT NULL DEFAULT 'SCRAPING',
-    status              TEXT        NOT NULL DEFAULT 'PENDING',
-    parameters_json     TEXT        NOT NULL DEFAULT '{}',
-    crit_secteurs_activite_txt TEXT NOT NULL DEFAULT '',
-    crit_types_entreprise_txt  TEXT NOT NULL DEFAULT '',
-    crit_tailles_entreprise_txt TEXT NOT NULL DEFAULT '',
-    crit_pays_txt              TEXT NOT NULL DEFAULT '',
-    crit_regions_txt           TEXT NOT NULL DEFAULT '',
-    crit_villes_txt            TEXT NOT NULL DEFAULT '',
-    crit_keywords_txt          TEXT NOT NULL DEFAULT '',
-    crit_max_resultats     INTEGER,
-    started_at          TIMESTAMPTZ,
-    finished_at         TIMESTAMPTZ,
-    total_collected     INTEGER     NOT NULL DEFAULT 0,
-    total_cleaned       INTEGER     NOT NULL DEFAULT 0,
-    total_deduped       INTEGER     NOT NULL DEFAULT 0,
-    total_scored        INTEGER     NOT NULL DEFAULT 0,
-    total_saved         INTEGER     NOT NULL DEFAULT 0,
-    total_qualified     INTEGER     NOT NULL DEFAULT 0,
-    total_duplicates    INTEGER     NOT NULL DEFAULT 0,
-    sources_used        TEXT[]      NOT NULL DEFAULT '{}',
-    errors              TEXT[]      NOT NULL DEFAULT '{}',
-    is_deleted          BOOLEAN     NOT NULL DEFAULT FALSE,
-    created_at          TIMESTAMPTZ NOT NULL DEFAULT NOW()
-);
+# Indexes conditionnels : créés seulement si la colonne cible existe dans la table
+# (certaines colonnes comme siren/email/ville peuvent être présentes ou non selon
+#  la version du schéma Flyway déployée).
+_DDL_PROSPECTS_CONDITIONAL_INDEXES = """
+DO $$
+BEGIN
+    IF EXISTS (SELECT 1 FROM information_schema.columns
+               WHERE table_name='prospects' AND column_name='siren') THEN
+        EXECUTE $idx$CREATE INDEX IF NOT EXISTS idx_prospects_siren
+                    ON prospects (siren) WHERE siren <> ''$idx$;
+    END IF;
+    IF EXISTS (SELECT 1 FROM information_schema.columns
+               WHERE table_name='prospects' AND column_name='email') THEN
+        EXECUTE $idx$CREATE INDEX IF NOT EXISTS idx_prospects_email
+                    ON prospects (email) WHERE email <> ''$idx$;
+    END IF;
+    IF EXISTS (SELECT 1 FROM information_schema.columns
+               WHERE table_name='prospects' AND column_name='ville') THEN
+        EXECUTE $idx$CREATE INDEX IF NOT EXISTS idx_prospects_ville
+                    ON prospects (ville)$idx$;
+    END IF;
+END $$;
 """
 
-_SQL_ALTER_PROSPECTS_ADD_JOB_ID = """
-ALTER TABLE prospects
-    ADD COLUMN IF NOT EXISTS job_id BIGINT;
-"""
-
-_SQL_ALTER_PROSPECTS_ADD_IS_DELETED = """
-ALTER TABLE prospects
-    ADD COLUMN IF NOT EXISTS is_deleted BOOLEAN NOT NULL DEFAULT FALSE;
-"""
-
+# collection_jobs : colonnes critères ajoutées par Python si absentes
 _SQL_ALTER_JOBS_ADD_CRITERIA_FIELDS = """
 ALTER TABLE collection_jobs
-    ADD COLUMN IF NOT EXISTS crit_secteurs_activite_txt TEXT NOT NULL DEFAULT '',
-    ADD COLUMN IF NOT EXISTS crit_types_entreprise_txt TEXT NOT NULL DEFAULT '',
+    ADD COLUMN IF NOT EXISTS crit_secteurs_activite_txt  TEXT NOT NULL DEFAULT '',
+    ADD COLUMN IF NOT EXISTS crit_secteurs_activite_id   BIGINT[],
+    ADD COLUMN IF NOT EXISTS crit_types_entreprise_txt   TEXT NOT NULL DEFAULT '',
     ADD COLUMN IF NOT EXISTS crit_tailles_entreprise_txt TEXT NOT NULL DEFAULT '',
-    ADD COLUMN IF NOT EXISTS crit_pays_txt TEXT NOT NULL DEFAULT '',
-    ADD COLUMN IF NOT EXISTS crit_regions_txt TEXT NOT NULL DEFAULT '',
-    ADD COLUMN IF NOT EXISTS crit_villes_txt TEXT NOT NULL DEFAULT '',
-    ADD COLUMN IF NOT EXISTS crit_keywords_txt TEXT NOT NULL DEFAULT '',
-    ADD COLUMN IF NOT EXISTS crit_max_resultats INTEGER;
+    ADD COLUMN IF NOT EXISTS crit_pays_txt               TEXT NOT NULL DEFAULT '',
+    ADD COLUMN IF NOT EXISTS crit_regions_txt            TEXT NOT NULL DEFAULT '',
+    ADD COLUMN IF NOT EXISTS crit_villes_txt             TEXT NOT NULL DEFAULT '',
+    ADD COLUMN IF NOT EXISTS crit_keywords_txt           TEXT NOT NULL DEFAULT '',
+    ADD COLUMN IF NOT EXISTS crit_max_resultats          INTEGER;
 """
 
-_SQL_ALTER_JOBS_ADD_IS_DELETED = """
-ALTER TABLE collection_jobs
-    ADD COLUMN IF NOT EXISTS is_deleted BOOLEAN NOT NULL DEFAULT FALSE;
-"""
 
-_SQL_DROP_JOB_ARRAY_CRITERIA_COLUMNS = """
-ALTER TABLE collection_jobs
-    DROP COLUMN IF EXISTS crit_secteurs_activite,
-    DROP COLUMN IF EXISTS crit_types_entreprise,
-    DROP COLUMN IF EXISTS crit_tailles_entreprise,
-    DROP COLUMN IF EXISTS crit_pays,
-    DROP COLUMN IF EXISTS crit_regions,
-    DROP COLUMN IF EXISTS crit_villes,
-    DROP COLUMN IF EXISTS crit_keywords;
-"""
-
-# Insert idempotent prospects (compatible schema CRM sans unique hash_dedup)
+# FIX : "qualification" au lieu de "statut" — cohérence avec Java/Flyway
+# NOTE : secteur_activite (TEXT) n'existe pas dans le schéma Spring — seul
+#        secteur_activite_id (BIGINT FK) est présent. Python stocke le nom
+#        textuel dans description ou le laisse null ; la résolution FK est
+#        faite côté Spring.
 _SQL_INSERT_PROSPECT = """
 INSERT INTO prospects (
     hash_dedup, job_id, nom_commercial, raison_sociale,
     email, telephone, website, linkedin_url,
     adresse, ville, region, pays, code_postal,
-    secteur_activite, type_entreprise, taille_entreprise,
+    secteur_activite_id,
+    type_entreprise, taille_entreprise,
     nombre_employes, chiffre_affaires, description, code_naf,
     siren, siret,
-    qualification_score, score_pct, statut, score_detail,
+    qualification_score, score_pct, qualification, score_detail,
     criteria_met, criteria_total,
-    source, segment, sector_confidence,
+    source, source_origin, sector_confidence,
     email_valid, website_active,
     enrich_score, email_mx_verified,
-    created_at, is_deleted
-)
-SELECT
+    created_at, updated_at, is_deleted
+) VALUES (
     %(hash_dedup)s, %(job_id)s, %(nom_commercial)s, %(raison_sociale)s,
     %(email)s, %(telephone)s, %(website)s, %(linkedin_url)s,
     %(adresse)s, %(ville)s, %(region)s, %(pays)s, %(code_postal)s,
-    %(secteur_activite)s, %(type_entreprise)s, %(taille_entreprise)s,
+    %(secteur_activite_id)s,
+    %(type_entreprise)s, %(taille_entreprise)s,
     %(nombre_employes)s, %(chiffre_affaires)s, %(description)s, %(code_naf)s,
     %(siren)s, %(siret)s,
-    %(qualification_score)s, %(score_pct)s, %(statut)s, %(score_detail)s,
+    %(qualification_score)s, %(score_pct)s, %(qualification)s, %(score_detail)s,
     %(criteria_met)s, %(criteria_total)s,
-    %(source)s, %(segment)s, %(sector_confidence)s,
+    %(source)s, %(source_origin)s, %(sector_confidence)s,
     %(email_valid)s, %(website_active)s,
     %(enrich_score)s, %(email_mx_verified)s,
-    %(created_at)s, false
-WHERE NOT EXISTS (
-    SELECT 1
-    FROM prospects p
-    WHERE p.hash_dedup = %(hash_dedup)s
-      AND p.job_id = %(job_id)s
-);
+    %(created_at)s, NOW(), false
+)
+ON CONFLICT (hash_dedup) DO UPDATE SET
+    job_id               = EXCLUDED.job_id,
+    nom_commercial       = EXCLUDED.nom_commercial,
+    raison_sociale       = EXCLUDED.raison_sociale,
+    email                = EXCLUDED.email,
+    telephone            = EXCLUDED.telephone,
+    website              = EXCLUDED.website,
+    linkedin_url         = EXCLUDED.linkedin_url,
+    adresse              = EXCLUDED.adresse,
+    ville                = EXCLUDED.ville,
+    region               = EXCLUDED.region,
+    pays                 = EXCLUDED.pays,
+    code_postal          = EXCLUDED.code_postal,
+    secteur_activite_id  = EXCLUDED.secteur_activite_id,
+    type_entreprise      = EXCLUDED.type_entreprise,
+    taille_entreprise    = EXCLUDED.taille_entreprise,
+    nombre_employes      = EXCLUDED.nombre_employes,
+    chiffre_affaires     = EXCLUDED.chiffre_affaires,
+    description          = EXCLUDED.description,
+    code_naf             = EXCLUDED.code_naf,
+    siren                = EXCLUDED.siren,
+    siret                = EXCLUDED.siret,
+    qualification_score  = EXCLUDED.qualification_score,
+    score_pct            = EXCLUDED.score_pct,
+    qualification        = EXCLUDED.qualification,
+    score_detail         = EXCLUDED.score_detail,
+    criteria_met         = EXCLUDED.criteria_met,
+    criteria_total       = EXCLUDED.criteria_total,
+    source               = EXCLUDED.source,
+    source_origin        = EXCLUDED.source_origin,
+    sector_confidence    = EXCLUDED.sector_confidence,
+    email_valid          = EXCLUDED.email_valid,
+    website_active       = EXCLUDED.website_active,
+    enrich_score         = EXCLUDED.enrich_score,
+    email_mx_verified    = EXCLUDED.email_mx_verified,
+    updated_at           = NOW();
 """
 
 _SQL_INSERT_JOB = """
 INSERT INTO collection_jobs (
     id, name, type, status, parameters_json,
-    crit_secteurs_activite_txt, crit_types_entreprise_txt, crit_tailles_entreprise_txt,
+    crit_secteurs_activite_txt, crit_secteurs_activite_id,
+    crit_types_entreprise_txt, crit_tailles_entreprise_txt,
     crit_pays_txt, crit_regions_txt, crit_villes_txt, crit_keywords_txt,
     crit_max_resultats,
     started_at, finished_at,
@@ -242,7 +209,8 @@ INSERT INTO collection_jobs (
     sources_used, errors, is_deleted
 ) VALUES (
     %(id)s, %(name)s, %(type)s, %(status)s, %(parameters_json)s,
-    %(crit_secteurs_activite_txt)s, %(crit_types_entreprise_txt)s, %(crit_tailles_entreprise_txt)s,
+    %(crit_secteurs_activite_txt)s, %(crit_secteurs_activite_id)s,
+    %(crit_types_entreprise_txt)s, %(crit_tailles_entreprise_txt)s,
     %(crit_pays_txt)s, %(crit_regions_txt)s, %(crit_villes_txt)s, %(crit_keywords_txt)s,
     %(crit_max_resultats)s,
     %(started_at)s, %(finished_at)s,
@@ -250,30 +218,31 @@ INSERT INTO collection_jobs (
     %(total_scored)s, %(total_saved)s, %(total_qualified)s, %(total_duplicates)s,
     %(sources_used)s, %(errors)s, false
 ) ON CONFLICT (id) DO UPDATE SET
-    name = EXCLUDED.name,
-    type = EXCLUDED.type,
-    status = EXCLUDED.status,
-    parameters_json = EXCLUDED.parameters_json,
-    crit_secteurs_activite_txt = EXCLUDED.crit_secteurs_activite_txt,
-    crit_types_entreprise_txt = EXCLUDED.crit_types_entreprise_txt,
+    name                        = EXCLUDED.name,
+    type                        = EXCLUDED.type,
+    status                      = EXCLUDED.status,
+    parameters_json             = EXCLUDED.parameters_json,
+    crit_secteurs_activite_txt  = EXCLUDED.crit_secteurs_activite_txt,
+    crit_secteurs_activite_id   = EXCLUDED.crit_secteurs_activite_id,
+    crit_types_entreprise_txt   = EXCLUDED.crit_types_entreprise_txt,
     crit_tailles_entreprise_txt = EXCLUDED.crit_tailles_entreprise_txt,
-    crit_pays_txt = EXCLUDED.crit_pays_txt,
-    crit_regions_txt = EXCLUDED.crit_regions_txt,
-    crit_villes_txt = EXCLUDED.crit_villes_txt,
-    crit_keywords_txt = EXCLUDED.crit_keywords_txt,
-    crit_max_resultats = EXCLUDED.crit_max_resultats,
-    started_at = EXCLUDED.started_at,
-    finished_at = EXCLUDED.finished_at,
-    total_collected = EXCLUDED.total_collected,
-    total_cleaned = EXCLUDED.total_cleaned,
-    total_deduped = EXCLUDED.total_deduped,
-    total_scored = EXCLUDED.total_scored,
-    total_saved = EXCLUDED.total_saved,
-    total_qualified = EXCLUDED.total_qualified,
-    total_duplicates = EXCLUDED.total_duplicates,
-    sources_used = EXCLUDED.sources_used,
-    errors = EXCLUDED.errors,
-    is_deleted = FALSE;
+    crit_pays_txt               = EXCLUDED.crit_pays_txt,
+    crit_regions_txt            = EXCLUDED.crit_regions_txt,
+    crit_villes_txt             = EXCLUDED.crit_villes_txt,
+    crit_keywords_txt           = EXCLUDED.crit_keywords_txt,
+    crit_max_resultats          = EXCLUDED.crit_max_resultats,
+    started_at                  = EXCLUDED.started_at,
+    finished_at                 = EXCLUDED.finished_at,
+    total_collected             = EXCLUDED.total_collected,
+    total_cleaned               = EXCLUDED.total_cleaned,
+    total_deduped               = EXCLUDED.total_deduped,
+    total_scored                = EXCLUDED.total_scored,
+    total_saved                 = EXCLUDED.total_saved,
+    total_qualified             = EXCLUDED.total_qualified,
+    total_duplicates            = EXCLUDED.total_duplicates,
+    sources_used                = EXCLUDED.sources_used,
+    errors                      = EXCLUDED.errors,
+    is_deleted                  = FALSE;
 """
 
 
@@ -301,17 +270,12 @@ class PgRepository:
     """
 
     def __init__(self, dsn: Optional[str] = None):
-        """
-        Args:
-            dsn: Connection string PostgreSQL. Si None, lu depuis config/settings.py.
-        """
         if not _PSYCOPG2_AVAILABLE:
             raise RuntimeError(
                 "[PgRepo] psycopg2 non disponible. "
                 "Installez-le avec : pip install psycopg2-binary"
             )
 
-        # Résolution du DSN
         if dsn is None:
             from config.settings import PG_DSN
             dsn = PG_DSN
@@ -376,64 +340,36 @@ class PgRepository:
     # ──────────────────────────────────────────
 
     def _ensure_schema(self) -> None:
-        """Crée les tables et index si absents (idempotent)."""
+        """
+        Vérifie que les extensions Python sont présentes dans le schéma Flyway/Spring.
+
+        IMPORTANT : Python ne crée PAS les tables — Spring/Flyway est le seul
+        DDL owner.  Cette méthode se limite à :
+          1. Ajouter les colonnes que Python utilise et que Flyway ne déclare pas
+             (source_origin).
+          2. Créer la contrainte UNIQUE sur hash_dedup (obligatoire pour ON CONFLICT).
+          3. Ajouter les colonnes de critères sur collection_jobs si absentes.
+          4. Créer des index utiles (conditionnels selon les colonnes présentes).
+        Tous les statements sont idempotents (IF NOT EXISTS / DO $$ … END $$).
+        """
         try:
             with self._cursor() as cur:
-                cur.execute(_DDL_PROSPECTS)
-                cur.execute(_SQL_ALTER_PROSPECTS_ADD_JOB_ID)
-                # Alignement non-destructif : convertir TEXT -> BIGINT si la base
-                # est encore sur l'ancien schéma Python.
-                cur.execute(
-                    """
-                    DO $$
-                    BEGIN
-                        IF EXISTS (
-                            SELECT 1
-                            FROM information_schema.columns
-                            WHERE table_schema = 'public'
-                              AND table_name = 'prospects'
-                              AND column_name = 'job_id'
-                              AND data_type <> 'bigint'
-                        ) THEN
-                            ALTER TABLE prospects
-                                ALTER COLUMN job_id TYPE BIGINT
-                                USING NULLIF(TRIM(job_id::text), '')::bigint;
-                        END IF;
-                    EXCEPTION WHEN others THEN
-                        -- Si conversion impossible (valeurs non numériques), on garde le type
-                        -- actuel et l'erreur sera rendue explicite au moment des inserts.
-                        NULL;
-                    END $$;
-                    """
-                )
-                cur.execute(_SQL_ALTER_PROSPECTS_ADD_IS_DELETED)
-                cur.execute(_DDL_PROSPECTS_INDEXES)
-                cur.execute(_DDL_JOBS)
-                cur.execute(
-                    """
-                    DO $$
-                    BEGIN
-                        IF EXISTS (
-                            SELECT 1
-                            FROM information_schema.columns
-                            WHERE table_schema = 'public'
-                              AND table_name = 'collection_jobs'
-                              AND column_name = 'id'
-                              AND data_type <> 'bigint'
-                        ) THEN
-                            ALTER TABLE collection_jobs
-                                ALTER COLUMN id TYPE BIGINT
-                                USING NULLIF(TRIM(id::text), '')::bigint;
-                        END IF;
-                    EXCEPTION WHEN others THEN
-                        NULL;
-                    END $$;
-                    """
-                )
+                # ── Colonne source_origin (Python-only) ───────────────────
+                cur.execute(_SQL_ALTER_PROSPECTS_ADD_SOURCE_ORIGIN)
+
+                # ── Contrainte UNIQUE hash_dedup (pour ON CONFLICT) ───────
+                cur.execute(_SQL_ADD_UNIQUE_HASH_DEDUP)
+
+                # ── Critères job (colonnes potentiellement absentes) ──────
                 cur.execute(_SQL_ALTER_JOBS_ADD_CRITERIA_FIELDS)
-                cur.execute(_SQL_ALTER_JOBS_ADD_IS_DELETED)
-                cur.execute(_SQL_DROP_JOB_ARRAY_CRITERIA_COLUMNS)
-            logger.info("[PgRepo] Schéma PostgreSQL vérifié/créé.")
+
+                # ── Index utiles (colonnes garanties par Spring) ──────────
+                cur.execute(_DDL_PROSPECTS_INDEXES)
+
+                # ── Index conditionnels (colonnes selon version Flyway) ───
+                cur.execute(_DDL_PROSPECTS_CONDITIONAL_INDEXES)
+
+            logger.info("[PgRepo] Schéma PostgreSQL vérifié (extensions Python appliquées).")
         except Exception as e:
             logger.error(f"[PgRepo] Erreur lors de la création du schéma : {e}")
             raise
@@ -443,34 +379,47 @@ class PgRepository:
     # ──────────────────────────────────────────
 
     def upsert_prospects(self, prospects: List[Any], job_id: str = "") -> Dict[str, int]:
+        print("[PgRepo][PRINT] upsert_prospects called with", len(prospects), "prospects, job_id=", job_id)
         """
         Insère ou met à jour les prospects qualifiés dans PostgreSQL.
-        L'upsert est basé sur hash_dedup (clé primaire).
-        Si job_id est fourni, le hash est "scopé job" pour éviter les collisions
-        entre exécutions différentes.
+        L'upsert est basé sur hash_dedup (contrainte UNIQUE).
 
-        Returns:
-            {"upserted": N, "skipped": M, "non_qualified": K}
-            skipped = prospects qualifiés sans hash_dedup (ne peuvent pas être upsertés)
-            non_qualified = prospects ignorés car statut != QUALIFIE
+        Seuls les prospects avec qualification QUALIFIE sont persistés.
+        Retourne un dict {"upserted": N, "skipped": N, "non_qualified": N}.
         """
-        if not prospects:
-            return {"upserted": 0, "skipped": 0, "non_qualified": 0}
-
-        qualified = [p for p in prospects if self._is_qualified(p)]
+        qualified     = [p for p in prospects if self._is_qualified(p)]
         non_qualified = len(prospects) - len(qualified)
 
         if non_qualified:
             logger.info(f"[PgRepo] {non_qualified} prospect(s) non qualifiés ignorés.")
 
         rows = [self._prospect_to_row(p, job_id=job_id) for p in qualified]
-        valid = [r for r in rows if r.get("hash_dedup") and r.get("job_id") is not None]
+
+        # Génération d'un hash de secours pour les lignes sans hash_dedup
+        for r in rows:
+            if not r.get("hash_dedup"):
+                raw = "|".join([
+                    str(r.get("nom_commercial") or ""),
+                    str(r.get("ville") or ""),
+                    str(r.get("siren") or ""),
+                    str(r.get("email") or ""),
+                    str(r.get("website") or ""),
+                ])
+                r["hash_dedup"] = hashlib.sha256(raw.encode()).hexdigest()[:16]
+                logger.debug(f"[PgRepo] hash_dedup fallback généré pour {r.get('nom_commercial')!r}")
+
+        valid   = [r for r in rows if r.get("hash_dedup") and r.get("job_id") is not None]
         skipped = len(rows) - len(valid)
 
-        if skipped:
-            logger.warning(
-                f"[PgRepo] {skipped} prospect(s) qualifié(s) ignorés (hash_dedup manquant)."
+        logger.info(f"[PgRepo][DEBUG] Tentative d'upsert de {len(rows)} prospects qualifiés pour job_id={job_id}")
+        for i, r in enumerate(rows[:10]):
+            logger.info(
+                f"[PgRepo][DEBUG] Prospect {i}: hash_dedup={r.get('hash_dedup')}, "
+                f"job_id={r.get('job_id')}, nom={r.get('nom_commercial')}, email={r.get('email')}"
             )
+
+        if skipped:
+            logger.warning(f"[PgRepo] {skipped} prospect(s) qualifié(s) ignorés (hash_dedup ou job_id non résolu).")
 
         if not valid:
             return {"upserted": 0, "skipped": skipped, "non_qualified": non_qualified}
@@ -490,8 +439,8 @@ class PgRepository:
 
     def save_job(self, job: CollectionJob) -> None:
         """Insère ou met à jour un CollectionJob."""
-        params = _parse_json_dict(job.parameters_json)
-        criteria = _extract_job_criteria(params)
+        params          = _parse_json_dict(job.parameters_json)
+        criteria        = _extract_job_criteria(params)
         resolved_job_id = _coerce_job_id_bigint(job.id)
 
         row = {
@@ -500,14 +449,16 @@ class PgRepository:
             "type":             getattr(job, "type", "SCRAPING"),
             "status":           job.status,
             "parameters_json":  job.parameters_json,
-            "crit_secteurs_activite_txt": _join_text_list(criteria["crit_secteurs_activite"]),
-            "crit_types_entreprise_txt":  _join_text_list(criteria["crit_types_entreprise"]),
+            "crit_secteurs_activite_txt":  _join_text_list(criteria["crit_secteurs_activite"]),
+            # FIX #3 : liste d'entiers (BIGINT[]) — psycopg2 la sérialise en tableau PostgreSQL
+            "crit_secteurs_activite_id":   criteria["crit_secteurs_activite_id"] or None,
+            "crit_types_entreprise_txt":   _join_text_list(criteria["crit_types_entreprise"]),
             "crit_tailles_entreprise_txt": _join_text_list(criteria["crit_tailles_entreprise"]),
-            "crit_pays_txt": _join_text_list(criteria["crit_pays"]),
-            "crit_regions_txt": _join_text_list(criteria["crit_regions"]),
-            "crit_villes_txt": _join_text_list(criteria["crit_villes"]),
-            "crit_keywords_txt": _join_text_list(criteria["crit_keywords"]),
-            "crit_max_resultats": criteria["crit_max_resultats"],
+            "crit_pays_txt":               _join_text_list(criteria["crit_pays"]),
+            "crit_regions_txt":            _join_text_list(criteria["crit_regions"]),
+            "crit_villes_txt":             _join_text_list(criteria["crit_villes"]),
+            "crit_keywords_txt":           _join_text_list(criteria["crit_keywords"]),
+            "crit_max_resultats":          criteria["crit_max_resultats"],
             "started_at":       _parse_dt(job.started_at),
             "finished_at":      _parse_dt(job.finished_at),
             "total_collected":  job.total_collected,
@@ -520,11 +471,19 @@ class PgRepository:
             "sources_used":     job.sources_used or [],
             "errors":           job.errors or [],
         }
+
         if row["id"] is None:
             raise ValueError(
                 f"[PgRepo] job.id invalide pour PostgreSQL BIGINT: {job.id!r}. "
                 "Le backend Spring doit fournir un jobId numérique."
             )
+
+        try:
+            logger.info("[PG JOB INSERT] Données insérées :\n%s",
+                        json.dumps(row, ensure_ascii=False, indent=2, default=str))
+        except Exception as log_exc:
+            logger.warning(f"[PG JOB INSERT] Impossible d'afficher row : {log_exc}")
+
         try:
             with self._cursor() as cur:
                 cur.execute(_SQL_INSERT_JOB, row)
@@ -539,9 +498,10 @@ class PgRepository:
 
     def load_qualified(self, limit: int = 500) -> List[Dict]:
         """Retourne les prospects qualifiés triés par score décroissant."""
+        # FIX #2 : filtre sur "qualification" et non "statut"
         sql = """
             SELECT * FROM prospects
-            WHERE statut = 'QUALIFIE'
+            WHERE qualification = 'QUALIFIE'
             ORDER BY qualification_score DESC
             LIMIT %(limit)s;
         """
@@ -554,10 +514,13 @@ class PgRepository:
             return []
 
     def load_by_sector(self, sector: str, limit: int = 200) -> List[Dict]:
-        """Retourne les prospects d'un secteur donné."""
+        """Retourne les prospects dont la description contient le secteur donné.
+        NOTE : la colonne secteur_activite (TEXT) n'existe pas dans le schéma Spring —
+        la recherche se fait sur description qui contient le texte du secteur.
+        """
         sql = """
             SELECT * FROM prospects
-            WHERE secteur_activite ILIKE %(sector)s
+            WHERE description ILIKE %(sector)s
             ORDER BY qualification_score DESC
             LIMIT %(limit)s;
         """
@@ -573,7 +536,7 @@ class PgRepository:
         """Retourne les prospects collectés dans les N derniers jours."""
         sql = """
             SELECT * FROM prospects
-            WHERE created_at >= NOW() - INTERVAL '%(days)s days'
+            WHERE created_at >= NOW() - (%(days)s || ' days')::INTERVAL
             ORDER BY created_at DESC
             LIMIT %(limit)s;
         """
@@ -585,11 +548,12 @@ class PgRepository:
             logger.error(f"[PgRepo] Erreur load_recent : {e}")
             return []
 
-    def count(self, statut: Optional[str] = None) -> int:
-        """Compte les prospects, optionnellement filtrés par statut."""
-        if statut:
-            sql = "SELECT COUNT(*) FROM prospects WHERE statut = %(statut)s;"
-            params: Dict = {"statut": statut}
+    def count(self, qualification: Optional[str] = None) -> int:
+        """Compte les prospects, optionnellement filtrés par qualification."""
+        # FIX #2 : paramètre renommé de "statut" en "qualification"
+        if qualification:
+            sql    = "SELECT COUNT(*) FROM prospects WHERE qualification = %(qualification)s;"
+            params: Dict = {"qualification": qualification}
         else:
             sql    = "SELECT COUNT(*) FROM prospects;"
             params = {}
@@ -604,19 +568,20 @@ class PgRepository:
 
     def get_stats(self) -> Dict[str, Any]:
         """Statistiques agrégées sur la table prospects."""
+        # FIX #2 : filtre sur "qualification" et non "statut"
         sql = """
             SELECT
-                COUNT(*)                                        AS total,
-                COUNT(*) FILTER (WHERE statut = 'QUALIFIE')    AS qualified,
-                ROUND(AVG(qualification_score), 1)             AS avg_score,
-                MAX(qualification_score)                        AS max_score,
-                ROUND(AVG(enrich_score), 2)                    AS avg_enrich_score,
-                COUNT(*) FILTER (WHERE email <> '')            AS with_email,
-                COUNT(*) FILTER (WHERE telephone <> '')        AS with_phone,
-                COUNT(*) FILTER (WHERE website <> '')          AS with_website,
-                COUNT(*) FILTER (WHERE email_mx_verified)      AS mx_verified,
-                MIN(created_at)                                 AS oldest,
-                MAX(created_at)                                 AS newest
+                COUNT(*)                                              AS total,
+                COUNT(*) FILTER (WHERE qualification = 'QUALIFIE')   AS qualified,
+                ROUND(AVG(qualification_score), 1)                    AS avg_score,
+                MAX(qualification_score)                              AS max_score,
+                ROUND(AVG(enrich_score), 2)                           AS avg_enrich_score,
+                COUNT(*) FILTER (WHERE email <> '')                   AS with_email,
+                COUNT(*) FILTER (WHERE telephone <> '')               AS with_phone,
+                COUNT(*) FILTER (WHERE website <> '')                 AS with_website,
+                COUNT(*) FILTER (WHERE email_mx_verified)             AS mx_verified,
+                MIN(created_at)                                       AS oldest,
+                MAX(created_at)                                       AS newest
             FROM prospects;
         """
         try:
@@ -645,6 +610,23 @@ class PgRepository:
         def _str(v) -> str:
             return str(v).strip() if v is not None else ""
 
+        def _enum(v, enum_cls):
+            """
+            Safe enum lookup against the Python enum class (which mirrors the
+            Spring enum exactly).  Any value not present in the enum — including
+            empty string, None, or an unrecognised scraper value — resolves to
+            the UNKNOWN sentinel (""), which this function then converts to None
+            so psycopg2 writes SQL NULL.  NULL is accepted by Hibernate's CHECK
+            constraint on nullable enum columns; an empty string is not.
+            """
+            s = str(v).strip().upper() if v is not None else ""
+            try:
+                result = enum_cls(s)
+            except ValueError:
+                result = enum_cls.UNKNOWN
+            # UNKNOWN sentinel value is "" — map to None (SQL NULL)
+            return result.value or None
+
         def _int(v) -> Optional[int]:
             try:
                 return int(v) if v is not None else None
@@ -662,17 +644,21 @@ class PgRepository:
                 return v
             return str(v).lower() in ("true", "1", "yes", "oui")
 
-        # score_detail : doit être du JSON sérialisé (psycopg2 gère le JSONB
-        # via Json() ou via une string JSON valide selon le driver).
         score_detail = d.get("score_detail", {})
         if not isinstance(score_detail, str):
             score_detail = json.dumps(score_detail, ensure_ascii=False, default=str)
 
-        created_at = _parse_dt(d.get("created_at")) or datetime.now()
+        created_at          = _parse_dt(d.get("created_at")) or datetime.now()
         resolved_job_id_raw = _str(job_id) or _str(d.get("job_id"))
-        resolved_job_id = _int(resolved_job_id_raw)
-        hash_raw = _str(d.get("hash_dedup"))
-        hash_scoped = PgRepository._scope_hash_with_job(
+        # FIX – job_id coercion: _int() silently returns None for non-numeric
+        # strings such as the short-UUID fallback ("d59f99ef") generated when no
+        # external_job_id is provided.  The guard on line 411 then drops every
+        # row, logging the misleading "job_id manquant" warning.
+        # Use _coerce_job_id_bigint() (same helper as save_job) so any string —
+        # numeric or UUID-style — always resolves to a valid BIGINT via SHA-256.
+        resolved_job_id     = _coerce_job_id_bigint(resolved_job_id_raw)
+        hash_raw            = _str(d.get("hash_dedup"))
+        hash_scoped         = PgRepository._scope_hash_with_job(
             hash_raw,
             str(resolved_job_id) if resolved_job_id is not None else "",
         )
@@ -691,9 +677,10 @@ class PgRepository:
             "region":               _str(d.get("region")),
             "pays":                 _str(d.get("pays")),
             "code_postal":          _str(d.get("code_postal")),
-            "secteur_activite":     _str(d.get("secteur_activite")),
-            "type_entreprise":      _str(d.get("type_entreprise")),
-            "taille_entreprise":    _str(d.get("taille_entreprise")),
+            # secteur_activite (TEXT) absent du schéma Spring — seul secteur_activite_id (FK) est inséré
+            "secteur_activite_id":  _int(d.get("secteur_activite_id")),
+            "type_entreprise":      _enum(d.get("type_entreprise"),   TypeEntreprise),
+            "taille_entreprise":    _enum(d.get("taille_entreprise"),  TailleEntreprise),
             "nombre_employes":      _int(d.get("nombre_employes")),
             "chiffre_affaires":     _float(d.get("chiffre_affaires")),
             "description":          _str(d.get("description")),
@@ -702,37 +689,40 @@ class PgRepository:
             "siret":                _str(d.get("siret")),
             "qualification_score":  _int(d.get("qualification_score")) or 0,
             "score_pct":            _float(d.get("score_pct")) or 0.0,
-            "statut":               _str(d.get("statut")) or "NON_QUALIFIE",
+            # FIX #2 : clé "qualification" — lecture depuis "statut" ou "qualification" du modèle Python
+            "qualification":        _str(d.get("qualification") or d.get("statut")) or "NON_QUALIFIE",
             "score_detail":         score_detail,
             "criteria_met":         _int(d.get("criteria_met")) or 0,
             "criteria_total":       _int(d.get("criteria_total")) or 0,
-            "source":               _str(d.get("source")) or "SCRAPING",
-            "segment":              _str(d.get("segment")),
+            # FIX – prospects_source_check: Hibernate generates the CHECK constraint
+            # from LeadSource enum values.  The correct value is 'AUTOPROSPECTION'
+            # (no underscore) — matches LeadSource.AUTOPROSPECTION in Spring.
+            "source":               "AUTOPROSPECTION",
+            # source_origin = source de données réelle (anciennement "source")
+            "source_origin":        _str(d.get("source_origin") or d.get("source")) or "",
             "sector_confidence":    _float(d.get("sector_confidence")) or 0.0,
             "email_valid":          _bool(d.get("email_valid")),
             "website_active":       _bool(d.get("website_active")),
             "enrich_score":         _int(d.get("enrich_score")) or 0,
             "email_mx_verified":    _bool(d.get("email_mx_verified")),
             "created_at":           created_at,
+            "updated_at":           created_at,
             "is_deleted":           False,
         }
 
     @staticmethod
     def _scope_hash_with_job(hash_dedup: str, job_id: str) -> str:
         """
-        Retourne un hash de déduplication contenant le job_id.
-
-        - Sans job_id: conserve le hash d'origine.
-        - Avec job_id: génère SHA-256(job_id|hash_dedup), tronqué à 16 hex.
+        Retourne un hash de déduplication scopé au job.
+        - Sans job_id : conserve le hash d'origine.
+        - Avec job_id : génère SHA-256(job_id|hash_dedup), tronqué à 16 hex.
         """
-        base_hash = (hash_dedup or "").strip()
+        base_hash  = (hash_dedup or "").strip()
         if not base_hash:
             return ""
-
         scoped_job = (job_id or "").strip()
         if not scoped_job:
             return base_hash
-
         raw = f"{scoped_job}|{base_hash}"
         return hashlib.sha256(raw.encode()).hexdigest()[:16]
 
@@ -740,12 +730,12 @@ class PgRepository:
     def _is_qualified(p: Any) -> bool:
         """Retourne True uniquement pour les prospects qualifiés."""
         if isinstance(p, Prospect):
-            statut = p.statut
+            # FIX #2 : lecture depuis .qualification en priorité, .statut en fallback
+            statut = getattr(p, "qualification", None) or getattr(p, "statut", "")
         elif isinstance(p, dict):
-            statut = p.get("statut", "")
+            statut = p.get("qualification") or p.get("statut", "")
         else:
-            statut = getattr(p, "statut", "")
-
+            statut = getattr(p, "qualification", "") or getattr(p, "statut", "")
         return str(statut).upper() == "QUALIFIE"
 
 
@@ -778,75 +768,41 @@ def _parse_json_dict(value: Any) -> Dict[str, Any]:
         return {}
 
 
-def _extract_job_criteria(params: Dict[str, Any]) -> Dict[str, Any]:
-    """Normalise les variantes de payload critères (interne + Spring/UI)."""
-    if not isinstance(params, dict):
-        params = {}
+def _safe_int(value: Any) -> Optional[int]:
+    """Convertit une valeur en int, ou None si impossible."""
+    try:
+        return int(value) if value is not None else None
+    except (ValueError, TypeError):
+        return None
 
-    secteurs = params.get("secteurs_activite", params.get("secteur_activite", []))
-    types = params.get("types_entreprise", params.get("type_entreprise", []))
-    keywords = (
-        params.get("keywords")
-        or params.get("mots_cles")
-        or params.get("motsCles")
-        or []
+
+def _coerce_job_id_bigint(value: Any) -> Optional[int]:
+    """
+    Convertit un job_id en BIGINT PostgreSQL.
+    - Si numérique : cast direct.
+    - Si alphanumérique (UUID, etc.) : dérive un BIGINT via SHA-256 (63 bits signés positifs).
+    - Si None/vide : retourne None.
+    """
+    if value is None:
+        return None
+    text = str(value).strip()
+    if not text:
+        return None
+    try:
+        return int(text)
+    except (ValueError, TypeError):
+        pass
+    derived = int.from_bytes(
+        hashlib.sha256(text.encode("utf-8")).digest()[:8], "big"
     )
-
-    tailles = params.get("tailles_entreprise", [])
-    if not tailles:
-        taille_obj = params.get("taille_entreprise", [])
-        if isinstance(taille_obj, dict):
-            tailles = taille_obj.get("categories", [])
-            if not tailles:
-                min_emp = _safe_int(taille_obj.get("nb_employes_min"))
-                max_emp = _safe_int(taille_obj.get("nb_employes_max"))
-                if min_emp is not None or max_emp is not None:
-                    label_min = str(min_emp) if min_emp is not None else "0"
-                    label_max = str(max_emp) if max_emp is not None else "+"
-                    tailles = [f"{label_min}-{label_max}"]
-        else:
-            tailles = taille_obj
-
-    localisation = params.get("localisation") if isinstance(params.get("localisation"), dict) else {}
-    if not localisation:
-        zone = params.get("zone_geographique") or params.get("zoneGeographique")
-        if isinstance(zone, dict):
-            localisation = {
-                "pays": zone.get("pays", zone.get("zone_geographique", [])),
-                "regions": zone.get("regions", []),
-                "villes": zone.get("villes", []),
-            }
-
-    # Supporte aussi les payloads plats ou variantes où zone_geographique est une liste.
-    pays = localisation.get("pays", [])
-    if not pays:
-        pays = localisation.get("zone_geographique", [])
-    if not pays:
-        pays = params.get("pays", [])
-    if not pays:
-        zone_raw = params.get("zone_geographique", params.get("zoneGeographique", []))
-        if not isinstance(zone_raw, dict):
-            pays = zone_raw
-
-    regions = localisation.get("regions", []) or params.get("regions", []) or params.get("region", [])
-    villes = localisation.get("villes", []) or params.get("villes", []) or params.get("ville", [])
-
-    max_resultats = params.get("max_resultats", params.get("max_prospects_total"))
-
-    return {
-        "crit_secteurs_activite": _as_text_list(secteurs),
-        "crit_types_entreprise": _as_text_list(types),
-        "crit_tailles_entreprise": _as_text_list(tailles),
-        "crit_pays": _as_text_list(pays),
-        "crit_regions": _as_text_list(regions),
-        "crit_villes": _as_text_list(villes),
-        "crit_keywords": _as_text_list(keywords),
-        "crit_max_resultats": _safe_int(max_resultats),
-    }
+    derived &= (1 << 63) - 1
+    return derived or 1
 
 
 def _as_text_list(value: Any) -> List[str]:
-    """Normalise une valeur (str/list/tuple/set) en liste de strings non vides."""
+    """
+    Normalise une valeur (str / list / tuple / set / autre) en liste de strings non vides.
+    """
     if value is None:
         return []
     if isinstance(value, str):
@@ -863,39 +819,109 @@ def _as_text_list(value: Any) -> List[str]:
     return [text] if text else []
 
 
-def _safe_int(value: Any) -> Optional[int]:
-    """Convertit une valeur en int si possible, sinon None."""
-    try:
-        return int(value) if value is not None else None
-    except (TypeError, ValueError):
-        return None
-
-
-def _coerce_job_id_bigint(value: Any) -> Optional[int]:
-    """
-    Convertit un job_id en BIGINT PostgreSQL.
-
-    - Si numérique: conserve la valeur.
-    - Si texte non numérique (ex: uuid court): dérive un entier positif stable.
-    - Si vide: retourne None.
-    """
-    direct = _safe_int(value)
-    if direct is not None:
-        return direct
-
+def _as_int_list(value: Any) -> List[int]:
+    """Normalise une valeur en liste d'entiers non nuls."""
     if value is None:
-        return None
-
-    text = str(value).strip()
-    if not text:
-        return None
-
-    # 63 bits signés positifs pour rester dans le range BIGINT PostgreSQL.
-    derived = int.from_bytes(hashlib.sha256(text.encode("utf-8")).digest()[:8], "big")
-    derived &= (1 << 63) - 1
-    return derived or 1
+        return []
+    if isinstance(value, int):
+        return [value]
+    if isinstance(value, (list, tuple, set)):
+        return [int(x) for x in value if str(x).strip().isdigit()]
+    if str(value).strip().isdigit():
+        return [int(value)]
+    return []
 
 
 def _join_text_list(values: List[str]) -> str:
     """Retourne une représentation texte lisible sans accolades PostgreSQL."""
     return ", ".join(v for v in values if str(v).strip())
+
+
+def _extract_job_criteria(params: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Normalise les variantes de payload critères (interne + Spring/UI)
+    et retourne un dict prêt à être inséré dans collection_jobs.
+
+    Gère les deux structures possibles dans parameters_json :
+      - Format orchestrateur interne : localisation.{pays, regions, villes}
+      - Format Spring/bridge          : zone_geographique.{zone_geographique, regions, villes}
+    """
+    if not isinstance(params, dict):
+        params = {}
+
+    # ── Secteurs ──────────────────────────────────────────────────────────────
+    secteurs    = params.get("secteurs_activite", params.get("secteur_activite", []))
+    secteurs_id = params.get("secteurs_activite_id", params.get("secteur_activite_id", []))
+
+    # ── Types ─────────────────────────────────────────────────────────────────
+    types = params.get("types_entreprise", params.get("type_entreprise", []))
+
+    # ── Keywords ──────────────────────────────────────────────────────────────
+    keywords = (
+        params.get("keywords")
+        or params.get("mots_cles")
+        or params.get("motsCles")
+        or []
+    )
+
+    # ── Tailles ───────────────────────────────────────────────────────────────
+    tailles = params.get("tailles_entreprise", [])
+    if not tailles:
+        taille_obj = params.get("taille_entreprise", [])
+        if isinstance(taille_obj, dict):
+            tailles = taille_obj.get("categories", [])
+            if not tailles:
+                min_emp = _safe_int(taille_obj.get("nb_employes_min"))
+                max_emp = _safe_int(taille_obj.get("nb_employes_max"))
+                if min_emp is not None or max_emp is not None:
+                    label_min = str(min_emp) if min_emp is not None else "0"
+                    label_max = str(max_emp) if max_emp is not None else "+"
+                    tailles = [f"{label_min}-{label_max}"]
+        else:
+            tailles = taille_obj if isinstance(taille_obj, list) else []
+
+    # ── Géographie ────────────────────────────────────────────────────────────
+    localisation: Dict[str, Any] = {}
+    if isinstance(params.get("localisation"), dict):
+        localisation = params["localisation"]
+
+    if not localisation:
+        zone = params.get("zone_geographique") or params.get("zoneGeographique")
+        if isinstance(zone, dict):
+            localisation = {
+                "pays":    zone.get("pays", zone.get("zone_geographique", [])),
+                "regions": zone.get("regions", []),
+                "villes":  zone.get("villes", []),
+            }
+
+    pays: List[str] = _as_text_list(localisation.get("pays", []))
+    if not pays:
+        pays = _as_text_list(localisation.get("zone_geographique", []))
+    if not pays:
+        pays = _as_text_list(params.get("pays", []))
+    if not pays:
+        zone_raw = params.get("zone_geographique", params.get("zoneGeographique", []))
+        if not isinstance(zone_raw, dict):
+            pays = _as_text_list(zone_raw)
+
+    regions = _as_text_list(
+        localisation.get("regions", []) or params.get("regions", []) or params.get("region", [])
+    )
+    villes = _as_text_list(
+        localisation.get("villes", []) or params.get("villes", []) or params.get("ville", [])
+    )
+
+    # ── Max résultats ─────────────────────────────────────────────────────────
+    max_resultats = params.get("max_resultats", params.get("max_prospects_total"))
+
+    return {
+        "crit_secteurs_activite":    _as_text_list(secteurs),
+        "crit_secteurs_activite_id": _as_int_list(secteurs_id),
+        "crit_types_entreprise":     _as_text_list(types),
+        "crit_tailles_entreprise":   _as_text_list(tailles),
+        "crit_pays":                 pays,
+        "crit_regions":              regions,
+        "crit_villes":               villes,
+        "crit_keywords":             _as_text_list(keywords),
+        "crit_max_resultats":        _safe_int(max_resultats),
+    }

@@ -1,33 +1,33 @@
 [
   {
-    "nom_commercial": "DISPLAY SAAS",
-    "raison_sociale": "DISPLAY SAAS",
-    "email": "",
-    "telephone": "",
-    "website": "https://entreprises.lefigaro.fr/display-saas-75/entreprise-978909992",
+    "nom_commercial": "HAPNI LOGICIEL",
+    "raison_sociale": "HAPNI LOGICIEL",
+    "email": "contact@hapni.fr",
+    "telephone": "09 78 45 02 87",
+    "website": "https://hapni.fr",
     "linkedin_url": "",
-    "adresse": "60 RUE FRANCOIS IER 75008 PARIS",
-    "ville": "Paris",
+    "adresse": "52 AVENUE DE LA MARNE 92600 ASNIERES-SUR-SEINE",
+    "ville": "Asnieres-sur-Seine",
     "region": "Île-de-France",
     "pays": "France",
-    "code_postal": "75008",
-    "secteur_activite": "Développement logiciel",
+    "code_postal": "92600",
+    "secteur_activite": "Informatique",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
-    "description": "Société Display Saas (Paris, 75008) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire...",
+    "description": "Obtenez un diagnostic précis pour l'apnée du sommeil avec un test en ligne et un diagnostic médical à domicile. Bénéficiez d'un diagnostic fiable, rapide et remboursé avec un médecin du sommeil.",
     "code_naf": "62.01Z",
-    "siren": "978909992",
-    "siret": "97890999200015",
-    "qualification_score": 40,
-    "score_pct": 40.0,
-    "statut": "NON_QUALIFIE",
+    "siren": "977946276",
+    "siret": "97794627600010",
+    "qualification_score": 70,
+    "score_pct": 70.0,
+    "qualification": "QUALIFIE",
     "score_detail": {
       "sector_match": {
-        "points": 10,
+        "points": 20,
         "max": 20,
-        "note": "partial:Informatique"
+        "note": "match:Informatique"
       },
       "size_match": {
         "points": 0,
@@ -45,19 +45,19 @@
         "note": "region:île-de-france"
       },
       "email_valid": {
-        "points": 0,
+        "points": 10,
         "max": 10,
-        "note": ""
+        "note": "contact@hapni.fr"
       },
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://entreprises.lefigaro.fr/display-saas-75/entreprise-978909992"
+        "note": "https://hapni.fr"
       },
       "phone_present": {
-        "points": 0,
+        "points": 10,
         "max": 10,
-        "note": ""
+        "note": "09 78 45 02 87"
       },
       "name_complete": {
         "points": 5,
@@ -70,47 +70,142 @@
         "note": ""
       }
     },
-    "criteria_met": 5,
+    "criteria_met": 7,
     "criteria_total": 9,
     "source": "annuaire-entreprises.data.gouv.fr",
-    "segment": "",
-    "sector_confidence": 0.332,
-    "email_valid": false,
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 1.0,
+    "email_valid": true,
     "website_active": true,
-    "enrich_score": 1,
-    "hash_dedup": "2a14707369eb57d4",
+    "enrich_score": 3,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "30bb17c127625bb0",
     "raw_text": "",
-    "created_at": "2026-04-17T10:13:01.349532"
+    "created_at": "2026-04-20T23:29:55.213498",
+    "updated_at": "2026-04-20T23:29:55.213498"
   },
   {
-    "nom_commercial": "BEST OF BREED CONSULTING (SAAS ADVISOR)",
-    "raison_sociale": "BEST OF BREED CONSULTING",
-    "email": "",
+    "nom_commercial": "CONCEPTION DEVELOPPEMENT LOGICIELS (CDL)",
+    "raison_sociale": "CONCEPTION DEVELOPPEMENT LOGICIELS",
+    "email": "contact@rubypayeur.com",
     "telephone": "",
-    "website": "https://saas-advisor.com",
-    "linkedin_url": "https://www.linkedin.com/company/saasadvisor",
-    "adresse": "23 RUE DULONG 75017 PARIS",
-    "ville": "Paris",
+    "website": "https://rubypayeur.com/societe/conception-developpement-logiciels-391507423",
+    "linkedin_url": "",
+    "adresse": "36 RUE DE LA FRATERNITE 93170 BAGNOLET",
+    "ville": "Bagnolet",
     "region": "Île-de-France",
     "pays": "France",
-    "code_postal": "75017",
-    "secteur_activite": "Développement logiciel",
+    "code_postal": "93170",
+    "secteur_activite": "Informatique",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
-    "description": "SaaS Advisor est une société de conseil spécialisée en choix de solutions SaaS pour entreprises, agences et en particulier pour les directions marketing.",
+    "description": "Toutes les infos sur CONCEPTION DEVELOPPEMENT LOGICIELS (CDL) : Dirigeants, chiffre d'affaires, bilans, statuts, effectif... Découvrez sa notation 🚦",
     "code_naf": "62.01Z",
-    "siren": "829981349",
-    "siret": "82998134900022",
-    "qualification_score": 40,
-    "score_pct": 40.0,
-    "statut": "NON_QUALIFIE",
+    "siren": "391507423",
+    "siret": "39150742300039",
+    "qualification_score": 60,
+    "score_pct": 60.0,
+    "qualification": "QUALIFIE",
     "score_detail": {
       "sector_match": {
-        "points": 10,
+        "points": 20,
         "max": 20,
-        "note": "partial:Informatique"
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 10,
+        "max": 10,
+        "note": "contact@rubypayeur.com"
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://rubypayeur.com/societe/conception-developpement-logiciels-391507423"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 6,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 1.0,
+    "email_valid": true,
+    "website_active": true,
+    "enrich_score": 2,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "4474e2de98961c00",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.214030",
+    "updated_at": "2026-04-20T23:29:55.214030"
+  },
+  {
+    "nom_commercial": "ASSISTANCE LOGICIEL INFORMATIQUE EQUIPEMENT RESEAU (ALIER)",
+    "raison_sociale": "ASSISTANCE LOGICIEL INFORMATIQUE EQUIPEMENT RESEAU",
+    "email": "assistancelogici.118666@spamfree.bookmyname.com",
+    "telephone": "01 48 94 37 92",
+    "website": "https://www.allbiz.fr/a-l-i-e-r-assistance-logiciel_1U",
+    "linkedin_url": "",
+    "adresse": "68 RUE DE NEUILLY 93250 VILLEMOMBLE",
+    "ville": "Villemomble",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "93250",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Fabrice Longer est le contact principal chez A.L.I.E.R Assistance Logiciel Informatique Equipement Reseaux.",
+    "code_naf": "62.02A",
+    "siren": "379321227",
+    "siret": "37932122700025",
+    "qualification_score": 60,
+    "score_pct": 60.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
       },
       "size_match": {
         "points": 0,
@@ -130,17 +225,17 @@
       "email_valid": {
         "points": 0,
         "max": 10,
-        "note": ""
+        "note": "assistancelogici.118666@spamfree.bookmyname.com"
       },
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://saas-advisor.com"
+        "note": "https://www.allbiz.fr/a-l-i-e-r-assistance-logiciel_1U"
       },
       "phone_present": {
-        "points": 0,
+        "points": 10,
         "max": 10,
-        "note": ""
+        "note": "01 48 94 37 92"
       },
       "name_complete": {
         "points": 5,
@@ -153,47 +248,53 @@
         "note": ""
       }
     },
-    "criteria_met": 5,
+    "criteria_met": 6,
     "criteria_total": 9,
     "source": "annuaire-entreprises.data.gouv.fr",
-    "segment": "",
-    "sector_confidence": 0.5,
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.493,
     "email_valid": false,
     "website_active": true,
     "enrich_score": 2,
-    "hash_dedup": "5f7737e1a4db2dad",
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "a6e3a63887592dc0",
     "raw_text": "",
-    "created_at": "2026-04-17T10:13:01.350541"
+    "created_at": "2026-04-20T23:30:05.054482",
+    "updated_at": "2026-04-20T23:30:05.054482"
   },
   {
-    "nom_commercial": "GEOSAAS (GEOSAAS - SERVICE GEOLOCALISES - GEO-SAAS)",
-    "raison_sociale": "GEOSAAS",
+    "nom_commercial": "ASSISTANCE TECHNIQUE INFORMATIQUE LOGICIELLE ET SYSTEMES",
+    "raison_sociale": "ASSISTANCE TECHNIQUE INFORMATIQUE LOGICIELLE ET SYSTEMES",
     "email": "",
-    "telephone": "",
-    "website": "https://predictice.com/entreprise/geosaas-520245648",
+    "telephone": "01 48 93 4000",
+    "website": "https://www.epx-informatique.com/entreprise-d-assistance-informatique-evry-courcouronnes-91000",
     "linkedin_url": "",
-    "adresse": "29 RUE DU BOEUF 78300 POISSY",
-    "ville": "Poissy",
+    "adresse": "300 ALL JULES VALLES 91000 EVRY-COURCOURONNES",
+    "ville": "Evry-Courcouronnes",
     "region": "Île-de-France",
     "pays": "France",
-    "code_postal": "78300",
-    "secteur_activite": "Cloud computing",
+    "code_postal": "91000",
+    "secteur_activite": "Informatique",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
-    "description": "Accédez à l’ensemble des informations juridiques de l’entreprise GEOSAAS, l’évolution de son contentieux par juridiction et par ville ainsi que toutes ses décisions de justice. Téléchargez l’intégralité de ses documents publics : brevets, marques, BODACC, comptes sociaux, accords.",
-    "code_naf": "62.01Z",
-    "siren": "520245648",
-    "siret": "52024564800024",
-    "qualification_score": 30,
-    "score_pct": 30.0,
-    "statut": "NON_QUALIFIE",
+    "description": "EPX Informatique propose depuis 16 ans un accompagnement complet aux entreprises et collectivités disposant d'un parc informatique de 10 à 100 postes de travail à Évry-Courcouronnes  (91000). Votre entreprise d'assistance informatique n'aura jamais été aussi efficace.",
+    "code_naf": "62.02A",
+    "siren": "490867074",
+    "siret": "49086707400018",
+    "qualification_score": 60,
+    "score_pct": 60.0,
+    "qualification": "QUALIFIE",
     "score_detail": {
       "sector_match": {
-        "points": 0,
+        "points": 20,
         "max": 20,
-        "note": "no_match (cloud computing)"
+        "note": "match:Informatique"
       },
       "size_match": {
         "points": 0,
@@ -218,7 +319,2321 @@
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://predictice.com/entreprise/geosaas-520245648"
+        "note": "https://www.epx-informatique.com/entreprise-d-assistance-informatique-evry-courcouronnes-91000"
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "01 48 93 4000"
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 6,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.57,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 2,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "752405f2599a56d2",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:30:05.054482",
+    "updated_at": "2026-04-20T23:30:05.054482"
+  },
+  {
+    "nom_commercial": "PUZZLE LOGICIELS",
+    "raison_sociale": "PUZZLE LOGICIELS",
+    "email": "",
+    "telephone": "",
+    "website": "https://app.dataprospects.fr/entreprises/PUZZLE-LOGICIELS/981313281",
+    "linkedin_url": "",
+    "adresse": "30 RUE ALCIDE D'ORBIGNY 93380 PIERREFITTE-SUR-SEINE",
+    "ville": "Pierrefitte-sur-Seine",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "93380",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "PUZZLE LOGICIELS (981313281), SAS, socit par actions simplifie a vu le jour en 2023, il y a 3 ans. Le siège social est établi à PIERREFITTE-SUR-SEINE (le code postal est le 93380). Le code NAF qui lui a été attribué est le 6201Z (Programmation informatique).",
+    "code_naf": "62.01Z",
+    "siren": "981313281",
+    "siret": "98131328100017",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://app.dataprospects.fr/entreprises/PUZZLE-LOGICIELS/981313281"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "3c0b245d18395246",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.214030",
+    "updated_at": "2026-04-20T23:29:55.214030"
+  },
+  {
+    "nom_commercial": "CAP-LOGICIELS",
+    "raison_sociale": "CAP-LOGICIELS",
+    "email": "",
+    "telephone": "",
+    "website": "https://cap-logiciels.fr",
+    "linkedin_url": "",
+    "adresse": "61 AVENUE DE L'ARCHE 92400 COURBEVOIE",
+    "ville": "Courbevoie",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "92400",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Cap-Logiciels Ã©diteur de la gamme Aerogest - Logiciels de gestion d'aÃ©roclubs",
+    "code_naf": "62.01Z",
+    "siren": "488073180",
+    "siret": "48807318000033",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://cap-logiciels.fr"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "24682f246216c928",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.214030",
+    "updated_at": "2026-04-20T23:29:55.214030"
+  },
+  {
+    "nom_commercial": "C I L-CONVERGENCE INGENIERIE LOGICIEL",
+    "raison_sociale": "C I L-CONVERGENCE INGENIERIE LOGICIEL",
+    "email": "",
+    "telephone": "",
+    "website": "https://entreprises.lefigaro.fr/c-i-l-convergence-ingenierie-logiciel-75/entreprise-342081965",
+    "linkedin_url": "",
+    "adresse": "49 AVENUE KLEBER 75016 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75016",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Société C I L-Convergence Ingenierie Logiciel (Paris, 75116) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire...",
+    "code_naf": "62.01Z",
+    "siren": "342081965",
+    "siret": "34208196500010",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://entreprises.lefigaro.fr/c-i-l-convergence-ingenierie-logiciel-75/entreprise-342081965"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "af03f536e196c7a5",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.214030",
+    "updated_at": "2026-04-20T23:29:55.214030"
+  },
+  {
+    "nom_commercial": "ASYMA CONSULTING & LOGICIELS",
+    "raison_sociale": "ASYMA CONSULTING & LOGICIELS",
+    "email": "",
+    "telephone": "",
+    "website": "https://entreprises.annuairefrancais.fr/91160/asyma-consulting-&-logiciels-longjumeau-91-essonne-433472958-00019.html",
+    "linkedin_url": "",
+    "adresse": "BAT J2 14 RUE DE L'YVETTE 91160 LONGJUMEAU",
+    "ville": "Longjumeau",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "91160",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "ASYMA CONSULTING & LOGICIELS (siren n° 433472958) est installé dans la commune de Longjumeau à l'adresse 14 RUE DE L YVETTE dans le département de l'Essonne téléphone... ASYMA CONSULTING & LOGICIELS est référencé dans l'Annuaire Français dans la catégorie informatique Ssii, informations complètes Bilans gratuits, statuts, chiffre d'affaires, dirigeants, actionnaires, levées de fonds, annonces légales, APE, NAF, TVA, RCS, KBIS, SIREN, SIRET, BODACC, INSEE, INPI.",
+    "code_naf": "62.01Z",
+    "siren": "433472958",
+    "siret": "43347295800019",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://entreprises.annuairefrancais.fr/91160/asyma-consulting-&-logiciels-longjumeau-91-essonne-433472958-00019.html"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "dc24a84f2a753a0d",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.214030",
+    "updated_at": "2026-04-20T23:29:55.214030"
+  },
+  {
+    "nom_commercial": "GAVANIER INGENIERIE LOGICIELLE",
+    "raison_sociale": "GAVANIER INGENIERIE LOGICIELLE",
+    "email": "",
+    "telephone": "",
+    "website": "https://marc.gavanier.com/contact",
+    "linkedin_url": "",
+    "adresse": "229 RUE SAINT-HONORE 75001 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75001",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Vous souhaitez discuter d’un projet ? Je suis disponible pour échanger et vous accompagner dans la conception d’applications fiables et performantes.",
+    "code_naf": "62.01Z",
+    "siren": "910040591",
+    "siret": "91004059100034",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://marc.gavanier.com/contact"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "9a5797eb6a3ce258",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.214030",
+    "updated_at": "2026-04-20T23:29:55.214030"
+  },
+  {
+    "nom_commercial": "CIVISOFT-CVOX LOGICIEL",
+    "raison_sociale": "CIVISOFT-CVOX LOGICIEL",
+    "email": "",
+    "telephone": "",
+    "website": "https://entreprises.lefigaro.fr/civisoft-civivox-logiciels-75/entreprise-950880674",
+    "linkedin_url": "",
+    "adresse": "55 AVENUE MARCEAU 75016 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75016",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Société Civisoft-Cvox Logiciel (Paris, 75016) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire...",
+    "code_naf": "62.01Z",
+    "siren": "950880674",
+    "siret": "95088067400011",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://entreprises.lefigaro.fr/civisoft-civivox-logiciels-75/entreprise-950880674"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.369,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "89430d9789df8e9a",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.214030",
+    "updated_at": "2026-04-20T23:29:55.214030"
+  },
+  {
+    "nom_commercial": "AUTOMOTIVE DEVELOPPEMENT LOGICIEL SARL",
+    "raison_sociale": "AUTOMOTIVE DEVELOPPEMENT LOGICIEL SARL",
+    "email": "",
+    "telephone": "09 61 51 29 40",
+    "website": "https://www.cylex-locale.fr/entreprises/automotive-d%C3%A9veloppement-logiciel-13187468.html",
+    "linkedin_url": "",
+    "adresse": "5 RUE GEORGES MELIES 78390 BOIS-D'ARCY",
+    "ville": "Bois-d'Arcy",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "78390",
+    "secteur_activite": "Développement logiciel",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Voir Automotive Développement Logiciel à Bois-d'Arcy, 5 Rue Georges Méliès sur Cylex et trouver ☎ 01 34 60 06..., données de contact, ⌚ horaires d'ouverture.",
+    "code_naf": "62.01Z",
+    "siren": "508241072",
+    "siret": "50824107200026",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 10,
+        "max": 20,
+        "note": "partial:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://www.cylex-locale.fr/entreprises/automotive-d%C3%A9veloppement-logiciel-13187468.html"
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "09 61 51 29 40"
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 6,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.333,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 2,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "6956683d0250a7c4",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.214030",
+    "updated_at": "2026-04-20T23:29:55.214030"
+  },
+  {
+    "nom_commercial": "JANY BELLUZ CONSEIL LOGICIEL",
+    "raison_sociale": "JANY BELLUZ CONSEIL LOGICIEL",
+    "email": "",
+    "telephone": "",
+    "website": "https://entreprises.lefigaro.fr/jany-belluz-conseil-logiciel-92/entreprise-908955982",
+    "linkedin_url": "",
+    "adresse": "4 RUE KLEBER 92400 COURBEVOIE",
+    "ville": "Courbevoie",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "92400",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Société Jany Belluz Conseil Logiciel (Courbevoie, 92400) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire...",
+    "code_naf": "62.01Z",
+    "siren": "908955982",
+    "siret": "90895598200016",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://entreprises.lefigaro.fr/jany-belluz-conseil-logiciel-92/entreprise-908955982"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "552c29164cd068a7",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.215057",
+    "updated_at": "2026-04-20T23:29:55.215057"
+  },
+  {
+    "nom_commercial": "PETITS LOGICIELS ENTRE AMIS (PLEA)",
+    "raison_sociale": "PETITS LOGICIELS ENTRE AMIS",
+    "email": "",
+    "telephone": "",
+    "website": "https://www.net1901.org/association/PETITS-LOGICIELS-ENTRE-AMIS-PLEA,1000165141.html",
+    "linkedin_url": "",
+    "adresse": "31 RUE DES TILLEULS 78600 LE MESNIL-LE-ROI",
+    "ville": "Le Mesnil-le-Roi",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "78600",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "PETITS LOGICIELS ENTRE AMIS (PLEA) - le Mesnil le Roi",
+    "code_naf": "62.01Z",
+    "siren": "919686287",
+    "siret": "91968628700013",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://www.net1901.org/association/PETITS-LOGICIELS-ENTRE-AMIS-PLEA,1000165141.html"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "54f5f3cd235d3faa",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.215057",
+    "updated_at": "2026-04-20T23:29:55.215057"
+  },
+  {
+    "nom_commercial": "SAIFUL ISLAM (SAIFUL LOGICIEL)",
+    "raison_sociale": "SAIFUL ISLAM (SAIFUL LOGICIEL)",
+    "email": "",
+    "telephone": "",
+    "website": "https://pontault-combault.localbiz.fr/fiche-m-islam-saiful-77373-92407307500021",
+    "linkedin_url": "",
+    "adresse": "32 AVENUE DES MARGUERITES 77340 PONTAULT-COMBAULT",
+    "ville": "Pontault-Combault",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "77340",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.01Z",
+    "siren": "924073075",
+    "siret": "92407307500013",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://pontault-combault.localbiz.fr/fiche-m-islam-saiful-77373-92407307500021"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "e23c74fb787f89ef",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.215057",
+    "updated_at": "2026-04-20T23:29:55.215057"
+  },
+  {
+    "nom_commercial": "PIERRE GAUTHIER (PIERRE LOGICIEL)",
+    "raison_sociale": "PIERRE GAUTHIER (PIERRE LOGICIEL)",
+    "email": "",
+    "telephone": "",
+    "website": "https://entreprises.annuairefrancais.fr/77340/pierre-gauthier-pontault-combault-77-seine-et-marne-924444011-00028.html",
+    "linkedin_url": "",
+    "adresse": "2 AVENUE LUCIEN REMY 77340 PONTAULT-COMBAULT",
+    "ville": "Pontault-Combault",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "77340",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "PIERRE GAUTHIER (siren n° 924444011) est installé dans la commune de Pontault-Combault à l'adresse 4 AVENUE CHARLES ROUXEL dans le département de la Seine et marne téléphone... PIERRE GAUTHIER est référencé dans l'Annuaire Français dans la catégorie informatique Ssii, informations complètes Bilans gratuits, statuts, chiffre d'affaires, dirigeants, actionnaires, levées de fonds, annonces légales, APE, NAF, TVA, RCS, KBIS, SIREN, SIRET, BODACC, INSEE, INPI.",
+    "code_naf": "62.01Z",
+    "siren": "924444011",
+    "siret": "92444401100010",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://entreprises.annuairefrancais.fr/77340/pierre-gauthier-pontault-combault-77-seine-et-marne-924444011-00028.html"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "fcf0759c4c4c14c2",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.215057",
+    "updated_at": "2026-04-20T23:29:55.215057"
+  },
+  {
+    "nom_commercial": "MESSAOUD NAILI (MESSAOUD LOGICIEL)",
+    "raison_sociale": "MESSAOUD NAILI (MESSAOUD LOGICIEL)",
+    "email": "",
+    "telephone": "",
+    "website": "https://entreprises.annuairefrancais.fr/77340/messaoud-naili-pontault-combault-77-seine-et-marne-512142456-00023.html",
+    "linkedin_url": "",
+    "adresse": "RUE DE LA LOUVETIERE 77340 PONTAULT-COMBAULT",
+    "ville": "Pontault-Combault",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "77340",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "MESSAOUD NAILI (siren n° 512142456) est installé dans la commune de Pontault-Combault à l'adresse  RUE DE LA LOUVETIERE dans le département de la Seine et marne téléphone... MESSAOUD NAILI est référencé dans l'Annuaire Français dans la catégorie informatique Ssii, informations complètes Bilans gratuits, statuts, chiffre d'affaires, dirigeants, actionnaires, levées de fonds, annonces légales, APE, NAF, TVA, RCS, KBIS, SIREN, SIRET, BODACC, INSEE, INPI.",
+    "code_naf": "62.01Z",
+    "siren": "512142456",
+    "siret": "51214245600023",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://entreprises.annuairefrancais.fr/77340/messaoud-naili-pontault-combault-77-seine-et-marne-512142456-00023.html"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "f9e02aba99cb19d8",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.216058",
+    "updated_at": "2026-04-20T23:29:55.216058"
+  },
+  {
+    "nom_commercial": "OLIVIER MONACHON (OLIVIER LOGICIEL)",
+    "raison_sociale": "OLIVIER MONACHON (OLIVIER LOGICIEL)",
+    "email": "",
+    "telephone": "",
+    "website": "https://entreprises.lefigaro.fr/monsieur-olivier-monachon-77/entreprise-429152630",
+    "linkedin_url": "",
+    "adresse": "17 RUE MONTHETY 77340 PONTAULT-COMBAULT",
+    "ville": "Pontault-Combault",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "77340",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Société Monsieur Olivier Monachon (Pontault-Combault, 77340) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire...",
+    "code_naf": "62.01Z",
+    "siren": "429152630",
+    "siret": "42915263000027",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://entreprises.lefigaro.fr/monsieur-olivier-monachon-77/entreprise-429152630"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "8fbd7c18a8ab39eb",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.216058",
+    "updated_at": "2026-04-20T23:29:55.216058"
+  },
+  {
+    "nom_commercial": "ERIC PAVAGEAU (ERIC LOGICIEL)",
+    "raison_sociale": "ERIC PAVAGEAU (ERIC LOGICIEL)",
+    "email": "",
+    "telephone": "",
+    "website": "https://entreprises.lefigaro.fr/monsieur-eric-pavageau-77/entreprise-924206493",
+    "linkedin_url": "",
+    "adresse": "20 RUE DE L'EPINETTE 77340 PONTAULT-COMBAULT",
+    "ville": "Pontault-Combault",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "77340",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Société Monsieur Eric Pavageau (Pontault-Combault, 77340) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire...",
+    "code_naf": "62.01Z",
+    "siren": "924206493",
+    "siret": "92420649300018",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://entreprises.lefigaro.fr/monsieur-eric-pavageau-77/entreprise-924206493"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "4963f302d93d9e12",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.216058",
+    "updated_at": "2026-04-20T23:29:55.216058"
+  },
+  {
+    "nom_commercial": "ANGELO CAGGIANO (ANGELO LOGICIEL)",
+    "raison_sociale": "ANGELO CAGGIANO (ANGELO LOGICIEL)",
+    "email": "",
+    "telephone": "",
+    "website": "https://entreprises.annuairefrancais.fr/77340/angelo-caggiano-pontault-combault-77-seine-et-marne-924217300-00012.html",
+    "linkedin_url": "",
+    "adresse": "RUE DE PARIS 77340 PONTAULT-COMBAULT",
+    "ville": "Pontault-Combault",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "77340",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "ANGELO CAGGIANO (siren n° 924217300) est installé dans la commune de Pontault-Combault à l'adresse  RUE DE PARIS dans le département de la Seine et marne téléphone... ANGELO CAGGIANO est référencé dans l'Annuaire Français dans la catégorie informatique Ssii, informations complètes Bilans gratuits, statuts, chiffre d'affaires, dirigeants, actionnaires, levées de fonds, annonces légales, APE, NAF, TVA, RCS, KBIS, SIREN, SIRET, BODACC, INSEE, INPI.",
+    "code_naf": "62.01Z",
+    "siren": "924217300",
+    "siret": "92421730000012",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://entreprises.annuairefrancais.fr/77340/angelo-caggiano-pontault-combault-77-seine-et-marne-924217300-00012.html"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "2863665afc9adb61",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.216058",
+    "updated_at": "2026-04-20T23:29:55.216058"
+  },
+  {
+    "nom_commercial": "VALENTIN AUDRAIN (VALENTIN LOGICIEL)",
+    "raison_sociale": "VALENTIN AUDRAIN (VALENTIN LOGICIEL)",
+    "email": "",
+    "telephone": "",
+    "website": "https://entreprises.annuairefrancais.fr/77340/valentin-audrain-pontault-combault-77-seine-et-marne-924241490-00011.html",
+    "linkedin_url": "",
+    "adresse": "25 RUE DE STRASBOURG 77340 PONTAULT-COMBAULT",
+    "ville": "Pontault-Combault",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "77340",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "VALENTIN AUDRAIN (siren n° 924241490) est installé dans la commune de Pontault-Combault à l'adresse 25 RUE DE STRASBOURG dans le département de la Seine et marne téléphone... VALENTIN AUDRAIN est référencé dans l'Annuaire Français dans la catégorie informatique Ssii, informations complètes Bilans gratuits, statuts, chiffre d'affaires, dirigeants, actionnaires, levées de fonds, annonces légales, APE, NAF, TVA, RCS, KBIS, SIREN, SIRET, BODACC, INSEE, INPI.",
+    "code_naf": "62.01Z",
+    "siren": "924241490",
+    "siret": "92424149000011",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://entreprises.annuairefrancais.fr/77340/valentin-audrain-pontault-combault-77-seine-et-marne-924241490-00011.html"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "de2ff3117423e52c",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.216058",
+    "updated_at": "2026-04-20T23:29:55.216058"
+  },
+  {
+    "nom_commercial": "MAXIME GICQUEL (MAXIME LOGICIEL)",
+    "raison_sociale": "MAXIME GICQUEL (MAXIME LOGICIEL)",
+    "email": "",
+    "telephone": "",
+    "website": "https://entreprises.lefigaro.fr/monsieur-maxime-gicquel-77/entreprise-924241516",
+    "linkedin_url": "",
+    "adresse": "10 AVENUE DE LA REPUBLIQUE 77340 PONTAULT-COMBAULT",
+    "ville": "Pontault-Combault",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "77340",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Société Monsieur Maxime Gicquel (Pontault-Combault, 77340) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire...",
+    "code_naf": "62.01Z",
+    "siren": "924241516",
+    "siret": "92424151600013",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://entreprises.lefigaro.fr/monsieur-maxime-gicquel-77/entreprise-924241516"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "62defb97cb537194",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.216058",
+    "updated_at": "2026-04-20T23:29:55.216058"
+  },
+  {
+    "nom_commercial": "OUSSMAN ADAM SOULEYMAN (OUSSMAN LOGICIEL)",
+    "raison_sociale": "OUSSMAN ADAM SOULEYMAN (OUSSMAN LOGICIEL)",
+    "email": "",
+    "telephone": "",
+    "website": "https://entreprises.annuairefrancais.fr/77340/oussman-adam-souleyman-pontault-combault-77-seine-et-marne-924324007-00013.html",
+    "linkedin_url": "",
+    "adresse": "RUE DE PARIS 77340 PONTAULT-COMBAULT",
+    "ville": "Pontault-Combault",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "77340",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "OUSSMAN ADAM SOULEYMAN (siren n° 924324007) est installé dans la commune de Pontault-Combault à l'adresse  RUE DE PARIS dans le département de la Seine et marne téléphone... OUSSMAN ADAM SOULEYMAN est référencé dans l'Annuaire Français dans la catégorie informatique Ssii, informations complètes Bilans gratuits, statuts, chiffre d'affaires, dirigeants, actionnaires, levées de fonds, annonces légales, APE, NAF, TVA, RCS, KBIS, SIREN, SIRET, BODACC, INSEE, INPI.",
+    "code_naf": "62.01Z",
+    "siren": "924324007",
+    "siret": "92432400700013",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://entreprises.annuairefrancais.fr/77340/oussman-adam-souleyman-pontault-combault-77-seine-et-marne-924324007-00013.html"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "6f1661c5cf8a6c5d",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.216058",
+    "updated_at": "2026-04-20T23:29:55.216058"
+  },
+  {
+    "nom_commercial": "ROMAIN ARRESTIER (ROMAIN LOGICIEL)",
+    "raison_sociale": "ROMAIN ARRESTIER (ROMAIN LOGICIEL)",
+    "email": "",
+    "telephone": "",
+    "website": "https://entreprises.lefigaro.fr/monsieur-romain-arrestier-77/entreprise-924325616",
+    "linkedin_url": "",
+    "adresse": "1 RUE LUCIEN BRUNET 77340 PONTAULT-COMBAULT",
+    "ville": "Pontault-Combault",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "77340",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Société Monsieur Romain Arrestier (Pontault-Combault, 77340) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire...",
+    "code_naf": "62.01Z",
+    "siren": "924325616",
+    "siret": "92432561600010",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://entreprises.lefigaro.fr/monsieur-romain-arrestier-77/entreprise-924325616"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "6da86e7a3e5394d1",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.216058",
+    "updated_at": "2026-04-20T23:29:55.216058"
+  },
+  {
+    "nom_commercial": "LIOUBOUCHKIN INGENIERIE ET LOGICIELS (LIOUBOUCHKIN INGENIERIE ET LOGICIELS)",
+    "raison_sociale": "LIOUBOUCHKIN INGENIERIE ET LOGICIELS",
+    "email": "",
+    "telephone": "",
+    "website": "https://app.dataprospects.fr/entreprises/LIOUBOUCHKIN-INGENIERIE-ET-LOGICIELS/838052850",
+    "linkedin_url": "",
+    "adresse": "1 BOULEVARD DESCARTES 78180 MONTIGNY-LE-BRETONNEUX",
+    "ville": "Montigny-le-Bretonneux",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "78180",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "LIOUBOUCHKIN INGENIERIE ET LOGICIELS, Socit  responsabilit limite (sans autre indication), dont le SIREN est le 838052850, est en activité depuis 2018, il y a 8 ans. Elle est domiciliée à MONTIGNY-LE-BRETONNEUX, code postal 78180. Le code NAF dont elle dispose est le 6202A (Conseil en systmes et logiciels informatiques).",
+    "code_naf": "62.02A",
+    "siren": "838052850",
+    "siret": "83805285000032",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://app.dataprospects.fr/entreprises/LIOUBOUCHKIN-INGENIERIE-ET-LOGICIELS/838052850"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "97ba9ea07f8967d8",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:30:05.053404",
+    "updated_at": "2026-04-20T23:30:05.053404"
+  },
+  {
+    "nom_commercial": "DS INGENIERIE LOGICIELLE (DSIL)",
+    "raison_sociale": "DS INGENIERIE LOGICIELLE",
+    "email": "",
+    "telephone": "",
+    "website": "https://entreprises.annuairefrancais.fr/91640/ds-ingenierie-logicielle-briis-sous-forges-91-essonne-813541786-00030.html",
+    "linkedin_url": "",
+    "adresse": "18 RUE SIMON DE MONTFORT 91640 BRIIS-SOUS-FORGES",
+    "ville": "Briis-sous-Forges",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "91640",
+    "secteur_activite": "Conseil IT",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "DS INGENIERIE LOGICIELLE (siren n° 813541786) est installé dans la commune de Briis-sous-Forges à l'adresse 18 RUE SIMON DE MONTFORT dans le département de l'Essonne téléphone... DS INGENIERIE LOGICIELLE est référencé dans l'Annuaire Français dans la catégorie informatique Ssii, informations complètes Bilans gratuits, statuts, chiffre d'affaires, dirigeants, actionnaires, levées de fonds, annonces légales, APE, NAF, TVA, RCS, KBIS, SIREN, SIRET, BODACC, INSEE, INPI.",
+    "code_naf": "62.01Z",
+    "siren": "813541786",
+    "siret": "81354178600030",
+    "qualification_score": 40,
+    "score_pct": 40.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 10,
+        "max": 20,
+        "note": "partial:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://entreprises.annuairefrancais.fr/91640/ds-ingenierie-logicielle-briis-sous-forges-91-essonne-813541786-00030.html"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.32,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "ccd77bad22450ad2",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.214030",
+    "updated_at": "2026-04-20T23:29:55.214030"
+  },
+  {
+    "nom_commercial": "SOC CIVILE PROPRIETAIRE DES LOGICIELS",
+    "raison_sociale": "SOC CIVILE PROPRIETAIRE DES LOGICIELS",
+    "email": "",
+    "telephone": "03 88 95 33 55",
+    "website": "https://www.mon-informaticien.com/entreprise/soc-civile-proprietaire-des-logiciels-392509022-00019",
+    "linkedin_url": "",
+    "adresse": "9 RUE BEETHOVEN 75016 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75016",
+    "secteur_activite": "Agriculture",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Faites appel à l'entreprise d'informatique SOC CIVILE PROPRIETAIRE DES LOGICIELS située à Paris-16 (75016). Cet informaticien est notamment spécialisé en Prestations informatiques.",
+    "code_naf": "62.01Z",
+    "siren": "392509022",
+    "siret": "39250902200019",
+    "qualification_score": 40,
+    "score_pct": 40.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 0,
+        "max": 20,
+        "note": "no_match (agriculture)"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://www.mon-informaticien.com/entreprise/soc-civile-proprietaire-des-logiciels-392509022-00019"
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "03 88 95 33 55"
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.313,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 2,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "859ef96e5e015eba",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.214030",
+    "updated_at": "2026-04-20T23:29:55.214030"
+  },
+  {
+    "nom_commercial": "CONCEPTION HAUTE TECHNOLOGIE & LOGICIELS (CH LOG)",
+    "raison_sociale": "CONCEPTION HAUTE TECHNOLOGIE & LOGICIELS",
+    "email": "",
+    "telephone": "",
+    "website": "https://entreprises.lefigaro.fr/conception-haute-technologie-logicie-ch-log-75/entreprise-392744751",
+    "linkedin_url": "",
+    "adresse": "12 AVENUE DE CLICHY 75018 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75018",
+    "secteur_activite": "Conseil IT",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Société Conception Haute Technologie & Logiciels - CH Log (Paris, 75018) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire...",
+    "code_naf": "62.01Z",
+    "siren": "392744751",
+    "siret": "39274475100026",
+    "qualification_score": 40,
+    "score_pct": 40.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 10,
+        "max": 20,
+        "note": "partial:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://entreprises.lefigaro.fr/conception-haute-technologie-logicie-ch-log-75/entreprise-392744751"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.405,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "bdbf769590a70be4",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.214030",
+    "updated_at": "2026-04-20T23:29:55.214030"
+  },
+  {
+    "nom_commercial": "HAMSTER.NET DEVELOPPEMENT LOGICIEL RESEAU",
+    "raison_sociale": "HAMSTER.NET DEVELOPPEMENT LOGICIEL RESEAU",
+    "email": "",
+    "telephone": "",
+    "website": "https://entreprises.lefigaro.fr/hamster-net-developpement-logiciel-reseau-78/entreprise-828092106",
+    "linkedin_url": "",
+    "adresse": "RESIDENCE DAUPHINE 78430 LOUVECIENNES",
+    "ville": "Louveciennes",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "78430",
+    "secteur_activite": "Développement logiciel",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Société Hamster.net Developpement Logiciel Reseau (Louveciennes, 78430) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire...",
+    "code_naf": "62.01Z",
+    "siren": "828092106",
+    "siret": "82809210600016",
+    "qualification_score": 40,
+    "score_pct": 40.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 10,
+        "max": 20,
+        "note": "partial:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://entreprises.lefigaro.fr/hamster-net-developpement-logiciel-reseau-78/entreprise-828092106"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.337,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "e319e5496d888b32",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.215057",
+    "updated_at": "2026-04-20T23:29:55.215057"
+  },
+  {
+    "nom_commercial": "SOC ETUDE LOGICIEL INFORMAT MEDIA (SELIM)",
+    "raison_sociale": "SOC ETUDE LOGICIEL INFORMAT MEDIA",
+    "email": "selim@selim.fr",
+    "telephone": "",
+    "website": "https://selim.fr/index.php/contact",
+    "linkedin_url": "",
+    "adresse": "4 RUE GREUZE 75016 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75016",
+    "secteur_activite": "Marketing & Communication",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Don't hesitate to contact us to discuss more in details SOLSIT SARL SELIM Address: 42 rue Monge - 75005 Paris, France Mail : selim@selim.fr SIRET: 444 722 235 00033",
+    "code_naf": "62.01Z",
+    "siren": "397519018",
+    "siret": "39751901800022",
+    "qualification_score": 40,
+    "score_pct": 40.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 0,
+        "max": 20,
+        "note": "no_match (marketing & communication)"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 10,
+        "max": 10,
+        "note": "selim@selim.fr"
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://selim.fr/index.php/contact"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.375,
+    "email_valid": true,
+    "website_active": true,
+    "enrich_score": 2,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "bf71f2f9473dc230",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.215057",
+    "updated_at": "2026-04-20T23:29:55.215057"
+  },
+  {
+    "nom_commercial": "TO-THI HOANG (DEVELOPPEMENT LOGICIEL)",
+    "raison_sociale": "TO-THI HOANG (DEVELOPPEMENT LOGICIEL)",
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "12 RUE DE LA FERME 92350 LE PLESSIS-ROBINSON",
+    "ville": "Le Plessis-Robinson",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "92350",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.01Z",
+    "siren": "919952788",
+    "siret": "91995278800017",
+    "qualification_score": 40,
+    "score_pct": 40.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
       },
       "phone_present": {
         "points": 0,
@@ -239,27 +2654,1724 @@
     "criteria_met": 4,
     "criteria_total": 9,
     "source": "annuaire-entreprises.data.gouv.fr",
-    "segment": "",
-    "sector_confidence": 0.348,
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 1.0,
     "email_valid": false,
-    "website_active": true,
-    "enrich_score": 1,
-    "hash_dedup": "b119ddcd600c5713",
+    "website_active": false,
+    "enrich_score": 0,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "3ab19880c1c4cc00",
     "raw_text": "",
-    "created_at": "2026-04-17T10:13:01.350541"
+    "created_at": "2026-04-20T23:29:55.216058",
+    "updated_at": "2026-04-20T23:29:55.216058"
   },
   {
-    "nom_commercial": "SAAS RABBIT CONSULTING",
-    "raison_sociale": "SAAS RABBIT CONSULTING",
+    "nom_commercial": "EMMANUEL AUGER (EMMANUEL LOGICIEL)",
+    "raison_sociale": "EMMANUEL AUGER (EMMANUEL LOGICIEL)",
     "email": "",
     "telephone": "",
     "website": "",
     "linkedin_url": "",
-    "adresse": "34 RUE DANTON 92130 ISSY-LES-MOULINEAUX",
-    "ville": "Issy-les-Moulineaux",
+    "adresse": "8 RUE SAINT CLAUDE 77340 PONTAULT-COMBAULT",
+    "ville": "Pontault-Combault",
     "region": "Île-de-France",
     "pays": "France",
-    "code_postal": "92130",
+    "code_postal": "77340",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.01Z",
+    "siren": "924066418",
+    "siret": "92406641800014",
+    "qualification_score": 40,
+    "score_pct": 40.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 4,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 0,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "3cbc8b684ceadd89",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.216058",
+    "updated_at": "2026-04-20T23:29:55.216058"
+  },
+  {
+    "nom_commercial": "MATTHIEU BELON (MATTHIEU LOGICIEL)",
+    "raison_sociale": "MATTHIEU BELON (MATTHIEU LOGICIEL)",
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "2 RUE DE STRASBOURG 77340 PONTAULT-COMBAULT",
+    "ville": "Pontault-Combault",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "77340",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.01Z",
+    "siren": "924100076",
+    "siret": "92410007600018",
+    "qualification_score": 40,
+    "score_pct": 40.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 4,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 0,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "ff2d1bdc40a893c9",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.216058",
+    "updated_at": "2026-04-20T23:29:55.216058"
+  },
+  {
+    "nom_commercial": "DYLAN DIRIL (DYLAN LOGICIEL)",
+    "raison_sociale": "DYLAN DIRIL (DYLAN LOGICIEL)",
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "4 AVENUE DE LA REPUBLIQUE 77340 PONTAULT-COMBAULT",
+    "ville": "Pontault-Combault",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "77340",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.01Z",
+    "siren": "924100084",
+    "siret": "92410008400012",
+    "qualification_score": 40,
+    "score_pct": 40.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 4,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 0,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "11d77389ad93c130",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.216058",
+    "updated_at": "2026-04-20T23:29:55.216058"
+  },
+  {
+    "nom_commercial": "WALID REHALA (WALID LOGICIEL)",
+    "raison_sociale": "WALID REHALA (WALID LOGICIEL)",
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "RUE DE PARIS 77340 PONTAULT-COMBAULT",
+    "ville": "Pontault-Combault",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "77340",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.01Z",
+    "siren": "924120108",
+    "siret": "92412010800015",
+    "qualification_score": 40,
+    "score_pct": 40.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 4,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 0,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "8a7b2a8f0b4b9e12",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.216058",
+    "updated_at": "2026-04-20T23:29:55.216058"
+  },
+  {
+    "nom_commercial": "ANTHONY HOUIS (ANTHONY LOGICIEL)",
+    "raison_sociale": "ANTHONY HOUIS (ANTHONY LOGICIEL)",
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "3 RUE SAINT CLAUDE 77340 PONTAULT-COMBAULT",
+    "ville": "Pontault-Combault",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "77340",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.01Z",
+    "siren": "924168172",
+    "siret": "92416817200014",
+    "qualification_score": 40,
+    "score_pct": 40.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 4,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 0,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "cd0bf82ae46d1e4b",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.216058",
+    "updated_at": "2026-04-20T23:29:55.216058"
+  },
+  {
+    "nom_commercial": "TOM SOURDEIX (TOM LOGICIEL)",
+    "raison_sociale": "TOM SOURDEIX (TOM LOGICIEL)",
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "88 RUE DE MONTHETY 77340 PONTAULT COMBAULT",
+    "ville": "Pontault Combault",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "77340",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.01Z",
+    "siren": "924460389",
+    "siret": "92446038900019",
+    "qualification_score": 40,
+    "score_pct": 40.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 4,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 0,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "93b986744a2e865b",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.216058",
+    "updated_at": "2026-04-20T23:29:55.216058"
+  },
+  {
+    "nom_commercial": "LA FABRIQUE LOGICIELLE",
+    "raison_sociale": "LA FABRIQUE LOGICIELLE",
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "9 RUE STANISLAS 75006 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75006",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.02A",
+    "siren": "450308259",
+    "siret": "45030825900016",
+    "qualification_score": 40,
+    "score_pct": 40.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 4,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 0,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "8e6e33681ae6fa20",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:30:05.053404",
+    "updated_at": "2026-04-20T23:30:05.053404"
+  },
+  {
+    "nom_commercial": "LOGICIELS HERTZIENS",
+    "raison_sociale": "LOGICIELS HERTZIENS",
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "9 RUE DU FAUBOURG SAINT-HONORE 75008 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75008",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.02A",
+    "siren": "441069531",
+    "siret": "44106953100040",
+    "qualification_score": 40,
+    "score_pct": 40.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 4,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 0,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "fb29e18f219c84e5",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:30:05.053404",
+    "updated_at": "2026-04-20T23:30:05.053404"
+  },
+  {
+    "nom_commercial": "CONSULTING TEST LOGICIELS",
+    "raison_sociale": "CONSULTING TEST LOGICIELS",
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "8 B RUE ABEL 75012 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75012",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.02A",
+    "siren": "913295093",
+    "siret": "91329509300011",
+    "qualification_score": 40,
+    "score_pct": 40.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 4,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 0,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "57e5e7b6b278326f",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:30:05.053404",
+    "updated_at": "2026-04-20T23:30:05.053404"
+  },
+  {
+    "nom_commercial": "ISIS LOGICIELS ET SYSTEMES",
+    "raison_sociale": "ISIS LOGICIELS ET SYSTEMES",
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "17 RUE JOEL LE THEULE 78180 MONTIGNY-LE-BRETONNEUX",
+    "ville": "Montigny-le-Bretonneux",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "78180",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.02A",
+    "siren": "408645505",
+    "siret": "40864550500020",
+    "qualification_score": 40,
+    "score_pct": 40.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 4,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 0,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "caaaa322c316fbf1",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:30:05.053404",
+    "updated_at": "2026-04-20T23:30:05.053404"
+  },
+  {
+    "nom_commercial": "PASCAL BIHL INGENIERIE LOGICIEL",
+    "raison_sociale": "PASCAL BIHL INGENIERIE LOGICIEL",
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "3 AVENUE SAMSON DAVILLIER 95600 EAUBONNE",
+    "ville": "Eaubonne",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "95600",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.02A",
+    "siren": "500101019",
+    "siret": "50010101900015",
+    "qualification_score": 40,
+    "score_pct": 40.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 4,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 0,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "648414566199f0c6",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:30:05.054482",
+    "updated_at": "2026-04-20T23:30:05.054482"
+  },
+  {
+    "nom_commercial": "SOCIETE D'ORGANISATION ET DE DEVELOPPEMENT DE LOGICIELS ASSISTANCE AUX REALISATIONS INGENIERIE ET SERVICES (SOLARIS)",
+    "raison_sociale": "SOCIETE D'ORGANISATION ET DE DEVELOPPEMENT DE LOGICIELS ASSISTANCE AUX REALISATIONS INGENIERIE ET SERVICES",
+    "email": "",
+    "telephone": "",
+    "website": "https://app.dataprospects.fr/entreprises/SOCIETE-D-ORGANISATION-ET-DE-DEVELOPPEMENT-DE-LOGICIELS-ASSISTANCE-AUX-REALISATIONS-INGENIERIE-ET-SERVICES/352884191",
+    "linkedin_url": "",
+    "adresse": "18 RUE PAUL FORT 75014 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75014",
+    "secteur_activite": "Conseil IT",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "L'activité de SOCIETE D'ORGANISATION ET DE DEVELOPPEMENT DE LOGICIELS ASSISTANCE AUX REALISATIONS INGENIERIE ET SERVICES (SIREN 352884191), Socit  responsabilit limite (sans autre indication) a commencé en 1989, il y a 37 ans. Son siège social est à PARIS (75014). Son code NAF assigné est le 6202A (Conseil en systmes et logiciels informatiques).",
+    "code_naf": "62.02A",
+    "siren": "352884191",
+    "siret": "35288419100045",
+    "qualification_score": 40,
+    "score_pct": 40.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 10,
+        "max": 20,
+        "note": "partial:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://app.dataprospects.fr/entreprises/SOCIETE-D-ORGANISATION-ET-DE-DEVELOPPEMENT-DE-LOGICIELS-ASSISTANCE-AUX-REALISATIONS-INGENIERIE-ET-SERVICES/352884191"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.394,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "c419d1de2b6de89b",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:30:05.054482",
+    "updated_at": "2026-04-20T23:30:05.054482"
+  },
+  {
+    "nom_commercial": "ID LOGICIEL (ID LOGICIEL)",
+    "raison_sociale": "ID LOGICIEL",
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "BATIMENT F7 DOMAINE DE SAINT PAUL 102 ROUTE DE LIMOURS 78470 SAINT-REMY-LES-CHEVREUSE",
+    "ville": "Saint-Remy-les-Chevreuse",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "78470",
+    "secteur_activite": "Informatique",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.09Z",
+    "siren": "520389529",
+    "siret": "52038952900022",
+    "qualification_score": 40,
+    "score_pct": 40.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 4,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 1.0,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 0,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "aa6eae0497e0a3ac",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:30:13.648216",
+    "updated_at": "2026-04-20T23:30:13.648216"
+  },
+  {
+    "nom_commercial": "ASSISTANCE LOGICIELS",
+    "raison_sociale": "ASSISTANCE LOGICIELS",
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "48 RUE LABAT 75018 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75018",
+    "secteur_activite": "Cybersécurité",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.01Z",
+    "siren": "442464913",
+    "siret": "44246491300015",
+    "qualification_score": 30,
+    "score_pct": 30.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 10,
+        "max": 20,
+        "note": "partial:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 4,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.321,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 0,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "ed853b022a8097f7",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.214030",
+    "updated_at": "2026-04-20T23:29:55.214030"
+  },
+  {
+    "nom_commercial": "A.G.I.L.E. ( ASSISTANTS DE GESTION INFORMATIQUE ET LOGICIELS D'EXPERTISE) (A.G.I.L.E.)",
+    "raison_sociale": "A.G.I.L.E. ( ASSISTANTS DE GESTION INFORMATIQUE ET LOGICIELS D'EXPERTISE)",
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "ZAC DU BOURG 21 BOULEVARD ROBERT THIBOUST 77700 SERRIS",
+    "ville": "Serris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "77700",
+    "secteur_activite": "Conseil IT",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.01Z",
+    "siren": "851682344",
+    "siret": "85168234400029",
+    "qualification_score": 30,
+    "score_pct": 30.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 10,
+        "max": 20,
+        "note": "partial:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 4,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.403,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 0,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "22ffeacd633e71b9",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.215057",
+    "updated_at": "2026-04-20T23:29:55.215057"
+  },
+  {
+    "nom_commercial": "SOCIETE D'EXPLOITATION DE LOGICIELS SUR LE DESSIN L'ACTIVITE GRAPHIQUE ET L'ECRITURE (SELDAGE)",
+    "raison_sociale": "SOCIETE D'EXPLOITATION DE LOGICIELS SUR LE DESSIN L'ACTIVITE GRAPHIQUE ET L'ECRITURE",
+    "email": "",
+    "telephone": "",
+    "website": "https://app.dataprospects.fr/entreprises/SOCIETE-D-EXPLOITATION-DE-LOGICIELS-SUR-LE-DESSIN-L-ACTIVITE-GRAPHIQUE-ET-L-ECRITURE/502980683",
+    "linkedin_url": "",
+    "adresse": "23 ALLEE DES PETITES GARENNES 91190 GIF-SUR-YVETTE",
+    "ville": "Gif-sur-Yvette",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "91190",
+    "secteur_activite": "E-commerce",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "SOCIETE D'EXPLOITATION DE LOGICIELS SUR LE DESSIN L'ACTIVITE GRAPHIQUE ET L'ECRITURE, Socit  responsabilit limite (sans autre indication), ayant pour SIREN le 502980683, a été créée en , il y a 18 ans. Son siège social est domicilié à GIF-SUR-YVETTE - 91190. Le code NAF qui lui a été attribué est le 6201Z (Programmation informatique).",
+    "code_naf": "62.01Z",
+    "siren": "502980683",
+    "siret": "50298068300010",
+    "qualification_score": 30,
+    "score_pct": 30.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 0,
+        "max": 20,
+        "note": "no_match (e-commerce)"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://app.dataprospects.fr/entreprises/SOCIETE-D-EXPLOITATION-DE-LOGICIELS-SUR-LE-DESSIN-L-ACTIVITE-GRAPHIQUE-ET-L-ECRITURE/502980683"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 4,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.354,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "c0f9aae16942a29a",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.215057",
+    "updated_at": "2026-04-20T23:29:55.215057"
+  },
+  {
+    "nom_commercial": "JOWEL BISWASH (JOWEL SYSTEME)",
+    "raison_sociale": "JOWEL BISWASH (JOWEL SYSTEME)",
+    "email": "",
+    "telephone": "",
+    "website": "https://entreprises.annuairefrancais.fr/77340/jowel-biswash-pontault-combault-77-seine-et-marne-924121353-00016.html",
+    "linkedin_url": "",
+    "adresse": "10 RUE SAINT CLAUDE 77340 PONTAULT-COMBAULT",
+    "ville": "Pontault-Combault",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "77340",
+    "secteur_activite": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "JOWEL BISWASH (siren n° 924121353) est installé dans la commune de Pontault-Combault à l'adresse 10 RUE SAINT CLAUDE dans le département de la Seine et marne téléphone... JOWEL BISWASH est référencé dans l'Annuaire Français dans la catégorie informatique Ssii, informations complètes Bilans gratuits, statuts, chiffre d'affaires, dirigeants, actionnaires, levées de fonds, annonces légales, APE, NAF, TVA, RCS, KBIS, SIREN, SIRET, BODACC, INSEE, INPI.",
+    "code_naf": "62.01Z",
+    "siren": "924121353",
+    "siret": "92412135300016",
+    "qualification_score": 30,
+    "score_pct": 30.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 0,
+        "max": 20,
+        "note": "no_match (non spécifié)"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://entreprises.annuairefrancais.fr/77340/jowel-biswash-pontault-combault-77-seine-et-marne-924121353-00016.html"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 4,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.0,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "aec09f64a30e2144",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.215057",
+    "updated_at": "2026-04-20T23:29:55.215057"
+  },
+  {
+    "nom_commercial": "ELI WEISBROD",
+    "raison_sociale": "ELI WEISBROD",
+    "email": "",
+    "telephone": "",
+    "website": "http://www.skylinefrance.com/fr_footer/contact",
+    "linkedin_url": "",
+    "adresse": "30 RUE DE MIROMESNIL 75008 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75008",
+    "secteur_activite": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.01Z",
+    "siren": "333693547",
+    "siret": "33369354700049",
+    "qualification_score": 30,
+    "score_pct": 30.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 0,
+        "max": 20,
+        "note": "no_match (non spécifié)"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "http://www.skylinefrance.com/fr_footer/contact"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 4,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.0,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "77d2bb70354c174a",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.215057",
+    "updated_at": "2026-04-20T23:29:55.215057"
+  },
+  {
+    "nom_commercial": "CONSEIL LOGICIEL SECURITE (CLS)",
+    "raison_sociale": "CONSEIL LOGICIEL SECURITE",
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "20 RUE MALAR 75007 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75007",
+    "secteur_activite": "Cybersécurité",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.02A",
+    "siren": "502281926",
+    "siret": "50228192600035",
+    "qualification_score": 30,
+    "score_pct": 30.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 10,
+        "max": 20,
+        "note": "partial:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 4,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.386,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 0,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "4748d886b7321280",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:30:05.053404",
+    "updated_at": "2026-04-20T23:30:05.053404"
+  },
+  {
+    "nom_commercial": "INFORMATIQUE DOCUMENTAIRE LOGICIELS SARL",
+    "raison_sociale": "INFORMATIQUE DOCUMENTAIRE LOGICIELS SARL",
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "10 AVENUE DU QUEBEC 91140 VILLEBON-SUR-YVETTE",
+    "ville": "Villebon-sur-Yvette",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "91140",
     "secteur_activite": "Conseil IT",
     "type_entreprise": "",
     "taille_entreprise": "",
@@ -267,11 +4379,11 @@
     "chiffre_affaires": null,
     "description": "",
     "code_naf": "62.02A",
-    "siren": "514781913",
-    "siret": "51478191300017",
+    "siren": "403648173",
+    "siret": "40364817300017",
     "qualification_score": 30,
     "score_pct": 30.0,
-    "statut": "NON_QUALIFIE",
+    "qualification": "NON_QUALIFIE",
     "score_detail": {
       "sector_match": {
         "points": 10,
@@ -322,13 +4434,1087 @@
     "criteria_met": 4,
     "criteria_total": 9,
     "source": "annuaire-entreprises.data.gouv.fr",
-    "segment": "",
-    "sector_confidence": 0.316,
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.387,
     "email_valid": false,
     "website_active": false,
     "enrich_score": 0,
-    "hash_dedup": "ad7195e6900ee1d3",
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "fc8a0db57573fbf4",
     "raw_text": "",
-    "created_at": "2026-04-17T10:13:03.212046"
+    "created_at": "2026-04-20T23:30:05.054482",
+    "updated_at": "2026-04-20T23:30:05.054482"
+  },
+  {
+    "nom_commercial": "IT-MANAGEMENT CONSEILS ET LOGICIELS",
+    "raison_sociale": "IT-MANAGEMENT CONSEILS ET LOGICIELS",
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "16 RUE GUY DE MAUPASSANT 78500 SARTROUVILLE",
+    "ville": "Sartrouville",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "78500",
+    "secteur_activite": "Conseil IT",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.02A",
+    "siren": "909131203",
+    "siret": "90913120300012",
+    "qualification_score": 30,
+    "score_pct": 30.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 10,
+        "max": 20,
+        "note": "partial:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 4,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.447,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 0,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "d94de6e785ee17bd",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:30:05.054482",
+    "updated_at": "2026-04-20T23:30:05.054482"
+  },
+  {
+    "nom_commercial": "PRODUITS LOGICIELS TESTS ET CONSEILS (PL-TEC)",
+    "raison_sociale": "PRODUITS LOGICIELS TESTS ET CONSEILS",
+    "email": "",
+    "telephone": "",
+    "website": "https://entreprises.lefigaro.fr/produits-logiciels-tests-et-conseils-pl-tec-93/entreprise-799641253",
+    "linkedin_url": "",
+    "adresse": "2 RUE GISELE HALIMI 93400 SAINT-OUEN-SUR-SEINE",
+    "ville": "Saint-Ouen-sur-Seine",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "93400",
+    "secteur_activite": "Éducation & Formation",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Société Produits Logiciels Tests Et Conseils - Pl-Tec (Saint-Ouen-sur-Seine, 93400) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire, bilan gratuit...",
+    "code_naf": "62.02A",
+    "siren": "799641253",
+    "siret": "79964125300023",
+    "qualification_score": 30,
+    "score_pct": 30.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 0,
+        "max": 20,
+        "note": "no_match (éducation & formation)"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://entreprises.lefigaro.fr/produits-logiciels-tests-et-conseils-pl-tec-93/entreprise-799641253"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 4,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.333,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "dd06ce252eee8815",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:30:05.054482",
+    "updated_at": "2026-04-20T23:30:05.054482"
+  },
+  {
+    "nom_commercial": "KAKO SYSTECHCONSEIL EN SYSTEMES, LOGICIELS INFORMATIQUES, ET VENTES DE PRODUITS INFORMATIQUE",
+    "raison_sociale": "KAKO SYSTECHCONSEIL EN SYSTEMES, LOGICIELS INFORMATIQUES, ET VENTES DE PRODUITS INFORMATIQUE",
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "39 RUE DU FAUBOURG POISSONNIERE 75009 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75009",
+    "secteur_activite": "Conseil IT",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.02A",
+    "siren": "928604727",
+    "siret": "92860472700075",
+    "qualification_score": 30,
+    "score_pct": 30.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 10,
+        "max": 20,
+        "note": "partial:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 4,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.489,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 0,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "1d41c92cb1f75a5d",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:30:05.054482",
+    "updated_at": "2026-04-20T23:30:05.054482"
+  },
+  {
+    "nom_commercial": "SOCIETE FRANCAISE DE DIFFUSION DE LOGICIELS CYBERLEX (SFDL CYBERLEX)",
+    "raison_sociale": "SOCIETE FRANCAISE DE DIFFUSION DE LOGICIELS CYBERLEX",
+    "email": "",
+    "telephone": "",
+    "website": "https://entreprises.lefigaro.fr/societe-francaise-de-diffusion-de-logiciels-cyberlex-75/entreprise-901446526",
+    "linkedin_url": "",
+    "adresse": "37 RUE DES MATHURINS 75008 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75008",
+    "secteur_activite": "Santé",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Société Societe Francaise De Diffusion De Logiciels Cyberlex (Paris, 75008) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire...",
+    "code_naf": "62.02A",
+    "siren": "901446526",
+    "siret": "90144652600013",
+    "qualification_score": 30,
+    "score_pct": 30.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 0,
+        "max": 20,
+        "note": "no_match (santé)"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://entreprises.lefigaro.fr/societe-francaise-de-diffusion-de-logiciels-cyberlex-75/entreprise-901446526"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 4,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.326,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "3d5f8cb2dd42d291",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:30:05.054482",
+    "updated_at": "2026-04-20T23:30:05.054482"
+  },
+  {
+    "nom_commercial": "BLUE RIDGE LOGICIELS",
+    "raison_sociale": "BLUE RIDGE LOGICIELS",
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "31 AVENUE DE SEGUR 75007 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75007",
+    "secteur_activite": "BTP",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.01Z",
+    "siren": "812533693",
+    "siret": "81253369300030",
+    "qualification_score": 20,
+    "score_pct": 20.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 0,
+        "max": 20,
+        "note": "no_match (btp)"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 3,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.32,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 0,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "65ff8bbf556e1dc9",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.214030",
+    "updated_at": "2026-04-20T23:29:55.214030"
+  },
+  {
+    "nom_commercial": "KILLIAN LE BIHAN (KILLIAN LOGICIEL)",
+    "raison_sociale": "KILLIAN LE BIHAN (KILLIAN LOGICIEL)",
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "79 RUE LUCIEN BRUNET 77340 PONTAULT-COMBAULT",
+    "ville": "Pontault-Combault",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "77340",
+    "secteur_activite": "Intelligence artificielle",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.01Z",
+    "siren": "924443948",
+    "siret": "92444394800014",
+    "qualification_score": 20,
+    "score_pct": 20.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 0,
+        "max": 20,
+        "note": "no_match (intelligence artificielle)"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 3,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.667,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 0,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "6d2a6c3a175a7f58",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.215057",
+    "updated_at": "2026-04-20T23:29:55.215057"
+  },
+  {
+    "nom_commercial": "JEAN-FRANCOIS DANIEL (JEAN FRANCOIS SYSTEME)",
+    "raison_sociale": "JEAN-FRANCOIS DANIEL (JEAN FRANCOIS SYSTEME)",
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "1 AVENUE DE LA REPUBLIQUE 77340 PONTAULT-COMBAULT",
+    "ville": "Pontault-Combault",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "77340",
+    "secteur_activite": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.01Z",
+    "siren": "924443146",
+    "siret": "92444314600015",
+    "qualification_score": 20,
+    "score_pct": 20.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 0,
+        "max": 20,
+        "note": "no_match (non spécifié)"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 3,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.0,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 0,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "95579893934d36bb",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.215057",
+    "updated_at": "2026-04-20T23:29:55.215057"
+  },
+  {
+    "nom_commercial": "VINCENT JOLIVET (VINCENT SYSTEME)",
+    "raison_sociale": "VINCENT JOLIVET (VINCENT SYSTEME)",
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "10 AVENUE CHARLES ROUXEL 77340 PONTAULT-COMBAULT",
+    "ville": "Pontault-Combault",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "77340",
+    "secteur_activite": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.01Z",
+    "siren": "924445240",
+    "siret": "92444524000014",
+    "qualification_score": 20,
+    "score_pct": 20.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 0,
+        "max": 20,
+        "note": "no_match (non spécifié)"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 3,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.0,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 0,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "4ec737245dca63d0",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:29:55.215057",
+    "updated_at": "2026-04-20T23:29:55.215057"
+  },
+  {
+    "nom_commercial": "CV LOGICIEL",
+    "raison_sociale": "CV LOGICIEL",
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "7 IMP QUEUNE 93200 SAINT-DENIS",
+    "ville": "Saint-Denis",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "93200",
+    "secteur_activite": "Ressources humaines",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.02A",
+    "siren": "507447498",
+    "siret": "50744749800019",
+    "qualification_score": 20,
+    "score_pct": 20.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 0,
+        "max": 20,
+        "note": "no_match (ressources humaines)"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 3,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.325,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 0,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "6b91ea9d9f69d2bb",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:30:05.053404",
+    "updated_at": "2026-04-20T23:30:05.053404"
+  },
+  {
+    "nom_commercial": "CAP 3000 INGENIERIE LOGICIELLE",
+    "raison_sociale": "CAP 3000 INGENIERIE LOGICIELLE",
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "5 AVENUE GOUNOD 95130 FRANCONVILLE",
+    "ville": "Franconville",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "95130",
+    "secteur_activite": "Industrie",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.02A",
+    "siren": "420862955",
+    "siret": "42086295500010",
+    "qualification_score": 20,
+    "score_pct": 20.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 0,
+        "max": 20,
+        "note": "no_match (industrie)"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 3,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.369,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 0,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "bb93812d8ec50479",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:30:05.053404",
+    "updated_at": "2026-04-20T23:30:05.053404"
+  },
+  {
+    "nom_commercial": "DERAY MEDICAL & LOGICIELS (DML)",
+    "raison_sociale": "DERAY MEDICAL & LOGICIELS",
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "31 BOULEVARD DE LA LIBERTE 94170 LE PERREUX-SUR-MARNE",
+    "ville": "Le Perreux-sur-Marne",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "94170",
+    "secteur_activite": "Santé",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.03Z",
+    "siren": "353582000",
+    "siret": "35358200000058",
+    "qualification_score": 20,
+    "score_pct": 20.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 0,
+        "max": 20,
+        "note": "no_match (santé)"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 3,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.451,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 0,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "0d1c3b96bb187f18",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:30:10.971290",
+    "updated_at": "2026-04-20T23:30:10.971290"
+  },
+  {
+    "nom_commercial": "POLYWORKS EUROPA",
+    "raison_sociale": "POLYWORKS EUROPA",
+    "email": "",
+    "telephone": "",
+    "website": "",
+    "linkedin_url": "",
+    "adresse": "62 RUE DE LA CHAUSSEE D'ANTIN 75009 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75009",
+    "secteur_activite": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.09Z",
+    "siren": "812673028",
+    "siret": "81267302800013",
+    "qualification_score": 20,
+    "score_pct": 20.0,
+    "qualification": "NON_QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 0,
+        "max": 20,
+        "note": "no_match (non spécifié)"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 3,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.0,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 0,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": null,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "2dcf178a3c855382",
+    "raw_text": "",
+    "created_at": "2026-04-20T23:30:13.648216",
+    "updated_at": "2026-04-20T23:30:13.648216"
   }
 ]

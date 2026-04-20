@@ -3,22 +3,14 @@
 -- Fichier : migrations/001_initial_schema.sql
 --
 -- Crée les tables prospects et collection_jobs.
--- Idempotent (CREATE TABLE IF NOT EXISTS + CREATE INDEX IF NOT EXISTS).
--- Exécuter manuellement ou via un outil de migration (Flyway, Alembic, etc.)
+-- Idempotent (CREATE TABLE IF NOT EXISTS + ADD COLUMN IF NOT EXISTS).
 -- ============================================================================
-
--- Extensions utiles (optionnelles, décommentez si disponibles)
--- CREATE EXTENSION IF NOT EXISTS pg_trgm;   -- Pour les recherches fuzzy sur TEXT
--- CREATE EXTENSION IF NOT EXISTS unaccent;   -- Pour ignorer les accents dans les recherches
 
 -- ── Table : prospects ─────────────────────────────────────────────────────────
 
 CREATE TABLE IF NOT EXISTS prospects (
 
-    -- Clé primaire : hash SHA-256 tronqué calculé par BaseScraper._make_hash
     hash_dedup          TEXT            PRIMARY KEY,
-
-    -- Job d'origine
     job_id              BIGINT          NOT NULL,
 
     -- Identité
@@ -39,13 +31,15 @@ CREATE TABLE IF NOT EXISTS prospects (
     code_postal         TEXT            NOT NULL DEFAULT '',
 
     -- Entreprise
-    secteur_activite    TEXT            NOT NULL DEFAULT '',
-    type_entreprise     TEXT            NOT NULL DEFAULT '',
-    taille_entreprise   TEXT            NOT NULL DEFAULT '',   -- TPE | PME | ETI | GE
-    nombre_employes     INTEGER,
-    chiffre_affaires    NUMERIC(18, 2),
-    description         TEXT            NOT NULL DEFAULT '',
-    code_naf            TEXT            NOT NULL DEFAULT '',
+    secteur_activite        TEXT        NOT NULL DEFAULT '',
+    -- [AJOUT] FK vers la table secteurs_activite (chargés depuis la BD, non plus enum statique)
+    secteur_activite_id     BIGINT,
+    type_entreprise         TEXT        NOT NULL DEFAULT '',
+    taille_entreprise       TEXT        NOT NULL DEFAULT '',
+    nombre_employes         INTEGER,
+    chiffre_affaires        NUMERIC(18, 2),
+    description             TEXT        NOT NULL DEFAULT '',
+    code_naf                TEXT        NOT NULL DEFAULT '',
 
     -- Identifiants légaux
     siren               TEXT            NOT NULL DEFAULT '',
@@ -55,8 +49,6 @@ CREATE TABLE IF NOT EXISTS prospects (
     qualification_score INTEGER         NOT NULL DEFAULT 0,
     score_pct           NUMERIC(5, 1)   NOT NULL DEFAULT 0.0,
     statut              TEXT            NOT NULL DEFAULT 'NON_QUALIFIE',
-    -- score_detail : dict Python sérialisé en JSON
-    -- Exemple : {"sector_match": {"points": 20, "max": 20, "note": "match:Informatique"}, ...}
     score_detail        JSONB           NOT NULL DEFAULT '{}',
     criteria_met        INTEGER         NOT NULL DEFAULT 0,
     criteria_total      INTEGER         NOT NULL DEFAULT 0,
@@ -72,79 +64,65 @@ CREATE TABLE IF NOT EXISTS prospects (
     enrich_score        INTEGER         NOT NULL DEFAULT 0,
     email_mx_verified   BOOLEAN         NOT NULL DEFAULT FALSE,
 
-    -- Soft delete (aligné avec Spring Boot AutoProspectionEntity.isDeleted)
+    -- Soft delete
     is_deleted          BOOLEAN         NOT NULL DEFAULT FALSE,
 
     -- Timestamps
     created_at          TIMESTAMPTZ     NOT NULL DEFAULT NOW(),
     updated_at          TIMESTAMPTZ     NOT NULL DEFAULT NOW()
-
 );
 
--- Commentaires de table
 COMMENT ON TABLE  prospects IS 'Prospects B2B collectés par SCRAPING_V1';
 COMMENT ON COLUMN prospects.hash_dedup          IS 'Clé de déduplication SHA-256 (tronqué 16 chars)';
+COMMENT ON COLUMN prospects.secteur_activite_id IS 'FK vers secteurs_activite.id (BD CRM)';
 COMMENT ON COLUMN prospects.qualification_score IS 'Score de qualification 0-100';
 COMMENT ON COLUMN prospects.statut              IS 'QUALIFIE | NON_QUALIFIE';
 COMMENT ON COLUMN prospects.enrich_score        IS 'Complétude contacts 0-4 (email+tel+web+linkedin)';
 COMMENT ON COLUMN prospects.score_detail        IS 'Détail des points par critère (JSONB)';
 
+-- ── Migration rétroactive : prospects ────────────────────────────────────────
+-- Ces ALTER sont idempotents (IF NOT EXISTS) — sans effet si la colonne existe déjà.
+
+ALTER TABLE prospects ADD COLUMN IF NOT EXISTS secteur_activite_id BIGINT;
+ALTER TABLE prospects ADD COLUMN IF NOT EXISTS is_deleted          BOOLEAN NOT NULL DEFAULT FALSE;
+
 -- ── Index : prospects ─────────────────────────────────────────────────────────
 
--- Filtres fréquents CRM
-CREATE INDEX IF NOT EXISTS idx_prospects_statut
-    ON prospects (statut);
-
-CREATE INDEX IF NOT EXISTS idx_prospects_job_id
-    ON prospects (job_id);
-
-CREATE INDEX IF NOT EXISTS idx_prospects_siren
-    ON prospects (siren)
-    WHERE siren <> '';
-
-CREATE INDEX IF NOT EXISTS idx_prospects_email
-    ON prospects (email)
-    WHERE email <> '';
-
-CREATE INDEX IF NOT EXISTS idx_prospects_ville
-    ON prospects (ville);
-
-CREATE INDEX IF NOT EXISTS idx_prospects_secteur
-    ON prospects (secteur_activite);
-
--- Tri des résultats
-CREATE INDEX IF NOT EXISTS idx_prospects_score
-    ON prospects (qualification_score DESC);
-
-CREATE INDEX IF NOT EXISTS idx_prospects_enrich
-    ON prospects (enrich_score DESC);
-
-CREATE INDEX IF NOT EXISTS idx_prospects_created
-    ON prospects (created_at DESC);
-
--- Index composite pour les exports CRM typiques (qualifiés + score)
-CREATE INDEX IF NOT EXISTS idx_prospects_qualified_score
-    ON prospects (qualification_score DESC)
-    WHERE statut = 'QUALIFIE';
+CREATE INDEX IF NOT EXISTS idx_prospects_statut          ON prospects (statut);
+CREATE INDEX IF NOT EXISTS idx_prospects_job_id          ON prospects (job_id);
+CREATE INDEX IF NOT EXISTS idx_prospects_siren           ON prospects (siren)           WHERE siren <> '';
+CREATE INDEX IF NOT EXISTS idx_prospects_email           ON prospects (email)           WHERE email <> '';
+CREATE INDEX IF NOT EXISTS idx_prospects_ville           ON prospects (ville);
+CREATE INDEX IF NOT EXISTS idx_prospects_secteur         ON prospects (secteur_activite);
+-- [AJOUT] Index sur la FK secteur pour les jointures CRM
+CREATE INDEX IF NOT EXISTS idx_prospects_secteur_id      ON prospects (secteur_activite_id) WHERE secteur_activite_id IS NOT NULL;
+CREATE INDEX IF NOT EXISTS idx_prospects_score           ON prospects (qualification_score DESC);
+CREATE INDEX IF NOT EXISTS idx_prospects_enrich          ON prospects (enrich_score DESC);
+CREATE INDEX IF NOT EXISTS idx_prospects_created         ON prospects (created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_prospects_qualified_score ON prospects (qualification_score DESC) WHERE statut = 'QUALIFIE';
 
 -- ── Table : collection_jobs ──────────────────────────────────────────────────
 
 CREATE TABLE IF NOT EXISTS collection_jobs (
 
-    id                  BIGINT          PRIMARY KEY,        -- Aligné Spring Boot (IDENTITY)
-    name                TEXT            NOT NULL DEFAULT '', -- scraping_YYYYMMDD_HHMMSS
+    id                  BIGINT          PRIMARY KEY,
+    name                TEXT            NOT NULL DEFAULT '',
     type                TEXT            NOT NULL DEFAULT 'SCRAPING',
-    status              TEXT            NOT NULL DEFAULT 'PENDING', -- PENDING | RUNNING | DONE | FAILED
+    status              TEXT            NOT NULL DEFAULT 'PENDING',
     parameters_json     TEXT            NOT NULL DEFAULT '{}',
 
-    -- Critères de ciblage extraits de parameters_json
-    crit_secteurs_activite TEXT[]       NOT NULL DEFAULT '{}',
-    crit_types_entreprise  TEXT[]       NOT NULL DEFAULT '{}',
-    crit_tailles_entreprise TEXT[]      NOT NULL DEFAULT '{}',
-    crit_pays              TEXT[]       NOT NULL DEFAULT '{}',
-    crit_regions           TEXT[]       NOT NULL DEFAULT '{}',
-    crit_villes            TEXT[]       NOT NULL DEFAULT '{}',
-    crit_max_resultats     INTEGER,
+    -- Critères de ciblage — stockés en TEXT (lisibles, sans accolades PostgreSQL)
+    -- [MODIFIÉ] Remplace les colonnes TEXT[] de l'ancienne version
+    crit_secteurs_activite_txt  TEXT    NOT NULL DEFAULT '',
+    -- [AJOUT] IDs BD des secteurs sélectionnés (BIGINT[] pour FK)
+    crit_secteurs_activite_id   BIGINT[],
+    crit_types_entreprise_txt   TEXT    NOT NULL DEFAULT '',
+    crit_tailles_entreprise_txt TEXT    NOT NULL DEFAULT '',
+    crit_pays_txt               TEXT    NOT NULL DEFAULT '',
+    crit_regions_txt            TEXT    NOT NULL DEFAULT '',
+    crit_villes_txt             TEXT    NOT NULL DEFAULT '',
+    crit_keywords_txt           TEXT    NOT NULL DEFAULT '',
+    crit_max_resultats          INTEGER,
 
     -- Timestamps du job
     started_at          TIMESTAMPTZ,
@@ -159,32 +137,54 @@ CREATE TABLE IF NOT EXISTS collection_jobs (
     total_qualified     INTEGER         NOT NULL DEFAULT 0,
     total_duplicates    INTEGER         NOT NULL DEFAULT 0,
 
-    -- Sources utilisées et erreurs
     sources_used        TEXT[]          NOT NULL DEFAULT '{}',
     errors              TEXT[]          NOT NULL DEFAULT '{}',
 
-    -- Soft delete (aligné avec Spring Boot AutoCollectionJobEntity.isDeleted)
     is_deleted          BOOLEAN         NOT NULL DEFAULT FALSE,
-
-    -- Timestamp de création
     created_at          TIMESTAMPTZ     NOT NULL DEFAULT NOW()
-
 );
 
 COMMENT ON TABLE  collection_jobs IS 'Historique des jobs de collecte SCRAPING_V1';
-COMMENT ON COLUMN collection_jobs.status IS 'PENDING | RUNNING | DONE | FAILED';
+COMMENT ON COLUMN collection_jobs.status                     IS 'PENDING | RUNNING | DONE | FAILED | CANCELLED';
+COMMENT ON COLUMN collection_jobs.crit_secteurs_activite_txt IS 'Noms des secteurs (CSV lisible)';
+COMMENT ON COLUMN collection_jobs.crit_secteurs_activite_id  IS 'IDs BD des secteurs (FK secteurs_activite)';
 
-CREATE INDEX IF NOT EXISTS idx_jobs_status
-    ON collection_jobs (status);
+-- ── Migration rétroactive : collection_jobs ──────────────────────────────────
+-- Supprime les anciennes colonnes TEXT[] et ajoute les nouvelles colonnes TEXT.
+-- Idempotent (DROP IF EXISTS + ADD IF NOT EXISTS).
 
-CREATE INDEX IF NOT EXISTS idx_jobs_created
-    ON collection_jobs (created_at DESC);
+-- Supprimer les anciennes colonnes tableau si elles existent encore
+ALTER TABLE collection_jobs DROP COLUMN IF EXISTS crit_secteurs_activite;
+ALTER TABLE collection_jobs DROP COLUMN IF EXISTS crit_types_entreprise;
+ALTER TABLE collection_jobs DROP COLUMN IF EXISTS crit_tailles_entreprise;
+ALTER TABLE collection_jobs DROP COLUMN IF EXISTS crit_pays;
+ALTER TABLE collection_jobs DROP COLUMN IF EXISTS crit_regions;
+ALTER TABLE collection_jobs DROP COLUMN IF EXISTS crit_villes;
+ALTER TABLE collection_jobs DROP COLUMN IF EXISTS crit_keywords;
+
+-- Ajouter les nouvelles colonnes si absentes
+ALTER TABLE collection_jobs ADD COLUMN IF NOT EXISTS crit_secteurs_activite_txt  TEXT    NOT NULL DEFAULT '';
+ALTER TABLE collection_jobs ADD COLUMN IF NOT EXISTS crit_secteurs_activite_id   BIGINT[];
+ALTER TABLE collection_jobs ADD COLUMN IF NOT EXISTS crit_types_entreprise_txt   TEXT    NOT NULL DEFAULT '';
+ALTER TABLE collection_jobs ADD COLUMN IF NOT EXISTS crit_tailles_entreprise_txt TEXT    NOT NULL DEFAULT '';
+ALTER TABLE collection_jobs ADD COLUMN IF NOT EXISTS crit_pays_txt               TEXT    NOT NULL DEFAULT '';
+ALTER TABLE collection_jobs ADD COLUMN IF NOT EXISTS crit_regions_txt            TEXT    NOT NULL DEFAULT '';
+ALTER TABLE collection_jobs ADD COLUMN IF NOT EXISTS crit_villes_txt             TEXT    NOT NULL DEFAULT '';
+ALTER TABLE collection_jobs ADD COLUMN IF NOT EXISTS crit_keywords_txt           TEXT    NOT NULL DEFAULT '';
+ALTER TABLE collection_jobs ADD COLUMN IF NOT EXISTS crit_max_resultats          INTEGER;
+ALTER TABLE collection_jobs ADD COLUMN IF NOT EXISTS is_deleted                  BOOLEAN NOT NULL DEFAULT FALSE;
+
+-- ── Index : collection_jobs ───────────────────────────────────────────────────
+
+CREATE INDEX IF NOT EXISTS idx_jobs_status  ON collection_jobs (status);
+CREATE INDEX IF NOT EXISTS idx_jobs_created ON collection_jobs (created_at DESC);
 
 -- ── Vue utilitaire : prospects qualifiés enrichis ────────────────────────────
 
 CREATE OR REPLACE VIEW v_qualified_prospects AS
 SELECT
     hash_dedup,
+    job_id,
     nom_commercial,
     raison_sociale,
     email,
@@ -195,6 +195,7 @@ SELECT
     region,
     pays,
     secteur_activite,
+    secteur_activite_id,
     taille_entreprise,
     siren,
     qualification_score,
@@ -212,11 +213,3 @@ ORDER BY qualification_score DESC, enrich_score DESC;
 
 COMMENT ON VIEW v_qualified_prospects IS
     'Prospects qualifiés triés par score — colonnes utiles pour export CRM';
-
--- ── Migration rétroactive : ajouter is_deleted si les colonnes n'existent pas ────
-
-ALTER TABLE prospects
-    ADD COLUMN IF NOT EXISTS is_deleted BOOLEAN NOT NULL DEFAULT FALSE;
-
-ALTER TABLE collection_jobs
-    ADD COLUMN IF NOT EXISTS is_deleted BOOLEAN NOT NULL DEFAULT FALSE;

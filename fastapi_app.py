@@ -496,6 +496,18 @@ def launch(req: CrmLaunchRequest) -> Dict[str, Any]:
     job_id = req.jobId or str(uuid.uuid4())
     payload = _request_to_payload(req, job_id)
 
+    # Log détaillé de la requête utilisateur (critères)
+    try:
+        logger.info(
+            "[HTTP REQUEST DETAIL] /launch\nREQUETE BRUTE REÇUE :\n%s",
+            json.dumps(req.model_dump(), ensure_ascii=False, indent=2, default=str)
+        )
+        logger.info(
+            "[HTTP REQUEST DETAIL] /launch\nCRITERES NORMALISES :\n%s",
+            json.dumps(payload.get("criteria", {}), ensure_ascii=False, indent=2, default=str)
+        )
+    except Exception as log_exc:
+        logger.warning(f"[HTTP REQUEST DETAIL] Impossible d'afficher la requête : {log_exc}")
 
     try:
         _launch_job(payload, job_id)

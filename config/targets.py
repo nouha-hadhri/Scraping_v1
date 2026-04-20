@@ -53,7 +53,8 @@ class SearchTarget:
     Encapsule les critères de recherche d'une campagne de prospection.
     Peut être instancié depuis le code ou depuis search_config.json.
     """
-    secteur_activite:   List[str] = field(default_factory=list)
+    secteur_activite:    List[str] = field(default_factory=list)
+    secteurs_activite_id: List[int] = field(default_factory=list)
     taille_entreprise:  List[str] = field(default_factory=list)
     types_entreprise:   List[str] = field(default_factory=list)
     keywords:           List[str] = field(default_factory=list)

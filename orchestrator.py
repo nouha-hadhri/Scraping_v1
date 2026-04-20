@@ -144,7 +144,7 @@ _NON_SUBSOURCE_KEYS = frozenset({"enabled", "max_pages_per_site"})
 # ══════════════════════════════════════════════════════════════════════════════
 # DomainRateLimiter
 # ══════════════════════════════════════════════════════════════════════════════
-
+print("[DEBUG] orchestrator.py chargé")
 class DomainRateLimiter:
     """
     Rate-limiter intelligent par domaine pour l'enrichissement parallèle.
@@ -318,6 +318,8 @@ class ProspectCollector:
             )
 
         criteria = self._target_to_criteria(target)
+        # Log des critères utilisateur (backend)
+        logger.info("CRITERES UTILISATEUR (backend) :\n%s", json.dumps(criteria, ensure_ascii=False, indent=2, default=str))
         self.scorer.criteria = criteria
 
         # Calculer les sous-sources actives UNE SEULE FOIS pour tout le run
@@ -353,6 +355,7 @@ class ProspectCollector:
         start_time   = time.time()
         step_timings = {}
 
+
         try:
             # ── Step 1 : Collecte ─────────────────────────────────────
             logger.info("\n [Step 1/7] Collecte des prospects…")
@@ -362,13 +365,20 @@ class ProspectCollector:
             step_timings["1. Collecte"] = step_1_elapsed
             job.total_collected = len(raw)
             logger.info(f"    {len(raw)} prospects bruts collectés ( {step_1_elapsed:.2f}s)")
+            if raw:
+                logger.info(f"    [DEBUG] Secteurs collectés: {[getattr(p, 'secteur_activite', None) for p in raw[:10]]}")
+            else:
+                logger.warning("    [DEBUG] Aucun prospect collecté à l'étape 1")
 
             # ── Step 2 : Nettoyage ────────────────────────────────────
             logger.info("\n [Step 2/7] Nettoyage & normalisation…")
             step_2_start = time.time()
             cleaned = self.cleaner.clean_batch(raw)
+            logger.info(f"    [DEBUG] Après nettoyage: {len(cleaned)} prospects. Exemples secteurs: {[getattr(p, 'secteur_activite', None) for p in cleaned[:10]]}")
             enriched_region = self._enrich_region(cleaned)
+            logger.info(f"    [DEBUG] Après enrichissement région: {len(enriched_region)} prospects. Exemples régions: {[getattr(p, 'region', None) for p in enriched_region[:10]]}")
             cleaned_geo = self._filter_by_geo(enriched_region, criteria)
+            logger.info(f"    [DEBUG] Après filtre géographique: {len(cleaned_geo)} prospects. Exemples villes: {[getattr(p, 'ville', None) for p in cleaned_geo[:10]]}")
             step_2_elapsed = time.time() - step_2_start
             step_timings["2. Nettoyage"] = step_2_elapsed
             job.total_cleaned = len(cleaned_geo)
@@ -382,6 +392,7 @@ class ProspectCollector:
             logger.info("\n [Step 3/7] Déduplication…")
             step_3_start = time.time()
             unique, n_dups = self.deduplicator.deduplicate(cleaned_geo)
+            logger.info(f"    [DEBUG] Après déduplication: {len(unique)} uniques, {n_dups} doublons supprimés. Exemples secteurs: {[getattr(p, 'secteur_activite', None) for p in unique[:10]]}")
             step_3_elapsed = time.time() - step_3_start
             step_timings["3. Déduplication"] = step_3_elapsed
             job.total_deduped    = len(unique)
@@ -392,6 +403,7 @@ class ProspectCollector:
             logger.info("\n [Step 4/7] Analyse NLP (secteur, taille)…")
             step_4_start = time.time()
             analyzed = self.embedder.enrich_all(unique)
+            logger.info(f"    [DEBUG] Après NLP: {len(analyzed)} prospects. Exemples secteurs: {[getattr(p, 'secteur_activite', None) for p in analyzed[:10]]}")
             step_4_elapsed = time.time() - step_4_start
             step_timings["4. Analyse NLP"] = step_4_elapsed
             logger.info(f"    {len(analyzed)} prospects enrichis NLP ( {step_4_elapsed:.2f}s)")
@@ -438,27 +450,26 @@ class ProspectCollector:
                     f"({stats['qualification_rate_pct']}%) — score moyen: {stats['avg_score']} ( {step_6_elapsed:.2f}s)"
                 )
 
+            elapsed          = round(time.time() - start_time, 2)
+            job.status       = JobStatut.DONE.value
+            job.finished_at  = datetime.now().isoformat()
+            job.sources_used = list(active_subsources.keys())
+            print(f"[DEBUG][orchestrator] Sauvegarde locale : {len(enriched)} prospects enrichis, {len(scored)} prospects qualifiés à sauvegarder pour job_id={job.id}")
+
             # ── Step 7 : Sauvegarde CSV/JSON + PostgreSQL ─────────────
             logger.info("\n [Step 7/7] Sauvegarde (CSV/JSON + PostgreSQL)…")
+            print(f"[DEBUG][orchestrator] Après scoring : {len(scored)} prospects qualifiés pour job_id={job.id}")
+            # Job fields (status, finished_at, sources_used) are set above so
+            # the row written to PG inside _step_sauvegarde is already complete.
             step_7_start   = time.time()
             step_7_elapsed = self._step_sauvegarde(enriched, scored, job)
             step_timings["7. Sauvegarde"] = step_7_elapsed
             logger.info(f"    ( {step_7_elapsed:.2f}s)")
 
-            elapsed          = round(time.time() - start_time, 2)
-            job.status       = JobStatut.DONE.value
-            job.finished_at  = datetime.now().isoformat()
-            job.sources_used = list(active_subsources.keys())
-
-            # Sauvegarde finale du job (CSV/JSON toujours, PG si activé)
+            # Sauvegarde finale du job en CSV/JSON local (toujours actif)
             if not self.dry_run:
                 self.repo.save_job(job)
-                if PG_ENABLED:
-                    try:
-                        with PgRepository() as pg:
-                            pg.save_job(job)
-                    except Exception as e:
-                        logger.error(f"    [PG] Erreur sauvegarde job final : {e}")
+                # PG job already saved inside _step_sauvegarde — no duplicate needed.
 
             logger.info(f"\n  TEMPS TOTAL : {elapsed}s")
             self._print_summary(scored, stats, elapsed)
@@ -506,6 +517,7 @@ class ProspectCollector:
         Dry-run :
           Aucune écriture n'est effectuée (ni CSV/JSON, ni PostgreSQL).
         """
+        print(f"[DEBUG][orchestrator] _step_sauvegarde appelée pour job_id={job.id}")
         step_start = time.time()
 
         if self.dry_run:
@@ -520,10 +532,17 @@ class ProspectCollector:
         job.total_saved = info["n_saved"]
         logger.info(f"    [CSV/JSON] {info['n_saved']} prospects sauvegardés dans output/")
 
+        print(f"[DEBUG][orchestrator] Valeur de PG_ENABLED juste avant test: {PG_ENABLED}")
         # ── 7b : PostgreSQL (nouveau, optionnel, non-bloquant) ────────────────
         if PG_ENABLED:
+            print(f"[DEBUG][orchestrator] Appel upsert_prospects avec {len(scored)} prospects qualifiés pour job_id={job.id}")
             try:
                 with PgRepository() as pg:
+                    # FIX – FK violation: prospects.job_id references collection_jobs.id.
+                    # The job row MUST exist before prospects are inserted.
+                    # Save the job first, then upsert prospects in the same block
+                    # so both operations share one connection and the FK is satisfied.
+                    pg.save_job(job)
                     result = pg.upsert_prospects(scored, job_id=job.id)
                 n_upserted = result.get("upserted", 0)
                 n_skipped  = result.get("skipped", 0)
@@ -649,12 +668,13 @@ class ProspectCollector:
                 employes_max = max(finite) if finite else None
 
         return {
-            "secteurs_activite":  t.secteur_activite,
-            "tailles_entreprise": t.taille_entreprise,
-            "types_entreprise":   t.types_entreprise,
-            "codes_naf":          [],
-            "employes_min":       employes_min,
-            "employes_max":       employes_max,
+            "secteurs_activite":    t.secteur_activite,
+            "secteurs_activite_id": getattr(t, "secteurs_activite_id", []),
+            "tailles_entreprise":   t.taille_entreprise,
+            "types_entreprise":     t.types_entreprise,
+            "codes_naf":            [],
+            "employes_min":         employes_min,
+            "employes_max":         employes_max,
             "localisation": {
                 "pays":    t.pays,
                 "regions": t.regions,
@@ -1724,10 +1744,10 @@ class ProspectCollector:
 
     @staticmethod
     def _print_summary(scored: List[Prospect], stats: Dict, elapsed: float) -> None:
-        qualified: List[Prospect] = [p for p in scored if p.statut == "QUALIFIE"]
+        qualified: List[Prospect] = [p for p in scored if p.qualification == "QUALIFIE"]
         sources_count: Dict[str, int] = {}
         for p in scored:
-            sources_count[p.source] = sources_count.get(p.source, 0) + 1
+            sources_count[p.source_origin] = sources_count.get(p.source_origin, 0) + 1
 
         enrich_dist = {s: sum(1 for p in scored if p.enrich_score == s) for s in range(5)}
         avg_enrich  = round(sum(p.enrich_score for p in scored) / max(len(scored), 1), 2)
@@ -1985,15 +2005,16 @@ def main() -> int:
     from config.targets import SearchTarget as _ST
     try:
         target = _ST(
-            secteur_activite  = _bridge_criteria_normalized.get("secteurs_activite", []),
-            taille_entreprise = _bridge_criteria_normalized.get("tailles_entreprise", []),
-            types_entreprise  = _bridge_criteria_normalized.get("types_entreprise", []),
-            pays              = _bridge_criteria_normalized.get("pays", ["France"]),
-            regions           = _bridge_criteria_normalized.get("regions", []),
-            villes            = _bridge_criteria_normalized.get("villes", []),
-            keywords          = _bridge_criteria_normalized.get("keywords", []),
-            max_resultats     = int(_bridge_criteria_normalized.get("max_resultats", 700)),
-            max_par_source    = int(_bridge_criteria_normalized.get("max_par_source", 100)),
+            secteur_activite     = _bridge_criteria_normalized.get("secteurs_activite", []),
+            secteurs_activite_id = _bridge_criteria_normalized.get("secteurs_activite_id", []),
+            taille_entreprise    = _bridge_criteria_normalized.get("tailles_entreprise", []),
+            types_entreprise     = _bridge_criteria_normalized.get("types_entreprise", []),
+            pays                 = _bridge_criteria_normalized.get("pays", ["France"]),
+            regions              = _bridge_criteria_normalized.get("regions", []),
+            villes               = _bridge_criteria_normalized.get("villes", []),
+            keywords             = _bridge_criteria_normalized.get("keywords", []),
+            max_resultats        = int(_bridge_criteria_normalized.get("max_resultats", 700)),
+            max_par_source       = int(_bridge_criteria_normalized.get("max_par_source", 100)),
         )
         logger.info("[Bridge] Critères normalisés convertis en SearchTarget")
     except Exception as _bt_err:
@@ -2046,7 +2067,8 @@ def main() -> int:
             _qualified_prospects = []
             for p in _all_scored:
                 p_dict = p.__dict__ if hasattr(p, "__dict__") else dict(p)
-                statut = str(p_dict.get("statut", "")).upper()
+                # Support both old "statut" field and new "qualification" field
+                statut = str(p_dict.get("qualification", p_dict.get("statut", ""))).upper()
                 if statut != "QUALIFIE":
                     continue
 
@@ -2081,7 +2103,8 @@ def main() -> int:
                     "siret": p_dict.get("siret", ""),
                     "qualification_score": int(p_dict.get("qualification_score", 0) or 0),
                     "score_pct": p_dict.get("score_pct", 0),
-                    "statut": p_dict.get("statut", "NON_QUALIFIE"),
+                    # "qualification" = colonne DB Spring (QUALIFIE / NON_QUALIFIE)
+                    "qualification": p_dict.get("qualification", p_dict.get("statut", "NON_QUALIFIE")),
                     "score_detail": _to_json_text(p_dict.get("score_detail", {})),
                     "enrich_score": int(p_dict.get("enrich_score", 0) or 0),
                     "criteria_met": int(p_dict.get("criteria_met", 0) or 0),
@@ -2089,8 +2112,10 @@ def main() -> int:
                     "email_valid": bool(p_dict.get("email_valid", False)),
                     "website_active": bool(p_dict.get("website_active", False)),
                     "email_mx_verified": bool(p_dict.get("email_mx_verified", False)),
-                    "source": p_dict.get("source", "SCRAPING"),
-                    "segment": p_dict.get("segment", ""),
+                    # source = valeur fixe discriminant CRM
+                    "source": "AUTOPROSPECTION",
+                    # source_origin = source de données réelle (anciennement "source")
+                    "source_origin": p_dict.get("source_origin", p_dict.get("source", "")),
                     "sector_confidence": p_dict.get("sector_confidence", 0),
                     "created_at": _to_iso_or_none(p_dict.get("created_at")),
                     "updated_at": _to_iso_or_none(p_dict.get("updated_at") or p_dict.get("created_at")),

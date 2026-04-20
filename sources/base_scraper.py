@@ -362,13 +362,15 @@ class BaseScraper(ABC):
     # Normalization
     # ──────────────────────────────────────────
 
-    def normalize_prospect(self, raw: Dict[str, Any]) -> Prospect:
+    def normalize_prospect(self, raw: Dict[str, Any], job_id: str = None) -> Prospect:
         """
         Convertit un dict brut en Prospect normalisé.
-        Calcule le hash de déduplication.
+        Calcule le hash de déduplication (ne dépend plus du job_id).
         """
         p = Prospect.from_dict(raw)
-        p.source     = p.source or self.source_name
+        # source_origin stocke la source de données réelle (open_data, annuaire…)
+        # source reste fixé à AUTOPROSPECTION (valeur par défaut du dataclass)
+        p.source_origin = p.source_origin or raw.get("source", "") or self.source_name
         p.hash_dedup = self._make_hash(
             p.email, p.website, p.telephone, p.nom_commercial
         )
@@ -383,6 +385,7 @@ class BaseScraper(ABC):
         """
         Génère un hash de déduplication.
         Priorité: email > domaine web > téléphone > nom normalisé.
+        Ne dépend plus du job_id.
         """
         from urllib.parse import urlparse
         candidates = []
@@ -409,11 +412,6 @@ class BaseScraper(ABC):
             norm_name = re.sub(r"\W+", "", name.lower())
             candidates.append(f"name:{norm_name}")
 
-        # Utilise le candidat de plus haute priorité (email > domaine > téléphone > nom).
-        # Les candidats sont ajoutés dans cet ordre, donc candidates[0] est toujours
-        # le plus discriminant disponible.
-        # FIX : l'ancienne écriture `"|".join(candidates[:1])` construisait une liste
-        # de 4 candidats puis la tronquait à 1 — trompeur pour le lecteur.
         raw = candidates[0] if candidates else name.lower()
         return hashlib.sha256(raw.encode()).hexdigest()[:16]
 

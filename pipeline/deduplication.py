@@ -161,7 +161,7 @@ class Deduplicator:
     def _enrich(existing: Prospect, new: Prospect) -> Prospect:
         """Complète les champs vides de `existing` avec les valeurs de `new`."""
         skip = {
-            "qualification_score", "statut", "segment", "source",
+            "qualification_score", "qualification", "segment", "source", "source_origin",
             "created_at", "hash_dedup",
             # Les scores d'enrichissement sont calculés après la dédup —
             # ne pas les écraser si l'existant a déjà été enrichi.

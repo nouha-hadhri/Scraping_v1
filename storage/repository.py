@@ -96,7 +96,7 @@ class ProspectRepository:
     def export_qualified_only(self) -> Path:
         """Exporte uniquement les prospects qualifiés."""
         scored = self._read_json(self.scored_json)
-        qualified = [p for p in scored if p.get("statut") == "QUALIFIE"]
+        qualified = [p for p in scored if p.get("qualification", p.get("statut")) == "QUALIFIE"]
         self._write_json(QUALIFIED_JSON, qualified)
         self._write_csv(QUALIFIED_CSV,   qualified)
         logger.info(f"[Repo] Exported {len(qualified)} qualified prospects")
@@ -177,10 +177,10 @@ class ProspectRepository:
             "secteur_activite", "taille_entreprise", "type_entreprise",
             "nombre_employes", "chiffre_affaires", "description",
             "siren", "siret", "code_naf",
-            "qualification_score", "score_pct", "statut", "segment",
+            "qualification_score", "score_pct", "qualification",
             "enrich_score", "email_mx_verified",
             "criteria_met", "criteria_total",
-            "source", "email_valid", "website_active", "linkedin_url",
+            "source", "source_origin", "email_valid", "website_active", "linkedin_url",
             "created_at",
         ]
         all_keys = set()

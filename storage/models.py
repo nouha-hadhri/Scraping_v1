@@ -19,17 +19,33 @@ class LeadStatut(str, Enum):
 
 
 class LeadSource(str, Enum):
-    API      = "API"
-    FORM     = "FORM"
-    SCRAPING = "SCRAPING"
-    MANUAL   = "MANUAL"
+    API              = "API"
+    FORM             = "FORM"
+    SCRAPING         = "SCRAPING"
+    MANUAL           = "MANUAL"
+    # Mirrors Spring LeadSource.AUTOPROSPECTION (no underscore)
+    AUTO_PROSPECTION = "AUTOPROSPECTION"
 
 
 class TailleEntreprise(str, Enum):
-    TPE = "TPE"
-    PME = "PME"
-    ETI = "ETI"
-    GE  = "GE"
+    """Mirrors Spring TailleEntrepriseEnum exactly."""
+    TPE     = "TPE"
+    PME     = "PME"
+    ETI     = "ETI"
+    GE      = "GE"
+    UNKNOWN = ""    # sentinel — converts to SQL NULL in pg_repository
+
+
+class TypeEntreprise(str, Enum):
+    """Mirrors Spring TypeEntrepriseEnum exactly."""
+    SAS               = "SAS"
+    SA                = "SA"
+    SARL              = "SARL"
+    EURL              = "EURL"
+    SASU              = "SASU"
+    AUTO_ENTREPRENEUR = "AUTO_ENTREPRENEUR"
+    EI                = "EI"
+    UNKNOWN           = ""  # sentinel — converts to SQL NULL in pg_repository
 
 
 class JobStatut(str, Enum):
@@ -79,14 +95,17 @@ class Prospect:
     # ── Scoring & Qualification ───────────────────────────────────────
     qualification_score: int   = 0
     score_pct:           float = 0.0
-    statut:              str   = LeadStatut.NON_QUALIFIE.value
+    # "qualification" : colonne DB côté Spring (QUALIFIE / NON_QUALIFIE)
+    qualification:       str   = LeadStatut.NON_QUALIFIE.value
     score_detail:        Dict  = field(default_factory=dict)
     criteria_met:        int   = 0
     criteria_total:      int   = 0
 
     # ── Métadonnées ───────────────────────────────────────────────────
-    source:            str   = LeadSource.SCRAPING.value
-    segment:           str   = ""
+    # source       : valeur fixe "AUTO_PROSPECTION" — discriminant CRM côté Spring
+    source:            str   = LeadSource.AUTO_PROSPECTION.value
+    # source_origin : source de données réelle (open_data, annuaire, sirene…)
+    source_origin:     str   = ""
     sector_confidence: float = 0.0
     email_valid:       bool  = False
     website_active:    bool  = False
@@ -101,6 +120,16 @@ class Prospect:
     # complétude des données de contact après l'étape d'enrichissement.
     enrich_score:       int  = 0
     # True si le domaine MX a été vérifié (vérification DNS)
+    email_mx_verified:  bool = False
+
+    # ── Identifiants DB ───────────────────────────────────────────────
+    # job_id est fourni par Spring avant l'upsert PostgreSQL
+    job_id:              Optional[int] = None
+    secteur_activite_id: Optional[int] = None
+
+    # ── Soft delete ───────────────────────────────────────────────────
+    is_deleted:    bool           = False
+    is_converted:  Optional[bool] = None
 
     # ── Déduplication ─────────────────────────────────────────────────
     hash_dedup: str = ""
@@ -110,6 +139,7 @@ class Prospect:
 
     # ── Timestamps ────────────────────────────────────────────────────
     created_at: str = field(default_factory=lambda: datetime.now().isoformat())
+    updated_at: str = field(default_factory=lambda: datetime.now().isoformat())
 
     # ──────────────────────────────────────────
     # Helper methods
@@ -164,7 +194,7 @@ class Prospect:
     def __repr__(self) -> str:
         return (
             f"<Prospect {self.nom_commercial!r} | {self.ville} | "
-            f"score={self.qualification_score} | enrich={self.enrich_score}/4 | {self.statut}>"
+            f"score={self.qualification_score} | enrich={self.enrich_score}/4 | {self.qualification}>"
         )
 
 
