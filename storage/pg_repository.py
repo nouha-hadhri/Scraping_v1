@@ -75,6 +75,14 @@ ALTER TABLE prospects
     ADD COLUMN IF NOT EXISTS source_origin TEXT NOT NULL DEFAULT '';
 """
 
+# secteur_activite_scraped : valeur textuelle brute issue du scraper, avant résolution FK.
+# Distincte de secteur_activite_id (FK résolue par SecteurResolver).
+# Permet au CRM d'afficher ce que le scraper a trouvé et de ré-évaluer le mapping.
+_SQL_ALTER_PROSPECTS_ADD_SECTEUR_SCRAPED = """
+ALTER TABLE prospects
+    ADD COLUMN IF NOT EXISTS secteur_activite_scraped TEXT NOT NULL DEFAULT '';
+"""
+
 # Indexes sur colonnes que Spring ne crée pas forcément
 _DDL_PROSPECTS_INDEXES = """
 CREATE INDEX IF NOT EXISTS idx_prospects_qualification ON prospects (qualification);
@@ -133,7 +141,7 @@ INSERT INTO prospects (
     hash_dedup, job_id, nom_commercial, raison_sociale,
     email, telephone, website, linkedin_url,
     adresse, ville, region, pays, code_postal,
-    secteur_activite_id,
+    secteur_activite_scraped, secteur_activite_id,
     type_entreprise, taille_entreprise,
     nombre_employes, chiffre_affaires, description, code_naf,
     siren, siret,
@@ -147,7 +155,7 @@ INSERT INTO prospects (
     %(hash_dedup)s, %(job_id)s, %(nom_commercial)s, %(raison_sociale)s,
     %(email)s, %(telephone)s, %(website)s, %(linkedin_url)s,
     %(adresse)s, %(ville)s, %(region)s, %(pays)s, %(code_postal)s,
-    %(secteur_activite_id)s,
+    %(secteur_activite_scraped)s, %(secteur_activite_id)s,
     %(type_entreprise)s, %(taille_entreprise)s,
     %(nombre_employes)s, %(chiffre_affaires)s, %(description)s, %(code_naf)s,
     %(siren)s, %(siret)s,
@@ -171,6 +179,12 @@ ON CONFLICT (hash_dedup) DO UPDATE SET
     region               = EXCLUDED.region,
     pays                 = EXCLUDED.pays,
     code_postal          = EXCLUDED.code_postal,
+    -- secteur_activite_scraped : jamais écrasé si déjà renseigné — on garde
+    -- la valeur initiale du scraper pour la traçabilité du mapping FK.
+    secteur_activite_scraped = CASE
+        WHEN prospects.secteur_activite_scraped = '' THEN EXCLUDED.secteur_activite_scraped
+        ELSE prospects.secteur_activite_scraped
+    END,
     secteur_activite_id  = EXCLUDED.secteur_activite_id,
     type_entreprise      = EXCLUDED.type_entreprise,
     taille_entreprise    = EXCLUDED.taille_entreprise,
@@ -356,6 +370,10 @@ class PgRepository:
             with self._cursor() as cur:
                 # ── Colonne source_origin (Python-only) ───────────────────
                 cur.execute(_SQL_ALTER_PROSPECTS_ADD_SOURCE_ORIGIN)
+
+                # ── Colonne secteur_activite_scraped (Python-only) ────────
+                # Stocke la valeur brute du scraper avant résolution FK.
+                cur.execute(_SQL_ALTER_PROSPECTS_ADD_SECTEUR_SCRAPED)
 
                 # ── Contrainte UNIQUE hash_dedup (pour ON CONFLICT) ───────
                 cur.execute(_SQL_ADD_UNIQUE_HASH_DEDUP)
@@ -664,23 +682,26 @@ class PgRepository:
         )
 
         return {
-            "hash_dedup":           hash_scoped,
-            "job_id":               resolved_job_id,
-            "nom_commercial":       _str(d.get("nom_commercial")),
-            "raison_sociale":       _str(d.get("raison_sociale")),
-            "email":                _str(d.get("email")),
-            "telephone":            _str(d.get("telephone")),
-            "website":              _str(d.get("website")),
-            "linkedin_url":         _str(d.get("linkedin_url")),
-            "adresse":              _str(d.get("adresse")),
-            "ville":                _str(d.get("ville")),
-            "region":               _str(d.get("region")),
-            "pays":                 _str(d.get("pays")),
-            "code_postal":          _str(d.get("code_postal")),
-            # secteur_activite (TEXT) absent du schéma Spring — seul secteur_activite_id (FK) est inséré
-            "secteur_activite_id":  _int(d.get("secteur_activite_id")),
-            "type_entreprise":      _enum(d.get("type_entreprise"),   TypeEntreprise),
-            "taille_entreprise":    _enum(d.get("taille_entreprise"),  TailleEntreprise),
+            "hash_dedup":                hash_scoped,
+            "job_id":                    resolved_job_id,
+            "nom_commercial":            _str(d.get("nom_commercial")),
+            "raison_sociale":            _str(d.get("raison_sociale")),
+            "email":                     _str(d.get("email")),
+            "telephone":                 _str(d.get("telephone")),
+            "website":                   _str(d.get("website")),
+            "linkedin_url":              _str(d.get("linkedin_url")),
+            "adresse":                   _str(d.get("adresse")),
+            "ville":                     _str(d.get("ville")),
+            "region":                    _str(d.get("region")),
+            "pays":                      _str(d.get("pays")),
+            "code_postal":               _str(d.get("code_postal")),
+            # secteur_activite_scraped : valeur brute du scraper (jamais résolue, jamais normalisée)
+            # Utilisée par le CRM pour afficher ce que le scraper a trouvé et ré-évaluer le mapping FK.
+            "secteur_activite_scraped":  _str(d.get("secteur_activite_scraped") or d.get("secteur_activite")),
+            # secteur_activite_id : FK résolue par SecteurResolver (step 4B du pipeline)
+            "secteur_activite_id":       _int(d.get("secteur_activite_id")),
+            "type_entreprise":           _enum(d.get("type_entreprise"),   TypeEntreprise),
+            "taille_entreprise":         _enum(d.get("taille_entreprise"),  TailleEntreprise),
             "nombre_employes":      _int(d.get("nombre_employes")),
             "chiffre_affaires":     _float(d.get("chiffre_affaires")),
             "description":          _str(d.get("description")),
@@ -700,6 +721,9 @@ class PgRepository:
             "source":               "AUTOPROSPECTION",
             # source_origin = source de données réelle (anciennement "source")
             "source_origin":        _str(d.get("source_origin") or d.get("source")) or "",
+            # sector_confidence : confiance FK mapping (SecteurResolver) — 0.95/0.80/0.65/0.50/0.00
+            # nlp_confidence est distinct (confiance NLP embedder) et non persisté en PG
+            # (information interne pipeline, non utile côté CRM).
             "sector_confidence":    _float(d.get("sector_confidence")) or 0.0,
             "email_valid":          _bool(d.get("email_valid")),
             "website_active":       _bool(d.get("website_active")),

@@ -166,6 +166,10 @@ class Deduplicator:
             # Les scores d'enrichissement sont calculés après la dédup —
             # ne pas les écraser si l'existant a déjà été enrichi.
             "enrich_score", "email_mx_verified",
+            # secteur_activite_scraped : valeur brute figée au moment du scraping —
+            # jamais écrasée par un doublon entrant (la traçabilité FK côté CRM
+            # repose sur la valeur originale, pas sur une fusion).
+            "secteur_activite_scraped",
         }
         for f in Prospect.__dataclass_fields__:
             if f in skip:

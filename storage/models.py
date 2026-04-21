@@ -81,6 +81,12 @@ class Prospect:
 
     # ── Entreprise ────────────────────────────────────────────────────
     secteur_activite:  str            = ""
+    # secteur_activite_scraped : valeur BRUTE extraite par le scraper, avant toute
+    # normalisation ou résolution FK.  Permet côté CRM/Spring de voir ce que le
+    # scraper a effectivement trouvé, indépendamment de la FK résolue.
+    # Exemples : "Cybersécurité", "Logiciels & SaaS", "Conseil en IT", …
+    # Jamais écrasé après le scraping — lecture seule après la step cleaner.
+    secteur_activite_scraped: str     = ""
     type_entreprise:   str            = ""
     taille_entreprise: str            = ""
     nombre_employes:   Optional[int]  = None
@@ -106,7 +112,15 @@ class Prospect:
     source:            str   = LeadSource.AUTO_PROSPECTION.value
     # source_origin : source de données réelle (open_data, annuaire, sirene…)
     source_origin:     str   = ""
+    # sector_confidence : confiance du mapping FK secteur (SecteurResolver step 4B)
+    #   0.95 = match exact label  |  0.80 = match partiel  |  0.65 = keyword
+    #   0.50 = fallback job       |  0.00 = pas d'id disponible
     sector_confidence: float = 0.0
+    # nlp_confidence : confiance du modèle NLP (ProspectEmbedder) sur la détection
+    # du secteur textuel.  Distinct de sector_confidence (mapping FK) :
+    #   nlp_confidence = qualité de la détection du label textuel
+    #   sector_confidence = qualité du mapping label → FK base de données
+    nlp_confidence:    float = 0.0
     email_valid:       bool  = False
     website_active:    bool  = False
 

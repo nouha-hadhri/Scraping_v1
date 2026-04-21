@@ -14,6 +14,10 @@ Workflow:
   3. Nettoyage & normalisation
   4. Déduplication
   5. Analyse NLP / Embeddings (secteur, taille)
+ 5B. Résolution secteur_activite_id (SecteurResolver — step 4B dans le code)
+       -> Charge GET /api/crm/secteur-activite/secteurs_resolver depuis Spring (une seule fois par job)
+       -> Mappe le texte scraped → FK secteur_activite_id (conf 0.95/0.80/0.65)
+       -> Fallback job si pas de match (sector_confidence=0.50)
   6. Enrichissement contacts (website scraping + DuckDuckGo + PagesJaunes fallback)
   7. Scoring & qualification
   8. Sauvegarde CSV + JSON + PostgreSQL (si PG_ENABLED=True)
@@ -252,6 +256,231 @@ class DomainRateLimiter:
 
 
 # ══════════════════════════════════════════════════════════════════════════════
+# SecteurResolver
+# ══════════════════════════════════════════════════════════════════════════════
+
+def _normalize_label(text: str) -> str:
+    """
+    Normalise un label de secteur pour la comparaison :
+    - minuscules
+    - suppression des accents (NFD → ASCII)
+    - suppression des caractères non-alphanumériques sauf espace
+    """
+    if not text:
+        return ""
+    text = text.strip().lower()
+    text = unicodedata.normalize("NFKD", text)
+    text = "".join(ch for ch in text if not unicodedata.combining(ch))
+    text = re.sub(r"[^a-z0-9\s]", " ", text)
+    return re.sub(r"\s+", " ", text).strip()
+
+
+class SecteurResolver:
+    """
+    Résout le secteur_activite_id d'un prospect à partir du texte scraped.
+
+    Stratégie (par ordre de priorité) :
+      1. Correspondance exacte sur le label normalisé
+      2. Correspondance partielle : le label scraped contient un label connu
+         (ou inversement)
+      3. Correspondance par mots-clés alternatifs (colonne `keywords` côté Spring)
+      4. Fallback : premier id du job (secteur cible de la recherche)
+
+    Le cache `secteur_map` est chargé UNE SEULE FOIS par job depuis l'endpoint
+    Spring GET /api/crm/secteur-activite/secteurs_resolver  →  [{ id, label, keywords }, ...]
+    et reconstruit en  { label_normalisé: id }.
+
+    `sector_confidence` retournée :
+        0.95  exact match
+        0.80  partial match (label contient / est contenu dans)
+        0.65  keyword match
+        0.50  fallback job  ← signal "mapping incertain" visible côté CRM
+        0.00  pas d'id disponible (job sans secteur_activite_id)
+    """
+
+    # Seuil en-dessous duquel on considère le mapping comme "incertain"
+    # (affiché dans les logs, utile pour filtrer côté CRM)
+    CONFIDENCE_THRESHOLD = 0.7
+
+    def __init__(
+        self,
+        secteur_map: Dict[str, int],           # { label_normalisé: id }
+        job_secteur_ids: List[int],            # ids du job (critères Spring)
+        job_secteur_labels: List[str],         # labels du job (pour les logs)
+    ) -> None:
+        self._map            = secteur_map
+        self._fallback_id    = job_secteur_ids[0] if job_secteur_ids else None
+        self._fallback_label = job_secteur_labels[0] if job_secteur_labels else "—"
+
+    # ── API publique ──────────────────────────────────────────────────────────
+
+    def resolve(self, prospect: "Prospect") -> Tuple[Optional[int], float]:
+        """
+        Résout (secteur_activite_id, sector_confidence) pour un prospect.
+
+        Stratégie de sélection du texte source (par priorité) :
+          1. secteur_activite_scraped — valeur brute d'origine (avant NLP).
+             Plus fidèle à ce que le scraper a vraiment trouvé.
+          2. secteur_activite — valeur post-NLP (fallback si scraped vide).
+
+        Ne modifie PAS le prospect — l'appelant est responsable de l'affectation
+        pour garder cette méthode pure et testable.
+        """
+        # Priorité au texte brut scraped : il n'a pas été altéré par le NLP
+        raw_scraped = getattr(prospect, "secteur_activite_scraped", "") or ""
+        raw_nlp     = prospect.secteur_activite or ""
+        scraped = _normalize_label(raw_scraped if raw_scraped else raw_nlp)
+
+        if scraped:
+            # 1. Exact match
+            if scraped in self._map:
+                logger.debug(
+                    f"[SecteurResolver] '{prospect.secteur_activite}' → exact match "
+                    f"id={self._map[scraped]} (conf=0.95)"
+                )
+                return self._map[scraped], 0.95
+
+            # 2. Partial match
+            for known_label, known_id in self._map.items():
+                if known_label and (known_label in scraped or scraped in known_label):
+                    logger.debug(
+                        f"[SecteurResolver] '{prospect.secteur_activite}' → partial match "
+                        f"'{known_label}' id={known_id} (conf=0.80)"
+                    )
+                    return known_id, 0.80
+
+            # 3. Word-level overlap (au moins 1 mot en commun de longueur >= 4)
+            scraped_words = {w for w in scraped.split() if len(w) >= 4}
+            for known_label, known_id in self._map.items():
+                known_words = {w for w in known_label.split() if len(w) >= 4}
+                if scraped_words & known_words:
+                    logger.debug(
+                        f"[SecteurResolver] '{prospect.secteur_activite}' → keyword match "
+                        f"'{known_label}' id={known_id} (conf=0.65)"
+                    )
+                    return known_id, 0.65
+
+            # Secteur scraped non reconnu — on logge pour investigation
+            logger.debug(
+                f"[SecteurResolver] Secteur inconnu '{prospect.secteur_activite}' "
+                f"pour '{prospect.nom_commercial}' → fallback job '{self._fallback_label}'"
+            )
+
+        # 4. Fallback : secteur du job
+        if self._fallback_id is not None:
+            confidence = 0.50 if scraped else 0.50  # même valeur, sémantiques différentes
+            return self._fallback_id, confidence
+
+        # Aucun id disponible (job lancé sans secteur_activite_id)
+        return None, 0.0
+
+    def apply(self, prospect: "Prospect") -> "Prospect":
+        """
+        Résout et affecte directement sur le prospect.
+        Retourne le prospect pour permettre le chaînage.
+        """
+        sid, conf = self.resolve(prospect)
+        prospect.secteur_activite_id = sid
+        prospect.sector_confidence   = conf
+        return prospect
+
+    # ── Chargement du cache depuis Spring ────────────────────────────────────
+
+    @classmethod
+    def load_from_spring(
+        cls,
+        spring_base_url: str,
+        job_secteur_ids: List[int],
+        job_secteur_labels: List[str],
+        http_client: Any,
+        timeout: float = 5.0,
+    ) -> "SecteurResolver":
+        """
+        Charge tous les secteurs connus depuis GET /api/crm/secteur-activite/secteurs_resolver et construit
+        le cache { label_normalisé: id }.
+
+        En cas d'échec réseau (Spring injoignable, timeout…), retourne un
+        resolver dégradé qui utilisera systématiquement le fallback job —
+        le pipeline ne s'arrête PAS.
+
+        Format attendu de l'endpoint Spring :
+            [
+              { "id": 9,  "label": "Informatique", "keywords": "it,esn,saas" },
+              { "id": 12, "label": "Cybersécurité", "keywords": "cyber,sécurité" },
+              ...
+            ]
+        """
+        secteur_map: Dict[str, int] = {}
+
+        # ── Construction du map local depuis les labels du job ────────────────
+        # Même sans appel réseau, on peut déjà enregistrer les labels du job
+        # pour garantir que le secteur cible lui-même sera toujours résolu.
+        for sid, label in zip(job_secteur_ids, job_secteur_labels):
+            norm = _normalize_label(label)
+            if norm:
+                secteur_map[norm] = sid
+
+        # ── Appel Spring GET /api/crm/secteur-activite/secteurs_resolver ────────────────────────────────────
+        try:
+            url = f"{spring_base_url.rstrip('/')}/api/crm/secteur-activite/secteurs_resolver"
+            raw_html = http_client.get(url, timeout=timeout, retries=1)
+            if raw_html:
+                secteurs = json.loads(raw_html)
+                if isinstance(secteurs, list):
+                    for s in secteurs:
+                        sid   = s.get("id")
+                        label = s.get("label", "")
+                        if not sid or not label:
+                            continue
+
+                        # Label principal
+                        secteur_map[_normalize_label(label)] = sid
+                        raw_keywords = s.get("keywords", [])
+                        if isinstance(raw_keywords, list):
+                            kw_items = raw_keywords          # nouveau format TEXT[]
+                        elif isinstance(raw_keywords, str):
+                            kw_items = raw_keywords.split(",")  # ancien format CSV (compatibilité)
+
+                    logger.info(
+                        f"[SecteurResolver] Cache chargé depuis Spring : "
+                        f"{len(secteurs)} secteurs → {len(secteur_map)} entrées normalisées"
+                    )
+                else:
+                    logger.warning(
+                        "[SecteurResolver] Réponse Spring /api/crm/secteur-activite/secteurs_resolver inattendue "
+                        f"(type={type(secteurs).__name__}) — fallback job uniquement"
+                    )
+        except json.JSONDecodeError as e:
+            logger.warning(f"[SecteurResolver] JSON invalide depuis Spring : {e} — fallback job")
+        except Exception as e:
+            logger.warning(
+                f"[SecteurResolver] Impossible de charger les secteurs depuis Spring "
+                f"({url if 'url' in dir() else '?'}) : {e} — fallback job"
+            )
+
+        if not secteur_map:
+            logger.warning(
+                "[SecteurResolver] Cache vide — tous les prospects utiliseront "
+                "le fallback job (sector_confidence=0.50)"
+            )
+
+        return cls(secteur_map, job_secteur_ids, job_secteur_labels)
+
+    @classmethod
+    def from_static_map(
+        cls,
+        secteur_map: Dict[str, int],
+        job_secteur_ids: List[int],
+        job_secteur_labels: List[str],
+    ) -> "SecteurResolver":
+        """
+        Constructeur alternatif depuis un dict déjà construit
+        (utile pour les tests unitaires).
+        """
+        return cls(secteur_map, job_secteur_ids, job_secteur_labels)
+
+
+# ══════════════════════════════════════════════════════════════════════════════
 # ProspectCollector
 # ══════════════════════════════════════════════════════════════════════════════
 
@@ -283,9 +512,21 @@ class ProspectCollector:
         "societe":   SocieteScraper,    # Pappers + societe.com
     }
 
-    def __init__(self, dry_run: bool = False, source_filter: Optional[str] = None):
-        self.dry_run       = dry_run
-        self.source_filter = source_filter
+    def __init__(
+        self,
+        dry_run: bool = False,
+        source_filter: Optional[str] = None,
+        spring_base_url: Optional[str] = None,
+    ):
+        self.dry_run         = dry_run
+        self.source_filter   = source_filter
+        # URL du backend Spring pour les appels inter-services (résolution secteurs).
+        # Lit SPRING_BASE_URL depuis l'environnement si non fournie.
+        self.spring_base_url = (
+            spring_base_url
+            or os.environ.get("SPRING_BASE_URL", "http://localhost:8080")
+        ).rstrip("/")
+
         self._thread_local = threading.local()  # Storage isolé par thread
         self._geo_qbuilder: Optional[SireneQueryBuilder] = None
 
@@ -321,6 +562,22 @@ class ProspectCollector:
         # Log des critères utilisateur (backend)
         logger.info("CRITERES UTILISATEUR (backend) :\n%s", json.dumps(criteria, ensure_ascii=False, indent=2, default=str))
         self.scorer.criteria = criteria
+
+        # ── Résolution secteurs : chargement du cache Spring UNE SEULE FOIS ──
+        # On charge tous les secteurs connus depuis Spring avant le pipeline
+        # pour pouvoir mapper le texte scraped vers le bon secteur_activite_id.
+        _job_secteur_ids:    List[int] = [
+            int(x) for x in criteria.get("secteurs_activite_id", []) if x
+        ]
+        _job_secteur_labels: List[str] = [
+            str(x) for x in criteria.get("secteurs_activite", []) if x
+        ]
+        self._secteur_resolver = SecteurResolver.load_from_spring(
+            spring_base_url     = self.spring_base_url,
+            job_secteur_ids     = _job_secteur_ids,
+            job_secteur_labels  = _job_secteur_labels,
+            http_client         = self.client,
+        )
 
         # Calculer les sous-sources actives UNE SEULE FOIS pour tout le run
         active_subsources = self._active_subsources()
@@ -400,6 +657,16 @@ class ProspectCollector:
             logger.info(f"    {len(unique)} uniques, {n_dups} doublons supprimés ( {step_3_elapsed:.2f}s)")
 
             # ── Step 4 : NLP ──────────────────────────────────────────
+            # Avant le NLP : figer secteur_activite_scraped = valeur issue du cleaner.
+            # Le NLP (ProspectEmbedder) peut enrichir/remplacer secteur_activite si
+            # le secteur est absent ou trop court — on garde ici la trace de ce que
+            # le scraper a réellement trouvé, pour la traçabilité FK côté CRM.
+            # La règle : on écrit uniquement si le champ est encore vide (ne pas
+            # écraser une valeur déjà posée par un scraper antérieur dans le même job).
+            for _p in unique:
+                if not _p.secteur_activite_scraped and _p.secteur_activite:
+                    _p.secteur_activite_scraped = _p.secteur_activite
+
             logger.info("\n [Step 4/7] Analyse NLP (secteur, taille)…")
             step_4_start = time.time()
             analyzed = self.embedder.enrich_all(unique)
@@ -407,6 +674,28 @@ class ProspectCollector:
             step_4_elapsed = time.time() - step_4_start
             step_timings["4. Analyse NLP"] = step_4_elapsed
             logger.info(f"    {len(analyzed)} prospects enrichis NLP ( {step_4_elapsed:.2f}s)")
+
+            # ── Step 4B : Résolution secteur_activite_id ──────────────
+            # Après NLP (le secteur_activite textuel est stabilisé),
+            # on résout le secteur_activite_id vers la FK Spring.
+            # Deux cas :
+            #   • Le texte scraped matche un secteur connu → id précis (conf ≥ 0.65)
+            #   • Pas de match → fallback sur le secteur du job   (conf = 0.50)
+            logger.info("\n [Step 4B/7] Résolution secteur_activite_id…")
+            step_4b_start = time.time()
+            analyzed = self._step_resolve_secteurs(analyzed)
+            step_4b_elapsed = time.time() - step_4b_start
+            step_timings["4B. Résolution secteurs"] = step_4b_elapsed
+            _n_exact    = sum(1 for p in analyzed if p.sector_confidence >= 0.90)
+            _n_partial  = sum(1 for p in analyzed if 0.60 <= p.sector_confidence < 0.90)
+            _n_fallback = sum(1 for p in analyzed if p.sector_confidence < 0.60)
+            _avg_nlp    = round(
+                sum(getattr(p, "nlp_confidence", 0.0) for p in analyzed) / max(len(analyzed), 1), 3
+            )
+            logger.info(
+                f"    exact={_n_exact} | partial/kw={_n_partial} | "
+                f"fallback={_n_fallback} | avg_nlp_conf={_avg_nlp} ( {step_4b_elapsed:.2f}s)"
+            )
 
             # ── Step 5 : Enrichissement contacts ─────────────────────
             logger.info("\n [Step 5/7] Enrichissement contacts…")
@@ -490,6 +779,40 @@ class ProspectCollector:
                     except Exception as pg_exc:
                         logger.error(f"    [PG] Erreur sauvegarde job failed : {pg_exc}")
             raise
+
+    # ──────────────────────────────────────────
+    # Step 4B — Résolution secteur_activite_id
+    # ──────────────────────────────────────────
+
+    def _step_resolve_secteurs(self, prospects: List[Prospect]) -> List[Prospect]:
+        """Resout secteur_activite_id via SecteurResolver (apres NLP, avant enrichissement).
+
+        Le resolver est initialise une seule fois dans run() -- aucun appel reseau ici.
+        Logs DEBUG par prospect, resume INFO dans run().
+        """
+        if not hasattr(self, "_secteur_resolver") or self._secteur_resolver is None:
+            logger.warning(
+                "[SecteurResolve] _secteur_resolver absent — resolution ignoree. "
+                "Verifiez que run() initialise bien le resolver avant le pipeline."
+            )
+            return prospects
+
+        resolver = self._secteur_resolver
+
+        for p in prospects:
+            sid, conf = resolver.resolve(p)
+            p.secteur_activite_id = sid
+            p.sector_confidence   = conf
+
+            # Log DEBUG uniquement pour eviter le bruit sur grands volumes
+            if conf < SecteurResolver.CONFIDENCE_THRESHOLD:
+                logger.debug(
+                    f"[SecteurResolve] FAIBLE CONFIANCE ({conf:.2f}) "
+                    f"'{p.secteur_activite}' -> id={sid} "
+                    f"| {p.nom_commercial!r}"
+                )
+
+        return prospects
 
     # ──────────────────────────────────────────
     # Step 7 — Sauvegarde (méthode extraite)
@@ -623,13 +946,24 @@ class ProspectCollector:
         if taille.get("nb_employes_max") is not None:
             employes_max = int(taille["nb_employes_max"])
 
+        # Normalise secteurs_activite_id en liste d'entiers propres
+        _raw_ids = cfg.get("secteurs_activite_id", []) or []
+        _secteur_ids: List[int] = []
+        for _x in _raw_ids:
+            try:
+                _secteur_ids.append(int(_x))
+            except (TypeError, ValueError):
+                pass
+
         return {
-            "secteurs_activite":  cfg.get("secteurs_activite", []),
-            "tailles_entreprise": categories,
-            "types_entreprise":   cfg.get("types_entreprise", []),
-            "codes_naf":          cfg.get("codes_naf", []),
-            "employes_min":       employes_min,
-            "employes_max":       employes_max,
+            "secteurs_activite":    cfg.get("secteurs_activite", []),
+            # IDs des secteurs cibles (FK Spring) — utilisés par SecteurResolver
+            "secteurs_activite_id": _secteur_ids,
+            "tailles_entreprise":   categories,
+            "types_entreprise":     cfg.get("types_entreprise", []),
+            "codes_naf":            cfg.get("codes_naf", []),
+            "employes_min":         employes_min,
+            "employes_max":         employes_max,
             "localisation": {
                 "pays":    geo.get("pays") or geo.get("zone_geographique", ["France"]),
                 "regions": geo.get("regions", []),
@@ -667,9 +1001,20 @@ class ProspectCollector:
                 finite = [m for m in maxs if m != float("inf")]
                 employes_max = max(finite) if finite else None
 
+        # Normalise secteurs_activite_id en liste d'entiers propres
+        _raw_ids = getattr(t, "secteurs_activite_id", []) or []
+        _secteur_ids: List[int] = []
+        for _x in _raw_ids:
+            try:
+                _secteur_ids.append(int(_x))
+            except (TypeError, ValueError):
+                pass
+
         return {
             "secteurs_activite":    t.secteur_activite,
-            "secteurs_activite_id": getattr(t, "secteurs_activite_id", []),
+            # IDs des secteurs cibles (FK Spring) — utilisés par SecteurResolver
+            # comme fallback quand le texte scraped ne matche aucun secteur connu.
+            "secteurs_activite_id": _secteur_ids,
             "tailles_entreprise":   t.taille_entreprise,
             "types_entreprise":     t.types_entreprise,
             "codes_naf":            [],
@@ -1895,14 +2240,15 @@ def main() -> int:
     # ── Lecture du payload bridge (--bridge-json-file) ─────────────────────────
     # Priorité maximale : écrase les autres args si présent
     _bridge_job_id: Optional[str] = None
+    _bridge_payload_cached: Optional[Dict[str, Any]] = None   # FIX: cache pour éviter la double lecture
     if args.bridge_json_file:
         import pathlib
         try:
-            _bridge_payload = json.loads(
+            _bridge_payload_cached = json.loads(
                 pathlib.Path(args.bridge_json_file).read_text(encoding="utf-8")
             )
-            _bridge_job_id = _bridge_payload.get("job_id") or _bridge_payload.get("jobId")
-            _criteria_raw  = _bridge_payload.get("criteria") or {}
+            _bridge_job_id = _bridge_payload_cached.get("job_id") or _bridge_payload_cached.get("jobId")
+            _criteria_raw  = _bridge_payload_cached.get("criteria") or {}
 
             # Mapper les champs de ProspectionCriteriaDTO vers les args CLI existants
             if _criteria_raw.get("source_filter") and not args.source:
@@ -1972,7 +2318,14 @@ def main() -> int:
     if sf == "opendata":
         sf = "open_data"
 
-    collector = ProspectCollector(dry_run=args.dry_run, source_filter=sf)
+    # Transmettre l'URL Spring au collector pour que SecteurResolver
+    # puisse charger les secteurs connus depuis GET /api/crm/secteur-activite/secteurs_resolver.
+    _spring_url = os.environ.get("SPRING_BASE_URL", "http://localhost:8080")
+    collector = ProspectCollector(
+        dry_run         = args.dry_run,
+        source_filter   = sf,
+        spring_base_url = _spring_url,
+    )
 
     # Source unique des critères : payload backend (--bridge-json-file)
     if not args.bridge_json_file:
@@ -1982,8 +2335,12 @@ def main() -> int:
 
     _bridge_criteria_raw: Optional[Dict[str, Any]] = None
     try:
-        import pathlib
-        _bp = json.loads(pathlib.Path(args.bridge_json_file).read_text(encoding="utf-8"))
+        # FIX: réutilise le payload déjà parsé (évite une double lecture du fichier)
+        if _bridge_payload_cached is not None:
+            _bp = _bridge_payload_cached
+        else:
+            import pathlib
+            _bp = json.loads(pathlib.Path(args.bridge_json_file).read_text(encoding="utf-8"))
         _raw = _bp.get("criteria")
         if isinstance(_raw, dict):
             _bridge_criteria_raw = _raw
@@ -2092,8 +2449,14 @@ def main() -> int:
                     "region": p_dict.get("region", ""),
                     "pays": p_dict.get("pays", ""),
                     "code_postal": p_dict.get("code_postal", ""),
-                    "secteur_activite": p_dict.get("secteur_activite", ""),
-                    "type_entreprise": p_dict.get("type_entreprise", ""),
+                    "secteur_activite":    p_dict.get("secteur_activite", ""),
+                    # secteur_activite_scraped : valeur brute du scraper (avant résolution FK)
+                    "secteur_activite_scraped": p_dict.get("secteur_activite_scraped", ""),
+                    # secteur_activite_id : FK résolue par SecteurResolver (step 4B)
+                    # None si le secteur scraped ne correspond à aucun secteur connu
+                    # et qu'aucun secteur n'a été fourni dans les critères du job.
+                    "secteur_activite_id": p_dict.get("secteur_activite_id"),
+                    "type_entreprise":     p_dict.get("type_entreprise", ""),
                     "taille_entreprise": p_dict.get("taille_entreprise", ""),
                     "nombre_employes": p_dict.get("nombre_employes"),
                     "chiffre_affaires": p_dict.get("chiffre_affaires"),
@@ -2116,7 +2479,10 @@ def main() -> int:
                     "source": "AUTOPROSPECTION",
                     # source_origin = source de données réelle (anciennement "source")
                     "source_origin": p_dict.get("source_origin", p_dict.get("source", "")),
+                    # sector_confidence : qualité du mapping FK (SecteurResolver)
                     "sector_confidence": p_dict.get("sector_confidence", 0),
+                    # nlp_confidence : qualité de la détection NLP du label textuel (distinct de sector_confidence)
+                    "nlp_confidence": p_dict.get("nlp_confidence", 0),
                     "created_at": _to_iso_or_none(p_dict.get("created_at")),
                     "updated_at": _to_iso_or_none(p_dict.get("updated_at") or p_dict.get("created_at")),
                     "is_deleted": bool(p_dict.get("is_deleted", False)),

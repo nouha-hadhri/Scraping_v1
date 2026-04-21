@@ -81,14 +81,14 @@ class ProspectEmbedder:
             sector, conf = self._detect_sector(text)
             if sector:
                 p.secteur_activite  = sector
-                p.sector_confidence = round(conf, 3)
+                p.nlp_confidence    = round(conf, 3)
             else:
-                p.sector_confidence = 0.0
+                p.nlp_confidence    = 0.0
         else:
             normalized = self._normalize_sector(p.secteur_activite)
             if normalized:
                 p.secteur_activite = normalized
-            p.sector_confidence = 1.0
+            p.nlp_confidence = 1.0
 
         # ── Taille ────────────────────────────────
         if not p.taille_entreprise or p.taille_entreprise not in SIZE_RANGES:

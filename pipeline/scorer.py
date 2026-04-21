@@ -234,6 +234,10 @@ class ProspectScorer:
                     "with_email_pct": 0.0, "with_phone_pct": 0.0,
                     "with_website_pct": 0.0, "mx_verified": 0,
                 },
+                "sector_mapping": {
+                    "avg_sector_confidence": 0.0, "avg_nlp_confidence": 0.0,
+                    "exact_fk": 0, "partial_fk": 0, "fallback_fk": 0,
+                },
             }
 
         def _get(p, field, default=0):
@@ -252,6 +256,13 @@ class ProspectScorer:
         with_website = sum(1 for p in prospects if _get(p, "website"))
         mx_verified  = sum(1 for p in prospects if _get(p, "email_mx_verified", False))
 
+        # Statistiques de confiance secteur (FK mapping) et NLP
+        sector_confs  = [_get(p, "sector_confidence") or 0.0 for p in prospects]
+        nlp_confs     = [_get(p, "nlp_confidence") or 0.0 for p in prospects]
+        n_exact_fk    = sum(1 for c in sector_confs if c >= 0.90)
+        n_partial_fk  = sum(1 for c in sector_confs if 0.60 <= c < 0.90)
+        n_fallback_fk = sum(1 for c in sector_confs if 0 < c < 0.60)
+
         return {
             "total":                  len(prospects),
             "qualified":              len(qualified),
@@ -269,6 +280,13 @@ class ProspectScorer:
                 "with_phone_pct":   round(100 * with_phone   / n, 1),
                 "with_website_pct": round(100 * with_website / n, 1),
                 "mx_verified":      mx_verified,
+            },
+            "sector_mapping": {
+                "avg_sector_confidence": round(sum(sector_confs) / max(len(sector_confs), 1), 3),
+                "avg_nlp_confidence":    round(sum(nlp_confs)    / max(len(nlp_confs),    1), 3),
+                "exact_fk":    n_exact_fk,
+                "partial_fk":  n_partial_fk,
+                "fallback_fk": n_fallback_fk,
             },
         }
 
