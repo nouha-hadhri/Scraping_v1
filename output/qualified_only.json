@@ -1,26 +1,26 @@
 [
   {
-    "nom_commercial": "COLOMBAGE COHABITATION",
-    "raison_sociale": "COLOMBAGE COHABITATION",
-    "email": "contact@colombage-cohabitation.fr",
-    "telephone": "0649382843",
-    "website": "https://www.colombage-cohabitation.fr",
-    "linkedin_url": "https://www.linkedin.com/company/94135075",
-    "adresse": "33 RUE SEVIN VINCENT 92210 SAINT-CLOUD",
-    "ville": "Saint-Cloud",
+    "nom_commercial": "YDRAL CONSTRUCTION",
+    "raison_sociale": "YDRAL CONSTRUCTION",
+    "email": "contact@ydralconstruction.fr",
+    "telephone": "06 42 90 47 59",
+    "website": "https://www.ydralconstruction.fr",
+    "linkedin_url": "",
+    "adresse": "99-103 99 RUE DE SEVRES 75006 PARIS",
+    "ville": "Paris",
     "region": "Île-de-France",
     "pays": "France",
-    "code_postal": "92210",
-    "secteur_activite": "Informatique",
+    "code_postal": "75006",
+    "secteur_activite": "BTP",
     "secteur_activite_scraped": "Non spécifié",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
-    "description": "ColombAge propose une palette de services pour les seniors afin de les soutenir à domicile. Auxiliaires de vie expérimentés, cohabitation intergénérationnelle, matériels...",
-    "code_naf": "63.12Z",
-    "siren": "950911321",
-    "siret": "95091132100012",
+    "description": "Maisons neuves à vendre à RUEIL MALMAISON",
+    "code_naf": "41.10A",
+    "siren": "309246734",
+    "siret": "30924673400078",
     "qualification_score": 70,
     "score_pct": 70.0,
     "qualification": "QUALIFIE",
@@ -28,7 +28,7 @@
       "sector_match": {
         "points": 20,
         "max": 20,
-        "note": "match:Informatique"
+        "note": "match:Construction & btp"
       },
       "size_match": {
         "points": 0,
@@ -48,17 +48,1109 @@
       "email_valid": {
         "points": 10,
         "max": 10,
-        "note": "contact@colombage-cohabitation.fr"
+        "note": "contact@ydralconstruction.fr"
       },
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://www.colombage-cohabitation.fr"
+        "note": "https://www.ydralconstruction.fr"
       },
       "phone_present": {
         "points": 10,
         "max": 10,
-        "note": "0649382843"
+        "note": "06 42 90 47 59"
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 7,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 0.55,
+    "email_valid": true,
+    "website_active": true,
+    "enrich_score": 3,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 2,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "7acc18b8cf9f3d71",
+    "raw_text": "",
+    "created_at": "2026-04-21T17:24:33.012750",
+    "updated_at": "2026-04-21T17:24:33.012750"
+  },
+  {
+    "nom_commercial": "WDG CONSTRUCTIONS (SADG)",
+    "raison_sociale": "WDG CONSTRUCTIONS",
+    "email": "ag@wdg-constructions.com",
+    "telephone": "06 81 30 61 07",
+    "website": "https://wdg-constructions.com/contacts",
+    "linkedin_url": "",
+    "adresse": "60 RUE JULES PICARD 95660 CHAMPAGNE-SUR-OISE",
+    "ville": "Champagne-sur-Oise",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "95660",
+    "secteur_activite": "BTP",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "41.10A",
+    "siren": "887662153",
+    "siret": "88766215300014",
+    "qualification_score": 70,
+    "score_pct": 70.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Construction & btp"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 10,
+        "max": 10,
+        "note": "ag@wdg-constructions.com"
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://wdg-constructions.com/contacts"
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "06 81 30 61 07"
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 7,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 0.424,
+    "email_valid": true,
+    "website_active": true,
+    "enrich_score": 2,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 2,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "25343abf2d2c6d8c",
+    "raw_text": "",
+    "created_at": "2026-04-21T17:24:33.012750",
+    "updated_at": "2026-04-21T17:24:33.012750"
+  },
+  {
+    "nom_commercial": "IDOINE CONSTRUCTION",
+    "raison_sociale": "IDOINE CONSTRUCTION",
+    "email": "alemaire@idoine.fr",
+    "telephone": "06 37 78 27 32",
+    "website": "https://idoine.com",
+    "linkedin_url": "https://www.linkedin.com/company/idoine-design-and-build/",
+    "adresse": "19-21 19 RUE DU BOULOI 75001 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75001",
+    "secteur_activite": "BTP",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "41.20A",
+    "siren": "914262191",
+    "siret": "91426219100010",
+    "qualification_score": 70,
+    "score_pct": 70.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Construction & btp"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 10,
+        "max": 10,
+        "note": "alemaire@idoine.fr"
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://idoine.com"
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "06 37 78 27 32"
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 7,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 0.366,
+    "email_valid": true,
+    "website_active": true,
+    "enrich_score": 4,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 2,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "33d9c39af5ba72b6",
+    "raw_text": "",
+    "created_at": "2026-04-21T17:24:44.166533",
+    "updated_at": "2026-04-21T17:24:44.166533"
+  },
+  {
+    "nom_commercial": "INOV CONSTRUCTION (INOV CONSTRUCTION)",
+    "raison_sociale": "INOV CONSTRUCTION",
+    "email": "contact@inovconstruction.fr",
+    "telephone": "01 72 52 35 09",
+    "website": "https://inovconstruction.fr",
+    "linkedin_url": "",
+    "adresse": "1 RUE LE NOTRE 95190 GOUSSAINVILLE",
+    "ville": "Goussainville",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "95190",
+    "secteur_activite": "BTP",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Travaux Construction neuve rénovation Gros Œuvre - Maçonnerie - façade et isolation, Carrelage en intérieur et extérieur",
+    "code_naf": "41.20A",
+    "siren": "818502841",
+    "siret": "81850284100054",
+    "qualification_score": 70,
+    "score_pct": 70.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Construction & btp"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 10,
+        "max": 10,
+        "note": "contact@inovconstruction.fr"
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://inovconstruction.fr"
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "01 72 52 35 09"
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 7,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 0.374,
+    "email_valid": true,
+    "website_active": true,
+    "enrich_score": 3,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 2,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "7efb47c883019fc3",
+    "raw_text": "",
+    "created_at": "2026-04-21T17:24:44.166533",
+    "updated_at": "2026-04-21T17:24:44.166533"
+  },
+  {
+    "nom_commercial": "VALENTE CONSTRUCTION",
+    "raison_sociale": "VALENTE CONSTRUCTION",
+    "email": "valente@valente-construction.fr",
+    "telephone": "06.50.14.98.18",
+    "website": "https://www.valente-construction.fr",
+    "linkedin_url": "https://www.linkedin.com/company/25261465/admin/updates/",
+    "adresse": "243 RUE ROBERT FOURNIER 77120 MOUROUX",
+    "ville": "Mouroux",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "77120",
+    "secteur_activite": "BTP",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Valente Construction est spécialisé dans la construction de maison traditionnelle et moderne en Seine et Marne ... Nous proposons également des constructions de maison haut de gamme.",
+    "code_naf": "41.20B",
+    "siren": "388292005",
+    "siret": "38829200500039",
+    "qualification_score": 70,
+    "score_pct": 70.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Construction & btp"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 10,
+        "max": 10,
+        "note": "valente@valente-construction.fr"
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://www.valente-construction.fr"
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "06.50.14.98.18"
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 7,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 0.566,
+    "email_valid": true,
+    "website_active": true,
+    "enrich_score": 4,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 2,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "6fc44172e8f4c6e1",
+    "raw_text": "",
+    "created_at": "2026-04-21T17:24:54.499476",
+    "updated_at": "2026-04-21T17:24:54.499476"
+  },
+  {
+    "nom_commercial": "NC CONSTRUCTIONS",
+    "raison_sociale": "NC CONSTRUCTIONS",
+    "email": "contact@nc-constructions.fr",
+    "telephone": "06 99 03 17 86",
+    "website": "https://www.nc-constructions.fr/service/entreprise-construction-paris",
+    "linkedin_url": "",
+    "adresse": "266 AVENUE DAUMESNIL 75012 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75012",
+    "secteur_activite": "BTP",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "41.20B",
+    "siren": "828985382",
+    "siret": "82898538200013",
+    "qualification_score": 70,
+    "score_pct": 70.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Construction & btp"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 10,
+        "max": 10,
+        "note": "contact@nc-constructions.fr"
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://www.nc-constructions.fr/service/entreprise-construction-paris"
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "06 99 03 17 86"
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 7,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 0.496,
+    "email_valid": true,
+    "website_active": true,
+    "enrich_score": 3,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 2,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "cc4089ac32fe7213",
+    "raw_text": "",
+    "created_at": "2026-04-21T17:24:54.499476",
+    "updated_at": "2026-04-21T17:24:54.499476"
+  },
+  {
+    "nom_commercial": "EDILE CONSTRUCTION (S.C.G.E. EDILE CONSTRUCTION)",
+    "raison_sociale": "EDILE CONSTRUCTION",
+    "email": "edile@edileconstruction.com",
+    "telephone": "01 70 27 90 00",
+    "website": "https://edileconstruction.fr",
+    "linkedin_url": "",
+    "adresse": "80 AVENUE DE LA GRANDE ARMEE 75017 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75017",
+    "secteur_activite": "BTP",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "EDILE Construction - Entreprise générale de bâtiment en France.",
+    "code_naf": "41.20B",
+    "siren": "377700554",
+    "siret": "37770055400050",
+    "qualification_score": 70,
+    "score_pct": 70.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Construction & btp"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 10,
+        "max": 10,
+        "note": "edile@edileconstruction.com"
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://edileconstruction.fr"
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "01 70 27 90 00"
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 7,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 0.461,
+    "email_valid": true,
+    "website_active": true,
+    "enrich_score": 3,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 2,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "44b99defb8514f56",
+    "raw_text": "",
+    "created_at": "2026-04-21T17:24:54.499476",
+    "updated_at": "2026-04-21T17:24:54.499476"
+  },
+  {
+    "nom_commercial": "ACM CONSTRUCTION",
+    "raison_sociale": "ACM CONSTRUCTION",
+    "email": "infos@acmconstruction.fr",
+    "telephone": "09 72 11 40 82",
+    "website": "https://www.acmconstruction.fr",
+    "linkedin_url": "",
+    "adresse": "91 AVENUE SAINT JACQUES 91600 SAVIGNY-SUR-ORGE",
+    "ville": "Savigny-sur-Orge",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "91600",
+    "secteur_activite": "BTP",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "41.20B",
+    "siren": "484277710",
+    "siret": "48427771000022",
+    "qualification_score": 70,
+    "score_pct": 70.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Construction & btp"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 10,
+        "max": 10,
+        "note": "infos@acmconstruction.fr"
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://www.acmconstruction.fr"
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "09 72 11 40 82"
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 7,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 0.396,
+    "email_valid": true,
+    "website_active": true,
+    "enrich_score": 3,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 2,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "e2cb97d7d9c312c6",
+    "raw_text": "",
+    "created_at": "2026-04-21T17:24:54.499476",
+    "updated_at": "2026-04-21T17:24:54.499476"
+  },
+  {
+    "nom_commercial": "EU CONSTRUCTION",
+    "raison_sociale": "EU CONSTRUCTION",
+    "email": "contact@euconstruction.eu",
+    "telephone": "+33781139835",
+    "website": "https://www.euconstruction.fr",
+    "linkedin_url": "",
+    "adresse": "1-3 1 RUE D'ENGHIEN 75010 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75010",
+    "secteur_activite": "BTP",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "41.20B",
+    "siren": "520782061",
+    "siret": "52078206100011",
+    "qualification_score": 70,
+    "score_pct": 70.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Construction & btp"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 10,
+        "max": 10,
+        "note": "contact@euconstruction.eu"
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://www.euconstruction.fr"
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "+33781139835"
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 7,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 0.491,
+    "email_valid": true,
+    "website_active": true,
+    "enrich_score": 3,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 2,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "9c6b063f53e2830f",
+    "raw_text": "",
+    "created_at": "2026-04-21T17:24:54.499476",
+    "updated_at": "2026-04-21T17:24:54.499476"
+  },
+  {
+    "nom_commercial": "AMA CONSTRUCTION",
+    "raison_sociale": "AMA CONSTRUCTION",
+    "email": "hello@ama-renovation.fr",
+    "telephone": "06 50 55 63 01",
+    "website": "https://ama-renovation.fr/construction",
+    "linkedin_url": "",
+    "adresse": "100 AVENUE DU GENERAL LECLERC 93500 PANTIN",
+    "ville": "Pantin",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "93500",
+    "secteur_activite": "BTP",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "41.20B",
+    "siren": "523722668",
+    "siret": "52372266800028",
+    "qualification_score": 70,
+    "score_pct": 70.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Construction & btp"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 10,
+        "max": 10,
+        "note": "hello@ama-renovation.fr"
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://ama-renovation.fr/construction"
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "06 50 55 63 01"
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 7,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 0.418,
+    "email_valid": true,
+    "website_active": true,
+    "enrich_score": 3,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 2,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "e1c0607d72f7ecb6",
+    "raw_text": "",
+    "created_at": "2026-04-21T17:24:54.500487",
+    "updated_at": "2026-04-21T17:24:54.500487"
+  },
+  {
+    "nom_commercial": "A.T.S CONSTRUCTION",
+    "raison_sociale": "A.T.S CONSTRUCTION",
+    "email": "fr@gowork.com",
+    "telephone": "07 71 95 22 08",
+    "website": "https://gowork.fr/a-t-s-construction-orly",
+    "linkedin_url": "https://www.linkedin.com/company/gowork-fr/",
+    "adresse": "3 ALLEE ALEXANDRE DUMAS 94310 ORLY",
+    "ville": "Orly",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "94310",
+    "secteur_activite": "BTP",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Consultez les avis sur A T S CONSTRUCTION Orly. Informations sur les revenus, la gestion, l'atmosphère !",
+    "code_naf": "43.12A",
+    "siren": "797508488",
+    "siret": "79750848800021",
+    "qualification_score": 70,
+    "score_pct": 70.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Construction & btp"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 10,
+        "max": 10,
+        "note": "fr@gowork.com"
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://gowork.fr/a-t-s-construction-orly"
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "07 71 95 22 08"
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 7,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 0.487,
+    "email_valid": true,
+    "website_active": true,
+    "enrich_score": 4,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 2,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "422fb1bfb2beac63",
+    "raw_text": "",
+    "created_at": "2026-04-21T17:25:02.693819",
+    "updated_at": "2026-04-21T17:25:02.693819"
+  },
+  {
+    "nom_commercial": "ADM CONSTRUCTION",
+    "raison_sociale": "ADM CONSTRUCTION",
+    "email": "contact@admconstruction.eu",
+    "telephone": "+33753624419",
+    "website": "https://admconstruction.eu",
+    "linkedin_url": "",
+    "adresse": "65 RUE SAINT - GERMAIN 93230 ROMAINVILLE",
+    "ville": "Romainville",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "93230",
+    "secteur_activite": "BTP",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "43.29A",
+    "siren": "824534051",
+    "siret": "82453405100019",
+    "qualification_score": 70,
+    "score_pct": 70.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Construction & btp"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 10,
+        "max": 10,
+        "note": "contact@admconstruction.eu"
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://admconstruction.eu"
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "+33753624419"
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 7,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 0.383,
+    "email_valid": true,
+    "website_active": true,
+    "enrich_score": 3,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 2,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "e1c7888d3b66c88b",
+    "raw_text": "",
+    "created_at": "2026-04-21T17:25:14.932827",
+    "updated_at": "2026-04-21T17:25:14.932827"
+  },
+  {
+    "nom_commercial": "PRESTAN'S BTP +",
+    "raison_sociale": "PRESTAN'S BTP +",
+    "email": "contact@prestans-btp.fr",
+    "telephone": "+33 04 23 13 63 78",
+    "website": "https://prestans-btp.fr",
+    "linkedin_url": "",
+    "adresse": "34 RUE EDOUARD VAILLANT 91200 ATHIS-MONS",
+    "ville": "Athis-Mons",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "91200",
+    "secteur_activite": "BTP",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "41.20A",
+    "siren": "900736083",
+    "siret": "90073608300016",
+    "qualification_score": 70,
+    "score_pct": 70.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Construction & btp"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 10,
+        "max": 10,
+        "note": "contact@prestans-btp.fr"
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://prestans-btp.fr"
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "+33 04 23 13 63 78"
       },
       "name_complete": {
         "points": 5,
@@ -79,39 +1171,130 @@
     "nlp_confidence": 1.0,
     "email_valid": true,
     "website_active": true,
-    "enrich_score": 4,
+    "enrich_score": 3,
     "email_mx_verified": false,
     "job_id": null,
-    "secteur_activite_id": 1,
+    "secteur_activite_id": 2,
     "is_deleted": false,
     "is_converted": null,
-    "hash_dedup": "1ba51cc08f08b2ff",
+    "hash_dedup": "65dc94c1a264263f",
     "raw_text": "",
-    "created_at": "2026-04-21T16:53:03.196752",
-    "updated_at": "2026-04-21T16:53:03.196752"
+    "created_at": "2026-04-21T17:25:24.955483",
+    "updated_at": "2026-04-21T17:25:24.955483"
   },
   {
-    "nom_commercial": "LITCO",
-    "raison_sociale": "LITCO",
-    "email": "",
-    "telephone": "01 85 74 23 60",
-    "website": "https://litco.fr",
-    "linkedin_url": "https://www.linkedin.com/company/litco-fr/",
-    "adresse": "160 BOULEVARD DE LA REPUBLIQUE 92210 SAINT-CLOUD",
-    "ville": "Saint-Cloud",
+    "nom_commercial": "ONE CONSTRUCTION (ONE CONSTRUCTION)",
+    "raison_sociale": "ONE CONSTRUCTION",
+    "email": "contact@oneconstruction.pro",
+    "telephone": "",
+    "website": "https://oneconstruction.pro/fr/about",
+    "linkedin_url": "",
+    "adresse": "11 RUE DE LOURMEL 75015 PARIS",
+    "ville": "Paris",
     "region": "Île-de-France",
     "pays": "France",
-    "code_postal": "92210",
-    "secteur_activite": "Informatique",
+    "code_postal": "75015",
+    "secteur_activite": "BTP",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "About Us About Us We are a dedicated company known for quality and reliability One Construction is a Paris-based construction and renovation company",
+    "code_naf": "41.10A",
+    "siren": "849337332",
+    "siret": "84933733200019",
+    "qualification_score": 60,
+    "score_pct": 60.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Construction & btp"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 10,
+        "max": 10,
+        "note": "contact@oneconstruction.pro"
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://oneconstruction.pro/fr/about"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 6,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 0.451,
+    "email_valid": true,
+    "website_active": true,
+    "enrich_score": 2,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 2,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "6463f717c3ac9d5d",
+    "raw_text": "",
+    "created_at": "2026-04-21T17:24:33.012750",
+    "updated_at": "2026-04-21T17:24:33.012750"
+  },
+  {
+    "nom_commercial": "AMMARI CONSTRUCTION",
+    "raison_sociale": "AMMARI CONSTRUCTION",
+    "email": "info@ammariconstruction.net",
+    "telephone": "09.52.69.50.35",
+    "website": "https://ammariconstruction.com",
+    "linkedin_url": "",
+    "adresse": "5 RUE BEAUGRENELLE 75015 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75015",
+    "secteur_activite": "BTP",
     "secteur_activite_scraped": "Non spécifié",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
     "description": "",
-    "code_naf": "62.03Z",
-    "siren": "908182900",
-    "siret": "90818290000013",
+    "code_naf": "41.20A",
+    "siren": "752661843",
+    "siret": "75266184300041",
     "qualification_score": 60,
     "score_pct": 60.0,
     "qualification": "QUALIFIE",
@@ -119,7 +1302,7 @@
       "sector_match": {
         "points": 20,
         "max": 20,
-        "note": "match:Informatique"
+        "note": "match:Construction & btp"
       },
       "size_match": {
         "points": 0,
@@ -139,17 +1322,17 @@
       "email_valid": {
         "points": 0,
         "max": 10,
-        "note": ""
+        "note": "info@ammariconstruction.net"
       },
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://litco.fr"
+        "note": "https://ammariconstruction.com"
       },
       "phone_present": {
         "points": 10,
         "max": 10,
-        "note": "01 85 74 23 60"
+        "note": "09.52.69.50.35"
       },
       "name_complete": {
         "points": 5,
@@ -167,224 +1350,42 @@
     "source": "annuaire-entreprises.data.gouv.fr",
     "source_origin": "annuaire-entreprises.data.gouv.fr",
     "sector_confidence": 0.5,
-    "nlp_confidence": 1.0,
-    "email_valid": false,
-    "website_active": true,
-    "enrich_score": 3,
-    "email_mx_verified": false,
-    "job_id": null,
-    "secteur_activite_id": 1,
-    "is_deleted": false,
-    "is_converted": null,
-    "hash_dedup": "20387c9b262cea91",
-    "raw_text": "",
-    "created_at": "2026-04-21T16:52:53.176121",
-    "updated_at": "2026-04-21T16:52:53.176121"
-  },
-  {
-    "nom_commercial": "CONCEPTION DEVELOPPEMENT LOGICIELS (CDL)",
-    "raison_sociale": "CONCEPTION DEVELOPPEMENT LOGICIELS",
-    "email": "contact@rubypayeur.com",
-    "telephone": "",
-    "website": "https://rubypayeur.com/societe/conception-developpement-logiciels-391507423",
-    "linkedin_url": "",
-    "adresse": "36 RUE DE LA FRATERNITE 93170 BAGNOLET",
-    "ville": "Bagnolet",
-    "region": "Île-de-France",
-    "pays": "France",
-    "code_postal": "93170",
-    "secteur_activite": "Informatique",
-    "secteur_activite_scraped": "Non spécifié",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "Toutes les infos sur CONCEPTION DEVELOPPEMENT LOGICIELS (CDL) : Dirigeants, chiffre d'affaires, bilans, statuts, effectif... Découvrez sa notation 🚦",
-    "code_naf": "62.01Z",
-    "siren": "391507423",
-    "siret": "39150742300039",
-    "qualification_score": 60,
-    "score_pct": 60.0,
-    "qualification": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Informatique"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "region:île-de-france"
-      },
-      "email_valid": {
-        "points": 10,
-        "max": 10,
-        "note": "contact@rubypayeur.com"
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://rubypayeur.com/societe/conception-developpement-logiciels-391507423"
-      },
-      "phone_present": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 6,
-    "criteria_total": 9,
-    "source": "annuaire-entreprises.data.gouv.fr",
-    "source_origin": "annuaire-entreprises.data.gouv.fr",
-    "sector_confidence": 0.5,
-    "nlp_confidence": 1.0,
-    "email_valid": true,
-    "website_active": true,
-    "enrich_score": 2,
-    "email_mx_verified": false,
-    "job_id": null,
-    "secteur_activite_id": 1,
-    "is_deleted": false,
-    "is_converted": null,
-    "hash_dedup": "4474e2de98961c00",
-    "raw_text": "",
-    "created_at": "2026-04-21T16:53:20.006977",
-    "updated_at": "2026-04-21T16:53:20.006977"
-  },
-  {
-    "nom_commercial": "SOC CIVILE PROPRIETAIRE DES LOGICIELS",
-    "raison_sociale": "SOC CIVILE PROPRIETAIRE DES LOGICIELS",
-    "email": "",
-    "telephone": "03 88 95 33 55",
-    "website": "https://www.mon-informaticien.com/entreprise/soc-civile-proprietaire-des-logiciels-392509022-00019",
-    "linkedin_url": "",
-    "adresse": "9 RUE BEETHOVEN 75016 PARIS",
-    "ville": "Paris",
-    "region": "Île-de-France",
-    "pays": "France",
-    "code_postal": "75016",
-    "secteur_activite": "Informatique",
-    "secteur_activite_scraped": "Non spécifié",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "Faites appel à l'entreprise d'informatique SOC CIVILE PROPRIETAIRE DES LOGICIELS située à Paris-16 (75016). Cet informaticien est notamment spécialisé en Prestations informatiques.",
-    "code_naf": "62.01Z",
-    "siren": "392509022",
-    "siret": "39250902200019",
-    "qualification_score": 60,
-    "score_pct": 60.0,
-    "qualification": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Informatique"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "region:île-de-france"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://www.mon-informaticien.com/entreprise/soc-civile-proprietaire-des-logiciels-392509022-00019"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "03 88 95 33 55"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 6,
-    "criteria_total": 9,
-    "source": "annuaire-entreprises.data.gouv.fr",
-    "source_origin": "annuaire-entreprises.data.gouv.fr",
-    "sector_confidence": 0.5,
-    "nlp_confidence": 0.45,
+    "nlp_confidence": 0.402,
     "email_valid": false,
     "website_active": true,
     "enrich_score": 2,
     "email_mx_verified": false,
     "job_id": null,
-    "secteur_activite_id": 1,
+    "secteur_activite_id": 2,
     "is_deleted": false,
     "is_converted": null,
-    "hash_dedup": "859ef96e5e015eba",
+    "hash_dedup": "790d1096803d4592",
     "raw_text": "",
-    "created_at": "2026-04-21T16:53:20.006977",
-    "updated_at": "2026-04-21T16:53:20.006977"
+    "created_at": "2026-04-21T17:24:44.166533",
+    "updated_at": "2026-04-21T17:24:44.166533"
   },
   {
-    "nom_commercial": "CONSEIL LOGICIEL SECURITE (CLS)",
-    "raison_sociale": "CONSEIL LOGICIEL SECURITE",
-    "email": "contact@cls.to",
+    "nom_commercial": "AP CONSTRUCTION (AWAPLAISIR)",
+    "raison_sociale": "AP CONSTRUCTION",
+    "email": "contact@awaplaisir.fr",
     "telephone": "",
-    "website": "http://www.cls.to",
+    "website": "https://awaplaisir.fr",
     "linkedin_url": "",
-    "adresse": "20 RUE MALAR 75007 PARIS",
-    "ville": "Paris",
+    "adresse": "10 RUE FRANCOISE DOLTO 78130 LES MUREAUX",
+    "ville": "Les Mureaux",
     "region": "Île-de-France",
     "pays": "France",
-    "code_postal": "75007",
-    "secteur_activite": "Informatique",
+    "code_postal": "78130",
+    "secteur_activite": "BTP",
     "secteur_activite_scraped": "Non spécifié",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
-    "description": "|",
-    "code_naf": "62.02A",
-    "siren": "502281926",
-    "siret": "50228192600035",
+    "description": "Pose Shopify Template with multiple layouts and styles allows you to create different structures and satisfies any specific requirements for different kinds of business.",
+    "code_naf": "41.20A",
+    "siren": "951345305",
+    "siret": "95134530500027",
     "qualification_score": 60,
     "score_pct": 60.0,
     "qualification": "QUALIFIE",
@@ -392,7 +1393,7 @@
       "sector_match": {
         "points": 20,
         "max": 20,
-        "note": "match:Informatique"
+        "note": "match:Construction & btp"
       },
       "size_match": {
         "points": 0,
@@ -412,12 +1413,12 @@
       "email_valid": {
         "points": 10,
         "max": 10,
-        "note": "contact@cls.to"
+        "note": "contact@awaplaisir.fr"
       },
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "http://www.cls.to"
+        "note": "https://awaplaisir.fr"
       },
       "phone_present": {
         "points": 0,
@@ -440,42 +1441,42 @@
     "source": "annuaire-entreprises.data.gouv.fr",
     "source_origin": "annuaire-entreprises.data.gouv.fr",
     "sector_confidence": 0.5,
-    "nlp_confidence": 0.45,
+    "nlp_confidence": 0.432,
     "email_valid": true,
     "website_active": true,
     "enrich_score": 2,
     "email_mx_verified": false,
     "job_id": null,
-    "secteur_activite_id": 1,
+    "secteur_activite_id": 2,
     "is_deleted": false,
     "is_converted": null,
-    "hash_dedup": "4748d886b7321280",
+    "hash_dedup": "01cac9a0cc559a21",
     "raw_text": "",
-    "created_at": "2026-04-21T16:53:25.792209",
-    "updated_at": "2026-04-21T16:53:25.792209"
+    "created_at": "2026-04-21T17:24:44.167553",
+    "updated_at": "2026-04-21T17:24:44.167553"
   },
   {
-    "nom_commercial": "ISIS LOGICIELS ET SYSTEMES",
-    "raison_sociale": "ISIS LOGICIELS ET SYSTEMES",
-    "email": "contact@isislog.com",
-    "telephone": "",
-    "website": "https://www.isislog.com",
-    "linkedin_url": "https://www.linkedin.com/company/isis-logiciels-&-systemes/",
-    "adresse": "17 RUE JOEL LE THEULE 78180 MONTIGNY-LE-BRETONNEUX",
-    "ville": "Montigny-le-Bretonneux",
+    "nom_commercial": "HUGO CONSTRUCTION (ESTB)",
+    "raison_sociale": "HUGO CONSTRUCTION",
+    "email": "umuc.hugoconstruction@gmail.com",
+    "telephone": "03-22-12-00-59",
+    "website": "https://www.hugoconstruction.fr",
+    "linkedin_url": "",
+    "adresse": "10 ALLEE DU CENTRE 91760 ITTEVILLE",
+    "ville": "Itteville",
     "region": "Île-de-France",
     "pays": "France",
-    "code_postal": "78180",
-    "secteur_activite": "Informatique",
+    "code_postal": "91760",
+    "secteur_activite": "BTP",
     "secteur_activite_scraped": "Non spécifié",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
-    "description": "ISIS Logiciels et Systèmes est une société de conseil spécialisée en Ingénierie et Hautes Technologies, basée en Ile-de France",
-    "code_naf": "62.02A",
-    "siren": "408645505",
-    "siret": "40864550500020",
+    "description": "",
+    "code_naf": "41.20B",
+    "siren": "817602162",
+    "siret": "81760216200056",
     "qualification_score": 60,
     "score_pct": 60.0,
     "qualification": "QUALIFIE",
@@ -483,7 +1484,7 @@
       "sector_match": {
         "points": 20,
         "max": 20,
-        "note": "match:Informatique"
+        "note": "match:Construction & btp"
       },
       "size_match": {
         "points": 0,
@@ -501,19 +1502,19 @@
         "note": "region:île-de-france"
       },
       "email_valid": {
-        "points": 10,
+        "points": 0,
         "max": 10,
-        "note": "contact@isislog.com"
+        "note": "umuc.hugoconstruction@gmail.com"
       },
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://www.isislog.com"
+        "note": "https://www.hugoconstruction.fr"
       },
       "phone_present": {
-        "points": 0,
+        "points": 10,
         "max": 10,
-        "note": ""
+        "note": "03-22-12-00-59"
       },
       "name_complete": {
         "points": 5,
@@ -531,141 +1532,141 @@
     "source": "annuaire-entreprises.data.gouv.fr",
     "source_origin": "annuaire-entreprises.data.gouv.fr",
     "sector_confidence": 0.5,
-    "nlp_confidence": 0.45,
-    "email_valid": true,
+    "nlp_confidence": 0.446,
+    "email_valid": false,
     "website_active": true,
-    "enrich_score": 3,
+    "enrich_score": 2,
     "email_mx_verified": false,
     "job_id": null,
-    "secteur_activite_id": 1,
+    "secteur_activite_id": 2,
     "is_deleted": false,
     "is_converted": null,
-    "hash_dedup": "caaaa322c316fbf1",
+    "hash_dedup": "50bf925b2099e4b2",
     "raw_text": "",
-    "created_at": "2026-04-21T16:53:25.792209",
-    "updated_at": "2026-04-21T16:53:25.792209"
+    "created_at": "2026-04-21T17:24:54.499476",
+    "updated_at": "2026-04-21T17:24:54.499476"
   },
   {
-    "nom_commercial": "T-SYSTEMS FRANCE",
-    "raison_sociale": "T-SYSTEMS FRANCE",
-    "email": "t-systems.marketing@t-systems.com",
-    "telephone": "01 55 94 15 15",
-    "website": "https://www.t-systems.com/fr/fr",
-    "linkedin_url": "https://www.linkedin.com/company/t-systems-france",
-    "adresse": "1-3 1 RUE EUGENE ET ARMAND PEUGEOT 92500 RUEIL-MALMAISON",
-    "ville": "Rueil-Malmaison",
-    "region": "Île-de-France",
-    "pays": "France",
-    "code_postal": "92500",
-    "secteur_activite": "Non spécifié",
-    "secteur_activite_scraped": "Non spécifié",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "T-Systems est un partenaire sur votre chemin vers la numérisation : avec un réseau intégré et sécurisé, le cloud, une force de vente et des solutions SAP.",
-    "code_naf": "62.03Z",
-    "siren": "319488409",
-    "siret": "31948840900529",
-    "qualification_score": 50,
-    "score_pct": 50.0,
-    "qualification": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 0,
-        "max": 20,
-        "note": "no_match (non spécifié)"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "region:île-de-france"
-      },
-      "email_valid": {
-        "points": 10,
-        "max": 10,
-        "note": "t-systems.marketing@t-systems.com"
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://www.t-systems.com/fr/fr"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "01 55 94 15 15"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 6,
-    "criteria_total": 9,
-    "source": "annuaire-entreprises.data.gouv.fr",
-    "source_origin": "annuaire-entreprises.data.gouv.fr",
-    "sector_confidence": 0.5,
-    "nlp_confidence": 0.0,
-    "email_valid": true,
-    "website_active": true,
-    "enrich_score": 4,
-    "email_mx_verified": false,
-    "job_id": null,
-    "secteur_activite_id": 1,
-    "is_deleted": false,
-    "is_converted": null,
-    "hash_dedup": "fcd576e8b91b9e38",
-    "raw_text": "",
-    "created_at": "2026-04-21T16:52:53.176121",
-    "updated_at": "2026-04-21T16:52:53.176121"
-  },
-  {
-    "nom_commercial": "HORIZON CLOUD SERVICES",
-    "raison_sociale": "HORIZON CLOUD SERVICES",
-    "email": "contact@horizoncloudservices.com",
-    "telephone": "01.45.97.01.51",
-    "website": "https://horizoncloudservices.fr",
+    "nom_commercial": "COLTS-CONSTRUCTIONS",
+    "raison_sociale": "COLTS-CONSTRUCTIONS",
+    "email": "",
+    "telephone": "0720-117471",
+    "website": "https://entreprises.lefigaro.fr/colts-constructions-93/entreprise-884929803",
     "linkedin_url": "",
-    "adresse": "2 A RUE DE LA BRIQUETERIE 94290 VILLENEUVE-LE-ROI",
-    "ville": "Villeneuve-le-Roi",
+    "adresse": "42 ALLEE DES SABLONS 93410 VAUJOURS",
+    "ville": "Vaujours",
     "region": "Île-de-France",
     "pays": "France",
-    "code_postal": "94290",
-    "secteur_activite": "Cloud computing",
+    "code_postal": "93410",
+    "secteur_activite": "BTP",
     "secteur_activite_scraped": "Non spécifié",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
-    "description": "",
-    "code_naf": "63.11Z",
-    "siren": "892096561",
-    "siret": "89209656100022",
-    "qualification_score": 50,
-    "score_pct": 50.0,
+    "description": "Société Colts-Constructions (Vaujours, 93410) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire...",
+    "code_naf": "43.29A",
+    "siren": "884929803",
+    "siret": "88492980300010",
+    "qualification_score": 60,
+    "score_pct": 60.0,
     "qualification": "QUALIFIE",
     "score_detail": {
       "sector_match": {
-        "points": 0,
+        "points": 20,
         "max": 20,
-        "note": "no_match (cloud computing)"
+        "note": "match:Construction & btp"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://entreprises.lefigaro.fr/colts-constructions-93/entreprise-884929803"
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "0720-117471"
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 6,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 0.495,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 2,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 2,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "89df451da248cc9b",
+    "raw_text": "",
+    "created_at": "2026-04-21T17:25:14.932827",
+    "updated_at": "2026-04-21T17:25:14.932827"
+  },
+  {
+    "nom_commercial": "YA CONSTRUCTION",
+    "raison_sociale": "YA CONSTRUCTION",
+    "email": "contact@donizo.com",
+    "telephone": "",
+    "website": "https://donizo.com/fr/artisan/ya-construction",
+    "linkedin_url": "https://www.linkedin.com/company/donizo",
+    "adresse": "12 RUE DELIZY 93500 PANTIN",
+    "ville": "Pantin",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "93500",
+    "secteur_activite": "BTP",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "YA CONSTRUCTION, Isolateur à PANTIN (93500). SIRET 97962094500019. Entreprise créée en 2023. Consultez les avis, coordonnées et informations légales sur Donizo.",
+    "code_naf": "43.29A",
+    "siren": "979620945",
+    "siret": "97962094500019",
+    "qualification_score": 60,
+    "score_pct": 60.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Construction & btp"
       },
       "size_match": {
         "points": 0,
@@ -685,17 +1686,17 @@
       "email_valid": {
         "points": 10,
         "max": 10,
-        "note": "contact@horizoncloudservices.com"
+        "note": "contact@donizo.com"
       },
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://horizoncloudservices.fr"
+        "note": "https://donizo.com/fr/artisan/ya-construction"
       },
       "phone_present": {
-        "points": 10,
+        "points": 0,
         "max": 10,
-        "note": "01.45.97.01.51"
+        "note": ""
       },
       "name_complete": {
         "points": 5,
@@ -713,42 +1714,133 @@
     "source": "annuaire-entreprises.data.gouv.fr",
     "source_origin": "annuaire-entreprises.data.gouv.fr",
     "sector_confidence": 0.5,
-    "nlp_confidence": 0.49,
+    "nlp_confidence": 0.431,
     "email_valid": true,
     "website_active": true,
     "enrich_score": 3,
     "email_mx_verified": false,
     "job_id": null,
-    "secteur_activite_id": 1,
+    "secteur_activite_id": 2,
     "is_deleted": false,
     "is_converted": null,
-    "hash_dedup": "6ad138f634bb0d6b",
+    "hash_dedup": "0fa8f0c01b28f721",
     "raw_text": "",
-    "created_at": "2026-04-21T16:53:01.377367",
-    "updated_at": "2026-04-21T16:53:01.377367"
+    "created_at": "2026-04-21T17:25:14.932827",
+    "updated_at": "2026-04-21T17:25:14.932827"
   },
   {
-    "nom_commercial": "CLOUD TECHNOLOGY SERVICES (YES WE CLOUD)",
-    "raison_sociale": "CLOUD TECHNOLOGY SERVICES",
+    "nom_commercial": "ETABLISSEMENT FRANCAIS DE CONSTRUCTION (E.F.C)",
+    "raison_sociale": "ETABLISSEMENT FRANCAIS DE CONSTRUCTION",
+    "email": "trustandsafety@support.aws.com",
+    "telephone": "",
+    "website": "https://datalegal.fr/entreprises/514234442",
+    "linkedin_url": "",
+    "adresse": "143 AVENUE DE LA DIVISION LECLERC 93350 LE BOURGET",
+    "ville": "Le Bourget",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "93350",
+    "secteur_activite": "BTP",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "➥ Accédez gratuitement aux informations légales et économiques de la société ETABLISSEMENT FRANCAIS DE CONSTRUCTION (E.F.C) (93350) ✓ SIREN – KBIS",
+    "code_naf": "43.29A",
+    "siren": "514234442",
+    "siret": "51423444200010",
+    "qualification_score": 60,
+    "score_pct": 60.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Construction & btp"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 10,
+        "max": 10,
+        "note": "trustandsafety@support.aws.com"
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://datalegal.fr/entreprises/514234442"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 6,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 0.435,
+    "email_valid": true,
+    "website_active": true,
+    "enrich_score": 2,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 2,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "034f5d2d29bd664a",
+    "raw_text": "",
+    "created_at": "2026-04-21T17:25:14.932827",
+    "updated_at": "2026-04-21T17:25:14.932827"
+  },
+  {
+    "nom_commercial": "CONSTRUCTION D'ARS",
+    "raison_sociale": "CONSTRUCTION D'ARS",
     "email": "",
     "telephone": "",
-    "website": "https://www.dnb.com/business-directory/company-profiles.cloud_technology_services.53f8377265b3b2757c6db38a68e87bd8.html",
+    "website": "https://entreprises.lefigaro.fr/construction-d-ars-77/entreprise-848994182",
     "linkedin_url": "",
-    "adresse": "20 RUE ALBERT EINSTEIN 77420 CHAMPS-SUR-MARNE",
-    "ville": "Champs-sur-Marne",
+    "adresse": "2 B RUE EMILE CLOUD 77700 SERRIS",
+    "ville": "Serris",
     "region": "Île-de-France",
     "pays": "France",
-    "code_postal": "77420",
-    "secteur_activite": "Informatique",
+    "code_postal": "77700",
+    "secteur_activite": "BTP",
     "secteur_activite_scraped": "Non spécifié",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
-    "description": "",
-    "code_naf": "63.11Z",
-    "siren": "892370479",
-    "siret": "89237047900024",
+    "description": "Société Construction D'ars (Serris, 77700) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire...",
+    "code_naf": "41.10A",
+    "siren": "848994182",
+    "siret": "84899418200014",
     "qualification_score": 50,
     "score_pct": 50.0,
     "qualification": "QUALIFIE",
@@ -756,7 +1848,7 @@
       "sector_match": {
         "points": 20,
         "max": 20,
-        "note": "match:Informatique"
+        "note": "match:Construction & btp"
       },
       "size_match": {
         "points": 0,
@@ -781,7 +1873,7 @@
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://www.dnb.com/business-directory/company-profiles.cloud_technology_services.53f8377265b3b2757c6db38a68e87bd8.html"
+        "note": "https://entreprises.lefigaro.fr/construction-d-ars-77/entreprise-848994182"
       },
       "phone_present": {
         "points": 0,
@@ -804,141 +1896,50 @@
     "source": "annuaire-entreprises.data.gouv.fr",
     "source_origin": "annuaire-entreprises.data.gouv.fr",
     "sector_confidence": 0.5,
-    "nlp_confidence": 0.57,
+    "nlp_confidence": 0.396,
     "email_valid": false,
-    "website_active": false,
-    "enrich_score": 0,
-    "email_mx_verified": false,
-    "job_id": null,
-    "secteur_activite_id": 1,
-    "is_deleted": false,
-    "is_converted": null,
-    "hash_dedup": "11bec3bee0471a9b",
-    "raw_text": "",
-    "created_at": "2026-04-21T16:53:01.377367",
-    "updated_at": "2026-04-21T16:53:01.377367"
-  },
-  {
-    "nom_commercial": "ORDONNANCEM BUDGET INFORMATIQ",
-    "raison_sociale": "ORDONNANCEM BUDGET INFORMATIQ",
-    "email": "urbanisme@saintcloud.fr",
-    "telephone": "01 47 71 39 22",
-    "website": "https://www.saintcloud.fr/budget",
-    "linkedin_url": "https://www.linkedin.com/company/mairie-de-saint-cloud/?viewAsMember=true",
-    "adresse": "903 F RUE D ORLEANS 92210 SAINT CLOUD",
-    "ville": "Saint Cloud",
-    "region": "Île-de-France",
-    "pays": "France",
-    "code_postal": "92210",
-    "secteur_activite": "Non spécifié",
-    "secteur_activite_scraped": "Non spécifié",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "La présentation du budget est un acte majeur dans le calendrier communal. En ajustant les dépenses nécessaires à la réalisation des projets en fonction des recettes attendues, le budget est l'expression financière de la politique de l'équipe municipale.",
-    "code_naf": "63.11Z",
-    "siren": "709805360",
-    "siret": "70980536000019",
-    "qualification_score": 50,
-    "score_pct": 50.0,
-    "qualification": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 0,
-        "max": 20,
-        "note": "no_match (non spécifié)"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "region:île-de-france"
-      },
-      "email_valid": {
-        "points": 10,
-        "max": 10,
-        "note": "urbanisme@saintcloud.fr"
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://www.saintcloud.fr/budget"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "01 47 71 39 22"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 6,
-    "criteria_total": 9,
-    "source": "annuaire-entreprises.data.gouv.fr",
-    "source_origin": "annuaire-entreprises.data.gouv.fr",
-    "sector_confidence": 0.5,
-    "nlp_confidence": 0.0,
-    "email_valid": true,
     "website_active": true,
-    "enrich_score": 4,
+    "enrich_score": 1,
     "email_mx_verified": false,
     "job_id": null,
-    "secteur_activite_id": 1,
+    "secteur_activite_id": 2,
     "is_deleted": false,
     "is_converted": null,
-    "hash_dedup": "3d0a07d22e91d246",
+    "hash_dedup": "2403ca0a2f8029d0",
     "raw_text": "",
-    "created_at": "2026-04-21T16:53:01.377367",
-    "updated_at": "2026-04-21T16:53:01.377367"
+    "created_at": "2026-04-21T17:24:33.012750",
+    "updated_at": "2026-04-21T17:24:33.012750"
   },
   {
-    "nom_commercial": "OPTIN DATA",
-    "raison_sociale": "OPTIN DATA",
-    "email": "service_clients@bdmr.fr",
-    "telephone": "01 55 64 03 20",
-    "website": "https://optin-data.fr",
+    "nom_commercial": "DAUPHINE CONSTRUCTION (SELBI)",
+    "raison_sociale": "DAUPHINE CONSTRUCTION",
+    "email": "",
+    "telephone": "",
+    "website": "https://entreprises.lefigaro.fr/selbi-06/entreprise-853006823",
     "linkedin_url": "",
-    "adresse": "69 AVENUE PIERRE GRENIER 92100 BOULOGNE-BILLANCOURT",
-    "ville": "Boulogne-Billancourt",
+    "adresse": "61 RUE DE PARIS 78100 SAINT-GERMAIN-EN-LAYE",
+    "ville": "Saint-Germain-en-Laye",
     "region": "Île-de-France",
     "pays": "France",
-    "code_postal": "92100",
-    "secteur_activite": "Non spécifié",
+    "code_postal": "78100",
+    "secteur_activite": "BTP",
     "secteur_activite_scraped": "Non spécifié",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
-    "description": "",
-    "code_naf": "63.11Z",
-    "siren": "831357850",
-    "siret": "83135785000039",
+    "description": "Société Dauphine Construction (Saint-Germain-en-Laye, 78100) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire...",
+    "code_naf": "41.10A",
+    "siren": "853006823",
+    "siret": "85300682300043",
     "qualification_score": 50,
     "score_pct": 50.0,
     "qualification": "QUALIFIE",
     "score_detail": {
       "sector_match": {
-        "points": 0,
+        "points": 20,
         "max": 20,
-        "note": "no_match (non spécifié)"
+        "note": "match:Construction & btp"
       },
       "size_match": {
         "points": 0,
@@ -956,19 +1957,19 @@
         "note": "region:île-de-france"
       },
       "email_valid": {
-        "points": 10,
+        "points": 0,
         "max": 10,
-        "note": "service_clients@bdmr.fr"
+        "note": ""
       },
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://optin-data.fr"
+        "note": "https://entreprises.lefigaro.fr/selbi-06/entreprise-853006823"
       },
       "phone_present": {
-        "points": 10,
+        "points": 0,
         "max": 10,
-        "note": "01 55 64 03 20"
+        "note": ""
       },
       "name_complete": {
         "points": 5,
@@ -981,47 +1982,1321 @@
         "note": ""
       }
     },
-    "criteria_met": 6,
+    "criteria_met": 5,
     "criteria_total": 9,
     "source": "annuaire-entreprises.data.gouv.fr",
     "source_origin": "annuaire-entreprises.data.gouv.fr",
     "sector_confidence": 0.5,
-    "nlp_confidence": 0.0,
-    "email_valid": true,
+    "nlp_confidence": 0.443,
+    "email_valid": false,
     "website_active": true,
-    "enrich_score": 3,
+    "enrich_score": 1,
     "email_mx_verified": false,
     "job_id": null,
-    "secteur_activite_id": 1,
+    "secteur_activite_id": 2,
     "is_deleted": false,
     "is_converted": null,
-    "hash_dedup": "18e09d836dba1c0e",
+    "hash_dedup": "9bdbbcdfa95818ef",
     "raw_text": "",
-    "created_at": "2026-04-21T16:53:01.377367",
-    "updated_at": "2026-04-21T16:53:01.377367"
+    "created_at": "2026-04-21T17:24:33.012750",
+    "updated_at": "2026-04-21T17:24:33.012750"
   },
   {
-    "nom_commercial": "DI.MA.INFO.",
-    "raison_sociale": "DI.MA.INFO.",
-    "email": "nomprenom@domaine.fr",
-    "telephone": "01 49 52 42 81",
-    "website": "https://www.paris.fr/?+=",
-    "linkedin_url": "https://www.linkedin.com/company/villedeparis/",
-    "adresse": "16 B RUE PORTALIS 75008 PARIS",
+    "nom_commercial": "J M CONSTRUCTIONS SARL",
+    "raison_sociale": "J M CONSTRUCTIONS SARL",
+    "email": "",
+    "telephone": "",
+    "website": "https://www.monartisan.info/pro-j-m-constructions-sarl-48751627000013",
+    "linkedin_url": "",
+    "adresse": "53 RUE LAVOISIER 95330 DOMONT",
+    "ville": "Domont",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "95330",
+    "secteur_activite": "BTP",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Contactez J M CONSTRUCTIONS SARL à DOMONT (95330) : téléphone, adresse, zone d’intervention et informations légales",
+    "code_naf": "41.20A",
+    "siren": "487516270",
+    "siret": "48751627000013",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Construction & btp"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://www.monartisan.info/pro-j-m-constructions-sarl-48751627000013"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 1.0,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 2,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "4ed35760ec385915",
+    "raw_text": "",
+    "created_at": "2026-04-21T17:24:44.166533",
+    "updated_at": "2026-04-21T17:24:44.166533"
+  },
+  {
+    "nom_commercial": "TIB CONSTRUCTION (TIB CONSTRUCTION) (TIB CONSTRUCTION)",
+    "raison_sociale": "TIB CONSTRUCTION",
+    "email": "",
+    "telephone": "",
+    "website": "https://entreprises.lefigaro.fr/tib-construction-44/entreprise-978934917",
+    "linkedin_url": "",
+    "adresse": "121 AVENUE DES CHAMPS ELYSEES 75008 PARIS",
     "ville": "Paris",
     "region": "Île-de-France",
     "pays": "France",
     "code_postal": "75008",
-    "secteur_activite": "Non spécifié",
+    "secteur_activite": "BTP",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Société Tib Construction (Paris, 75008) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire...",
+    "code_naf": "41.20A",
+    "siren": "978934917",
+    "siret": "97893491700029",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Construction & btp"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://entreprises.lefigaro.fr/tib-construction-44/entreprise-978934917"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 0.421,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 2,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "9720fd2ffdd6b932",
+    "raw_text": "",
+    "created_at": "2026-04-21T17:24:44.166533",
+    "updated_at": "2026-04-21T17:24:44.166533"
+  },
+  {
+    "nom_commercial": "S.B.C CONSTRUCTION",
+    "raison_sociale": "S.B.C CONSTRUCTION",
+    "email": "",
+    "telephone": "",
+    "website": "https://entreprises.lefigaro.fr/s-b-c-construction-75/entreprise-439520065",
+    "linkedin_url": "",
+    "adresse": "CHEZ SOCIETE KC DOM 23 RUE D'HAUTEVILLE 75010 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75010",
+    "secteur_activite": "BTP",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Société SBC Construction (Paris, 75010) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire...",
+    "code_naf": "41.20A",
+    "siren": "439520065",
+    "siret": "43952006500038",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Construction & btp"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://entreprises.lefigaro.fr/s-b-c-construction-75/entreprise-439520065"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 0.441,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 2,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "b7068febee1bd994",
+    "raw_text": "",
+    "created_at": "2026-04-21T17:24:44.166533",
+    "updated_at": "2026-04-21T17:24:44.166533"
+  },
+  {
+    "nom_commercial": "LIVRY CONSTRUCTION",
+    "raison_sociale": "LIVRY CONSTRUCTION",
+    "email": "",
+    "telephone": "",
+    "website": "https://livry-constructions.fr",
+    "linkedin_url": "",
+    "adresse": "48 A 58 48 AVENUE LUCIE AUBRAC 93190 LIVRY-GARGAN",
+    "ville": "Livry-Gargan",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "93190",
+    "secteur_activite": "BTP",
     "secteur_activite_scraped": "Non spécifié",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
     "description": "",
-    "code_naf": "63.11Z",
-    "siren": "349814632",
-    "siret": "34981463200023",
+    "code_naf": "41.20A",
+    "siren": "443722202",
+    "siret": "44372220200035",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Construction & btp"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://livry-constructions.fr"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 0.425,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 2,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "444661039accc02d",
+    "raw_text": "",
+    "created_at": "2026-04-21T17:24:44.166533",
+    "updated_at": "2026-04-21T17:24:44.166533"
+  },
+  {
+    "nom_commercial": "DCG CONSTRUCTION",
+    "raison_sociale": "DCG CONSTRUCTION",
+    "email": "",
+    "telephone": "",
+    "website": "https://www.carte-entreprises.fr/entreprise/530898543-dcg-construction",
+    "linkedin_url": "",
+    "adresse": "25 RUE NOTRE DAME DES CHAMPS 91100 CORBEIL-ESSONNES",
+    "ville": "Corbeil-Essonnes",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "91100",
+    "secteur_activite": "BTP",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "DCG CONSTRUCTION — 70.10Z — 25 RUE NOTRE DAME DES CHAMPS 91100 CORBEIL-ESSONNES — Dirigeant : DOMINIQUE GIANNONE (GIANNONE), CORINNE LAURE MARIE-LOUISE GIANNONE (LUCAS) — SIREN 530898543",
+    "code_naf": "41.20A",
+    "siren": "530898543",
+    "siret": "53089854300018",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Construction & btp"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://www.carte-entreprises.fr/entreprise/530898543-dcg-construction"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 0.494,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 2,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "19ba08ba91670a4a",
+    "raw_text": "",
+    "created_at": "2026-04-21T17:24:44.167553",
+    "updated_at": "2026-04-21T17:24:44.167553"
+  },
+  {
+    "nom_commercial": "G & D CONSTRUCTION",
+    "raison_sociale": "G & D CONSTRUCTION",
+    "email": "",
+    "telephone": "",
+    "website": "https://www.prosmaison.fr/entreprise-84164951000036",
+    "linkedin_url": "",
+    "adresse": "4 RUE DES VIEILLES GRANGES 78410 AUBERGENVILLE",
+    "ville": "Aubergenville",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "78410",
+    "secteur_activite": "BTP",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Contactez G & D CONSTRUCTION à AUBERGENVILLE (78410) : téléphone, adresse, zone d’intervention et informations légales",
+    "code_naf": "41.20A",
+    "siren": "841649510",
+    "siret": "84164951000036",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Construction & btp"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://www.prosmaison.fr/entreprise-84164951000036"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 0.353,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 2,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "67ac46ada6ef6dfe",
+    "raw_text": "",
+    "created_at": "2026-04-21T17:24:44.167553",
+    "updated_at": "2026-04-21T17:24:44.167553"
+  },
+  {
+    "nom_commercial": "MOEVA CONSTRUCTION (MC)",
+    "raison_sociale": "MOEVA CONSTRUCTION",
+    "email": "",
+    "telephone": "",
+    "website": "https://entreprises.lefigaro.fr/moeva-construction-976/entreprise-893522953",
+    "linkedin_url": "",
+    "adresse": "60 RUE DE LA JONQUIERE 75017 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75017",
+    "secteur_activite": "BTP",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Société Moeva Construction (Paris, 75017) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire...",
+    "code_naf": "41.20B",
+    "siren": "893522953",
+    "siret": "89352295300023",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Construction & btp"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://entreprises.lefigaro.fr/moeva-construction-976/entreprise-893522953"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 0.505,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 2,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "3dd6b48704ff8fb4",
+    "raw_text": "",
+    "created_at": "2026-04-21T17:24:54.499476",
+    "updated_at": "2026-04-21T17:24:54.499476"
+  },
+  {
+    "nom_commercial": "NEUILLY CONSTRUCTIONS",
+    "raison_sociale": "NEUILLY CONSTRUCTIONS",
+    "email": "",
+    "telephone": "",
+    "website": "https://entreprises.annuairefrancais.fr/93330/neuilly-constructions-neuilly-sur-marne-93-seine-saint-denis-497513309-00011.html",
+    "linkedin_url": "",
+    "adresse": "72 RUE THEOPHILE GAUBERT 93330 NEUILLY-SUR-MARNE",
+    "ville": "Neuilly-sur-Marne",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "93330",
+    "secteur_activite": "BTP",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "NEUILLY CONSTRUCTIONS (siren n° 497513309) est installé dans la commune de Neuilly-sur-Marne à l'adresse 74 RUE THEOPHILE GAUBERT dans le département de la Seine saint denis téléphone... neuilly constructions est référencé dans l'Annuaire Français dans la catégorie entreprises de batiments, informations complètes Bilans gratuits, statuts, chiffre d'affaires, dirigeants, actionnaires, levées de fonds, annonces légales, APE, NAF, TVA, RCS, KBIS, SIREN, SIRET, BODACC, INSEE, INPI.",
+    "code_naf": "41.20B",
+    "siren": "497513309",
+    "siret": "49751330900029",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Construction & btp"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://entreprises.annuairefrancais.fr/93330/neuilly-constructions-neuilly-sur-marne-93-seine-saint-denis-497513309-00011.html"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 0.501,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 2,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "024959cfe6fbb8b2",
+    "raw_text": "",
+    "created_at": "2026-04-21T17:24:54.499476",
+    "updated_at": "2026-04-21T17:24:54.499476"
+  },
+  {
+    "nom_commercial": "MAGALS CONSTRUCTION",
+    "raison_sociale": "MAGALS CONSTRUCTION",
+    "email": "",
+    "telephone": "",
+    "website": "https://www.monartisan.info/pro-magals-construction-91391525200021",
+    "linkedin_url": "",
+    "adresse": "4 ROUTE DE TREMBLAY 93420 VILLEPINTE",
+    "ville": "Villepinte",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "93420",
+    "secteur_activite": "BTP",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Contactez MAGALS CONSTRUCTION à VILLEPINTE (93420) : téléphone, adresse, zone d’intervention et informations légales",
+    "code_naf": "43.29A",
+    "siren": "913915252",
+    "siret": "91391525200021",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Construction & btp"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://www.monartisan.info/pro-magals-construction-91391525200021"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 0.387,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 2,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "1a967a2b792d6dda",
+    "raw_text": "",
+    "created_at": "2026-04-21T17:25:14.932827",
+    "updated_at": "2026-04-21T17:25:14.932827"
+  },
+  {
+    "nom_commercial": "PALMIER CONSTRUCTION",
+    "raison_sociale": "PALMIER CONSTRUCTION",
+    "email": "",
+    "telephone": "",
+    "website": "https://entreprises.lefigaro.fr/palmier-construction-93/entreprise-821000684",
+    "linkedin_url": "",
+    "adresse": "6-8 6 RUE BERTHIER 93500 PANTIN",
+    "ville": "Pantin",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "93500",
+    "secteur_activite": "BTP",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Société Palmier Construction (Pantin, 93500) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire...",
+    "code_naf": "43.29A",
+    "siren": "821000684",
+    "siret": "82100068400018",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Construction & btp"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://entreprises.lefigaro.fr/palmier-construction-93/entreprise-821000684"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 0.371,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 2,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "5a273666e8c283b8",
+    "raw_text": "",
+    "created_at": "2026-04-21T17:25:14.932827",
+    "updated_at": "2026-04-21T17:25:14.932827"
+  },
+  {
+    "nom_commercial": "VMD CONSTRUCTIONS (VDM CONSTRUCTIONS)",
+    "raison_sociale": "VMD CONSTRUCTIONS",
+    "email": "",
+    "telephone": "",
+    "website": "https://fr.mappy.com/poi/50b1198284aefb1e95a447d0",
+    "linkedin_url": "",
+    "adresse": "111 RUE MAXIMILIEN DE ROBESPIERRE 93600 AULNAY-SOUS-BOIS",
+    "ville": "Aulnay-sous-Bois",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "93600",
+    "secteur_activite": "BTP",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Découvrez VMD Constructions (111 r Maximillien Robespierre, 93600 Aulnay sous Bois) avec toutes les photos du quartier, le plan d'accès, les avis et les infos pratiques : horaires, ...",
+    "code_naf": "43.29A",
+    "siren": "532919362",
+    "siret": "53291936200014",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Construction & btp"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://fr.mappy.com/poi/50b1198284aefb1e95a447d0"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 0.375,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 2,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "99450f0e87daff72",
+    "raw_text": "",
+    "created_at": "2026-04-21T17:25:14.932827",
+    "updated_at": "2026-04-21T17:25:14.932827"
+  },
+  {
+    "nom_commercial": "IMMO FRANCE CONSTRUCTION",
+    "raison_sociale": "IMMO FRANCE CONSTRUCTION",
+    "email": "info@procedurecollective.fr",
+    "telephone": "",
+    "website": "https://www.procedurecollective.fr/fr/liquidation-judiciaire/1451844/immo-france-construction.aspx",
+    "linkedin_url": "",
+    "adresse": "82 BOULEVARD HENRI BARBUSSE 91210 DRAVEIL",
+    "ville": "Draveil",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "91210",
+    "secteur_activite": "BTP",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Immo France Construction située à Draveil (Essonne) a été déclarée en liquidation judiciaire par par le tribunal de  Tribunal De Commerce D'évry. En tant que liquidateur judiciaire est désigné Me SOUCHON Alain-François. Le numéro de RCS de cette affaire est le 821795226. Cet état des créances est déposé au greffe. Aucun rapport n'est (encore) disponible.",
+    "code_naf": "43.29A",
+    "siren": "821795226",
+    "siret": "82179522600017",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Construction & btp"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": "info@procedurecollective.fr"
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://www.procedurecollective.fr/fr/liquidation-judiciaire/1451844/immo-france-construction.aspx"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 0.433,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 2,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "7d7b08a7be04e497",
+    "raw_text": "",
+    "created_at": "2026-04-21T17:25:14.932827",
+    "updated_at": "2026-04-21T17:25:14.932827"
+  },
+  {
+    "nom_commercial": "BT PRESTIGE (BTP)",
+    "raison_sociale": "BT PRESTIGE",
+    "email": "",
+    "telephone": "",
+    "website": "https://entreprises.lefigaro.fr/bt-prestige-btp-93/entreprise-434164307",
+    "linkedin_url": "",
+    "adresse": "CHEZ FRANCE SECRETARIAT 40 AVENUE DES FRICHES 93600 AULNAY-SOUS-BOIS",
+    "ville": "Aulnay-sous-Bois",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "93600",
+    "secteur_activite": "BTP",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Société BT Prestige - BTP (Aulnay-sous-Bois, 93600) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire...",
+    "code_naf": "41.20A",
+    "siren": "434164307",
+    "siret": "43416430700010",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Construction & btp"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://entreprises.lefigaro.fr/bt-prestige-btp-93/entreprise-434164307"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 0.416,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 2,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "cd56503473abadbd",
+    "raw_text": "",
+    "created_at": "2026-04-21T17:25:24.955483",
+    "updated_at": "2026-04-21T17:25:24.955483"
+  },
+  {
+    "nom_commercial": "M T BTP",
+    "raison_sociale": "M T BTP",
+    "email": "",
+    "telephone": "",
+    "website": "https://www.monartisan.info/pro-m-t-btp-53862175600047",
+    "linkedin_url": "",
+    "adresse": "22 B RUE SAINT-DENIS 92700 COLOMBES",
+    "ville": "Colombes",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "92700",
+    "secteur_activite": "BTP",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Contactez M T BTP à COLOMBES (92700) : téléphone, adresse, zone d’intervention et informations légales",
+    "code_naf": "41.20A",
+    "siren": "538621756",
+    "siret": "53862175600047",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Construction & btp"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://www.monartisan.info/pro-m-t-btp-53862175600047"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 1.0,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 2,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "f5a3fe56f88148e6",
+    "raw_text": "",
+    "created_at": "2026-04-21T17:25:24.955483",
+    "updated_at": "2026-04-21T17:25:24.956048"
+  },
+  {
+    "nom_commercial": "B.T.P",
+    "raison_sociale": "B.T.P",
+    "email": "support-digital@probtp.com",
+    "telephone": "05 56 11 56 11",
+    "website": "https://www.probtp.com/particuliers-accueil.html",
+    "linkedin_url": "https://www.linkedin.com/company/pro-btp-groupe",
+    "adresse": "33 RUE ETIENNE CHEVALIER 95100 ARGENTEUIL",
+    "ville": "Argenteuil",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "95100",
+    "secteur_activite": "Non spécifié",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Nos offres d'assurances : complémentaire santé, assurance chien chat, épargne et prévoyance individuelle. Devis gratuit et rapide, des formules simples et adaptées à vos besoins.",
+    "code_naf": "41.20A",
+    "siren": "504714098",
+    "siret": "50471409800010",
     "qualification_score": 50,
     "score_pct": 50.0,
     "qualification": "QUALIFIE",
@@ -1049,17 +3324,17 @@
       "email_valid": {
         "points": 10,
         "max": 10,
-        "note": "nomprenom@domaine.fr"
+        "note": "support-digital@probtp.com"
       },
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://www.paris.fr/?+="
+        "note": "https://www.probtp.com/particuliers-accueil.html"
       },
       "phone_present": {
         "points": 10,
         "max": 10,
-        "note": "01 49 52 42 81"
+        "note": "05 56 11 56 11"
       },
       "name_complete": {
         "points": 5,
@@ -1083,127 +3358,36 @@
     "enrich_score": 4,
     "email_mx_verified": false,
     "job_id": null,
-    "secteur_activite_id": 1,
+    "secteur_activite_id": 2,
     "is_deleted": false,
     "is_converted": null,
-    "hash_dedup": "0663bc1863fa41a8",
+    "hash_dedup": "03a1d7da006707b8",
     "raw_text": "",
-    "created_at": "2026-04-21T16:53:01.377367",
-    "updated_at": "2026-04-21T16:53:01.377367"
+    "created_at": "2026-04-21T17:25:24.956048",
+    "updated_at": "2026-04-21T17:25:24.956048"
   },
   {
-    "nom_commercial": "ASYMA CONSULTING & LOGICIELS",
-    "raison_sociale": "ASYMA CONSULTING & LOGICIELS",
+    "nom_commercial": "BTP IDF",
+    "raison_sociale": "BTP IDF",
     "email": "",
     "telephone": "",
-    "website": "https://entreprises.annuairefrancais.fr/91160/asyma-consulting-&-logiciels-longjumeau-91-essonne-433472958-00019.html",
+    "website": "https://www.cibtp-idf.fr",
     "linkedin_url": "",
-    "adresse": "BAT J2 14 RUE DE L'YVETTE 91160 LONGJUMEAU",
-    "ville": "Longjumeau",
-    "region": "Île-de-France",
-    "pays": "France",
-    "code_postal": "91160",
-    "secteur_activite": "Informatique",
-    "secteur_activite_scraped": "Non spécifié",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "ASYMA CONSULTING & LOGICIELS (siren n° 433472958) est installé dans la commune de Longjumeau à l'adresse 14 RUE DE L YVETTE dans le département de l'Essonne téléphone... ASYMA CONSULTING & LOGICIELS est référencé dans l'Annuaire Français dans la catégorie informatique Ssii, informations complètes Bilans gratuits, statuts, chiffre d'affaires, dirigeants, actionnaires, levées de fonds, annonces légales, APE, NAF, TVA, RCS, KBIS, SIREN, SIRET, BODACC, INSEE, INPI.",
-    "code_naf": "62.01Z",
-    "siren": "433472958",
-    "siret": "43347295800019",
-    "qualification_score": 50,
-    "score_pct": 50.0,
-    "qualification": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Informatique"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "region:île-de-france"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://entreprises.annuairefrancais.fr/91160/asyma-consulting-&-logiciels-longjumeau-91-essonne-433472958-00019.html"
-      },
-      "phone_present": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 5,
-    "criteria_total": 9,
-    "source": "annuaire-entreprises.data.gouv.fr",
-    "source_origin": "annuaire-entreprises.data.gouv.fr",
-    "sector_confidence": 0.5,
-    "nlp_confidence": 1.0,
-    "email_valid": false,
-    "website_active": true,
-    "enrich_score": 1,
-    "email_mx_verified": false,
-    "job_id": null,
-    "secteur_activite_id": 1,
-    "is_deleted": false,
-    "is_converted": null,
-    "hash_dedup": "dc24a84f2a753a0d",
-    "raw_text": "",
-    "created_at": "2026-04-21T16:53:20.006977",
-    "updated_at": "2026-04-21T16:53:20.006977"
-  },
-  {
-    "nom_commercial": "BLUE RIDGE LOGICIELS",
-    "raison_sociale": "BLUE RIDGE LOGICIELS",
-    "email": "",
-    "telephone": "",
-    "website": "https://entreprises.lefigaro.fr/blue-ridge-logiciels-75/entreprise-812533693",
-    "linkedin_url": "",
-    "adresse": "31 AVENUE DE SEGUR 75007 PARIS",
+    "adresse": "6 CITE JOLY 75011 PARIS",
     "ville": "Paris",
     "region": "Île-de-France",
     "pays": "France",
-    "code_postal": "75007",
-    "secteur_activite": "Informatique",
+    "code_postal": "75011",
+    "secteur_activite": "BTP",
     "secteur_activite_scraped": "Non spécifié",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
-    "description": "Société Blue Ridge Logiciels (Paris, 75007) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire...",
-    "code_naf": "62.01Z",
-    "siren": "812533693",
-    "siret": "81253369300030",
+    "description": "Au service des entreprises du BTP et de leurs salariés, la caisse CIBTP de l'Île-de-France gère les congés payés et opère le régime de chômage intempéries dans l'intérêt général de la profession.",
+    "code_naf": "41.20A",
+    "siren": "517844775",
+    "siret": "51784477500018",
     "qualification_score": 50,
     "score_pct": 50.0,
     "qualification": "QUALIFIE",
@@ -1211,7 +3395,7 @@
       "sector_match": {
         "points": 20,
         "max": 20,
-        "note": "match:Informatique"
+        "note": "match:Construction & btp"
       },
       "size_match": {
         "points": 0,
@@ -1236,7 +3420,7 @@
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://entreprises.lefigaro.fr/blue-ridge-logiciels-75/entreprise-812533693"
+        "note": "https://www.cibtp-idf.fr"
       },
       "phone_present": {
         "points": 0,
@@ -1265,36 +3449,491 @@
     "enrich_score": 1,
     "email_mx_verified": false,
     "job_id": null,
-    "secteur_activite_id": 1,
+    "secteur_activite_id": 2,
     "is_deleted": false,
     "is_converted": null,
-    "hash_dedup": "65ff8bbf556e1dc9",
+    "hash_dedup": "fb7f9de87e98033c",
     "raw_text": "",
-    "created_at": "2026-04-21T16:53:20.006977",
-    "updated_at": "2026-04-21T16:53:20.006977"
+    "created_at": "2026-04-21T17:25:24.956048",
+    "updated_at": "2026-04-21T17:25:24.956048"
   },
   {
-    "nom_commercial": "AUTOMOTIVE DEVELOPPEMENT LOGICIEL SARL",
-    "raison_sociale": "AUTOMOTIVE DEVELOPPEMENT LOGICIEL SARL",
+    "nom_commercial": "ALBI BTP",
+    "raison_sociale": "ALBI BTP",
     "email": "",
     "telephone": "",
-    "website": "https://www.cylex-locale.fr/entreprises/automotive-d%C3%A9veloppement-logiciel-13187468.html",
+    "website": "https://www.monartisan.info/pro-albi-btp-51014951100014",
     "linkedin_url": "",
-    "adresse": "5 RUE GEORGES MELIES 78390 BOIS-D'ARCY",
-    "ville": "Bois-d'Arcy",
+    "adresse": "85 AVENUE DE LA DIVISION LECLERC 95200 SARCELLES",
+    "ville": "Sarcelles",
     "region": "Île-de-France",
     "pays": "France",
-    "code_postal": "78390",
-    "secteur_activite": "Informatique",
+    "code_postal": "95200",
+    "secteur_activite": "BTP",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Contactez ALBI BTP à SARCELLES (95200) : téléphone, adresse, zone d’intervention et informations légales",
+    "code_naf": "41.20A",
+    "siren": "510149511",
+    "siret": "51014951100014",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Construction & btp"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://www.monartisan.info/pro-albi-btp-51014951100014"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 1.0,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 2,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "9e9fd430faba33bd",
+    "raw_text": "",
+    "created_at": "2026-04-21T17:25:24.956048",
+    "updated_at": "2026-04-21T17:25:24.956048"
+  },
+  {
+    "nom_commercial": "BTP IDEAL'SERVICES",
+    "raison_sociale": "BTP IDEAL'SERVICES",
+    "email": "",
+    "telephone": "",
+    "website": "https://www.prosmaison.fr/entreprise-49447463800025",
+    "linkedin_url": "",
+    "adresse": "18 RUE GABRIEL PERI 94320 THIAIS",
+    "ville": "Thiais",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "94320",
+    "secteur_activite": "BTP",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Contactez BTP IDEAL'SERVICES à THIAIS (94320) : téléphone, adresse, zone d’intervention et informations légales",
+    "code_naf": "41.20A",
+    "siren": "494474638",
+    "siret": "49447463800025",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Construction & btp"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://www.prosmaison.fr/entreprise-49447463800025"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 0.365,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 2,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "002f37b30443aaec",
+    "raw_text": "",
+    "created_at": "2026-04-21T17:25:24.956048",
+    "updated_at": "2026-04-21T17:25:24.956048"
+  },
+  {
+    "nom_commercial": "GT BTP",
+    "raison_sociale": "GT BTP",
+    "email": "",
+    "telephone": "",
+    "website": "https://www.prosmaison.fr/entreprise-75232292500039",
+    "linkedin_url": "",
+    "adresse": "117-119 117 AVENUE DU GENERAL LECLERC 77400 LAGNY-SUR-MARNE",
+    "ville": "Lagny-sur-Marne",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "77400",
+    "secteur_activite": "BTP",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Contactez GT BTP à LAGNY-SUR-MARNE (77400) : téléphone, adresse, zone d’intervention et informations légales",
+    "code_naf": "41.20A",
+    "siren": "752322925",
+    "siret": "75232292500039",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Construction & btp"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://www.prosmaison.fr/entreprise-75232292500039"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 1.0,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 2,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "63be8a4cd044e138",
+    "raw_text": "",
+    "created_at": "2026-04-21T17:25:24.956048",
+    "updated_at": "2026-04-21T17:25:24.956048"
+  },
+  {
+    "nom_commercial": "GENC BTP",
+    "raison_sociale": "GENC BTP",
+    "email": "",
+    "telephone": "",
+    "website": "https://www.monartisan.info/pro-genc-btp-78928003900056",
+    "linkedin_url": "",
+    "adresse": "1 COUR DU HAVRE 75008 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75008",
+    "secteur_activite": "BTP",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "L’entreprise que vous recherchez est introuvable.",
+    "code_naf": "41.20A",
+    "siren": "789280039",
+    "siret": "78928003900064",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Construction & btp"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://www.monartisan.info/pro-genc-btp-78928003900056"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 1.0,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 2,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "1f876602106c4349",
+    "raw_text": "",
+    "created_at": "2026-04-21T17:25:24.956048",
+    "updated_at": "2026-04-21T17:25:24.956048"
+  },
+  {
+    "nom_commercial": "BTP 52",
+    "raison_sociale": "BTP 52",
+    "email": "",
+    "telephone": "",
+    "website": "https://www.cibtp-idf.fr",
+    "linkedin_url": "",
+    "adresse": "221 RUE LA FAYETTE 75010 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75010",
+    "secteur_activite": "BTP",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Au service des entreprises du BTP et de leurs salariés, la caisse CIBTP de l'Île-de-France gère les congés payés et opère le régime de chômage intempéries dans l'intérêt général de la profession.",
+    "code_naf": "41.20A",
+    "siren": "502063118",
+    "siret": "50206311800025",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Construction & btp"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://www.cibtp-idf.fr"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 0.383,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 2,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "ab5fd0073ec8d6df",
+    "raw_text": "",
+    "created_at": "2026-04-21T17:25:24.956048",
+    "updated_at": "2026-04-21T17:25:24.956048"
+  },
+  {
+    "nom_commercial": "SKF BTP",
+    "raison_sociale": "SKF BTP",
+    "email": "",
+    "telephone": "",
+    "website": "https://www.skf.com/fr",
+    "linkedin_url": "",
+    "adresse": "233 RUE DU FAUBOURG SAINT-MARTIN 75010 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75010",
+    "secteur_activite": "BTP",
     "secteur_activite_scraped": "Non spécifié",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
     "description": "",
-    "code_naf": "62.01Z",
-    "siren": "508241072",
-    "siret": "50824107200026",
+    "code_naf": "41.20A",
+    "siren": "890525637",
+    "siret": "89052563700017",
     "qualification_score": 50,
     "score_pct": 50.0,
     "qualification": "QUALIFIE",
@@ -1302,7 +3941,7 @@
       "sector_match": {
         "points": 20,
         "max": 20,
-        "note": "match:Informatique"
+        "note": "match:Construction & btp"
       },
       "size_match": {
         "points": 0,
@@ -1327,7 +3966,7 @@
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://www.cylex-locale.fr/entreprises/automotive-d%C3%A9veloppement-logiciel-13187468.html"
+        "note": "https://www.skf.com/fr"
       },
       "phone_present": {
         "points": 0,
@@ -1356,36 +3995,36 @@
     "enrich_score": 1,
     "email_mx_verified": false,
     "job_id": null,
-    "secteur_activite_id": 1,
+    "secteur_activite_id": 2,
     "is_deleted": false,
     "is_converted": null,
-    "hash_dedup": "6956683d0250a7c4",
+    "hash_dedup": "79fb83ca8d2a76ba",
     "raw_text": "",
-    "created_at": "2026-04-21T16:53:20.006977",
-    "updated_at": "2026-04-21T16:53:20.006977"
+    "created_at": "2026-04-21T17:25:24.956048",
+    "updated_at": "2026-04-21T17:25:24.956048"
   },
   {
-    "nom_commercial": "HAMSTER.NET DEVELOPPEMENT LOGICIEL RESEAU",
-    "raison_sociale": "HAMSTER.NET DEVELOPPEMENT LOGICIEL RESEAU",
+    "nom_commercial": "BTP GROUPES",
+    "raison_sociale": "BTP GROUPES",
     "email": "",
     "telephone": "",
-    "website": "https://entreprises.annuairefrancais.fr/78430/hamster.net-developpement-logiciel-reseau-louveciennes-78-yvelines-828092106-00016.html",
-    "linkedin_url": "",
-    "adresse": "RESIDENCE DAUPHINE 78430 LOUVECIENNES",
-    "ville": "Louveciennes",
+    "website": "https://groupe.probtp.com",
+    "linkedin_url": "https://www.linkedin.com/company/pro-btp-groupe",
+    "adresse": "126 BOULEVARD HAUSSMANN 75008 PARIS",
+    "ville": "Paris",
     "region": "Île-de-France",
     "pays": "France",
-    "code_postal": "78430",
-    "secteur_activite": "Informatique",
+    "code_postal": "75008",
+    "secteur_activite": "BTP",
     "secteur_activite_scraped": "Non spécifié",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
-    "description": "HAMSTER.NET DEVELOPPEMENT LOGICIEL RESEAU (siren n° 828092106) est installé dans la commune de Louveciennes à l'adresse RESIDENCE DAUPHINE dans le département des Yvelines téléphone... HAMSTER.NET DEVELOPPEMENT LOGICIEL RESEAU est référencé dans l'Annuaire Français dans la catégorie informatique Ssii, informations complètes Bilans gratuits, statuts, chiffre d'affaires, dirigeants, actionnaires, levées de fonds, annonces légales, APE, NAF, TVA, RCS, KBIS, SIREN, SIRET, BODACC, INSEE, INPI.",
-    "code_naf": "62.01Z",
-    "siren": "828092106",
-    "siret": "82809210600016",
+    "description": "PRO BTP est une association a but non lucratif à gestion paritaire. Découvrez toutes les actualités du Groupe PRO BTP et retrouvez toutes les informations nécessaires sur nos offres et action sociale pour les salariés du BTP.",
+    "code_naf": "41.20B",
+    "siren": "888828498",
+    "siret": "88882849800012",
     "qualification_score": 50,
     "score_pct": 50.0,
     "qualification": "QUALIFIE",
@@ -1393,7 +4032,7 @@
       "sector_match": {
         "points": 20,
         "max": 20,
-        "note": "match:Informatique"
+        "note": "match:Construction & btp"
       },
       "size_match": {
         "points": 0,
@@ -1418,7 +4057,7 @@
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://entreprises.annuairefrancais.fr/78430/hamster.net-developpement-logiciel-reseau-louveciennes-78-yvelines-828092106-00016.html"
+        "note": "https://groupe.probtp.com"
       },
       "phone_present": {
         "points": 0,
@@ -1441,42 +4080,42 @@
     "source": "annuaire-entreprises.data.gouv.fr",
     "source_origin": "annuaire-entreprises.data.gouv.fr",
     "sector_confidence": 0.5,
-    "nlp_confidence": 0.333,
+    "nlp_confidence": 1.0,
     "email_valid": false,
     "website_active": true,
-    "enrich_score": 1,
+    "enrich_score": 2,
     "email_mx_verified": false,
     "job_id": null,
-    "secteur_activite_id": 1,
+    "secteur_activite_id": 2,
     "is_deleted": false,
     "is_converted": null,
-    "hash_dedup": "e319e5496d888b32",
+    "hash_dedup": "a08a368da390da8f",
     "raw_text": "",
-    "created_at": "2026-04-21T16:53:20.006977",
-    "updated_at": "2026-04-21T16:53:20.006977"
+    "created_at": "2026-04-21T17:25:32.264664",
+    "updated_at": "2026-04-21T17:25:32.264664"
   },
   {
-    "nom_commercial": "LA FABRIQUE LOGICIELLE",
-    "raison_sociale": "LA FABRIQUE LOGICIELLE",
+    "nom_commercial": "DELUCA BTP",
+    "raison_sociale": "DELUCA BTP",
     "email": "",
     "telephone": "",
-    "website": "https://www.la-fabrique-logicielle.fr",
+    "website": "https://www.cylex-locale.fr/entreprises/deluca-btp-12709605.html",
     "linkedin_url": "",
-    "adresse": "9 RUE STANISLAS 75006 PARIS",
-    "ville": "Paris",
+    "adresse": "74 RUE ADOLPHE PAJEAUD 92160 ANTONY",
+    "ville": "Antony",
     "region": "Île-de-France",
     "pays": "France",
-    "code_postal": "75006",
-    "secteur_activite": "Informatique",
+    "code_postal": "92160",
+    "secteur_activite": "BTP",
     "secteur_activite_scraped": "Non spécifié",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
     "description": "",
-    "code_naf": "62.02A",
-    "siren": "450308259",
-    "siret": "45030825900016",
+    "code_naf": "41.20B",
+    "siren": "519486492",
+    "siret": "51948649200027",
     "qualification_score": 50,
     "score_pct": 50.0,
     "qualification": "QUALIFIE",
@@ -1484,7 +4123,7 @@
       "sector_match": {
         "points": 20,
         "max": 20,
-        "note": "match:Informatique"
+        "note": "match:Construction & btp"
       },
       "size_match": {
         "points": 0,
@@ -1509,98 +4148,7 @@
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://www.la-fabrique-logicielle.fr"
-      },
-      "phone_present": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 5,
-    "criteria_total": 9,
-    "source": "annuaire-entreprises.data.gouv.fr",
-    "source_origin": "annuaire-entreprises.data.gouv.fr",
-    "sector_confidence": 0.5,
-    "nlp_confidence": 1.0,
-    "email_valid": false,
-    "website_active": false,
-    "enrich_score": 0,
-    "email_mx_verified": false,
-    "job_id": null,
-    "secteur_activite_id": 1,
-    "is_deleted": false,
-    "is_converted": null,
-    "hash_dedup": "8e6e33681ae6fa20",
-    "raw_text": "",
-    "created_at": "2026-04-21T16:53:25.791009",
-    "updated_at": "2026-04-21T16:53:25.791009"
-  },
-  {
-    "nom_commercial": "CV LOGICIEL",
-    "raison_sociale": "CV LOGICIEL",
-    "email": "",
-    "telephone": "",
-    "website": "https://entreprises.lefigaro.fr/cv-logiciel-93/entreprise-507447498",
-    "linkedin_url": "",
-    "adresse": "7 IMP QUEUNE 93200 SAINT-DENIS",
-    "ville": "Saint-Denis",
-    "region": "Île-de-France",
-    "pays": "France",
-    "code_postal": "93200",
-    "secteur_activite": "Informatique",
-    "secteur_activite_scraped": "Non spécifié",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "Société CV Logiciel (Saint-Denis, 93210) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire...",
-    "code_naf": "62.02A",
-    "siren": "507447498",
-    "siret": "50744749800019",
-    "qualification_score": 50,
-    "score_pct": 50.0,
-    "qualification": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Informatique"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "region:île-de-france"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://entreprises.lefigaro.fr/cv-logiciel-93/entreprise-507447498"
+        "note": "https://www.cylex-locale.fr/entreprises/deluca-btp-12709605.html"
       },
       "phone_present": {
         "points": 0,
@@ -1629,194 +4177,12 @@
     "enrich_score": 1,
     "email_mx_verified": false,
     "job_id": null,
-    "secteur_activite_id": 1,
+    "secteur_activite_id": 2,
     "is_deleted": false,
     "is_converted": null,
-    "hash_dedup": "6b91ea9d9f69d2bb",
+    "hash_dedup": "88b90199ac5ddbb7",
     "raw_text": "",
-    "created_at": "2026-04-21T16:53:25.791009",
-    "updated_at": "2026-04-21T16:53:25.791009"
-  },
-  {
-    "nom_commercial": "LIOUBOUCHKIN INGENIERIE ET LOGICIELS (LIOUBOUCHKIN INGENIERIE ET LOGICIELS)",
-    "raison_sociale": "LIOUBOUCHKIN INGENIERIE ET LOGICIELS",
-    "email": "",
-    "telephone": "",
-    "website": "https://app.dataprospects.fr/entreprises/LIOUBOUCHKIN-INGENIERIE-ET-LOGICIELS/838052850",
-    "linkedin_url": "",
-    "adresse": "1 BOULEVARD DESCARTES 78180 MONTIGNY-LE-BRETONNEUX",
-    "ville": "Montigny-le-Bretonneux",
-    "region": "Île-de-France",
-    "pays": "France",
-    "code_postal": "78180",
-    "secteur_activite": "Informatique",
-    "secteur_activite_scraped": "Non spécifié",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "LIOUBOUCHKIN INGENIERIE ET LOGICIELS, Socit  responsabilit limite (sans autre indication), dont le SIREN est le 838052850, est en activité depuis 2018, il y a 8 ans. Elle est domiciliée à MONTIGNY-LE-BRETONNEUX, code postal 78180. Le code NAF dont elle dispose est le 6202A (Conseil en systmes et logiciels informatiques).",
-    "code_naf": "62.02A",
-    "siren": "838052850",
-    "siret": "83805285000032",
-    "qualification_score": 50,
-    "score_pct": 50.0,
-    "qualification": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Informatique"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "region:île-de-france"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://app.dataprospects.fr/entreprises/LIOUBOUCHKIN-INGENIERIE-ET-LOGICIELS/838052850"
-      },
-      "phone_present": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 5,
-    "criteria_total": 9,
-    "source": "annuaire-entreprises.data.gouv.fr",
-    "source_origin": "annuaire-entreprises.data.gouv.fr",
-    "sector_confidence": 0.5,
-    "nlp_confidence": 1.0,
-    "email_valid": false,
-    "website_active": true,
-    "enrich_score": 1,
-    "email_mx_verified": false,
-    "job_id": null,
-    "secteur_activite_id": 1,
-    "is_deleted": false,
-    "is_converted": null,
-    "hash_dedup": "97ba9ea07f8967d8",
-    "raw_text": "",
-    "created_at": "2026-04-21T16:53:25.791009",
-    "updated_at": "2026-04-21T16:53:25.791009"
-  },
-  {
-    "nom_commercial": "INFORMATIQUE DOCUMENTAIRE LOGICIELS SARL",
-    "raison_sociale": "INFORMATIQUE DOCUMENTAIRE LOGICIELS SARL",
-    "email": "",
-    "telephone": "",
-    "website": "https://entreprises.lefigaro.fr/id-log-91/entreprise-403648173",
-    "linkedin_url": "",
-    "adresse": "10 AVENUE DU QUEBEC 91140 VILLEBON-SUR-YVETTE",
-    "ville": "Villebon-sur-Yvette",
-    "region": "Île-de-France",
-    "pays": "France",
-    "code_postal": "91140",
-    "secteur_activite": "Informatique",
-    "secteur_activite_scraped": "Non spécifié",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "Société Informatique Documentaire Logiciels SARL (Villebon-sur-Yvette, 91140) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire...",
-    "code_naf": "62.02A",
-    "siren": "403648173",
-    "siret": "40364817300017",
-    "qualification_score": 50,
-    "score_pct": 50.0,
-    "qualification": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 20,
-        "max": 20,
-        "note": "match:Informatique"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "region:île-de-france"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://entreprises.lefigaro.fr/id-log-91/entreprise-403648173"
-      },
-      "phone_present": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 5,
-    "criteria_total": 9,
-    "source": "annuaire-entreprises.data.gouv.fr",
-    "source_origin": "annuaire-entreprises.data.gouv.fr",
-    "sector_confidence": 0.5,
-    "nlp_confidence": 0.45,
-    "email_valid": false,
-    "website_active": true,
-    "enrich_score": 1,
-    "email_mx_verified": false,
-    "job_id": null,
-    "secteur_activite_id": 1,
-    "is_deleted": false,
-    "is_converted": null,
-    "hash_dedup": "fc8a0db57573fbf4",
-    "raw_text": "",
-    "created_at": "2026-04-21T16:53:25.792209",
-    "updated_at": "2026-04-21T16:53:25.792209"
+    "created_at": "2026-04-21T17:25:32.264664",
+    "updated_at": "2026-04-21T17:25:32.264664"
   }
 ]

@@ -630,24 +630,33 @@ class OpenDataScraper(BaseScraper):
             # quand la tranche est "NN" ou vide).
             taille_normalisee = self._TRANCHE_TO_TAILLE.get(tranche, "")
 
+            # FIX Bug 3 — secteur_activite_scraped : capturer le libellé brut
+            # de l'API Sirene (activite_principale_libelle) avant toute
+            # normalisation NLP ou résolution FK.  Sans cette ligne, le champ
+            # reste vide jusqu'au fallback orchestrator (ligne ~668) qui écrit
+            # à la place la valeur *post-cleaner*, perdant ainsi la traçabilité
+            # de la valeur originale telle que retournée par l'API Sirene.
+            secteur_brut = item.get("activite_principale_libelle", "")
+
             raw = {
-                "nom_commercial":          nom,
-                "raison_sociale":          item.get("nom_raison_sociale", ""),
-                "siren":                   item.get("siren", ""),
-                "siret":                   siege.get("siret", ""),
-                "adresse":                 siege.get("adresse", ""),
-                "ville":                   siege.get("libelle_commune", ""),
-                "region":                  siege.get("libelle_region", ""),
-                "code_postal":             siege.get("code_postal", ""),
-                "pays":                    "France",
-                "secteur_activite":        item.get("activite_principale_libelle", ""),
-                "code_naf":                item.get("activite_principale", ""),
-                "type_entreprise":         type_normalise,
-                "taille_entreprise":       taille_normalisee,
-                "nombre_employes":         _TRANCHE_MAP.get(tranche),
-                "_tranche":                tranche,
-                "website":                 self.clean_url(siege.get("site_internet", "")),
-                "source":                  "data.gouv.fr/Sirene",
+                "nom_commercial":            nom,
+                "raison_sociale":            item.get("nom_raison_sociale", ""),
+                "siren":                     item.get("siren", ""),
+                "siret":                     siege.get("siret", ""),
+                "adresse":                   siege.get("adresse", ""),
+                "ville":                     siege.get("libelle_commune", ""),
+                "region":                    siege.get("libelle_region", ""),
+                "code_postal":               siege.get("code_postal", ""),
+                "pays":                      "France",
+                "secteur_activite":          secteur_brut,
+                "secteur_activite_scraped":  secteur_brut,
+                "code_naf":                  item.get("activite_principale", ""),
+                "type_entreprise":           type_normalise,
+                "taille_entreprise":         taille_normalisee,
+                "nombre_employes":           _TRANCHE_MAP.get(tranche),
+                "_tranche":                  tranche,
+                "website":                   self.clean_url(siege.get("site_internet", "")),
+                "source":                    "data.gouv.fr/Sirene",
             }
             return self.normalize_prospect(raw)
         # FIX – Inconsistent Error Handling: previously caught as DEBUG, making
@@ -840,18 +849,23 @@ class OpenDataScraper(BaseScraper):
             # (l'orchestrator a déjà _enrich_region qui le fait)
 
             raw = {
-                "nom_commercial":   name,
-                "adresse":          adresse,
-                "ville":            tags.get("addr:city", city),
-                "region":           region,
-                "code_postal":      tags.get("addr:postcode", ""),
-                "pays":             tags.get("addr:country", "France"),
-                "website":          website,
-                "email":            email,
-                "telephone":        telephone,
-                "secteur_activite": secteur,
-                "description":      tags.get("description", ""),
-                "source":           "OpenStreetMap",
+                "nom_commercial":           name,
+                "adresse":                  adresse,
+                "ville":                    tags.get("addr:city", city),
+                "region":                   region,
+                "code_postal":              tags.get("addr:postcode", ""),
+                "pays":                     tags.get("addr:country", "France"),
+                "website":                  website,
+                "email":                    email,
+                "telephone":                telephone,
+                "secteur_activite":         secteur,
+                # FIX Bug 3 — secteur_activite_scraped : valeur brute OSM
+                # (tag office= tel que retourné par Overpass, avant mapping
+                # _OSM_OFFICE_TYPES). Permet de garder la traçabilité de la
+                # source originale indépendamment de la normalisation NLP.
+                "secteur_activite_scraped": office_type or secteur,
+                "description":              tags.get("description", ""),
+                "source":                   "OpenStreetMap",
             }
             results.append(self.normalize_prospect(raw))
 
@@ -1210,16 +1224,19 @@ class OpenDataScraper(BaseScraper):
                         logger.debug(f"[BODACC] {field!r} JSON decode skipped: {e}")
 
             raw = {
-                "nom_commercial":   nom,
-                "raison_sociale":   (personne.get("denomination") or commercant).strip(),
-                "siren":            siren,
-                "ville":            ville,
-                "code_postal":      cp,
-                "pays":             "France",
-                "secteur_activite": description[:200] if description else "",
-                "type_entreprise":  forme,
-                "website":          rec.get("url_complete", ""),
-                "source":           "BODACC",
+                "nom_commercial":            nom,
+                "raison_sociale":            (personne.get("denomination") or commercant).strip(),
+                "siren":                     siren,
+                "ville":                     ville,
+                "code_postal":               cp,
+                "pays":                      "France",
+                "secteur_activite":          description[:200] if description else "",
+                # FIX Bug 3 — secteur_activite_scraped : valeur brute BODACC
+                # (champ acte/depot descriptif, avant normalisation NLP).
+                "secteur_activite_scraped":  description[:200] if description else "",
+                "type_entreprise":           forme,
+                "website":                   rec.get("url_complete", ""),
+                "source":                    "BODACC",
             }
             return self.normalize_prospect(raw)
         except Exception as e:
