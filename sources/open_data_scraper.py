@@ -563,6 +563,51 @@ class OpenDataScraper(BaseScraper):
                 break
         return all_items
 
+    @staticmethod
+    def _normalize_type_juridique(libelle: str) -> str:
+        """
+        Mappe le libellé complet Sirene (nature_juridique_libelle) vers le code
+        court attendu par TypeEntreprise (SAS, SARL, SASU, etc.).
+
+        L'ordre de priorité est important : SASU avant SAS, EURL avant SARL,
+        AUTO_ENTREPRENEUR avant EI pour éviter les faux positifs sur les
+        sous-chaînes.
+        """
+        if not libelle:
+            return ""
+        _MAP = [
+            # Libellés complets Sirene (correspondances prioritaires)
+            ("société par actions simplifiée unipersonnelle", "SASU"),
+            ("société par actions simplifiée",                "SAS"),
+            ("société à responsabilité limitée unipersonnelle", "EURL"),
+            ("société à responsabilité limitée",              "SARL"),
+            ("société anonyme",                               "SA"),
+            ("auto-entrepreneur",                             "AUTO_ENTREPRENEUR"),
+            ("micro-entrepreneur",                            "AUTO_ENTREPRENEUR"),
+            ("entrepreneur individuel à responsabilité",      "EI"),
+            ("entrepreneur individuel",                       "EI"),
+            ("entreprise individuelle",                       "EI"),
+        ]
+        lb = libelle.lower().strip()
+        for fragment, code in _MAP:
+            if fragment in lb:
+                return code
+        # Fallback : cherche l'abréviation directement dans le libellé brut
+        for code in ("SASU", "EURL", "SAS", "SARL", "SA", "EI"):
+            if re.search(rf"\b{code}\b", libelle, re.IGNORECASE):
+                return code
+        return ""
+
+    # Mapping tranche effectif Sirene → catégorie TailleEntreprise
+    _TRANCHE_TO_TAILLE: Dict[str, str] = {
+        "00": "TPE", "01": "TPE", "02": "TPE", "03": "TPE",   # 0-9 salariés
+        "11": "PME", "12": "PME", "21": "PME", "22": "PME",   # 10-249 salariés
+        "31": "PME", "32": "ETI",                              # 200 → PME / 250 → ETI
+        "41": "ETI", "42": "ETI",                              # 500-1999 salariés
+        "51": "ETI",                                           # 2000-4999 salariés
+        "52": "GE",  "53": "GE",                               # 5000+ salariés
+    }
+
     def _parse_sirene_item(self, item: Dict) -> Optional[Prospect]:
         try:
             siege   = item.get("siege", {}) or {}
@@ -570,6 +615,21 @@ class OpenDataScraper(BaseScraper):
             nom     = item.get("nom_complet") or item.get("nom_raison_sociale", "")
             if not nom:
                 return None
+
+            # FIX Bug 2 — type_entreprise : normaliser le libellé complet Sirene
+            # vers le code court (SAS, SARL…) avant de créer le Prospect, pour
+            # que _enum() dans pg_repository trouve une correspondance dans
+            # TypeEntreprise et ne retombe pas systématiquement sur UNKNOWN → NULL.
+            type_normalise = self._normalize_type_juridique(
+                item.get("nature_juridique_libelle", "")
+            )
+
+            # FIX Bug 2 — taille_entreprise : dériver la catégorie directement
+            # depuis la tranche Sirene (source fiable) avant que le Cleaner
+            # n'essaie de la déduire depuis nombre_employes (souvent absent
+            # quand la tranche est "NN" ou vide).
+            taille_normalisee = self._TRANCHE_TO_TAILLE.get(tranche, "")
+
             raw = {
                 "nom_commercial":          nom,
                 "raison_sociale":          item.get("nom_raison_sociale", ""),
@@ -582,7 +642,8 @@ class OpenDataScraper(BaseScraper):
                 "pays":                    "France",
                 "secteur_activite":        item.get("activite_principale_libelle", ""),
                 "code_naf":                item.get("activite_principale", ""),
-                "type_entreprise":         item.get("nature_juridique_libelle", ""),
+                "type_entreprise":         type_normalise,
+                "taille_entreprise":       taille_normalisee,
                 "nombre_employes":         _TRANCHE_MAP.get(tranche),
                 "_tranche":                tranche,
                 "website":                 self.clean_url(siege.get("site_internet", "")),

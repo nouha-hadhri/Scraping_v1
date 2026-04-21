@@ -1694,17 +1694,17 @@
   },
   {
     "id": "3",
-    "name": "scraping_20260420_124759",
+    "name": "scraping_20260421_162610",
     "status": "DONE",
-    "parameters_json": "{\"secteurs_activite\": [\"Informatique\"], \"tailles_entreprise\": [\"PME\"], \"types_entreprise\": [\"SAS\", \"SA\"], \"codes_naf\": [], \"employes_min\": 10, \"employes_max\": 249, \"localisation\": {\"pays\": [\"France\"], \"regions\": [\"Île-de-France\"], \"villes\": []}, \"keywords\": [\"logiciel\"], \"max_pages_annuaire\": 5, \"max_resultats\": 700, \"max_par_source\": 100}",
-    "started_at": "2026-04-20T12:47:59.220516",
-    "finished_at": "2026-04-20T12:48:26.230314",
-    "total_collected": 0,
-    "total_cleaned": 0,
-    "total_deduped": 0,
-    "total_scored": 0,
-    "total_saved": 0,
-    "total_qualified": 0,
+    "parameters_json": "{\"secteurs_activite\": [\"Informatique\"], \"secteurs_activite_id\": [1], \"tailles_entreprise\": [\"TPE\"], \"types_entreprise\": [\"SAS\", \"SARL\"], \"codes_naf\": [], \"employes_min\": 1, \"employes_max\": 9, \"localisation\": {\"pays\": [\"France\"], \"regions\": [\"Île-de-France\"], \"villes\": []}, \"keywords\": [\"saas\"], \"max_pages_annuaire\": 5, \"max_resultats\": 700, \"max_par_source\": 100}",
+    "started_at": "2026-04-21T16:26:10.076922",
+    "finished_at": "2026-04-21T16:28:00.343655",
+    "total_collected": 8,
+    "total_cleaned": 8,
+    "total_deduped": 8,
+    "total_scored": 8,
+    "total_saved": 8,
+    "total_qualified": 1,
     "total_duplicates": 0,
     "sources_used": [
       "sirene",
@@ -1719,10 +1719,10 @@
     ],
     "crit_types_entreprise": [
       "SAS",
-      "SA"
+      "SARL"
     ],
     "crit_tailles_entreprise": [
-      "PME"
+      "TPE"
     ],
     "crit_pays": [
       "France"
@@ -1735,17 +1735,17 @@
   },
   {
     "id": "4",
-    "name": "scraping_20260420_124914",
+    "name": "scraping_20260421_165241",
     "status": "DONE",
-    "parameters_json": "{\"secteurs_activite\": [\"Informatique\"], \"tailles_entreprise\": [\"PME\", \"TPE\"], \"types_entreprise\": [\"SARL\", \"SA\"], \"codes_naf\": [], \"employes_min\": 1, \"employes_max\": 249, \"localisation\": {\"pays\": [\"France\"], \"regions\": [\"Île-de-France\"], \"villes\": []}, \"keywords\": [\"saas\", \"logiciel\"], \"max_pages_annuaire\": 5, \"max_resultats\": 700, \"max_par_source\": 100}",
-    "started_at": "2026-04-20T12:49:14.234684",
-    "finished_at": "2026-04-20T12:50:01.681032",
-    "total_collected": 0,
-    "total_cleaned": 0,
-    "total_deduped": 0,
-    "total_scored": 0,
-    "total_saved": 0,
-    "total_qualified": 0,
+    "parameters_json": "{\"secteurs_activite\": [\"Informatique\"], \"secteurs_activite_id\": [1], \"tailles_entreprise\": [\"PME\"], \"types_entreprise\": [\"SAS\"], \"codes_naf\": [], \"employes_min\": 10, \"employes_max\": 249, \"localisation\": {\"pays\": [\"France\"], \"regions\": [\"Île-de-France\"], \"villes\": []}, \"keywords\": [\"cloud\", \"logiciel\"], \"max_pages_annuaire\": 5, \"max_resultats\": 700, \"max_par_source\": 100}",
+    "started_at": "2026-04-21T16:52:41.184142",
+    "finished_at": "2026-04-21T17:00:34.118836",
+    "total_collected": 70,
+    "total_cleaned": 70,
+    "total_deduped": 70,
+    "total_scored": 70,
+    "total_saved": 70,
+    "total_qualified": 20,
     "total_duplicates": 0,
     "sources_used": [
       "sirene",
@@ -1759,12 +1759,10 @@
       "Informatique"
     ],
     "crit_types_entreprise": [
-      "SARL",
-      "SA"
+      "SAS"
     ],
     "crit_tailles_entreprise": [
-      "PME",
-      "TPE"
+      "PME"
     ],
     "crit_pays": [
       "France"

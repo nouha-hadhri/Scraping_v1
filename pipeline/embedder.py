@@ -42,10 +42,62 @@ class ProspectEmbedder:
     - sector_confidence (0-1)
     """
 
+    # Phrases descriptives par secteur — ancres SBERT.
+    # SBERT (paraphrase-multilingual-MiniLM-L12-v2) est entraîné sur des phrases
+    # naturelles, pas des listes de mots-clés collés.  Encoder " ".join(kws)
+    # produit un vecteur bruité qui confond des secteurs proches (ex: Informatique
+    # vs Cloud vs Développement logiciel).  Une phrase courte + 2-3 termes
+    # représentatifs donne une similarité cosinus bien plus discriminante.
+    # Règle : la phrase doit rester distincte de celles des secteurs voisins.
+    # Fallback automatique sur " ".join(kws) si un label ne figure pas ici.
+    _SECTOR_PHRASES: Dict[str, str] = {
+        "Informatique":              "Entreprise de services informatiques, développement logiciel, systèmes et réseaux.",
+        "Cloud computing":           "Fournisseur de services cloud, hébergement, infrastructure as a service, SaaS.",
+        "Intelligence artificielle": "Entreprise spécialisée en intelligence artificielle, machine learning et data science.",
+        "Cybersécurité":             "Société de cybersécurité, protection des systèmes, audit de sécurité informatique, SOC.",
+        "Conseil IT":                "Cabinet de conseil en informatique et transformation digitale, intégration de systèmes.",
+        "E-commerce":                "Plateforme de vente en ligne, commerce électronique, marketplace, boutique web.",
+        "Télécommunications":        "Opérateur télécom, réseaux mobiles, fibre optique, communications d'entreprise.",
+        "Édition de logiciels":      "Éditeur de logiciels, développement d'applications SaaS et solutions métier.",
+        "Traitement de données":     "Traitement et analyse de données massives, data engineering, ETL, datawarehouse.",
+        "Ingénierie & R&D":          "Bureau d'études, ingénierie industrielle, recherche et développement technique.",
+        "Marketing digital":         "Agence de marketing digital, publicité en ligne, SEO, réseaux sociaux, growth hacking.",
+        "Fintech":                   "Entreprise fintech, services financiers numériques, paiement en ligne, néobanque.",
+        "Medtech / Santé digitale":  "Technologie médicale, dispositif de santé numérique, télémédecine, e-santé.",
+        "Éducation / Edtech":        "Plateforme éducative, formation en ligne, e-learning, EdTech, enseignement numérique.",
+        "Logistique & Supply chain": "Logistique, transport de marchandises, supply chain, entreposage, gestion de flux.",
+        "Industrie manufacturière":  "Entreprise industrielle, fabrication, production manufacturière, usine.",
+        "Energie & Environnement":   "Énergies renouvelables, transition écologique, gestion environnementale, cleantech.",
+        "Immobilier":                "Agence immobilière, promotion immobilière, gestion locative, transaction foncière.",
+        "Finance & Assurance":       "Banque, assurance, gestion d'actifs, courtage financier, services bancaires.",
+        "Conseil & Management":      "Cabinet de conseil en management, stratégie d'entreprise, transformation organisationnelle.",
+        "Ressources humaines":       "Cabinet RH, recrutement, gestion des talents, formation professionnelle.",
+        "Commerce de gros":          "Grossiste, distribution en gros, négoce, import-export, B2B commercial.",
+        "Restauration & Hôtellerie": "Restaurant, hôtel, hébergement touristique, restauration collective, café.",
+        "Santé":                     "Établissement de santé, clinique, cabinet médical, pharmacie, soins aux patients.",
+        "Construction & BTP":        "Construction, bâtiment, travaux publics, génie civil, maçonnerie, rénovation.",
+        "Transport":                 "Transports de voyageurs ou marchandises, logistique routière, aviation, maritime.",
+        "Agriculture & Agroalimentaire": "Agriculture, production agricole, agroalimentaire, transformation alimentaire.",
+        "Médias & Communication":    "Médias, presse, production audiovisuelle, communication institutionnelle, agence de presse.",
+        "Architecture & Design":     "Cabinet d'architecture, design graphique, design produit, aménagement intérieur.",
+        "Juridique & Comptabilité":  "Cabinet d'avocats, expertise comptable, conseil juridique, audit financier.",
+        "Technologie":               "Entreprise technologique, innovation numérique, R&D tech, startup technologique.",
+        "Développement logiciel":    "Développement de logiciels sur mesure, applications mobiles, web et API.",
+    }
+
     def __init__(self):
-        self._use_sbert        = USE_EMBEDDINGS
-        self._labels           = list(SECTOR_KEYWORDS.keys())
-        self._sector_texts     = [" ".join(kws) for kws in SECTOR_KEYWORDS.values()]
+        self._use_sbert         = USE_EMBEDDINGS
+        self._labels            = list(SECTOR_KEYWORDS.keys())
+        # Fix 1 — Descriptive phrases: encode natural sentences instead of raw
+        # keyword dumps.  SBERT cosine similarity is calibrated on sentence pairs —
+        # a space-joined keyword list is out-of-distribution and produces noisy
+        # vectors that conflate neighbouring sectors (Informatique / Cloud /
+        # Développement logiciel all share the same top keywords).
+        # Fallback: if a label has no entry in _SECTOR_PHRASES, use joined keywords.
+        self._sector_texts      = [
+            self._SECTOR_PHRASES.get(label, " ".join(kws))
+            for label, kws in SECTOR_KEYWORDS.items()
+        ]
         self._sector_embeddings = None
 
     def enrich_all(self, prospects: List[Prospect]) -> List[Prospect]:
@@ -107,15 +159,36 @@ class ProspectEmbedder:
             return "", 0.0
         if self._use_sbert:
             sector, conf = self._detect_sbert(text)
-            # Seuil 0.30 : en dessous, la similarité cosinus est trop faible
-            # pour être fiable (valeurs proches de 0 ou négatives indiquent
-            # l'absence de signal pertinent).  On bascule sur keyword fallback
-            # plutôt que de retourner un secteur peu pertinent.
-            # La similarité cosinus peut être négative — on la clamp à 0 pour
-            # éviter de retourner une confiance absurde à l'appelant.
             conf = max(conf, 0.0)
-            if conf > 0.30:
+
+            # Fix 2 — Raise threshold 0.30 → 0.50.
+            # With paraphrase-multilingual-MiniLM-L12-v2, cosine similarity
+            # between unrelated texts routinely falls in [0.20, 0.40], so a
+            # threshold of 0.30 produces many false positives.  Empirically a
+            # genuine sector match scores ≥ 0.50 with descriptive phrase anchors.
+            #
+            # Hybrid confirmation band [0.35, 0.50):
+            # Rather than silently falling back to keywords for scores in this
+            # grey zone, we cross-check with keyword matching.  If both SBERT
+            # and keywords agree on the same sector, we accept it at the SBERT
+            # confidence level.  If they disagree, keywords win (higher precision
+            # on short/generic company names) and the confidence is capped at 0.45
+            # to signal the lower certainty to downstream consumers (scorer, FK
+            # resolver).
+            if conf >= 0.50:
                 return sector, conf
+
+            if conf >= 0.35:
+                kw_sector, kw_conf = self._detect_keywords(text)
+                if kw_sector and kw_sector == sector:
+                    # Both agree — accept SBERT label, signal hybrid origin
+                    return sector, conf
+                if kw_sector:
+                    # Disagreement — trust keywords, cap confidence
+                    return kw_sector, min(kw_conf, 0.45)
+                # Keywords found nothing — SBERT alone is not reliable here
+                return "", 0.0
+
         return self._detect_keywords(text)
 
     def _detect_sbert(self, text: str) -> Tuple[str, float]:

@@ -628,6 +628,22 @@ class PgRepository:
         def _str(v) -> str:
             return str(v).strip() if v is not None else ""
 
+        # Pre-mapping defensif : libellés longs (BODACC, OpenCorporates, Sirene
+        # brut) → codes courts attendus par TypeEntreprise.
+        # Utilisé par _enum() avant la recherche dans l'enum Python.
+        _TYPE_LABEL_TO_CODE = {
+            "société par actions simplifiée unipersonnelle": "SASU",
+            "société par actions simplifiée":                "SAS",
+            "société à responsabilité limitée unipersonnelle": "EURL",
+            "société à responsabilité limitée":              "SARL",
+            "société anonyme":                               "SA",
+            "auto-entrepreneur":                             "AUTO_ENTREPRENEUR",
+            "micro-entrepreneur":                            "AUTO_ENTREPRENEUR",
+            "entrepreneur individuel à responsabilité":      "EI",
+            "entrepreneur individuel":                       "EI",
+            "entreprise individuelle":                       "EI",
+        }
+
         def _enum(v, enum_cls):
             """
             Safe enum lookup against the Python enum class (which mirrors the
@@ -636,8 +652,24 @@ class PgRepository:
             the UNKNOWN sentinel (""), which this function then converts to None
             so psycopg2 writes SQL NULL.  NULL is accepted by Hibernate's CHECK
             constraint on nullable enum columns; an empty string is not.
+
+            FIX Bug 2 — type_entreprise / taille_entreprise toujours NULL :
+            Avant la recherche dans l'enum Python, on tente un pre-mapping des
+            libellés longs (Sirene brut, BODACC, OpenCorporates) vers le code
+            court.  Cela couvre les prospects dont type_entreprise n'aurait pas
+            encore été normalisé en amont (open_data_scraper ou autres scrapers).
             """
-            s = str(v).strip().upper() if v is not None else ""
+            if v is None:
+                s = ""
+            else:
+                raw = str(v).strip()
+                # Essai de pre-mapping sur le libellé complet (case-insensitive)
+                mapped = _TYPE_LABEL_TO_CODE.get(raw.lower())
+                if mapped:
+                    s = mapped
+                else:
+                    # Fallback : normalisation upper pour les codes courts (SAS, PME…)
+                    s = raw.upper()
             try:
                 result = enum_cls(s)
             except ValueError:

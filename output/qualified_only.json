@@ -1,26 +1,208 @@
 [
   {
-    "nom_commercial": "CLOUD INITIO",
-    "raison_sociale": "CLOUD INITIO",
-    "email": "contact@initioparfums.com",
-    "telephone": "",
-    "website": "https://initioparfums.com",
-    "linkedin_url": "",
-    "adresse": "10 RUE DE LA PAIX 75002 PARIS",
-    "ville": "Paris",
+    "nom_commercial": "COLOMBAGE COHABITATION",
+    "raison_sociale": "COLOMBAGE COHABITATION",
+    "email": "contact@colombage-cohabitation.fr",
+    "telephone": "0649382843",
+    "website": "https://www.colombage-cohabitation.fr",
+    "linkedin_url": "https://www.linkedin.com/company/94135075",
+    "adresse": "33 RUE SEVIN VINCENT 92210 SAINT-CLOUD",
+    "ville": "Saint-Cloud",
     "region": "Île-de-France",
     "pays": "France",
-    "code_postal": "75002",
+    "code_postal": "92210",
     "secteur_activite": "Informatique",
     "secteur_activite_scraped": "Non spécifié",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
-    "description": "INITIO transgresse les règles de la parfumerie classique en renouant avec la puissance originelle des parfums. INITIO dévoile des facettes mystérieuses à travers des compositions sensorielles aux propriétés talismaniques.",
-    "code_naf": "62.02A",
-    "siren": "884348855",
-    "siret": "88434885500013",
+    "description": "ColombAge propose une palette de services pour les seniors afin de les soutenir à domicile. Auxiliaires de vie expérimentés, cohabitation intergénérationnelle, matériels...",
+    "code_naf": "63.12Z",
+    "siren": "950911321",
+    "siret": "95091132100012",
+    "qualification_score": 70,
+    "score_pct": 70.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 10,
+        "max": 10,
+        "note": "contact@colombage-cohabitation.fr"
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://www.colombage-cohabitation.fr"
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "0649382843"
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 7,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 1.0,
+    "email_valid": true,
+    "website_active": true,
+    "enrich_score": 4,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 1,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "1ba51cc08f08b2ff",
+    "raw_text": "",
+    "created_at": "2026-04-21T16:53:03.196752",
+    "updated_at": "2026-04-21T16:53:03.196752"
+  },
+  {
+    "nom_commercial": "LITCO",
+    "raison_sociale": "LITCO",
+    "email": "",
+    "telephone": "01 85 74 23 60",
+    "website": "https://litco.fr",
+    "linkedin_url": "https://www.linkedin.com/company/litco-fr/",
+    "adresse": "160 BOULEVARD DE LA REPUBLIQUE 92210 SAINT-CLOUD",
+    "ville": "Saint-Cloud",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "92210",
+    "secteur_activite": "Informatique",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.03Z",
+    "siren": "908182900",
+    "siret": "90818290000013",
+    "qualification_score": 60,
+    "score_pct": 60.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://litco.fr"
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "01 85 74 23 60"
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 6,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 1.0,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 3,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 1,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "20387c9b262cea91",
+    "raw_text": "",
+    "created_at": "2026-04-21T16:52:53.176121",
+    "updated_at": "2026-04-21T16:52:53.176121"
+  },
+  {
+    "nom_commercial": "CONCEPTION DEVELOPPEMENT LOGICIELS (CDL)",
+    "raison_sociale": "CONCEPTION DEVELOPPEMENT LOGICIELS",
+    "email": "contact@rubypayeur.com",
+    "telephone": "",
+    "website": "https://rubypayeur.com/societe/conception-developpement-logiciels-391507423",
+    "linkedin_url": "",
+    "adresse": "36 RUE DE LA FRATERNITE 93170 BAGNOLET",
+    "ville": "Bagnolet",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "93170",
+    "secteur_activite": "Informatique",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Toutes les infos sur CONCEPTION DEVELOPPEMENT LOGICIELS (CDL) : Dirigeants, chiffre d'affaires, bilans, statuts, effectif... Découvrez sa notation 🚦",
+    "code_naf": "62.01Z",
+    "siren": "391507423",
+    "siret": "39150742300039",
     "qualification_score": 60,
     "score_pct": 60.0,
     "qualification": "QUALIFIE",
@@ -48,12 +230,12 @@
       "email_valid": {
         "points": 10,
         "max": 10,
-        "note": "contact@initioparfums.com"
+        "note": "contact@rubypayeur.com"
       },
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://initioparfums.com"
+        "note": "https://rubypayeur.com/societe/conception-developpement-logiciels-391507423"
       },
       "phone_present": {
         "points": 0,
@@ -76,7 +258,7 @@
     "source": "annuaire-entreprises.data.gouv.fr",
     "source_origin": "annuaire-entreprises.data.gouv.fr",
     "sector_confidence": 0.5,
-    "nlp_confidence": 0.5,
+    "nlp_confidence": 1.0,
     "email_valid": true,
     "website_active": true,
     "enrich_score": 2,
@@ -85,41 +267,132 @@
     "secteur_activite_id": 1,
     "is_deleted": false,
     "is_converted": null,
-    "hash_dedup": "7ad3d4636d30a80c",
+    "hash_dedup": "4474e2de98961c00",
     "raw_text": "",
-    "created_at": "2026-04-21T13:15:49.396562",
-    "updated_at": "2026-04-21T13:15:49.396562"
+    "created_at": "2026-04-21T16:53:20.006977",
+    "updated_at": "2026-04-21T16:53:20.006977"
   },
   {
-    "nom_commercial": "ORDONNANCEM BUDGET INFORMATIQ",
-    "raison_sociale": "ORDONNANCEM BUDGET INFORMATIQ",
-    "email": "dpo@saintcloud.fr",
-    "telephone": "01 47 71 53 00",
-    "website": "https://www.saintcloud.fr/budget",
-    "linkedin_url": "https://www.linkedin.com/company/mairie-de-saint-cloud/?viewAsMember=true",
-    "adresse": "903 F RUE D ORLEANS 92210 SAINT CLOUD",
-    "ville": "Saint Cloud",
+    "nom_commercial": "SOC CIVILE PROPRIETAIRE DES LOGICIELS",
+    "raison_sociale": "SOC CIVILE PROPRIETAIRE DES LOGICIELS",
+    "email": "",
+    "telephone": "03 88 95 33 55",
+    "website": "https://www.mon-informaticien.com/entreprise/soc-civile-proprietaire-des-logiciels-392509022-00019",
+    "linkedin_url": "",
+    "adresse": "9 RUE BEETHOVEN 75016 PARIS",
+    "ville": "Paris",
     "region": "Île-de-France",
     "pays": "France",
-    "code_postal": "92210",
-    "secteur_activite": "Comptabilité",
+    "code_postal": "75016",
+    "secteur_activite": "Informatique",
     "secteur_activite_scraped": "Non spécifié",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
-    "description": "La présentation du budget est un acte majeur dans le calendrier communal. En ajustant les dépenses nécessaires à la réalisation des projets en fonction des recettes attendues, le budget est l'expression financière de la politique de l'équipe municipale.",
-    "code_naf": "63.11Z",
-    "siren": "709805360",
-    "siret": "70980536000019",
+    "description": "Faites appel à l'entreprise d'informatique SOC CIVILE PROPRIETAIRE DES LOGICIELS située à Paris-16 (75016). Cet informaticien est notamment spécialisé en Prestations informatiques.",
+    "code_naf": "62.01Z",
+    "siren": "392509022",
+    "siret": "39250902200019",
     "qualification_score": 60,
     "score_pct": 60.0,
     "qualification": "QUALIFIE",
     "score_detail": {
       "sector_match": {
-        "points": 10,
+        "points": 20,
         "max": 20,
-        "note": "partial:Informatique"
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://www.mon-informaticien.com/entreprise/soc-civile-proprietaire-des-logiciels-392509022-00019"
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "03 88 95 33 55"
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 6,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 0.45,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 2,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 1,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "859ef96e5e015eba",
+    "raw_text": "",
+    "created_at": "2026-04-21T16:53:20.006977",
+    "updated_at": "2026-04-21T16:53:20.006977"
+  },
+  {
+    "nom_commercial": "CONSEIL LOGICIEL SECURITE (CLS)",
+    "raison_sociale": "CONSEIL LOGICIEL SECURITE",
+    "email": "contact@cls.to",
+    "telephone": "",
+    "website": "http://www.cls.to",
+    "linkedin_url": "",
+    "adresse": "20 RUE MALAR 75007 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75007",
+    "secteur_activite": "Informatique",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "|",
+    "code_naf": "62.02A",
+    "siren": "502281926",
+    "siret": "50228192600035",
+    "qualification_score": 60,
+    "score_pct": 60.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
       },
       "size_match": {
         "points": 0,
@@ -139,17 +412,17 @@
       "email_valid": {
         "points": 10,
         "max": 10,
-        "note": "dpo@saintcloud.fr"
+        "note": "contact@cls.to"
       },
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://www.saintcloud.fr/budget"
+        "note": "http://www.cls.to"
       },
       "phone_present": {
-        "points": 10,
+        "points": 0,
         "max": 10,
-        "note": "01 47 71 53 00"
+        "note": ""
       },
       "name_complete": {
         "points": 5,
@@ -162,12 +435,194 @@
         "note": ""
       }
     },
-    "criteria_met": 7,
+    "criteria_met": 6,
     "criteria_total": 9,
     "source": "annuaire-entreprises.data.gouv.fr",
     "source_origin": "annuaire-entreprises.data.gouv.fr",
     "sector_confidence": 0.5,
-    "nlp_confidence": 0.32,
+    "nlp_confidence": 0.45,
+    "email_valid": true,
+    "website_active": true,
+    "enrich_score": 2,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 1,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "4748d886b7321280",
+    "raw_text": "",
+    "created_at": "2026-04-21T16:53:25.792209",
+    "updated_at": "2026-04-21T16:53:25.792209"
+  },
+  {
+    "nom_commercial": "ISIS LOGICIELS ET SYSTEMES",
+    "raison_sociale": "ISIS LOGICIELS ET SYSTEMES",
+    "email": "contact@isislog.com",
+    "telephone": "",
+    "website": "https://www.isislog.com",
+    "linkedin_url": "https://www.linkedin.com/company/isis-logiciels-&-systemes/",
+    "adresse": "17 RUE JOEL LE THEULE 78180 MONTIGNY-LE-BRETONNEUX",
+    "ville": "Montigny-le-Bretonneux",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "78180",
+    "secteur_activite": "Informatique",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "ISIS Logiciels et Systèmes est une société de conseil spécialisée en Ingénierie et Hautes Technologies, basée en Ile-de France",
+    "code_naf": "62.02A",
+    "siren": "408645505",
+    "siret": "40864550500020",
+    "qualification_score": 60,
+    "score_pct": 60.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 10,
+        "max": 10,
+        "note": "contact@isislog.com"
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://www.isislog.com"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 6,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 0.45,
+    "email_valid": true,
+    "website_active": true,
+    "enrich_score": 3,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 1,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "caaaa322c316fbf1",
+    "raw_text": "",
+    "created_at": "2026-04-21T16:53:25.792209",
+    "updated_at": "2026-04-21T16:53:25.792209"
+  },
+  {
+    "nom_commercial": "T-SYSTEMS FRANCE",
+    "raison_sociale": "T-SYSTEMS FRANCE",
+    "email": "t-systems.marketing@t-systems.com",
+    "telephone": "01 55 94 15 15",
+    "website": "https://www.t-systems.com/fr/fr",
+    "linkedin_url": "https://www.linkedin.com/company/t-systems-france",
+    "adresse": "1-3 1 RUE EUGENE ET ARMAND PEUGEOT 92500 RUEIL-MALMAISON",
+    "ville": "Rueil-Malmaison",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "92500",
+    "secteur_activite": "Non spécifié",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "T-Systems est un partenaire sur votre chemin vers la numérisation : avec un réseau intégré et sécurisé, le cloud, une force de vente et des solutions SAP.",
+    "code_naf": "62.03Z",
+    "siren": "319488409",
+    "siret": "31948840900529",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 0,
+        "max": 20,
+        "note": "no_match (non spécifié)"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 10,
+        "max": 10,
+        "note": "t-systems.marketing@t-systems.com"
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://www.t-systems.com/fr/fr"
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "01 55 94 15 15"
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 6,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 0.0,
     "email_valid": true,
     "website_active": true,
     "enrich_score": 4,
@@ -176,33 +631,33 @@
     "secteur_activite_id": 1,
     "is_deleted": false,
     "is_converted": null,
-    "hash_dedup": "3d0a07d22e91d246",
+    "hash_dedup": "fcd576e8b91b9e38",
     "raw_text": "",
-    "created_at": "2026-04-21T13:16:05.723611",
-    "updated_at": "2026-04-21T13:16:05.723611"
+    "created_at": "2026-04-21T16:52:53.176121",
+    "updated_at": "2026-04-21T16:52:53.176121"
   },
   {
-    "nom_commercial": "KOKORI CLOUD",
-    "raison_sociale": "KOKORI CLOUD",
-    "email": "contact@kokori.cloud",
-    "telephone": "01 86 53 98 70",
-    "website": "https://www.kokori.cloud",
+    "nom_commercial": "HORIZON CLOUD SERVICES",
+    "raison_sociale": "HORIZON CLOUD SERVICES",
+    "email": "contact@horizoncloudservices.com",
+    "telephone": "01.45.97.01.51",
+    "website": "https://horizoncloudservices.fr",
     "linkedin_url": "",
-    "adresse": "6 RUE D'ARMAILLE 75017 PARIS",
-    "ville": "Paris",
+    "adresse": "2 A RUE DE LA BRIQUETERIE 94290 VILLENEUVE-LE-ROI",
+    "ville": "Villeneuve-le-Roi",
     "region": "Île-de-France",
     "pays": "France",
-    "code_postal": "75017",
+    "code_postal": "94290",
     "secteur_activite": "Cloud computing",
     "secteur_activite_scraped": "Non spécifié",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
-    "description": "Chez Kokori.Cloud, nous avons à coeur d’améliorer le fonctionnement des Startups et PMEs en France grâce à la puissance des outils Google Workspace.",
-    "code_naf": "62.02A",
-    "siren": "890524663",
-    "siret": "89052466300014",
+    "description": "",
+    "code_naf": "63.11Z",
+    "siren": "892096561",
+    "siret": "89209656100022",
     "qualification_score": 50,
     "score_pct": 50.0,
     "qualification": "QUALIFIE",
@@ -230,17 +685,17 @@
       "email_valid": {
         "points": 10,
         "max": 10,
-        "note": "contact@kokori.cloud"
+        "note": "contact@horizoncloudservices.com"
       },
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://www.kokori.cloud"
+        "note": "https://horizoncloudservices.fr"
       },
       "phone_present": {
         "points": 10,
         "max": 10,
-        "note": "01 86 53 98 70"
+        "note": "01.45.97.01.51"
       },
       "name_complete": {
         "points": 5,
@@ -258,7 +713,7 @@
     "source": "annuaire-entreprises.data.gouv.fr",
     "source_origin": "annuaire-entreprises.data.gouv.fr",
     "sector_confidence": 0.5,
-    "nlp_confidence": 1.0,
+    "nlp_confidence": 0.49,
     "email_valid": true,
     "website_active": true,
     "enrich_score": 3,
@@ -267,33 +722,33 @@
     "secteur_activite_id": 1,
     "is_deleted": false,
     "is_converted": null,
-    "hash_dedup": "2964ad94c28413db",
+    "hash_dedup": "6ad138f634bb0d6b",
     "raw_text": "",
-    "created_at": "2026-04-21T13:15:49.396562",
-    "updated_at": "2026-04-21T13:15:49.396562"
+    "created_at": "2026-04-21T16:53:01.377367",
+    "updated_at": "2026-04-21T16:53:01.377367"
   },
   {
-    "nom_commercial": "CLOUD AUTOMATION",
-    "raison_sociale": "CLOUD AUTOMATION",
+    "nom_commercial": "CLOUD TECHNOLOGY SERVICES (YES WE CLOUD)",
+    "raison_sociale": "CLOUD TECHNOLOGY SERVICES",
     "email": "",
     "telephone": "",
-    "website": "https://entreprises.lefigaro.fr/cloud-automation-78/entreprise-853382182",
+    "website": "https://www.dnb.com/business-directory/company-profiles.cloud_technology_services.53f8377265b3b2757c6db38a68e87bd8.html",
     "linkedin_url": "",
-    "adresse": "40 RUE DE LA MUETTE 78600 MAISONS-LAFFITTE",
-    "ville": "Maisons-Laffitte",
+    "adresse": "20 RUE ALBERT EINSTEIN 77420 CHAMPS-SUR-MARNE",
+    "ville": "Champs-sur-Marne",
     "region": "Île-de-France",
     "pays": "France",
-    "code_postal": "78600",
+    "code_postal": "77420",
     "secteur_activite": "Informatique",
     "secteur_activite_scraped": "Non spécifié",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
-    "description": "Société Cloud Automation (Maisons-Laffitte, 78600) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire...",
-    "code_naf": "62.02A",
-    "siren": "853382182",
-    "siret": "85338218200014",
+    "description": "",
+    "code_naf": "63.11Z",
+    "siren": "892370479",
+    "siret": "89237047900024",
     "qualification_score": 50,
     "score_pct": 50.0,
     "qualification": "QUALIFIE",
@@ -326,7 +781,7 @@
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://entreprises.lefigaro.fr/cloud-automation-78/entreprise-853382182"
+        "note": "https://www.dnb.com/business-directory/company-profiles.cloud_technology_services.53f8377265b3b2757c6db38a68e87bd8.html"
       },
       "phone_present": {
         "points": 0,
@@ -349,133 +804,42 @@
     "source": "annuaire-entreprises.data.gouv.fr",
     "source_origin": "annuaire-entreprises.data.gouv.fr",
     "sector_confidence": 0.5,
-    "nlp_confidence": 0.339,
+    "nlp_confidence": 0.57,
     "email_valid": false,
-    "website_active": true,
-    "enrich_score": 1,
+    "website_active": false,
+    "enrich_score": 0,
     "email_mx_verified": false,
     "job_id": null,
     "secteur_activite_id": 1,
     "is_deleted": false,
     "is_converted": null,
-    "hash_dedup": "7005f2ea85b22627",
+    "hash_dedup": "11bec3bee0471a9b",
     "raw_text": "",
-    "created_at": "2026-04-21T13:15:49.396562",
-    "updated_at": "2026-04-21T13:15:49.396562"
+    "created_at": "2026-04-21T16:53:01.377367",
+    "updated_at": "2026-04-21T16:53:01.377367"
   },
   {
-    "nom_commercial": "MOHAMED-ISMAIL MEJRI",
-    "raison_sociale": "MOHAMED-ISMAIL MEJRI",
-    "email": "",
-    "telephone": "03 88 95 33 55",
-    "website": "https://www.mon-informaticien.com/entreprise/mejri-mohamed-ismail-840758999",
-    "linkedin_url": "",
-    "adresse": "1 RUE DE BEARN 92210 SAINT-CLOUD",
-    "ville": "Saint-Cloud",
+    "nom_commercial": "ORDONNANCEM BUDGET INFORMATIQ",
+    "raison_sociale": "ORDONNANCEM BUDGET INFORMATIQ",
+    "email": "urbanisme@saintcloud.fr",
+    "telephone": "01 47 71 39 22",
+    "website": "https://www.saintcloud.fr/budget",
+    "linkedin_url": "https://www.linkedin.com/company/mairie-de-saint-cloud/?viewAsMember=true",
+    "adresse": "903 F RUE D ORLEANS 92210 SAINT CLOUD",
+    "ville": "Saint Cloud",
     "region": "Île-de-France",
     "pays": "France",
     "code_postal": "92210",
-    "secteur_activite": "Conseil IT",
-    "secteur_activite_scraped": "Non spécifié",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "Faites appel à l'entreprise d'informatique MEJRI MOHAMED-ISMAIL située à Saint-Cloud (92210). Cet informaticien est notamment spécialisé en .",
-    "code_naf": "62.09Z",
-    "siren": "840758999",
-    "siret": "84075899900014",
-    "qualification_score": 50,
-    "score_pct": 50.0,
-    "qualification": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 10,
-        "max": 20,
-        "note": "partial:Informatique"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "region:île-de-france"
-      },
-      "email_valid": {
-        "points": 0,
-        "max": 10,
-        "note": ""
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://www.mon-informaticien.com/entreprise/mejri-mohamed-ismail-840758999"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "03 88 95 33 55"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 6,
-    "criteria_total": 9,
-    "source": "annuaire-entreprises.data.gouv.fr",
-    "source_origin": "annuaire-entreprises.data.gouv.fr",
-    "sector_confidence": 0.5,
-    "nlp_confidence": 0.314,
-    "email_valid": false,
-    "website_active": true,
-    "enrich_score": 2,
-    "email_mx_verified": false,
-    "job_id": null,
-    "secteur_activite_id": 1,
-    "is_deleted": false,
-    "is_converted": null,
-    "hash_dedup": "2f80015dea91536a",
-    "raw_text": "",
-    "created_at": "2026-04-21T13:16:00.511365",
-    "updated_at": "2026-04-21T13:16:00.511365"
-  },
-  {
-    "nom_commercial": "ALADNAN",
-    "raison_sociale": "ALADNAN",
-    "email": "correspondant.cnil@agglovgp.fr",
-    "telephone": "01 30 78 10 88",
-    "website": "https://lacellesaintcloud.fr",
-    "linkedin_url": "",
-    "adresse": "9 LE MAIL 78170 LA CELLE-SAINT-CLOUD",
-    "ville": "La Celle-Saint-Cloud",
-    "region": "Île-de-France",
-    "pays": "France",
-    "code_postal": "78170",
     "secteur_activite": "Non spécifié",
     "secteur_activite_scraped": "Non spécifié",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
-    "description": "Site officiel de la ville de La Celle Saint-Cloud 78170",
-    "code_naf": "62.09Z",
-    "siren": "850778861",
-    "siret": "85077886100011",
+    "description": "La présentation du budget est un acte majeur dans le calendrier communal. En ajustant les dépenses nécessaires à la réalisation des projets en fonction des recettes attendues, le budget est l'expression financière de la politique de l'équipe municipale.",
+    "code_naf": "63.11Z",
+    "siren": "709805360",
+    "siret": "70980536000019",
     "qualification_score": 50,
     "score_pct": 50.0,
     "qualification": "QUALIFIE",
@@ -503,17 +867,108 @@
       "email_valid": {
         "points": 10,
         "max": 10,
-        "note": "correspondant.cnil@agglovgp.fr"
+        "note": "urbanisme@saintcloud.fr"
       },
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://lacellesaintcloud.fr"
+        "note": "https://www.saintcloud.fr/budget"
       },
       "phone_present": {
         "points": 10,
         "max": 10,
-        "note": "01 30 78 10 88"
+        "note": "01 47 71 39 22"
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 6,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 0.0,
+    "email_valid": true,
+    "website_active": true,
+    "enrich_score": 4,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 1,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "3d0a07d22e91d246",
+    "raw_text": "",
+    "created_at": "2026-04-21T16:53:01.377367",
+    "updated_at": "2026-04-21T16:53:01.377367"
+  },
+  {
+    "nom_commercial": "OPTIN DATA",
+    "raison_sociale": "OPTIN DATA",
+    "email": "service_clients@bdmr.fr",
+    "telephone": "01 55 64 03 20",
+    "website": "https://optin-data.fr",
+    "linkedin_url": "",
+    "adresse": "69 AVENUE PIERRE GRENIER 92100 BOULOGNE-BILLANCOURT",
+    "ville": "Boulogne-Billancourt",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "92100",
+    "secteur_activite": "Non spécifié",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "63.11Z",
+    "siren": "831357850",
+    "siret": "83135785000039",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 0,
+        "max": 20,
+        "note": "no_match (non spécifié)"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 10,
+        "max": 10,
+        "note": "service_clients@bdmr.fr"
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://optin-data.fr"
+      },
+      "phone_present": {
+        "points": 10,
+        "max": 10,
+        "note": "01 55 64 03 20"
       },
       "name_complete": {
         "points": 5,
@@ -540,124 +995,33 @@
     "secteur_activite_id": 1,
     "is_deleted": false,
     "is_converted": null,
-    "hash_dedup": "d767c2571b82cb81",
+    "hash_dedup": "18e09d836dba1c0e",
     "raw_text": "",
-    "created_at": "2026-04-21T13:16:00.511365",
-    "updated_at": "2026-04-21T13:16:00.511365"
+    "created_at": "2026-04-21T16:53:01.377367",
+    "updated_at": "2026-04-21T16:53:01.377367"
   },
   {
-    "nom_commercial": "SAFWEE",
-    "raison_sociale": "SAFWEE",
-    "email": "contact@safwee.com",
-    "telephone": "09 70 72 72 92",
-    "website": "https://safwee.com",
-    "linkedin_url": "https://www.linkedin.com/company/safwee/",
-    "adresse": "11 RUE MARIUS FRANAY 92210 SAINT-CLOUD",
-    "ville": "Saint-Cloud",
-    "region": "Île-de-France",
-    "pays": "France",
-    "code_postal": "92210",
-    "secteur_activite": "Non spécifié",
-    "secteur_activite_scraped": "Non spécifié",
-    "type_entreprise": "",
-    "taille_entreprise": "",
-    "nombre_employes": null,
-    "chiffre_affaires": null,
-    "description": "SAFWEE est l'alliance de HOXPHONE (opérateur) et INTEGR-IP (infrastructure et réseaux) réunissant leurs savoir-faire 15 ans après leur création.",
-    "code_naf": "62.09Z",
-    "siren": "507666295",
-    "siret": "50766629500054",
-    "qualification_score": 50,
-    "score_pct": 50.0,
-    "qualification": "QUALIFIE",
-    "score_detail": {
-      "sector_match": {
-        "points": 0,
-        "max": 20,
-        "note": "no_match (non spécifié)"
-      },
-      "size_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_size_data"
-      },
-      "type_match": {
-        "points": 0,
-        "max": 15,
-        "note": "no_type_data"
-      },
-      "geo_match": {
-        "points": 10,
-        "max": 10,
-        "note": "region:île-de-france"
-      },
-      "email_valid": {
-        "points": 10,
-        "max": 10,
-        "note": "contact@safwee.com"
-      },
-      "website_active": {
-        "points": 10,
-        "max": 10,
-        "note": "https://safwee.com"
-      },
-      "phone_present": {
-        "points": 10,
-        "max": 10,
-        "note": "09 70 72 72 92"
-      },
-      "name_complete": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      },
-      "raison_sociale": {
-        "points": 5,
-        "max": 5,
-        "note": ""
-      }
-    },
-    "criteria_met": 6,
-    "criteria_total": 9,
-    "source": "annuaire-entreprises.data.gouv.fr",
-    "source_origin": "annuaire-entreprises.data.gouv.fr",
-    "sector_confidence": 0.5,
-    "nlp_confidence": 0.0,
-    "email_valid": true,
-    "website_active": true,
-    "enrich_score": 4,
-    "email_mx_verified": false,
-    "job_id": null,
-    "secteur_activite_id": 1,
-    "is_deleted": false,
-    "is_converted": null,
-    "hash_dedup": "2a00485a7b0a5232",
-    "raw_text": "",
-    "created_at": "2026-04-21T13:16:00.511365",
-    "updated_at": "2026-04-21T13:16:00.511365"
-  },
-  {
-    "nom_commercial": "ASSESSFIRST",
-    "raison_sociale": "ASSESSFIRST",
-    "email": "hello@assessfirst.com",
-    "telephone": "01 84 13 00 00",
-    "website": "https://www.assessfirst.com/fr",
-    "linkedin_url": "https://www.linkedin.com/company/assessfirst/",
-    "adresse": "10 RUE DE LA PAIX 75002 PARIS",
+    "nom_commercial": "DI.MA.INFO.",
+    "raison_sociale": "DI.MA.INFO.",
+    "email": "nomprenom@domaine.fr",
+    "telephone": "01 49 52 42 81",
+    "website": "https://www.paris.fr/?+=",
+    "linkedin_url": "https://www.linkedin.com/company/villedeparis/",
+    "adresse": "16 B RUE PORTALIS 75008 PARIS",
     "ville": "Paris",
     "region": "Île-de-France",
     "pays": "France",
-    "code_postal": "75002",
+    "code_postal": "75008",
     "secteur_activite": "Non spécifié",
     "secteur_activite_scraped": "Non spécifié",
     "type_entreprise": "",
     "taille_entreprise": "",
     "nombre_employes": null,
     "chiffre_affaires": null,
-    "description": "Recrutez plus vite, réduisez le turnover et boostez les performances RH avec notre IA prédictive et nos évaluations fiables.",
-    "code_naf": "58.29A",
-    "siren": "443179684",
-    "siret": "44317968400057",
+    "description": "",
+    "code_naf": "63.11Z",
+    "siren": "349814632",
+    "siret": "34981463200023",
     "qualification_score": 50,
     "score_pct": 50.0,
     "qualification": "QUALIFIE",
@@ -685,17 +1049,17 @@
       "email_valid": {
         "points": 10,
         "max": 10,
-        "note": "hello@assessfirst.com"
+        "note": "nomprenom@domaine.fr"
       },
       "website_active": {
         "points": 10,
         "max": 10,
-        "note": "https://www.assessfirst.com/fr"
+        "note": "https://www.paris.fr/?+="
       },
       "phone_present": {
         "points": 10,
         "max": 10,
-        "note": "01 84 13 00 00"
+        "note": "01 49 52 42 81"
       },
       "name_complete": {
         "points": 5,
@@ -722,9 +1086,737 @@
     "secteur_activite_id": 1,
     "is_deleted": false,
     "is_converted": null,
-    "hash_dedup": "1ff2e5b9d0a8364e",
+    "hash_dedup": "0663bc1863fa41a8",
     "raw_text": "",
-    "created_at": "2026-04-21T13:16:13.728323",
-    "updated_at": "2026-04-21T13:16:13.728323"
+    "created_at": "2026-04-21T16:53:01.377367",
+    "updated_at": "2026-04-21T16:53:01.377367"
+  },
+  {
+    "nom_commercial": "ASYMA CONSULTING & LOGICIELS",
+    "raison_sociale": "ASYMA CONSULTING & LOGICIELS",
+    "email": "",
+    "telephone": "",
+    "website": "https://entreprises.annuairefrancais.fr/91160/asyma-consulting-&-logiciels-longjumeau-91-essonne-433472958-00019.html",
+    "linkedin_url": "",
+    "adresse": "BAT J2 14 RUE DE L'YVETTE 91160 LONGJUMEAU",
+    "ville": "Longjumeau",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "91160",
+    "secteur_activite": "Informatique",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "ASYMA CONSULTING & LOGICIELS (siren n° 433472958) est installé dans la commune de Longjumeau à l'adresse 14 RUE DE L YVETTE dans le département de l'Essonne téléphone... ASYMA CONSULTING & LOGICIELS est référencé dans l'Annuaire Français dans la catégorie informatique Ssii, informations complètes Bilans gratuits, statuts, chiffre d'affaires, dirigeants, actionnaires, levées de fonds, annonces légales, APE, NAF, TVA, RCS, KBIS, SIREN, SIRET, BODACC, INSEE, INPI.",
+    "code_naf": "62.01Z",
+    "siren": "433472958",
+    "siret": "43347295800019",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://entreprises.annuairefrancais.fr/91160/asyma-consulting-&-logiciels-longjumeau-91-essonne-433472958-00019.html"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 1.0,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 1,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "dc24a84f2a753a0d",
+    "raw_text": "",
+    "created_at": "2026-04-21T16:53:20.006977",
+    "updated_at": "2026-04-21T16:53:20.006977"
+  },
+  {
+    "nom_commercial": "BLUE RIDGE LOGICIELS",
+    "raison_sociale": "BLUE RIDGE LOGICIELS",
+    "email": "",
+    "telephone": "",
+    "website": "https://entreprises.lefigaro.fr/blue-ridge-logiciels-75/entreprise-812533693",
+    "linkedin_url": "",
+    "adresse": "31 AVENUE DE SEGUR 75007 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75007",
+    "secteur_activite": "Informatique",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Société Blue Ridge Logiciels (Paris, 75007) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire...",
+    "code_naf": "62.01Z",
+    "siren": "812533693",
+    "siret": "81253369300030",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://entreprises.lefigaro.fr/blue-ridge-logiciels-75/entreprise-812533693"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 1.0,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 1,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "65ff8bbf556e1dc9",
+    "raw_text": "",
+    "created_at": "2026-04-21T16:53:20.006977",
+    "updated_at": "2026-04-21T16:53:20.006977"
+  },
+  {
+    "nom_commercial": "AUTOMOTIVE DEVELOPPEMENT LOGICIEL SARL",
+    "raison_sociale": "AUTOMOTIVE DEVELOPPEMENT LOGICIEL SARL",
+    "email": "",
+    "telephone": "",
+    "website": "https://www.cylex-locale.fr/entreprises/automotive-d%C3%A9veloppement-logiciel-13187468.html",
+    "linkedin_url": "",
+    "adresse": "5 RUE GEORGES MELIES 78390 BOIS-D'ARCY",
+    "ville": "Bois-d'Arcy",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "78390",
+    "secteur_activite": "Informatique",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.01Z",
+    "siren": "508241072",
+    "siret": "50824107200026",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://www.cylex-locale.fr/entreprises/automotive-d%C3%A9veloppement-logiciel-13187468.html"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 1.0,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 1,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "6956683d0250a7c4",
+    "raw_text": "",
+    "created_at": "2026-04-21T16:53:20.006977",
+    "updated_at": "2026-04-21T16:53:20.006977"
+  },
+  {
+    "nom_commercial": "HAMSTER.NET DEVELOPPEMENT LOGICIEL RESEAU",
+    "raison_sociale": "HAMSTER.NET DEVELOPPEMENT LOGICIEL RESEAU",
+    "email": "",
+    "telephone": "",
+    "website": "https://entreprises.annuairefrancais.fr/78430/hamster.net-developpement-logiciel-reseau-louveciennes-78-yvelines-828092106-00016.html",
+    "linkedin_url": "",
+    "adresse": "RESIDENCE DAUPHINE 78430 LOUVECIENNES",
+    "ville": "Louveciennes",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "78430",
+    "secteur_activite": "Informatique",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "HAMSTER.NET DEVELOPPEMENT LOGICIEL RESEAU (siren n° 828092106) est installé dans la commune de Louveciennes à l'adresse RESIDENCE DAUPHINE dans le département des Yvelines téléphone... HAMSTER.NET DEVELOPPEMENT LOGICIEL RESEAU est référencé dans l'Annuaire Français dans la catégorie informatique Ssii, informations complètes Bilans gratuits, statuts, chiffre d'affaires, dirigeants, actionnaires, levées de fonds, annonces légales, APE, NAF, TVA, RCS, KBIS, SIREN, SIRET, BODACC, INSEE, INPI.",
+    "code_naf": "62.01Z",
+    "siren": "828092106",
+    "siret": "82809210600016",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://entreprises.annuairefrancais.fr/78430/hamster.net-developpement-logiciel-reseau-louveciennes-78-yvelines-828092106-00016.html"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 0.333,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 1,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "e319e5496d888b32",
+    "raw_text": "",
+    "created_at": "2026-04-21T16:53:20.006977",
+    "updated_at": "2026-04-21T16:53:20.006977"
+  },
+  {
+    "nom_commercial": "LA FABRIQUE LOGICIELLE",
+    "raison_sociale": "LA FABRIQUE LOGICIELLE",
+    "email": "",
+    "telephone": "",
+    "website": "https://www.la-fabrique-logicielle.fr",
+    "linkedin_url": "",
+    "adresse": "9 RUE STANISLAS 75006 PARIS",
+    "ville": "Paris",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "75006",
+    "secteur_activite": "Informatique",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "",
+    "code_naf": "62.02A",
+    "siren": "450308259",
+    "siret": "45030825900016",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://www.la-fabrique-logicielle.fr"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 1.0,
+    "email_valid": false,
+    "website_active": false,
+    "enrich_score": 0,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 1,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "8e6e33681ae6fa20",
+    "raw_text": "",
+    "created_at": "2026-04-21T16:53:25.791009",
+    "updated_at": "2026-04-21T16:53:25.791009"
+  },
+  {
+    "nom_commercial": "CV LOGICIEL",
+    "raison_sociale": "CV LOGICIEL",
+    "email": "",
+    "telephone": "",
+    "website": "https://entreprises.lefigaro.fr/cv-logiciel-93/entreprise-507447498",
+    "linkedin_url": "",
+    "adresse": "7 IMP QUEUNE 93200 SAINT-DENIS",
+    "ville": "Saint-Denis",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "93200",
+    "secteur_activite": "Informatique",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Société CV Logiciel (Saint-Denis, 93210) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire...",
+    "code_naf": "62.02A",
+    "siren": "507447498",
+    "siret": "50744749800019",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://entreprises.lefigaro.fr/cv-logiciel-93/entreprise-507447498"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 1.0,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 1,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "6b91ea9d9f69d2bb",
+    "raw_text": "",
+    "created_at": "2026-04-21T16:53:25.791009",
+    "updated_at": "2026-04-21T16:53:25.791009"
+  },
+  {
+    "nom_commercial": "LIOUBOUCHKIN INGENIERIE ET LOGICIELS (LIOUBOUCHKIN INGENIERIE ET LOGICIELS)",
+    "raison_sociale": "LIOUBOUCHKIN INGENIERIE ET LOGICIELS",
+    "email": "",
+    "telephone": "",
+    "website": "https://app.dataprospects.fr/entreprises/LIOUBOUCHKIN-INGENIERIE-ET-LOGICIELS/838052850",
+    "linkedin_url": "",
+    "adresse": "1 BOULEVARD DESCARTES 78180 MONTIGNY-LE-BRETONNEUX",
+    "ville": "Montigny-le-Bretonneux",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "78180",
+    "secteur_activite": "Informatique",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "LIOUBOUCHKIN INGENIERIE ET LOGICIELS, Socit  responsabilit limite (sans autre indication), dont le SIREN est le 838052850, est en activité depuis 2018, il y a 8 ans. Elle est domiciliée à MONTIGNY-LE-BRETONNEUX, code postal 78180. Le code NAF dont elle dispose est le 6202A (Conseil en systmes et logiciels informatiques).",
+    "code_naf": "62.02A",
+    "siren": "838052850",
+    "siret": "83805285000032",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://app.dataprospects.fr/entreprises/LIOUBOUCHKIN-INGENIERIE-ET-LOGICIELS/838052850"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 1.0,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 1,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "97ba9ea07f8967d8",
+    "raw_text": "",
+    "created_at": "2026-04-21T16:53:25.791009",
+    "updated_at": "2026-04-21T16:53:25.791009"
+  },
+  {
+    "nom_commercial": "INFORMATIQUE DOCUMENTAIRE LOGICIELS SARL",
+    "raison_sociale": "INFORMATIQUE DOCUMENTAIRE LOGICIELS SARL",
+    "email": "",
+    "telephone": "",
+    "website": "https://entreprises.lefigaro.fr/id-log-91/entreprise-403648173",
+    "linkedin_url": "",
+    "adresse": "10 AVENUE DU QUEBEC 91140 VILLEBON-SUR-YVETTE",
+    "ville": "Villebon-sur-Yvette",
+    "region": "Île-de-France",
+    "pays": "France",
+    "code_postal": "91140",
+    "secteur_activite": "Informatique",
+    "secteur_activite_scraped": "Non spécifié",
+    "type_entreprise": "",
+    "taille_entreprise": "",
+    "nombre_employes": null,
+    "chiffre_affaires": null,
+    "description": "Société Informatique Documentaire Logiciels SARL (Villebon-sur-Yvette, 91140) : numéro siret, siren, information, adresse, contact, numero tva intracommunautaire...",
+    "code_naf": "62.02A",
+    "siren": "403648173",
+    "siret": "40364817300017",
+    "qualification_score": 50,
+    "score_pct": 50.0,
+    "qualification": "QUALIFIE",
+    "score_detail": {
+      "sector_match": {
+        "points": 20,
+        "max": 20,
+        "note": "match:Informatique"
+      },
+      "size_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_size_data"
+      },
+      "type_match": {
+        "points": 0,
+        "max": 15,
+        "note": "no_type_data"
+      },
+      "geo_match": {
+        "points": 10,
+        "max": 10,
+        "note": "region:île-de-france"
+      },
+      "email_valid": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "website_active": {
+        "points": 10,
+        "max": 10,
+        "note": "https://entreprises.lefigaro.fr/id-log-91/entreprise-403648173"
+      },
+      "phone_present": {
+        "points": 0,
+        "max": 10,
+        "note": ""
+      },
+      "name_complete": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      },
+      "raison_sociale": {
+        "points": 5,
+        "max": 5,
+        "note": ""
+      }
+    },
+    "criteria_met": 5,
+    "criteria_total": 9,
+    "source": "annuaire-entreprises.data.gouv.fr",
+    "source_origin": "annuaire-entreprises.data.gouv.fr",
+    "sector_confidence": 0.5,
+    "nlp_confidence": 0.45,
+    "email_valid": false,
+    "website_active": true,
+    "enrich_score": 1,
+    "email_mx_verified": false,
+    "job_id": null,
+    "secteur_activite_id": 1,
+    "is_deleted": false,
+    "is_converted": null,
+    "hash_dedup": "fc8a0db57573fbf4",
+    "raw_text": "",
+    "created_at": "2026-04-21T16:53:25.792209",
+    "updated_at": "2026-04-21T16:53:25.792209"
   }
 ]
